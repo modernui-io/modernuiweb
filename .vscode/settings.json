@@ -1,0 +1,86 @@
+{
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "eslint.lintTask.enable": true,
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  // "editor.formatOnSaveMode": "file",
+  "editor.rulers": [
+    {
+      "column": 80
+    }
+  ],
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript,typescript,javascriptreact,typescriptreact]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.filterGraceful": true,
+    "editor.suggest.showSnippets": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "markdownlint.config": {
+    "MD033": false
+  },
+  "tailwindCSS.experimental.configFile": "./tailwind.config.ts",
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    // ...
+    "style"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "tw`([^`]*)",
+      ["tw.style\\(([^)]*)\\)", "'([^']*)'"],
+      "tw\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]",
+      // "tw\\(([^)]*)\\)",
+      "tv\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]",
+      "twc\\.[^`]+`([^`]*)`",
+      "twc\\(.*?\\).*?`([^`]*)",
+      ["twc\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ["twc\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      "twx\\.[^`]+`([^`]*)`",
+      "twx\\(.*?\\).*?`([^`]*)",
+      ["twx\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ["twx\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ]
+  ],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "next/router.d.ts",
+    "next/dist/client/router.d.ts"
+  ],
+  "search.exclude": {
+    "**/.next": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

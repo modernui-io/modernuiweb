@@ -1,0 +1,102 @@
+/* Rehype */
+
+[data-rehype-pretty-code-fragment] {
+  @apply relative;
+}
+
+[data-rehype-pretty-code-figure] pre {
+  @apply px-0;
+}
+
+[data-rehype-pretty-code-figure] code {
+  @apply border-0 p-0 text-sm !leading-loose md:text-base;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply mr-4 inline-block w-4 text-right text-gray-500;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply border-l-2 border-l-transparent px-3;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  background: rgba(200, 200, 255, 0.1);
+  @apply border-l-blue-400;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  @apply rounded bg-zinc-600/50;
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+[data-rehype-pretty-code-figure] [data-chars-id] {
+  @apply border-b-2 p-1 shadow-none;
+}
+
+.subheading-anchor {
+  @apply no-underline hover:underline;
+}
+
+/* Fragments */
+[data-rehype-pretty-code-fragment] {
+  @apply relative;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] .line {
+  @apply inline-block min-h-[1rem] w-full px-4 py-0.5;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] .line {
+  @apply px-2;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  @apply text-xs text-zinc-50/40;
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1.8rem;
+  margin-right: 1.4rem;
+  text-align: right;
+}
+
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-zinc-700/50;
+}
+
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative;
+}
+
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply rounded-md border-zinc-700/70 bg-zinc-700/50 p-1;
+}
+
+.dark [data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply bg-zinc-900;
+}
+
+[data-rehype-pretty-code-title] {
+  @apply mt-2 px-4 pt-6 text-sm font-medium;
+}
+
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-2;
+}
+
+.mdx > .steps:first-child > h3:first-child {
+  @apply mt-0;
+}

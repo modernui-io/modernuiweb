@@ -8,7 +8,7 @@ import { Drawer } from "vaul";
 
 import { useMediaQuery } from "~/lib/hooks/use-media-query";
 
-export function Tooltip({
+export function ResponsiveTooltip({
   children,
   content,
   side = "top",
@@ -79,7 +79,7 @@ export function Tooltip({
   );
 }
 
-export function TooltipContent({ title }: { title: string }) {
+export function ResponsiveTooltipContent({ title }: { title: string }) {
   return (
     <div className="max-w-xs p-2 text-center text-sm text-background">
       {title}
@@ -87,10 +87,14 @@ export function TooltipContent({ title }: { title: string }) {
   );
 }
 
-export function InfoTooltip({ content }: { content: ReactNode | string }) {
+export function ResponsiveInfoTooltip({
+  content,
+}: {
+  content: ReactNode | string;
+}) {
   return (
-    <Tooltip content={content}>
+    <ResponsiveTooltip content={content}>
       <Info className="h-4 w-4 text-muted-foreground" />
-    </Tooltip>
+    </ResponsiveTooltip>
   );
 }

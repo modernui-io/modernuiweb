@@ -3,7 +3,12 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    // "../src/components/ui/stories/**/*.mdx",
+    "../src/components/ui/stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/ui/custom/stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "./tokens/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -15,8 +20,8 @@ const config: StorybookConfig = {
     options: {},
   },
   core: {
-    // disableTelemetry: true,
-    enableCrashReports: true,
+    disableTelemetry: true,
+    enableCrashReports: false,
   },
   docs: {
     autodocs: "tag",

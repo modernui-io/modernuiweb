@@ -5,18 +5,21 @@ import { Input } from "../input";
 import { Label } from "../label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 
+/**
+ * A set of layered sections of content—known as tab panels—that are displayed
+ * one at a time.
+ */
 const meta: Meta<typeof Tabs> = {
+  title: "ui/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-};
-
-export default meta;
-type Story = StoryObj<typeof Tabs>;
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {
+  argTypes: {},
+  args: {
+    defaultValue: "account",
+    className: "w-96",
+  },
   render: (args) => (
-    <Tabs defaultValue="account" className="w-[400px]" {...args}>
+    <Tabs {...args}>
       <TabsList>
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
@@ -59,4 +62,15 @@ export const Default: Story = {
       </TabsContent>
     </Tabs>
   ),
+  parameters: {
+    layout: "centered",
+  },
 };
+
+export default meta;
+type Story = StoryObj<typeof Tabs>;
+
+/**
+ * The default form of the tabs.
+ */
+export const Default: Story = {};

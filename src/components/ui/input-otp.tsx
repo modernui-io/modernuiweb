@@ -7,9 +7,11 @@ import { OTPInput, OTPInputContext } from "input-otp";
 
 import { cn } from "~/lib/utils";
 
+export type InputOTPProps = React.ComponentPropsWithoutRef<typeof OTPInput>;
+
 const InputOTP = React.forwardRef<
   React.ElementRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
+  InputOTPProps
 >(({ className, containerClassName, ...props }, ref) => (
   <OTPInput
     ref={ref}

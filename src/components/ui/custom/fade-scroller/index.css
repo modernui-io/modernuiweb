@@ -35,3 +35,30 @@
     transparent
   );
 }
+
+.modernui-wallpaper-fade-scroller {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    red 16px calc(100% - 16px),
+    transparent
+  );
+}
+
+.modernui-dialog-fade-scroller {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    red 32px calc(100% - 32px),
+    transparent
+  );
+}
+
+.modernui-cmdk-fade-scroller {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    red 20px calc(100% - 20px),
+    transparent
+  );
+}

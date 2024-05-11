@@ -8,6 +8,8 @@ const config = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended",
     "plugin:prettier/recommended",
   ],
   env: {
@@ -26,10 +28,12 @@ const config = {
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "tailwindcss"],
   rules: {
     "react/prop-types": "off",
     "jsx-a11y/heading-has-content": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/consistent-type-imports": [

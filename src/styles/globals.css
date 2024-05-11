@@ -343,3 +343,11 @@ table {
 .prose .callout > p {
   margin: 0 !important;
 }
+
+/* password input */
+.hide-password-toggle::-ms-reveal,
+.hide-password-toggle::-ms-clear {
+  visibility: hidden;
+  pointer-events: none;
+  display: none;
+}

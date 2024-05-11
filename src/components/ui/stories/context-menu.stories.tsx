@@ -19,16 +19,46 @@ import {
   ContextMenuTrigger,
 } from "../context-menu";
 
+/**
+ * Displays a menu to the user — such as a set of actions or functions —
+ * triggered by a button.
+ */
 const meta: Meta<typeof ContextMenu> = {
+  title: "ui/ContextMenu",
   component: ContextMenu,
   tags: ["autodocs"],
+  argTypes: {},
+  args: {},
+  render: (args) => (
+    <ContextMenu {...args}>
+      <ContextMenuTrigger className="flex h-48 w-96 items-center justify-center rounded-md border border-dashed bg-accent text-sm">
+        Right click here
+      </ContextMenuTrigger>
+      <ContextMenuContent className="w-32">
+        <ContextMenuItem>Profile</ContextMenuItem>
+        <ContextMenuItem>Billing</ContextMenuItem>
+        <ContextMenuItem>Team</ContextMenuItem>
+        <ContextMenuItem>Subscription</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  ),
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof ContextMenu>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {
+/**
+ * The default form of the context menu.
+ */
+export const Default: Story = {};
+
+/**
+ * A context menu with shortcuts.
+ */
+export const WithShortcuts: Story = {
   render: (args) => (
     <ContextMenu {...args}>
       <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed border-slate-200 text-sm dark:border-slate-700">

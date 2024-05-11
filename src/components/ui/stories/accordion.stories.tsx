@@ -8,24 +8,20 @@ import {
 } from "~/components/ui/accordion";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+
+/**
+ * A vertically stacked set of interactive headings that each reveal a section
+ * of content.
+ */
 const meta: Meta<typeof Accordion> = {
+  title: "ui/Accordion",
   component: Accordion,
   tags: ["autodocs"],
-  // argTypes: {
-  //   type: {
-  //     control: "string",
-  //   },
-  // },
-};
-
-export default meta;
-type Story = StoryObj<typeof Accordion>;
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Single: Story = {
-  args: {
-    type: "single",
-    collapsible: true,
+  argTypes: {
+    type: {
+      options: ["single", "multiple"],
+      control: { type: "radio" },
+    },
   },
   render: (args) => (
     <Accordion {...args}>
@@ -51,4 +47,19 @@ export const Single: Story = {
       </AccordionItem>
     </Accordion>
   ),
+};
+
+export default meta;
+type Story = StoryObj<typeof Accordion>;
+
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+
+/**
+ * The default behavior of the accordion allows only one item to be open.
+ */
+export const Single: Story = {
+  args: {
+    type: "single",
+    collapsible: true,
+  },
 };

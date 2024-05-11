@@ -6,15 +6,12 @@ import { ScrollArea } from "../scroll-area";
 import { Separator } from "../separator";
 
 const meta: Meta<typeof ScrollArea> = {
+  title: "ui/ScrollArea",
   component: ScrollArea,
   tags: ["autodocs"],
-};
-
-export default meta;
-type Story = StoryObj<typeof ScrollArea>;
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {
+  args: {
+    type: "auto",
+  },
   render: (args) => (
     <ScrollArea
       className="h-72 w-48 rounded-md border border-slate-100 dark:border-slate-700"
@@ -35,4 +32,42 @@ export const Default: Story = {
       </div>
     </ScrollArea>
   ),
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof ScrollArea>;
+
+/**
+ * The default form of the scroll area.
+ */
+export const Default: Story = {};
+
+/**
+ * Use the `type` prop with `always` to always show the scroll area.
+ */
+export const Always: Story = {
+  args: {
+    type: "always",
+  },
+};
+
+/**
+ * Use the `type` prop with `hover` to show the scroll area on hover.
+ */
+export const Hover: Story = {
+  args: {
+    type: "hover",
+  },
+};
+
+/**
+ * Use the `type` prop with `scroll` to show the scroll area when scrolling.
+ */
+export const Scroll: Story = {
+  args: {
+    type: "scroll",
+  },
 };

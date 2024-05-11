@@ -8,8 +8,6 @@ import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import Placeholder from "@/public/images/mocks/placeholder.jpg";
-
 import * as MuiLayout from "~/components/layouts";
 // Component Imports
 import { Button } from "~/components/ui/button";
@@ -23,6 +21,7 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
+import Placeholder from "~/lib/assets/images/placeholder.jpg";
 
 const formSchema = z.object({
   email: z.string().email({

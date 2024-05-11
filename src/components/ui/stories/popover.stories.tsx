@@ -6,7 +6,11 @@ import { Input } from "../input";
 import { Label } from "../label";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
+/**
+ * Displays rich content in a portal, triggered by a button.
+ */
 const meta: Meta<typeof Popover> = {
+  title: "ui/Popover",
   component: Popover,
   tags: ["autodocs"],
 };
@@ -14,7 +18,9 @@ const meta: Meta<typeof Popover> = {
 export default meta;
 type Story = StoryObj<typeof Popover>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the popover.
+ */
 export const Default: Story = {
   render: (args) => (
     <Popover {...args}>

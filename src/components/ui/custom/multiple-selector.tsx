@@ -26,7 +26,7 @@ export interface Option {
 }
 type GroupOption = Record<string, Option[]>;
 
-interface MultipleSelectorProps {
+export interface MultipleSelectorProps {
   value?: Option[];
   defaultOptions?: Option[];
   /** manually controlled options */
@@ -154,7 +154,7 @@ const CommandEmpty = forwardRef<
 
 CommandEmpty.displayName = "CommandEmpty";
 
-const MultipleSelector = React.forwardRef<
+export const MultipleSelector = React.forwardRef<
   MultipleSelectorRef,
   MultipleSelectorProps
 >(

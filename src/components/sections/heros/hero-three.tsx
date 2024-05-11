@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Logo from "@/public/images/mocks/logo.svg";
-
 import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
+import Logo from "~/lib/assets/images/logo.svg";
 
 const Hero = () => {
   return (

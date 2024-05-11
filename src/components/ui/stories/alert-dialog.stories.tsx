@@ -13,16 +13,25 @@ import {
 } from "~/components/ui/alert-dialog";
 import { Button } from "~/components/ui/button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+/**
+ * A modal dialog that interrupts the user with important content and expects
+ * a response.
+ */
 const meta: Meta<typeof AlertDialog> = {
+  title: "ui/AlertDialog",
   component: AlertDialog,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof AlertDialog>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the alert dialog.
+ */
 export const Default: Story = {
   render: (args) => (
     <AlertDialog {...args}>

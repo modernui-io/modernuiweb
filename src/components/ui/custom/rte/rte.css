@@ -1,0 +1,101 @@
+.rte-root {
+  @apply relative flex min-h-56 w-full max-w-screen-lg flex-col overflow-clip rounded-md border bg-background p-0 sm:shadow-md;
+
+  .ProseMirror {
+    @apply px-4 py-3 outline-0;
+  }
+
+  .ProseMirror > *:last-child {
+    @apply mb-0;
+  }
+
+  .ProseMirror p.is-editor-empty:first-of-type::before {
+    content: attr(data-placeholder);
+    @apply pointer-events-none float-left h-0 select-none text-sm text-foreground;
+  }
+
+  pre {
+    @apply rounded-md bg-secondary p-4 font-sans text-secondary-foreground;
+
+    & code {
+      background: none !important;
+      @apply p-0 text-sm text-inherit;
+    }
+  }
+}
+
+.rte-content {
+  @apply prose prose-sm prose-slate rounded-md bg-background font-sans dark:prose-invert prose-headings:font-sans prose-headings:font-medium focus:outline-none;
+}
+
+.rte-control {
+  @apply flex h-6 min-w-6 cursor-default items-center justify-center rounded-md border bg-background;
+
+  &:where([data-disabled]) {
+    @apply cursor-not-allowed bg-muted text-muted-foreground;
+  }
+
+  &:where([data-interactive]) {
+    @apply cursor-pointer bg-secondary text-secondary-foreground;
+  }
+
+  &:where([data-active]) {
+    @apply bg-accent text-accent-foreground;
+
+    &:hover {
+      @apply bg-brand-50 text-foreground;
+    }
+  }
+}
+
+.rte-controls-group {
+  @apply flex bg-background;
+
+  & [data-rich-text-editor-control] {
+    border-radius: 0;
+
+    &:not(:last-of-type) {
+      border-inline-end-width: 0;
+    }
+
+    &:last-of-type {
+      @apply rounded-br-md rounded-tr-md border;
+    }
+
+    &:first-of-type {
+      @apply rounded-bl-md rounded-tl-md border;
+    }
+  }
+}
+
+.rte-toolbar {
+  @apply top-4 flex flex-wrap items-center gap-2 rounded-tl-md rounded-tr-md border bg-background px-4 py-3;
+
+  &:where([data-sticky]) {
+    @apply sticky;
+  }
+}
+
+.rte-link-editor {
+  @apply flex;
+}
+
+.rte-link-editor-input {
+  @apply rounded-br-none rounded-tr-none;
+}
+
+.rte-link-editor-save {
+  @apply rounded-bl-none rounded-tl-none;
+}
+
+.rte-link-editor-dropdown {
+  @apply bg-background;
+}
+
+.rte-link-editor-external-control {
+  @apply flex h-6 w-6 items-center justify-center rounded-md border bg-background text-foreground;
+
+  &:where([data-active]) {
+    @apply bg-secondary text-secondary-foreground;
+  }
+}

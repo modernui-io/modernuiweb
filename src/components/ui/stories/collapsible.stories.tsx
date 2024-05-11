@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown, Info } from "lucide-react";
 
 import { Button } from "../button";
 import {
@@ -8,15 +8,55 @@ import {
   CollapsibleTrigger,
 } from "../collapsible";
 
+/**
+ * An interactive component which expands/collapses a panel.
+ */
 const meta: Meta<typeof Collapsible> = {
+  title: "ui/Collapsible",
   component: Collapsible,
   tags: ["autodocs"],
+  argTypes: {},
+  args: {
+    className: "w-96",
+    disabled: false,
+  },
+  render: (args) => (
+    <Collapsible {...args}>
+      <CollapsibleTrigger className="flex gap-2">
+        <h3 className="font-semibold">Can I use this in my project?</h3>
+        <Info className="size-6" />
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        Yes. Free to use for personal and commercial projects. No attribution
+        required.
+      </CollapsibleContent>
+    </Collapsible>
+  ),
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Collapsible>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the collapsible.
+ */
+export const Default: Story = {};
+
+/**
+ * Use the `disabled` prop to disable the interaction.
+ */
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+/**
+ * Use the `open` prop set to false.
+ */
 export const Closed: Story = {
   render: (args) => (
     <Collapsible
@@ -51,6 +91,9 @@ export const Closed: Story = {
   ),
 };
 
+/**
+ * Use the `open` prop set to true.
+ */
 export const Opened: Story = {
   render: (args) => (
     <Collapsible

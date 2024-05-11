@@ -4,17 +4,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+/**
+ * Displays content within a desired ratio.
+ */
 const meta: Meta<typeof AspectRatio> = {
+  title: "ui/AspectRatio",
   component: AspectRatio,
   tags: ["autodocs"],
-};
-
-export default meta;
-type Story = StoryObj<typeof AspectRatio>;
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {
   render: (args) => (
     <AspectRatio
       ratio={16 / 9}
@@ -29,4 +25,50 @@ export const Default: Story = {
       />
     </AspectRatio>
   ),
+  decorators: [
+    (Story) => (
+      <div className="w-1/2">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export default meta;
+type Story = StoryObj<typeof AspectRatio>;
+
+/**
+ * The default form of the aspect ratio.
+ */
+export const Default: Story = {
+  args: {
+    ratio: 16 / 9,
+  },
+};
+
+/**
+ * Use the `1:1` aspect ratio to display a square image.
+ */
+export const Square: Story = {
+  args: {
+    ratio: 1,
+  },
+};
+
+/**
+ * Use the `4:3` aspect ratio to display a landscape image.
+ */
+export const Landscape: Story = {
+  args: {
+    ratio: 4 / 3,
+  },
+};
+
+/**
+ * Use the `2.35:1` aspect ratio to display a cinemascope image.
+ */
+export const Cinemascope: Story = {
+  args: {
+    ratio: 2.35 / 1,
+  },
 };

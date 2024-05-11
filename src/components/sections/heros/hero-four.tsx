@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Image Imports
-import Placeholder from "@/public/images/mocks/placeholder.jpg";
-
 import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
+// Image Imports
+import Placeholder from "~/lib/assets/images/placeholder.jpg";
 
 const Hero = () => {
   return (

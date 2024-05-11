@@ -6,7 +6,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
-  content: [""],
+  content: ["src/**/*.{ts,tsx,mdx}", ".storybook/**/*.{ts,tsx}"],
   plugins: [typographyPlugin, scrollbarPlugin, animatePlugin],
   theme: {
     container: {

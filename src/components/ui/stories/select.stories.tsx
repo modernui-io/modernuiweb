@@ -11,15 +11,24 @@ import {
   SelectValue,
 } from "../select";
 
+/**
+ * Displays a list of options for the user to pick from—triggered by a button.
+ */
 const meta: Meta<typeof Select> = {
+  title: "ui/Select",
   component: Select,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the select.
+ */
 export const Default: Story = {
   render: (args) => (
     <Select {...args}>

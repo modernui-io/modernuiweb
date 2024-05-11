@@ -4,7 +4,9 @@ import {
   Menubar,
   MenubarCheckboxItem,
   MenubarContent,
+  MenubarGroup,
   MenubarItem,
+  MenubarLabel,
   MenubarMenu,
   MenubarRadioGroup,
   MenubarRadioItem,
@@ -16,7 +18,12 @@ import {
   MenubarTrigger,
 } from "../menubar";
 
+/**
+ * A visually persistent menu common in desktop applications that provides
+ * quick access to a consistent set of commands.
+ */
 const meta: Meta<typeof Menubar> = {
+  title: "ui/Menubar",
   component: Menubar,
   tags: ["autodocs"],
 };
@@ -24,7 +31,9 @@ const meta: Meta<typeof Menubar> = {
 export default meta;
 type Story = StoryObj<typeof Menubar>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the menubar.
+ */
 export const Default: Story = {
   render: (args) => (
     <Menubar {...args}>
@@ -111,6 +120,72 @@ export const Default: Story = {
           <MenubarItem inset>Edit...</MenubarItem>
           <MenubarSeparator />
           <MenubarItem inset>Add Profile...</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  ),
+};
+
+/**
+ * A menubar with a submenu.
+ */
+export const WithSubmenu: Story = {
+  render: (args) => (
+    <Menubar {...args}>
+      <MenubarMenu>
+        <MenubarTrigger>Actions</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Download</MenubarItem>
+          <MenubarSub>
+            <MenubarSubTrigger>Share</MenubarSubTrigger>
+            <MenubarSubContent>
+              <MenubarItem>Email link</MenubarItem>
+              <MenubarItem>Messages</MenubarItem>
+              <MenubarItem>Notes</MenubarItem>
+            </MenubarSubContent>
+          </MenubarSub>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  ),
+};
+
+/**
+ * A menubar with radio items.
+ */
+export const WithRadioItems: Story = {
+  render: (args) => (
+    <Menubar {...args}>
+      <MenubarMenu>
+        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarContent>
+          <MenubarLabel inset>Device Size</MenubarLabel>
+          <MenubarRadioGroup value="md">
+            <MenubarRadioItem value="sm">Small</MenubarRadioItem>
+            <MenubarRadioItem value="md">Medium</MenubarRadioItem>
+            <MenubarRadioItem value="lg">Large</MenubarRadioItem>
+          </MenubarRadioGroup>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  ),
+};
+
+/**
+ * A menubar with checkbox items.
+ */
+export const WithCheckboxItems: Story = {
+  render: (args) => (
+    <Menubar {...args}>
+      <MenubarMenu>
+        <MenubarTrigger>Filters</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Show All</MenubarItem>
+          <MenubarGroup>
+            <MenubarCheckboxItem checked>Unread</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>Important</MenubarCheckboxItem>
+            <MenubarCheckboxItem>Flagged</MenubarCheckboxItem>
+          </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

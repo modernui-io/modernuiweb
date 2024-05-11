@@ -4,11 +4,10 @@ import Link from "next/link";
 
 import { Camera } from "lucide-react";
 
-import Logo from "@/public/images/mocks/logo.svg";
-
 import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
+import Logo from "~/lib/assets/images/logo.svg";
 
 const Hero = () => {
   return (

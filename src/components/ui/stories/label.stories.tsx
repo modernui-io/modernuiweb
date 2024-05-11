@@ -2,7 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Label } from "../label";
 
+/**
+ * Renders an accessible label associated with controls.
+ */
 const meta: Meta<typeof Label> = {
+  title: "ui/Label",
   component: Label,
   tags: ["autodocs"],
 };
@@ -10,7 +14,9 @@ const meta: Meta<typeof Label> = {
 export default meta;
 type Story = StoryObj<typeof Label>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the label.
+ */
 export const Default: Story = {
   render: (args) => (
     <Label htmlFor="email" {...args}>

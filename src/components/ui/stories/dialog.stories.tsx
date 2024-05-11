@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -13,15 +14,25 @@ import {
 import { Input } from "../input";
 import { Label } from "../label";
 
+/**
+ * A window overlaid on either the primary window or another dialog window,
+ * rendering the content underneath inert.
+ */
 const meta: Meta<typeof Dialog> = {
+  title: "ui/Dialog",
   component: Dialog,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Dialog>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * The default form of the dialog.
+ */
 export const Default: Story = {
   render: (args) => (
     <Dialog {...args}>
@@ -51,6 +62,34 @@ export const Default: Story = {
         </div>
         <DialogFooter>
           <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+};
+
+/**
+ * With close button.
+ */
+export const WithClose: Story = {
+  render: (args) => (
+    <Dialog {...args}>
+      <DialogTrigger>Open</DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter className="gap-4">
+          <button className="hover:underline">Cancel</button>
+          <DialogClose>
+            <button className="rounded bg-primary px-4 py-2 text-primary-foreground">
+              Continue
+            </button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

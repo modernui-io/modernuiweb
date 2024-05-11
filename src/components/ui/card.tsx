@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import * as LabelPrimitive from "@radix-ui/react-label";
+
 import { cn } from "~/lib/utils";
 
 const Card = React.forwardRef<
@@ -16,6 +18,21 @@ const Card = React.forwardRef<
   />
 ));
 Card.displayName = "Card";
+
+const CardWithLabel = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <label
+    ref={ref}
+    className={cn(
+      "w-full rounded-xl border bg-card p-4 text-card-foreground shadow-sm",
+      className,
+    )}
+    {...props}
+  />
+));
+CardWithLabel.displayName = "CardWithLabel";
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
@@ -75,6 +92,7 @@ CardFooter.displayName = "CardFooter";
 
 export {
   Card,
+  CardWithLabel,
   CardHeader,
   CardFooter,
   CardTitle,

@@ -5,6 +5,7 @@ import type { StorybookConfig } from "@storybook/nextjs";
 const config: StorybookConfig = {
   stories: [
     // "../src/components/ui/stories/**/*.mdx",
+    "../src/components/sections/marketing-ui/**/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/components/ui/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/components/ui/custom/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "./tokens/**/*.stories.@(js|jsx|ts|tsx)",
@@ -27,6 +28,6 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   // staticDirs: [resolve(__dirname, "../", "public")],
-  staticDirs: ["../public"],
+  // staticDirs: ["../public"],
 };
 export default config;

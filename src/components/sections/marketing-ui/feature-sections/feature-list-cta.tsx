@@ -5,7 +5,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function FeatureSection() {
+export function FeatureListCTA() {
   return (
     <MuiLayout.Section>
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 text-center sm:py-16 lg:px-6">
@@ -16,7 +16,7 @@ export function FeatureSection() {
           The most trusted cryptocurrency platform
         </Heading>
         <Text className="text-gray-500 dark:text-gray-400 sm:text-xl">
-          Here are a few reasons why you should choose Flowbite
+          Here are a few reasons why you should choose Modernuiweb
         </Text>
         <div className="mt-8 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:mt-12 lg:grid-cols-3">
           <div>
@@ -92,8 +92,8 @@ export function FeatureSection() {
               Insurance
             </Heading>
             <Text className="mb-4 text-gray-500 dark:text-gray-400">
-              Flowbite maintains crypto insurance and all USD cash balances are
-              covered.
+              Modernuiweb maintains crypto insurance and all USD cash balances
+              are covered.
             </Text>
             <Link
               href="#"
@@ -134,7 +134,7 @@ export function FeatureSection() {
               Best practices
             </Heading>
             <Text className="mb-4 text-gray-500 dark:text-gray-400">
-              Flowbite marketplace supports a variety of the most popular
+              Modernuiweb marketplace supports a variety of the most popular
               digital currencies.
             </Text>
             <Link

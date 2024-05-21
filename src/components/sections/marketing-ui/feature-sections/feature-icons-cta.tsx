@@ -5,7 +5,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function FeatureSection() {
+export function FeatureIconsCta() {
   return (
     <MuiLayout.Section className="bg-white dark:bg-gray-900">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 text-center sm:py-16 lg:px-6">
@@ -40,7 +40,7 @@ export function FeatureSection() {
             </Heading>
             <Text className="mb-4 text-gray-500 dark:text-gray-400">
               Enterprise tools cost more, are difficult to use, and take longer
-              to implement. According to G2, Flowbite is the easiest-to-use
+              to implement. According to G2, Modernuiweb is the easiest-to-use
               tool, with the fastest time to ROI.
             </Text>
           </div>
@@ -67,7 +67,7 @@ export function FeatureSection() {
             </Heading>
             <Text className="mb-4 text-gray-500 dark:text-gray-400">
               Enterprise tools cost more, are difficult to use, and take longer
-              to implement. According to G2, Flowbite is the easiest-to-use
+              to implement. According to G2, Modernuiweb is the easiest-to-use
               tool, with the fastest time to ROI.
             </Text>
           </div>
@@ -77,7 +77,7 @@ export function FeatureSection() {
             href="#"
             className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400"
           >
-            Learn what makes Flowbite different&nbsp;
+            Learn what makes Modernuiweb different&nbsp;
             <svg
               className="ml-1 size-5"
               fill="currentColor"

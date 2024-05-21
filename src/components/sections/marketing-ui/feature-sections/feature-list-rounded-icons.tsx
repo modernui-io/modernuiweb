@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function FeatureSection() {
+export function FeatureSectionsRoundedIcons() {
   return (
     <MuiLayout.Section className="bg-white antialiased dark:bg-gray-900">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">

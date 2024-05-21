@@ -3,7 +3,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function FeatureSection() {
+export function FeatureListIcons() {
   return (
     <MuiLayout.Section>
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
@@ -15,8 +15,9 @@ export function FeatureSection() {
             Secure platform, secure data
           </Heading>
           <Text className="text-gray-500 dark:text-gray-400 sm:text-xl">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            Here at Modernuiweb we focus on markets where technology,
+            innovation, and capital can unlock long-term value and drive
+            economic growth.
           </Text>
         </div>
         <div className="space-y-8 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:grid-cols-3 xl:gap-12">

@@ -7,6 +7,7 @@ const config: StorybookConfig = {
     // "../src/components/ui/stories/**/*.mdx",
     "../src/components/ui/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/components/ui/custom/stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/sections/marketing-ui/**/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "./tokens/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
@@ -27,6 +28,6 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   // staticDirs: [resolve(__dirname, "../", "public")],
-  staticDirs: ["../public"],
+  // staticDirs: ["../public"],
 };
 export default config;

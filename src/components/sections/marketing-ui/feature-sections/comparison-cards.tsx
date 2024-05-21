@@ -5,7 +5,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function FeatureSection() {
+export function ComparisonCards() {
   return (
     <MuiLayout.Section>
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
@@ -15,7 +15,7 @@ export function FeatureSection() {
               level={2}
               className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
             >
-              Compare Flowbite to other platforms on the market
+              Compare Modernuiweb to other platforms on the market
             </Heading>
             <Text className="mb-4 text-gray-500 dark:text-gray-400 sm:text-xl">
               Here we focus on markets where technology, innovation, and capital
@@ -25,7 +25,7 @@ export function FeatureSection() {
               href="#"
               className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400 sm:text-lg"
             >
-              Learn what makes Flowbite different&nbsp;
+              Learn what makes Modernuiweb different&nbsp;
               <svg
                 className="ml-1 size-5"
                 fill="currentColor"
@@ -50,7 +50,7 @@ export function FeatureSection() {
                   Simplicity and Affordability
                 </span>
                 <span className="text-xl font-semibold text-primary-600 dark:text-primary-500">
-                  Flowbite vs Google
+                  Modernuiweb vs Google
                 </span>
               </div>
               <svg

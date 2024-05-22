@@ -10,23 +10,20 @@ import Placeholder from "~/lib/assets/images/placeholder.jpg";
 
 export function MobileAppDownloadCTASection() {
   return (
-    <MuiLayout.Section className="bg-white dark:bg-gray-900">
+    <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
         <div>
-          <Heading
-            level={2}
-            className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-          >
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Let's create more tools and ideas that brings us together.
           </Heading>
-          <Text className="mb-6 text-gray-500 dark:text-gray-400 md:text-lg">
+          <Text className="mb-6 text-muted-foreground md:text-lg">
             ModernUI Web helps you connect with friends and communities of
             people who share your interests. Connecting with your friends and
             family as well as discovering new ones is easy with features like
             Groups.
           </Text>
           <div className="items-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
-            <Button className="border-0 bg-gray-800 p-5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+            <Button className="border-0 bg-primary-700 p-6 hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-gray-300 [&>span]:border-gray-300 hover:[&>span]:text-secondary-foreground">
               <svg
                 className="mr-3 size-7"
                 aria-hidden="true"
@@ -46,7 +43,7 @@ export function MobileAppDownloadCTASection() {
                 </div>
               </div>
             </Button>
-            <Button className="border-0 bg-gray-800 p-5 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+            <Button className="border-0 bg-primary-700 p-6 hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-gray-300 [&>span]:border-gray-300 hover:[&>span]:text-secondary-foreground">
               <svg
                 className="mr-3 size-7"
                 aria-hidden="true"

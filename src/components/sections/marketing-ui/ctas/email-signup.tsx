@@ -14,7 +14,6 @@ import { Text } from "~/components/ui/custom/text";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -44,16 +43,13 @@ export function EmailSignUpCTASection() {
     console.log(values);
   }
   return (
-    <MuiLayout.Section className="bg-white dark:bg-gray-900">
+    <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 ">
         <div className="mx-auto max-w-screen-md text-center">
-          <Heading
-            level={2}
-            className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-          >
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight ">
             Get started with ModernUI web today
           </Heading>
-          <Text className="mb-6 text-gray-500 dark:text-gray-400 md:text-lg">
+          <Text className="mb-6 text-muted-foreground md:text-lg">
             Connecting with your audience has never been easier with Flowbite
             straightforward email marketing and automation tools.
           </Text>
@@ -69,11 +65,14 @@ export function EmailSignUpCTASection() {
                   <FormItem>
                     <FormLabel className="sr-only">Email</FormLabel>
                     <FormControl>
-                      <Input
-                        className="md:w-64"
-                        placeholder="Your email address"
-                        {...field}
-                      />
+                      <div className="relative">
+                        <Input
+                          className="bg-input pl-8 md:w-64"
+                          placeholder="Your email address"
+                          {...field}
+                        />
+                        <EnvelopeIconSVG />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -81,17 +80,17 @@ export function EmailSignUpCTASection() {
               />
               <Button type="submit">Submit</Button>
             </form>
-            <div className=" text-sm font-medium text-gray-500 dark:text-gray-300">
+            <div className=" text-sm font-medium text-muted-foreground ">
               Instant signup. No credit card required.&nbsp;
               <Link
                 href="#"
-                className="text-primary-600 hover:underline dark:text-primary-500"
+                className="text-secondary-foreground hover:underline "
               >
                 Terms of Service
               </Link>
               &nbsp;and&nbsp;
               <Link
-                className="text-primary-600 hover:underline dark:text-primary-500"
+                className="text-secondary-foreground hover:underline "
                 href="#"
               >
                 Privacy Policy
@@ -99,49 +98,6 @@ export function EmailSignUpCTASection() {
               .
             </div>
           </Form>
-
-          {/* <form action="#" className="mx-auto max-w-screen-sm">
-            <div className="mb-3 flex items-center">
-              <div className="relative mr-3 w-full">
-                <Label htmlFor="member_email" className="sr-only">
-                  Email address
-                </Label>
-                <TextInput
-                  icon={EnvelopeIconSVG}
-                  id="member_email"
-                  name="member_email"
-                  placeholder="Enter your email"
-                  required
-                  type="email"
-                  className="[&_input]:p-3 [&_input]:pl-10 [&_input]:placeholder:text-gray-400"
-                />
-              </div>
-              <Button
-                color="info"
-                type="submit"
-                className="[&>span]:px-5 [&>span]:py-3"
-              >
-                Subscribe
-              </Button>
-            </div>
-            <div className="text-left text-sm font-medium text-gray-500 dark:text-gray-300">
-              Instant signup. No credit card required.&nbsp;
-              <a
-                href="#"
-                className="text-primary-600 hover:underline dark:text-primary-500"
-              >
-                Terms of Service
-              </a>
-              &nbsp;and&nbsp;
-              <a
-                className="text-primary-600 hover:underline dark:text-primary-500"
-                href="#"
-              >
-                Privacy Policy
-              </a>
-              .
-            </div>
-          </form> */}
         </div>
       </MuiLayout.Container>
     </MuiLayout.Section>
@@ -150,7 +106,7 @@ export function EmailSignUpCTASection() {
 
 const EnvelopeIconSVG = () => (
   <svg
-    className="size-5 text-gray-500 dark:text-gray-400"
+    className="absolute left-2 top-1/4 size-5 text-muted-foreground"
     fill="currentColor"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"

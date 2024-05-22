@@ -10,19 +10,39 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 // Image Import
 import Placeholder from "~/lib/assets/images/placeholder.jpg";
 
+const iosKeyPoints = [
+  "Continuous integration and deployment",
+  "Development workflow",
+  "Knowledge management",
+];
+
+const androidKeyPoint = [
+  "Seamless integration with Android Studio",
+  "Deployments with a click of a button",
+  "Lightning fast performance",
+];
+
+const keyPoints = [
+  "Dynamic reports and dashboards",
+  "Templates for everyone",
+  "Development workflow",
+  "Limitless business automation",
+  "Knowledge management",
+];
+
 export function CTASectionWithTabsAndMobileApp() {
   return (
-    <MuiLayout.Section className="bg-white antialiased dark:bg-gray-900">
+    <MuiLayout.Section className="bg-background antialiased">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:py-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <Tabs defaultValue="ios">
-            <TabsList>
+            <TabsList className="bg-background">
               <TabsTrigger
                 value="ios"
                 className="relative mx-6 flex items-center justify-center "
               >
                 <>
-                  <span className="absolute -bottom-8 text-base font-medium text-gray-500 dark:text-gray-400">
+                  <span className="absolute -bottom-8 text-base font-medium text-muted-foreground">
                     iOS
                   </span>
                   <svg
@@ -41,7 +61,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 value="android"
               >
                 <>
-                  <span className="absolute -bottom-8 text-base font-medium text-gray-500 dark:text-gray-400">
+                  <span className="absolute -bottom-8 text-base font-medium text-muted-foreground">
                     Android
                   </span>
                   <svg
@@ -63,83 +83,45 @@ export function CTASectionWithTabsAndMobileApp() {
               <div>
                 <Heading
                   level={2}
-                  className="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-4xl"
+                  className=" font-extrabold leading-tight sm:text-4xl"
                 >
                   ModernUI Web in iOS: Take control of your finances with us
                 </Heading>
-                <Text className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
+                <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
                   Our app helps users easily track their expenses and create a
                   budget. With a user-friendly interface, the app allows users
                   to quickly input their income and expenses, and then
                   automatically categorizes them for easy tracking.
                 </Text>
               </div>
-              <div className="border-t border-gray-200 pt-4 dark:border-gray-800 sm:pt-6 lg:pt-8">
+              <div className="border-t border-border pt-4 sm:pt-6 lg:pt-8">
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Continuous integration and deployment
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Development workflow
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Knowledge management
-                    </span>
-                  </li>
+                  {iosKeyPoints.map((point) => (
+                    <li className="flex items-center gap-2.5" key={point}>
+                      <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground">
+                        <svg
+                          aria-hidden="true"
+                          className="size-3.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-base font-medium text-secondary-foreground">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
                 <Heading
                   level={3}
-                  className="mt-6 text-xl font-normal text-gray-500 dark:text-gray-400"
+                  className="mt-6 font-normal text-muted-foreground"
                 >
                   Flow Budget takes the hassle out of budgeting and empowers
                   users to take control of their finances
@@ -149,7 +131,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 <Link
                   href="#"
                   title=""
-                  className="inline-flex items-center text-base font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline "
                 >
                   Check out the iOS app features
                   <svg
@@ -175,81 +157,43 @@ export function CTASectionWithTabsAndMobileApp() {
               <div>
                 <Heading
                   level={2}
-                  className="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-4xl"
+                  className=" font-extrabold leading-tight sm:text-4xl"
                 >
                   ModernUI Web in Android: Take control of your finances with us
                 </Heading>
-                <Text className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
+                <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
                   Our app helps users easily track their expenses and create a
                   budget. With a user-friendly interface, the app allows users
                   to quickly input their income and expenses, and then
                   automatically categorizes them for easy tracking.
                 </Text>
               </div>
-              <div className="border-t border-gray-200 pt-4 dark:border-gray-800 sm:pt-6 lg:pt-8">
+              <div className="border-t border-border pt-4 sm:pt-6 lg:pt-8">
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Seamless integration with Android Studio
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Deployments with a click of a button
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                      <svg
-                        aria-hidden="true"
-                        className="size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-base font-medium text-gray-900 dark:text-white">
-                      Lightning fast performance
-                    </span>
-                  </li>
+                  {androidKeyPoint.map((point) => (
+                    <li className="flex items-center gap-2.5" key={point}>
+                      <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground ">
+                        <svg
+                          aria-hidden="true"
+                          className="size-3.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-base font-medium text-secondary-foreground">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
-                <Heading className="mt-6 text-xl font-normal text-gray-500 dark:text-gray-400">
+                <Heading className="mt-6 font-normal text-muted-foreground">
                   ModernUI Web takes the hassle out of budgeting and empowers
                   users to take control of their finances.
                 </Heading>
@@ -258,7 +202,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 <Link
                   href="#"
                   title=""
-                  className="inline-flex items-center text-base font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline "
                 >
                   Check out the Android app features
                   <svg
@@ -279,7 +223,7 @@ export function CTASectionWithTabsAndMobileApp() {
             </TabsContent>
           </Tabs>
           <div className="hidden lg:block">
-            <div className="relative mx-auto h-[600px] w-[300px] rounded-[2.5rem] border-[14px] border-gray-800 shadow-xl dark:border-gray-800 dark:bg-gray-800">
+            <div className="relative mx-auto h-[600px] w-[300px] rounded-[2.5rem] border-[14px] border-gray-800 shadow-xl dark:bg-gray-800">
               <div className="absolute left-1/2 top-0 h-[18px] w-[148px] -translate-x-1/2 rounded-b-2xl bg-gray-800"></div>
               <div className="absolute left-[-17px] top-[72px] h-[32px] w-[3px] rounded-l-lg bg-gray-800"></div>
               <div className="absolute left-[-17px] top-[124px] h-[46px] w-[3px] rounded-l-lg bg-gray-800"></div>
@@ -317,125 +261,47 @@ export function CTASectionWithTabsAndMobileApp() {
             <div>
               <Heading
                 level={2}
-                className="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white sm:text-4xl"
+                className=" font-extrabold leading-tight sm:text-4xl"
               >
                 We invest in the world's potential
               </Heading>
-              <Text className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
-                <span className="font-semibold text-gray-900 dark:text-white">
+              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+                <span className="font-semibold text-secondary-foreground">
                   ModernUI Web Budget
                 </span>
                 &nbsp;is a mobile app that helps users easily track their
                 expenses and create a budget.
               </Text>
-              <Text className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
+              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
                 With a user-friendly interface, the app allows users to quickly
                 input their income and expenses, and then automatically
                 categorizes them for easy tracking.
               </Text>
             </div>
-            <div className="border-t border-gray-200 pt-4 dark:border-gray-800 sm:pt-6 lg:pt-8">
+            <div className="border-t border-border sm:pt-6 lg:pt-8">
               <ul className="space-y-4">
-                <li className="flex items-center gap-2.5">
-                  <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                    <svg
-                      aria-hidden="true"
-                      className="size-3.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Dynamic reports and dashboards
-                  </span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                    <svg
-                      aria-hidden="true"
-                      className="size-3.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Templates for everyone
-                  </span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                    <svg
-                      aria-hidden="true"
-                      className="size-3.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Development workflow
-                  </span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                    <svg
-                      aria-hidden="true"
-                      className="size-3.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Limitless business automation
-                  </span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-500">
-                    <svg
-                      aria-hidden="true"
-                      className="size-3.5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-base font-medium text-gray-900 dark:text-white">
-                    Knowledge management
-                  </span>
-                </li>
+                {keyPoints.map((point) => (
+                  <li className="flex items-center gap-2.5" key={point}>
+                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground ">
+                      <svg
+                        aria-hidden="true"
+                        className="size-3.5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-base font-medium text-secondary-foreground">
+                      {point}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="flex items-center gap-4">
@@ -458,7 +324,7 @@ export function CTASectionWithTabsAndMobileApp() {
               <Button
                 color="gray"
                 variant="outline"
-                className="[&>span]:px-5 [&>span]:py-2.5 dark:[&>span]:bg-gray-800"
+                className="bg-muted hover:bg-primary-200 [&>span]:bg-muted [&>span]:px-5 [&>span]:py-2.5"
               >
                 Get a demo
               </Button>

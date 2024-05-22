@@ -20,18 +20,18 @@ import Placeholder from "~/lib/assets/images/placeholder.jpg";
 
 export function TwoCardsAndImagesCTASection() {
   return (
-    <MuiLayout.Section className="bg-white dark:bg-gray-900">
+    <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <Heading
             level={2}
-            className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+            className=" font-extrabold leading-tight tracking-tight sm:text-4xl"
           >
             Fundraising events
           </Heading>
-          <Text className="mt-4 text-base font-normal text-gray-500 dark:text-gray-400 sm:text-xl">
-            Flowbite helps you connect with friends, family and communities of
-            people who share your interests.
+          <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+            ModernUI Web helps you connect with friends, family and communities
+            of people who share your interests.
           </Text>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:gap-12">
@@ -44,14 +44,14 @@ export function TwoCardsAndImagesCTASection() {
               />
               <div className="flex items-center justify-between gap-6">
                 <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold text-gray-900 dark:text-white">
+                  <span className="text-lg font-bold text-secondary-foreground">
                     $376,856
                   </span>
-                  <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                  <span className="text-sm font-normal text-muted-foreground">
                     of 400k goal
                   </span>
                 </div>
-                <span className="text-right text-xs font-normal text-gray-500 dark:text-gray-400">
+                <span className="text-right text-xs font-normal text-muted-foreground">
                   2,756 donors
                 </span>
               </div>
@@ -59,15 +59,12 @@ export function TwoCardsAndImagesCTASection() {
             </CardHeader>
             <CardContent>
               <CardTitle>
-                <Heading
-                  level={4}
-                  className="text-lg font-bold leading-tight text-gray-900 dark:text-white"
-                >
+                <Heading level={4} className=" font-bold leading-tight ">
                   Thank you for supporting in planting trees work.
                 </Heading>
               </CardTitle>
               <CardDescription>
-                <Text className="text-base font-normal text-gray-500 dark:text-gray-400">
+                <Text className="text-base font-normal text-muted-foreground">
                   Our fundraisers are a creative bunch when it comes to taking
                   on challenges, from beard shaves and bake sales to stand-up
                   comedy and streaming marathons. There is something for
@@ -108,14 +105,14 @@ export function TwoCardsAndImagesCTASection() {
               <div>
                 <div className="flex items-center justify-between gap-6">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg font-bold text-gray-900 dark:text-white">
+                    <span className="text-lg font-bold text-secondary-foreground">
                       $75,856
                     </span>
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                    <span className="text-sm font-normal text-muted-foreground">
                       of 150k goal
                     </span>
                   </div>
-                  <span className="text-right text-xs font-normal text-gray-500 dark:text-gray-400">
+                  <span className="text-right text-xs font-normal text-muted-foreground">
                     568 donors
                   </span>
                 </div>
@@ -124,15 +121,12 @@ export function TwoCardsAndImagesCTASection() {
             </CardHeader>
             <CardContent>
               <CardTitle>
-                <Heading
-                  level={4}
-                  className="text-lg font-bold leading-tight text-gray-900 dark:text-white"
-                >
+                <Heading level={4} className=" font-bold leading-tight">
                   Thank you for supporting lifesaving work.
                 </Heading>
               </CardTitle>
               <CardDescription>
-                <Text className="text-base font-normal text-gray-500 dark:text-gray-400">
+                <Text className="text-base font-normal text-muted-foreground">
                   Our fundraisers are a creative bunch when it comes to taking
                   on challenges, from beard shaves and bake sales to stand-up
                   comedy and streaming marathons. There is something for
@@ -168,7 +162,7 @@ export function TwoCardsAndImagesCTASection() {
           <Link
             href="#"
             title=""
-            className="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500"
+            className="inline-flex items-center text-lg font-medium text-muted-foreground hover:underline "
           >
             View all fundraising events
             <svg

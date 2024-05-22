@@ -5,134 +5,31 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
-export function CardCTAsWithIconsSection() {
-  return (
-    <MuiLayout.Section className="bg-white dark:bg-gray-900">
-      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 ">
-        <Heading
-          level={2}
-          className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-        >
-          We didn't reinvent the wheel
-        </Heading>
-        <Text className="mb-3 text-gray-500 dark:text-gray-400 sm:text-xl">
-          Track work across the enterprise through an open, collaborative
-          platform. Link issues across Jira and ingest data from other software
-          development tools, so your IT support and operations teams have richer
-          contextual information to rapidly respond to requests, incidents, and
-          changes.
-        </Text>
-        <Text className="mb-8 text-gray-500 dark:text-gray-400 sm:text-xl">
-          Deliver great service experiences fast - without the complexity of
-          traditional ITSM solutions. Accelerate critical development work,
-          eliminate toil, and deploy changes with ease.
-        </Text>
-        <div className="grid gap-8 lg:grid-cols-2">
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="22"
-              height="30.1244"
-              fill="none"
-              stroke="#ba1c1c"
-              strokeWidth="1.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-3 size-6"
-            >
-              <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-              <path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17" />
-              <path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-            <span className="w-full">
-              Explore ModernUI and take your marketplace to the next level.
-            </span>
-            <svg
-              className="ml-3 size-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <FigmaLogoSVG />
-            <span className="w-full">
-              Get started with our Figma Design System
-            </span>
-            <svg
-              className="ml-3 size-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <ThemesbergLogoSVG />
-            <span className="w-full">
-              Learn how to market your business on Themesberg.
-            </span>
-            <svg
-              className="ml-3 size-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <TailwindCSSLogoSVG />
-            <span className="w-full">
-              Start coding with the most popular utility-first framework
-            </span>
-            <svg
-              className="ml-3 size-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-        </div>
-      </MuiLayout.Container>
-    </MuiLayout.Section>
-  );
+interface CardText {
+  title: string;
+  icon: JSX.Element;
+  href: string;
 }
+
+const GlobSVG = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width="22"
+    height="30.1244"
+    fill="none"
+    stroke="#ba1c1c"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="mr-3 size-6"
+  >
+    <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+    <path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17" />
+    <path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+    <circle cx="12" cy="12" r="10" />
+  </svg>
+);
 
 const FigmaLogoSVG = () => (
   <svg
@@ -258,3 +155,74 @@ const TailwindCSSLogoSVG = () => (
     </defs>
   </svg>
 );
+
+const CradText: CardText[] = [
+  {
+    icon: <GlobSVG />,
+    title: "Explore ModernUI Web and take your marketplace to the next level.",
+    href: "#",
+  },
+  {
+    icon: <FigmaLogoSVG />,
+    title: " Get started with our Figma Design System",
+    href: "#",
+  },
+  {
+    icon: <ThemesbergLogoSVG />,
+    title: "Learn how to market your business on Themesberg.",
+    href: "#",
+  },
+  {
+    icon: <TailwindCSSLogoSVG />,
+    title: "Start coding with the most popular utility-first framework",
+    href: "#",
+  },
+];
+
+export function CardCTAsWithIconsSection() {
+  return (
+    <MuiLayout.Section className="bg-background ">
+      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 ">
+        <Heading level={2} className="mb-4  font-extrabold tracking-tight">
+          We didn't reinvent the wheel
+        </Heading>
+        <Text className="mb-3 text-muted-foreground sm:text-xl">
+          Track work across the enterprise through an open, collaborative
+          platform. Link issues across Jira and ingest data from other software
+          development tools, so your IT support and operations teams have richer
+          contextual information to rapidly respond to requests, incidents, and
+          changes.
+        </Text>
+        <Text className="mb-8 text-muted-foreground sm:text-xl">
+          Deliver great service experiences fast - without the complexity of
+          traditional ITSM solutions. Accelerate critical development work,
+          eliminate toil, and deploy changes with ease.
+        </Text>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {CradText.map(({ title, href, icon }) => (
+            <Link
+              key={title}
+              href={href}
+              className="inline-flex items-center justify-center rounded-lg bg-muted p-5 text-base font-medium text-muted-foreground hover:bg-primary-200 hover:text-secondary-foreground  "
+            >
+              {icon}
+              <span className="w-full">{title}</span>
+              <svg
+                className="ml-3 size-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Link>
+          ))}
+        </div>
+      </MuiLayout.Container>
+    </MuiLayout.Section>
+  );
+}

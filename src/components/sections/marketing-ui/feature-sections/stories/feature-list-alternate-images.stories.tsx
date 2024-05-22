@@ -4,7 +4,7 @@ import { FeatureListAlternateImage } from "../feature-list-alternate-image";
 
 const meta = {
   title:
-    "sections/marketing-ui/feature-sections/feature-list-with-rounded-icons",
+    "sections/marketing-ui/feature-sections/feature-list-with-alternate-image",
   component: FeatureListAlternateImage,
 } satisfies Meta<typeof FeatureListAlternateImage>;
 

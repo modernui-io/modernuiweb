@@ -11,19 +11,16 @@ export function ComparisonCards() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="grid space-y-8 lg:grid-cols-2 lg:gap-12 lg:space-y-0">
           <div>
-            <Heading
-              level={2}
-              className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-            >
+            <Heading level={2} className="mb-4 font-extrabold tracking-tight ">
               Compare Modernuiweb to other platforms on the market
             </Heading>
-            <Text className="mb-4 text-gray-500 dark:text-gray-400 sm:text-xl">
+            <Text className="mb-4 text-muted-foreground sm:text-xl">
               Here we focus on markets where technology, innovation, and capital
               can unlock long-term value and drive economic growth.
             </Text>
             <Link
               href="#"
-              className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400 sm:text-lg"
+              className="inline-flex items-center font-medium text-primary-600 hover:text-primary-700  sm:text-lg"
             >
               Learn what makes Modernuiweb different&nbsp;
               <svg
@@ -43,18 +40,18 @@ export function ComparisonCards() {
           <div>
             <Link
               href="#"
-              className="mb-6 flex items-center justify-between rounded-lg border-l-8 border-primary-600 bg-white p-4 shadow hover:bg-gray-50 dark:border-primary-500 dark:bg-gray-800 dark:hover:bg-gray-700"
+              className="mb-6 flex items-center justify-between rounded-lg border-l-8 border-primary-600 bg-white p-4 shadow hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <div>
-                <span className="mb-1 block text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
+                <span className="mb-1 block text-xs font-medium uppercase text-muted-foreground ">
                   Simplicity and Affordability
                 </span>
-                <span className="text-xl font-semibold text-primary-600 dark:text-primary-500">
+                <span className="text-xl font-semibold text-primary-600 ">
                   Modernuiweb vs Google
                 </span>
               </div>
               <svg
-                className="size-6 text-primary-600 dark:text-primary-500"
+                className="size-6 text-primary-600 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,10 +65,10 @@ export function ComparisonCards() {
             </Link>
             <Link
               href="#"
-              className="mb-6 flex items-center justify-between rounded-lg border-l-8 border-purple-600 bg-white p-4 shadow hover:bg-gray-50 dark:border-purple-500 dark:bg-gray-800 dark:hover:bg-gray-700"
+              className="mb-6 flex items-center justify-between rounded-lg border-l-8 border-purple-600 bg-white p-4 shadow hover:bg-gray-100 dark:border-purple-500 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <div>
-                <span className="mb-1 block text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
+                <span className="mb-1 block text-xs font-medium uppercase text-muted-foreground">
                   Built for customer support
                 </span>
                 <span className="text-xl font-semibold text-purple-600 dark:text-purple-500">
@@ -93,18 +90,18 @@ export function ComparisonCards() {
             </Link>
             <Link
               href="#"
-              className="flex items-center justify-between rounded-lg border-l-8 border-teal-600 bg-white p-4 shadow hover:bg-gray-50 dark:border-teal-500 dark:bg-gray-800 dark:hover:bg-gray-700"
+              className="flex items-center justify-between rounded-lg border-l-8 border-teal-600 bg-white p-4 shadow hover:bg-gray-100 dark:border-teal-500 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <div>
-                <span className="mb-1 block text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
+                <span className="mb-1 block text-xs font-medium uppercase text-muted-foreground">
                   Modern and intuitive ui
                 </span>
-                <span className="text-xl font-semibold text-teal-600 dark:text-teal-500">
+                <span className="text-xl font-semibold text-teal-600 ">
                   Zendesk vs Meet
                 </span>
               </div>
               <svg
-                className="size-6 text-teal-600 dark:text-teal-500"
+                className="size-6 text-teal-600 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"

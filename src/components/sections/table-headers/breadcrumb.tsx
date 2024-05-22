@@ -29,9 +29,9 @@ import {
 
 export function TableHeaderWithBreadcrumb() {
   return (
-    <section className="flex items-center bg-gray-50 py-6 dark:bg-gray-900">
+    <section className="flex items-center bg-background py-6">
       <div className="mx-auto w-full max-w-screen-xl px-4 lg:px-12">
-        <div className="relative overflow-hidden bg-white px-4 shadow-md dark:bg-gray-800 sm:rounded-lg">
+        <div className="relative overflow-hidden px-4 shadow-md sm:rounded-lg">
           <div className="flex flex-col space-y-3 py-3 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
             <div>
               <Breadcrumb>
@@ -50,7 +50,7 @@ export function TableHeaderWithBreadcrumb() {
                 </BreadcrumbList>
               </Breadcrumb>
               <h5>
-                <span className="dark:text-white">View list of products</span>
+                <span>View list of products</span>
               </h5>
             </div>
             <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
@@ -62,131 +62,137 @@ export function TableHeaderWithBreadcrumb() {
           </div>
           <div className="grid w-full grid-cols-2 gap-4 pb-4 md:grid-cols-3 lg:grid-cols-6">
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Brand" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="samsung">Samsung</SelectItem>
-                <SelectItem value="apple">Aplle</SelectItem>
-                <SelectItem value="nokia">Nokia</SelectItem>
-                <SelectItem value="sony">Sony</SelectItem>
+                {[
+                  { value: "samsung", label: "Samsung" },
+                  { value: "apple", label: "Apple" },
+                  { value: "nokia", label: "Nokia" },
+                  { value: "sony", label: "Sony" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="tablet">Tablet</SelectItem>
-                <SelectItem value="phone">Phone</SelectItem>
-                <SelectItem value="tv">TV</SelectItem>
-                <SelectItem value="console">Console</SelectItem>
+                {[
+                  { value: "tablet", label: "Tablet" },
+                  { value: "phone", label: "Phone" },
+                  { value: "tv", label: "TV" },
+                  { value: "console", label: "Console" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Color" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="black">Black</SelectItem>
-                <SelectItem value="white">White</SelectItem>
-                <SelectItem value="silver">Silver</SelectItem>
+                {[
+                  { value: "black", label: "Black" },
+                  { value: "white", label: "White" },
+                  { value: "silver", label: "Silver" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="tablet">Tablet</SelectItem>
-                <SelectItem value="phone">Phone</SelectItem>
-                <SelectItem value="tv">TV</SelectItem>
-                <SelectItem value="console">Console</SelectItem>
+                {[
+                  { value: "tablet", label: "Tablet" },
+                  { value: "phone", label: "Phone" },
+                  { value: "tv", label: "TV" },
+                  { value: "console", label: "Console" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Sold by" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="samsung">Samsung</SelectItem>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="nokia">Nokia</SelectItem>
-                <SelectItem value="flowbite">Flowbite</SelectItem>
+                {[
+                  { value: "samsung", label: "Samsung" },
+                  { value: "apple", label: "Apple" },
+                  { value: "nokia", label: "Nokia" },
+                  { value: "modernui", label: "ModernUI" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
 
             <Select>
-              <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+              <SelectTrigger>
                 <SelectValue placeholder="Return Policy" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="30-days">30 days</SelectItem>
-                <SelectItem value="14-days">14 days</SelectItem>
-                <SelectItem value="no-returns">No returns</SelectItem>
+                {[
+                  { value: "30-days", label: "30 days" },
+                  { value: "14-days", label: "14 days" },
+                  { value: "no-returns", label: "No returns" },
+                ].map((item, index) => (
+                  <SelectItem key={index} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
-          <div className="block w-full items-center justify-between border-t py-3 dark:border-gray-700 md:flex">
+          <div className="block w-full items-center justify-between border-t py-3 md:flex">
             <div className="mb-4 flex flex-wrap md:mb-0">
-              <div className="mb-2 mr-4 flex w-full items-center text-sm font-medium text-gray-900 dark:text-white md:mb-0 md:w-auto">
+              <div className="mb-2 mr-4 flex w-full items-center text-sm font-medium md:mb-0 md:w-auto">
                 Show by:
               </div>
               <RadioGroup defaultValue="show-by">
                 <fieldset className="flex flex-wrap">
-                  <div className="mr-4 flex items-center">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="all-products" id="all-products" />
-                      <Label
-                        htmlFor="all-products"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        All
-                      </Label>
+                  {[
+                    { value: "all-products", label: "All" },
+                    { value: "by-category", label: "By Category" },
+                    { value: "by-price", label: "By Price" },
+                    { value: "by-state", label: "By State" },
+                    { value: "by-brand", label: "By Brand" },
+                  ].map((item, index) => (
+                    <div key={index} className="mr-4 flex items-center">
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value={item.value} id={item.value} />
+                        <Label
+                          htmlFor={item.value}
+                          className="ml-2 text-sm font-medium"
+                        >
+                          {item.label}
+                        </Label>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mr-4 flex items-center">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="by-category" id="by-category" />
-                      <Label
-                        htmlFor="by-category"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >
-                        By Category
-                      </Label>
-                    </div>
-                  </div>
-                  <div className="mr-4 flex items-center">
-                    <RadioGroupItem value="by-price" id="by-price" />
-                    <Label
-                      htmlFor="by-price"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >
-                      By Price
-                    </Label>
-                  </div>
-                  <div className="mr-4 flex items-center">
-                    <RadioGroupItem value="by-state" id="by-state" />
-                    <Label
-                      htmlFor="by-state"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >
-                      By State
-                    </Label>
-                  </div>
-                  <div className="mr-4 flex items-center">
-                    <RadioGroupItem value="by-brand" id="by-brand" />
-                    <Label
-                      htmlFor="by-brand"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >
-                      By Brand
-                    </Label>
-                  </div>
+                  ))}
                 </fieldset>
               </RadioGroup>
             </div>

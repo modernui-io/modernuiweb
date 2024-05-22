@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
+import {
+  MagnifyingGlassIcon,
+  StarFilledIcon,
+  StarIcon,
+} from "@radix-ui/react-icons";
 import { FaChevronDown } from "react-icons/fa";
 
 import {
@@ -11,6 +15,7 @@ import {
 } from "~/components/ui/accordion";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
+import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,19 +54,17 @@ export function AdvancedDropdownFilterKeywords() {
       <DropdownMenuContent className="w-80">
         <div className="px-3">
           <div className="flex items-center justify-between pt-2">
-            <p className="text-sm font-medium text-black dark:text-white">
-              Filters
-            </p>
+            <Text className="text-sm font-medium">Filters</Text>
             <div className="flex items-center space-x-3">
               <a
                 href="#"
-                className="flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                className="flex items-center text-sm font-medium text-primary-600 hover:underline"
               >
                 Save view
               </a>
               <a
                 href="#"
-                className="flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                className="flex items-center text-sm font-medium text-primary-600 hover:underline"
               >
                 Clear all
               </a>
@@ -71,127 +74,47 @@ export function AdvancedDropdownFilterKeywords() {
             <Label htmlFor="Checkbox-group-search" className="sr-only">
               Search
             </Label>
-            <Input
-              icon={() => (
-                <svg
-                  className="size-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              )}
-              id="Checkbox-group-search"
-              name="Checkbox-group-search"
-              placeholder="Search keywords..."
-              className="[&_input]:py-2"
-            />
+            <div className="relative flex items-center">
+              <MagnifyingGlassIcon className="absolute left-3 size-4 text-gray-500" />
+              <Input
+                id="Checkbox-group-search"
+                name="Checkbox-group-search"
+                placeholder="Search keywords..."
+                className="py-2 pl-8"
+              />
+            </div>
           </div>
-          <Accordion type="single" className="dark:divide-gray-600" collapsible>
+          <Accordion type="single" collapsible>
             <AccordionItem value="category">
               <AccordionTrigger>Category</AccordionTrigger>
               <AccordionContent className="p-1 dark:bg-transparent">
                 <div className="py-2 font-light">
                   <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Checkbox id="apple" name="apple" />
-                      <Label
-                        htmlFor="apple"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Apple (56)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="microsoft" name="microsoft" />
-                      <Label
-                        htmlFor="microsoft"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Microsoft (45)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox defaultChecked id="logitech" name="logitech" />
-                      <Label
-                        htmlFor="logitech"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Logitech (97)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="sony" name="sony" />
-                      <Label
-                        htmlFor="sony"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Sony (234)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox defaultChecked id="asus" name="asus" />
-                      <Label
-                        htmlFor="asus"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Asus (97)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="dell" name="dell" />
-                      <Label
-                        htmlFor="dell"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Dell (56)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="msi" name="msi" />
-                      <Label
-                        htmlFor="msi"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        MSI (97)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox defaultChecked id="canon" name="canon" />
-                      <Label
-                        htmlFor="canon"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Canon (49)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="benq" name="benq" />
-                      <Label
-                        htmlFor="benq"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        BenQ (23)
-                      </Label>
-                    </li>
-                    <li className="flex items-center">
-                      <Checkbox id="razer" name="razer" />
-                      <Label
-                        htmlFor="razer"
-                        className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                      >
-                        Razer (49)
-                      </Label>
-                    </li>
+                    {[
+                      { id: "apple", label: "Apple (56)" },
+                      { id: "microsoft", label: "Microsoft (45)" },
+                      { id: "logitech", label: "Logitech (97)" },
+                      { id: "sony", label: "Sony (234)" },
+                      { id: "asus", label: "Asus (97)" },
+                      { id: "dell", label: "Dell (56)" },
+                      { id: "msi", label: "MSI (97)" },
+                      { id: "canon", label: "Canon (49)" },
+                      { id: "benq", label: "BenQ (23)" },
+                      { id: "razer", label: "Razer (49)" },
+                    ].map((item) => (
+                      <li key={item.id} className="flex items-center">
+                        <Checkbox id={item.id} name={item.id} />
+                        <Label
+                          htmlFor={item.id}
+                          className="ml-2 text-sm font-medium"
+                        >
+                          {item.label}
+                        </Label>
+                      </li>
+                    ))}
                     <a
                       href="#"
-                      className="flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="flex items-center text-sm font-medium text-primary-600 hover:underline"
                     >
                       View all
                     </a>
@@ -204,7 +127,7 @@ export function AdvancedDropdownFilterKeywords() {
               <AccordionContent className="p-1 dark:bg-transparent">
                 <div className="grid w-full grid-cols-2 items-center gap-x-3 py-2 font-light">
                   <Select name="price-from">
-                    <SelectTrigger className="py-2 dark:bg-gray-600 dark:text-white sm:text-xs">
+                    <SelectTrigger className="py-2 sm:text-xs">
                       <SelectValue placeholder="From" />
                     </SelectTrigger>
                     <SelectContent>
@@ -215,7 +138,7 @@ export function AdvancedDropdownFilterKeywords() {
                   </Select>
 
                   <Select name="price-to">
-                    <SelectTrigger className="py-2 dark:bg-gray-600 dark:text-white sm:text-xs">
+                    <SelectTrigger className="py-2 sm:text-xs">
                       <SelectValue placeholder="To" />
                     </SelectTrigger>
                     <SelectContent>
@@ -236,7 +159,7 @@ export function AdvancedDropdownFilterKeywords() {
                       checked={isNorthAmerica}
                       onChange={() => setNorthAmerica(!isNorthAmerica)}
                     />
-                    <p>North America</p>
+                    <Text>North America</Text>
                   </div>
 
                   <div className="flex gap-2">
@@ -244,28 +167,28 @@ export function AdvancedDropdownFilterKeywords() {
                       checked={isSouthAmerica}
                       onChange={() => setSouthAmerica(!isSouthAmerica)}
                     />
-                    <p>South America</p>
+                    <Text>South America</Text>
                   </div>
                   <div className="flex gap-2">
                     <Switch
                       checked={isAsia}
                       onChange={() => setAsia(!isAsia)}
                     />
-                    <p>Asia</p>
+                    <Text>Asia</Text>
                   </div>
                   <div className="flex gap-2">
                     <Switch
                       checked={isAustralia}
                       onChange={() => setAustralia(!isAustralia)}
                     />
-                    <p>Australia</p>
+                    <Text>Australia</Text>
                   </div>
                   <div className="flex gap-2">
                     <Switch
                       checked={isEurope}
                       onChange={() => setEurope(!isEurope)}
                     />
-                    <p>Europe</p>
+                    <Text>Europe</Text>
                   </div>
                 </div>
               </AccordionContent>

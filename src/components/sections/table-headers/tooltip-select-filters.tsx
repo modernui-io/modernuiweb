@@ -1,7 +1,8 @@
 import { FaChevronDown } from "react-icons/fa";
-import { HiInformationCircle, HiPlus } from "react-icons/hi";
+import { HiInformationCircle, HiPlus, HiTemplate } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
+import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,27 +27,23 @@ import {
 
 export function TableHeaderWithTooltipAndSelectFilters() {
   return (
-    <section className="flex items-center bg-gray-50 py-6 dark:bg-gray-900">
+    <section className="flex items-center bg-background py-6">
       <div className="mx-auto w-full max-w-screen-xl px-4 lg:px-12">
-        <div className="relative bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-          <div className="mx-4 flex flex-col items-center justify-between space-y-3 border-b py-4 dark:border-gray-700 md:flex-row md:space-x-4 md:space-y-0">
+        <div className="relative shadow-md sm:rounded-lg">
+          <div className="mx-4 flex flex-col items-center justify-between space-y-3 border-b py-4 md:flex-row md:space-x-4 md:space-y-0">
             <div className="flex w-full items-center space-x-3">
-              <h5 className="font-semibold dark:text-white">
-                Flowbite Products
-              </h5>
-              <div className="font-medium text-gray-500 dark:text-gray-400">
-                6,560 results
-              </div>
+              <h5 className="font-semibold">Flowbite Products</h5>
+              <div className="font-medium text-gray-500">6,560 results</div>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
                     <div>
                       <span className="sr-only">More info</span>
-                      <HiInformationCircle className="size-4 text-gray-500 dark:text-gray-400" />
+                      <HiInformationCircle className="size-4 text-gray-500" />
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Showing 1-10 of 6,560 results</p>
+                    <Text>Showing 1-10 of 6,560 results</Text>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -57,21 +54,12 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                 Add new product
               </Button>
               <Button color="gray" className="flex-1 md:flex-none">
-                <svg
-                  aria-hidden
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  viewBox="0 0 12 13"
-                  className="mr-2 size-3"
-                >
-                  <path d="M1 2V1h10v3H1V2Zm0 4h5v6H1V6Zm8 0h2v6H9V6Z" />
-                </svg>
+                <HiTemplate className="mr-2 size-3" />
                 Manage Columns
               </Button>
             </div>
           </div>
-          <div className="flex flex-col-reverse items-start justify-between p-4 dark:border-gray-700 md:flex-row md:items-center md:space-x-4">
+          <div className="flex flex-col-reverse items-start justify-between p-4 md:flex-row md:items-center md:space-x-4">
             <div className="mt-3 md:mt-0">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -92,14 +80,20 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                   Brand
                 </Label>
                 <Select name="brand">
-                  <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                  <SelectTrigger>
                     <SelectValue placeholder="Brand" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="samsung">Samsung</SelectItem>
-                    <SelectItem value="apple">Apple</SelectItem>
-                    <SelectItem value="nokia">Nokia</SelectItem>
-                    <SelectItem value="sony">Sony</SelectItem>
+                    {[
+                      { value: "samsung", label: "Samsung" },
+                      { value: "apple", label: "Apple" },
+                      { value: "nokia", label: "Nokia" },
+                      { value: "sony", label: "Sony" },
+                    ].map((item, index) => (
+                      <SelectItem key={index} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -108,14 +102,20 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                   Price
                 </Label>
                 <Select name="price">
-                  <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                  <SelectTrigger>
                     <SelectValue placeholder="Price" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="bellow-100">$ 1-100</SelectItem>
-                    <SelectItem value="below-500">$ 101-500</SelectItem>
-                    <SelectItem value="below-1000">$ 501-1000</SelectItem>
-                    <SelectItem value="over-1000">$ 1001+</SelectItem>
+                    {[
+                      { value: "bellow-100", label: "$ 1-100" },
+                      { value: "below-500", label: "$ 101-500" },
+                      { value: "below-1000", label: "$ 501-1000" },
+                      { value: "over-1000", label: "$ 1001+" },
+                    ].map((item, index) => (
+                      <SelectItem key={index} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -124,14 +124,20 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                   Category
                 </Label>
                 <Select name="category">
-                  <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                  <SelectTrigger>
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="pc">PC</SelectItem>
-                    <SelectItem value="phone">Phone</SelectItem>
-                    <SelectItem value="tablet">Tablet</SelectItem>
-                    <SelectItem value="console">Gaming/Console</SelectItem>
+                    {[
+                      { value: "pc", label: "PC" },
+                      { value: "phone", label: "Phone" },
+                      { value: "tablet", label: "Tablet" },
+                      { value: "console", label: "Gaming/Console" },
+                    ].map((item, index) => (
+                      <SelectItem key={index} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -140,14 +146,20 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                   Color
                 </Label>
                 <Select name="color">
-                  <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                  <SelectTrigger>
                     <SelectValue placeholder="Color" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="purple">Purple</SelectItem>
-                    <SelectItem value="primary">Primary</SelectItem>
-                    <SelectItem value="pink">Pink</SelectItem>
-                    <SelectItem value="green">Green</SelectItem>
+                    {[
+                      { value: "purple", label: "Purple" },
+                      { value: "primary", label: "Primary" },
+                      { value: "pink", label: "Pink" },
+                      { value: "green", label: "Green" },
+                    ].map((item, index) => (
+                      <SelectItem key={index} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>

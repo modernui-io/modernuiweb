@@ -2,6 +2,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { HiInformationCircle, HiPlus, HiRefresh } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
+import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,14 +26,12 @@ import {
 
 export function TableHeaderWithComparison() {
   return (
-    <section className="flex items-center bg-gray-50 py-6 dark:bg-gray-900">
+    <section className="flex items-center bg-background py-6">
       <div className="mx-auto w-full max-w-screen-xl px-4 lg:px-12">
-        <div className="relative bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-          <div className="flex flex-col items-start justify-between space-y-3 p-4 dark:bg-gray-800 md:flex-row md:items-center md:space-x-4 md:space-y-0">
+        <div className="relative shadow-md sm:rounded-lg">
+          <div className="flex flex-col items-start justify-between space-y-3 p-4 md:flex-row md:items-center md:space-x-4 md:space-y-0">
             <div className="flex items-center">
-              <h5 className="mr-3 font-semibold dark:text-white">
-                Compare Products
-              </h5>
+              <h5 className="mr-3 font-semibold">Compare Products</h5>
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
@@ -42,9 +41,9 @@ export function TableHeaderWithComparison() {
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>
+                    <Text>
                       Selected Xbox Series S, PlayStation 5, and Xbox Series X
-                    </p>
+                    </Text>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -55,42 +54,42 @@ export function TableHeaderWithComparison() {
                 Add new product
               </Button>
               <Button>
-                <HiRefresh className="mr-2 size-4 text-white dark:text-gray-900" />
+                <HiRefresh className="mr-2 size-4" />
                 Reset all
               </Button>
             </div>
           </div>
-          <div className="mx-4 border-t dark:mx-0 dark:border-gray-700 dark:bg-gray-800"></div>
-          <div className="flex flex-col items-center justify-between space-y-3 px-4 pb-4 dark:bg-gray-800 md:mt-4 md:flex-row md:space-x-4 md:space-y-0 md:pb-0">
-            <ul className="hidden flex-wrap text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:flex">
-              <li className="mb-4 mr-2 lg:mr-4">
-                <Button>General Information</Button>
-              </li>
-              <li className="mb-4 mr-2 lg:mr-4">
-                <Button>Technical Information</Button>
-              </li>
-              <li className="mb-4 mr-2 lg:mr-4">
-                <Button>Delivery Information</Button>
-              </li>
-              <li className="mb-4 mr-2 lg:mr-4">
-                <Button>Ratings</Button>
-              </li>
+          <div className="mx-4 border-t"></div>
+          <div className="flex flex-col items-center justify-between px-4 pb-4 md:mt-4 md:flex-row md:-space-y-3 md:space-x-4 md:pb-0">
+            <ul className="hidden flex-wrap text-center text-sm font-medium md:flex">
+              {[
+                "General Information",
+                "Technical Information",
+                "Delivery Information",
+                "Ratings",
+              ].map((label, index) => (
+                <li key={index} className="mb-4 mr-2 lg:mr-4">
+                  <Button>{label}</Button>
+                </li>
+              ))}
             </ul>
             <div className="flex w-full items-center space-x-4 md:w-auto">
-              <div className="w-full md:hidden [&_select]:py-2">
+              <div className="w-full md:hidden">
                 <Select name="list-navigation">
-                  <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                  <SelectTrigger>
                     <SelectValue placeholder="Overview" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="general">General Information</SelectItem>
-                    <SelectItem value="technical">
-                      Technical Information
-                    </SelectItem>
-                    <SelectItem value="delivery">
-                      Delivery Information
-                    </SelectItem>
-                    <SelectItem value="ratings">Ratings</SelectItem>
+                    {[
+                      { value: "general", label: "General Information" },
+                      { value: "technical", label: "Technical Information" },
+                      { value: "delivery", label: "Delivery Information" },
+                      { value: "ratings", label: "Ratings" },
+                    ].map((item, index) => (
+                      <SelectItem key={index} value={item.value}>
+                        {item.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>

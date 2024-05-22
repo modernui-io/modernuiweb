@@ -19,15 +19,13 @@ import { cn } from "~/lib/utils";
 
 export function TableHeaderWithDateRangePickerFilter() {
   return (
-    <section className="flex items-center bg-gray-50 py-6 dark:bg-gray-900">
+    <section className="flex items-center bg-background py-6">
       <div className="mx-auto w-full max-w-screen-xl px-4 lg:px-12">
-        <div className="relative bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-          <div className="divide-y px-4 dark:divide-gray-700">
+        <div className="relative shadow-md sm:rounded-lg">
+          <div className="divide-y px-4">
             <div className="flex items-center justify-between py-3">
               <div className="flex flex-1 items-center space-x-2">
-                <h5 className="font-semibold dark:text-white">
-                  Total data used
-                </h5>
+                <h5 className="font-semibold">Total data used</h5>
               </div>
               <div className="flex items-center space-x-2 md:space-x-4">
                 <Button>View JSON</Button>
@@ -44,9 +42,7 @@ export function TableHeaderWithDateRangePickerFilter() {
                     <PopoverTrigger asChild>
                       <Button
                         variant={"outline"}
-                        className={cn(
-                          "justify-start text-left font-normal dark:bg-gray-600 dark:text-white",
-                        )}
+                        className={cn("justify-start text-left font-normal")}
                       >
                         <CalendarIcon className="mr-2 size-4" />
                         <span>Pick a date</span>
@@ -57,16 +53,12 @@ export function TableHeaderWithDateRangePickerFilter() {
                     </PopoverContent>
                   </Popover>
 
-                  <span className="px-3 text-center text-gray-500 dark:text-gray-200">
-                    &nbsp;to&nbsp;
-                  </span>
+                  <span className="px-3 text-center">&nbsp;to&nbsp;</span>
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
                         variant={"outline"}
-                        className={cn(
-                          "justify-start text-left font-normal dark:bg-gray-600 dark:text-white",
-                        )}
+                        className={cn("justify-start text-left font-normal")}
                       >
                         <CalendarIcon className="mr-2 size-4" />
                         <span>Pick a date</span>
@@ -79,13 +71,19 @@ export function TableHeaderWithDateRangePickerFilter() {
                 </div>
                 <div className="min-w-40 md:mr-4">
                   <Select name="compare">
-                    <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                    <SelectTrigger>
                       <SelectValue placeholder="Compare to" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="last_year">Last Year</SelectItem>
-                      <SelectItem value="last_month">Last Month</SelectItem>
-                      <SelectItem value="yesterday">Yesterday</SelectItem>
+                      {[
+                        { value: "last_year", label: "Last Year" },
+                        { value: "last_month", label: "Last Month" },
+                        { value: "yesterday", label: "Yesterday" },
+                      ].map((item, index) => (
+                        <SelectItem key={index} value={item.value}>
+                          {item.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>

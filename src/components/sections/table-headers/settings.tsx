@@ -1,6 +1,7 @@
 import { HiCog, HiInformationCircle, HiPlus } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
+import { Text } from "~/components/ui/custom/text";
 import {
   Tooltip,
   TooltipContent,
@@ -10,17 +11,15 @@ import {
 
 export function TableHeaderWithSettings() {
   return (
-    <section className="flex items-center bg-gray-50 py-6 dark:bg-gray-900">
+    <section className="flex items-center bg-background py-6">
       <div className="mx-auto w-full max-w-screen-xl px-4 lg:px-12">
-        <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-          <div className="divide-y px-4 dark:divide-gray-700">
+        <div className="relative overflow-hidden shadow-md sm:rounded-lg">
+          <div className="divide-y px-4">
             <div className="flex flex-col space-y-3 py-3 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
               <div className="flex flex-1 items-center space-x-2">
                 <h5>
-                  <span className="dark:text-white">Rankings Overview</span>
-                  <span className="ml-1 text-gray-500 dark:text-gray-400">
-                    1-100 (436)
-                  </span>
+                  <span>Rankings Overview</span>
+                  <span className="ml-1 text-gray-500">1-100 (436)</span>
                 </h5>
                 <TooltipProvider>
                   <Tooltip>
@@ -31,7 +30,7 @@ export function TableHeaderWithSettings() {
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Showing 1-100 of 436 results</p>
+                      <Text>Showing 1-100 of 436 results</Text>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -48,17 +47,17 @@ export function TableHeaderWithSettings() {
                 <HiPlus className="mr-2 size-3.5" />
                 Add more keywords
               </Button>
-              <div className="w-full flex-col space-x-2 space-y-2 md:w-auto md:flex-row md:space-x-0 md:space-y-2">
-                <Button className="border-r dark:bg-gray-700 dark:text-white dark:enabled:hover:bg-gray-600 md:rounded-r-none">
+              <div className="w-full flex-col space-x-2 md:w-auto md:flex-row md:space-x-0">
+                <Button className="border-r md:rounded-r-none">
                   Positions
                 </Button>
-                <Button className="border-x dark:bg-gray-700 dark:text-white dark:enabled:hover:bg-gray-600 md:rounded-none md:border-l-0">
+                <Button className="border-x md:rounded-none md:border-l-0">
                   Estimated Traffic
                 </Button>
-                <Button className="border-x dark:bg-gray-700 dark:text-white dark:enabled:hover:bg-gray-600 md:rounded-none md:border-l-0">
+                <Button className="border-x md:rounded-none md:border-l-0">
                   Visibility
                 </Button>
-                <Button className="dark:bg-gray-700 dark:text-white dark:enabled:hover:bg-gray-600 md:rounded-l-none">
+                <Button className="md:rounded-l-none">
                   All for flowbite.com
                 </Button>
               </div>

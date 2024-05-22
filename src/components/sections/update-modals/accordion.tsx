@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { QuestionMarkCircledIcon, UploadIcon } from "@radix-ui/react-icons";
+import { HiTrash } from "react-icons/hi";
+
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +11,7 @@ import {
 } from "~/components/ui/accordion";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
+import { Text } from "~/components/ui/custom/text";
 import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
@@ -36,18 +40,16 @@ export function UpdateModalAccordion() {
       <DialogTrigger>
         <Button>Update user</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-white p-5 shadow dark:bg-gray-800 md:min-w-[40rem]">
+      <DialogContent className="rounded-lg bg-background p-5 shadow md:min-w-[40rem]">
         <ScrollArea className="h-[40rem] overflow-hidden">
           <div className="flex items-center justify-between rounded-t">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Update user
-            </h3>
+            <h3 className="text-lg font-semibold">Update user</h3>
           </div>
           <form action="#">
             <Accordion type="single" collapsible defaultValue="general">
               <AccordionItem value="general">
                 <AccordionTrigger>General Information</AccordionTrigger>
-                <AccordionContent className="dark:bg-gray-800">
+                <AccordionContent>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="sm:col-span-2">
                       <Label className="mb-2 block" htmlFor="file_input">
@@ -61,38 +63,25 @@ export function UpdateModalAccordion() {
                         />
                         <div className="w-full">
                           <input
-                            className="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder:text-gray-400"
+                            className="w-full cursor-pointer rounded-lg border text-sm focus:outline-none"
                             aria-describedby="file_input_help"
                             id="file_input"
                             type="file"
                           />
-                          <p
-                            className="mb-3 mt-1 text-xs font-normal text-gray-500 dark:text-gray-300"
+                          <Text
+                            className="mb-3 mt-1 text-xs font-normal"
                             id="file_input_help"
                           >
                             SVG, PNG, JPG or GIF (MAX. 800x400px).
-                          </p>
+                          </Text>
                           <div className="flex items-center space-x-2.5">
                             <Button size="sm" className="inline-flex text-xs">
-                              <svg
-                                className="-ml-1 mr-1 size-4"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
+                              <UploadIcon className="-ml-1 mr-1 size-4" />
                               Upload new picture
                             </Button>
                             <Button
-                              color="gray"
                               variant={"outline"}
-                              size="sm"
-                              className="inline-flex text-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
+                              className="inline-flex text-xs"
                             >
                               Delete
                             </Button>
@@ -106,7 +95,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="Bonnie"
-                        className="dark:border-gray-500"
                         id="first-name"
                         name="first-name"
                         placeholder="John"
@@ -119,7 +107,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="Green"
-                        className="dark:border-gray-500"
                         id="last-name"
                         name="last-name"
                         placeholder="Doe"
@@ -132,7 +119,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="bonnie.green@company.com"
-                        className="dark:border-gray-500"
                         id="email"
                         name="email"
                         placeholder="john@company.com"
@@ -150,37 +136,25 @@ export function UpdateModalAccordion() {
                           <Tooltip>
                             <TooltipTrigger>
                               <button className="ml-1">
-                                <svg
-                                  aria-hidden
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  className="size-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
+                                <QuestionMarkCircledIcon className="size-4 text-gray-400 hover:text-gray-500" />
                                 <span className="sr-only">
                                   User permission details
                                 </span>
                               </button>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>
+                              <Text>
                                 User permissions, part of the overall user
                                 management process, are access granted to users
                                 to specific resources such as files,
                                 applications, networks, or devices.
-                              </p>
+                              </Text>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </Label>
                       <Select name="user-permissions">
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="Operational" />
                         </SelectTrigger>
                         <SelectContent>
@@ -195,7 +169,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="Back-end software engineer"
-                        className="dark:border-gray-500"
                         id="job-title"
                         name="job-title"
                         placeholder="Ex. React Developer"
@@ -208,7 +181,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="English, German"
-                        className="dark:border-gray-500"
                         id="languages"
                         name="languages"
                         placeholder="Ex. English, Spanish"
@@ -225,30 +197,18 @@ export function UpdateModalAccordion() {
                           <Tooltip>
                             <TooltipTrigger>
                               <button className="ml-1">
-                                <svg
-                                  aria-hidden
-                                  className="size-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
+                                <QuestionMarkCircledIcon className="size-4 text-gray-400 hover:text-gray-500" />
                                 <span className="sr-only">Account details</span>
                               </button>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>Choose here your account type.</p>
+                              <Text>Choose here your account type.</Text>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </Label>
                       <Select name="account">
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="PRO Account" />
                         </SelectTrigger>
                         <SelectContent>
@@ -267,45 +227,39 @@ export function UpdateModalAccordion() {
                           <Tooltip>
                             <TooltipTrigger>
                               <button className="ml-1">
-                                <svg
-                                  aria-hidden
-                                  className="ml-1 size-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
+                                <QuestionMarkCircledIcon className="size-4 text-gray-400 hover:text-gray-500" />
                                 <span className="sr-only">
                                   User role details
                                 </span>
                               </button>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>
+                              <Text>
                                 Flowbite provides 7 predefined roles: Owner,
                                 Admin, Editor, Contributor and Viewer. Assign
                                 the most suitable role to each user, giving them
                                 the most appropriate level of control.
-                              </p>
+                              </Text>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </Label>
                       <Select name="user-role">
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="Owner" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="OW">Owner</SelectItem>
-                          <SelectItem value="AD">Admin</SelectItem>
-                          <SelectItem value="ED">Editor</SelectItem>
-                          <SelectItem value="CO">Contributor</SelectItem>
-                          <SelectItem value="VI">Viewer</SelectItem>
+                          {[
+                            { value: "OW", label: "Owner" },
+                            { value: "AD", label: "Admin" },
+                            { value: "ED", label: "Editor" },
+                            { value: "CO", label: "Contributor" },
+                            { value: "VI", label: "Viewer" },
+                          ].map((item, index) => (
+                            <SelectItem key={index} value={item.value}>
+                              {item.label}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -319,41 +273,35 @@ export function UpdateModalAccordion() {
                           <Tooltip>
                             <TooltipTrigger>
                               <button className="ml-1">
-                                <svg
-                                  aria-hidden
-                                  className="ml-1 size-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
+                                <QuestionMarkCircledIcon className="size-4 text-gray-400 hover:text-gray-500" />
                                 <span className="sr-only">
                                   Email status details
                                 </span>
                               </button>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>
+                              <Text>
                                 As an administrator, you can view the status of
                                 a user's email. The status indicates whether a
                                 user's email is verified or not.
-                              </p>
+                              </Text>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
                       </Label>
                       <Select name="email-status">
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="Verified" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="VF">Verified</SelectItem>
-                          <SelectItem value="NV">Not verified</SelectItem>
+                          {[
+                            { value: "VF", label: "Verified" },
+                            { value: "NV", label: "Not verified" },
+                          ].map((item, index) => (
+                            <SelectItem key={index} value={item.value}>
+                              {item.label}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -364,7 +312,6 @@ export function UpdateModalAccordion() {
                       <Input
                         id="password"
                         name="password"
-                        className="dark:border-gray-500"
                         placeholder="•••••••••"
                         required
                         type="password"
@@ -377,7 +324,6 @@ export function UpdateModalAccordion() {
                       <Input
                         id="confirm-password"
                         name="confirm-password"
-                        className="dark:border-gray-500"
                         placeholder="•••••••••"
                         required
                         type="password"
@@ -388,46 +334,37 @@ export function UpdateModalAccordion() {
                         Assign Role
                       </Label>
                       <div className="space-y-4 sm:flex sm:space-y-0">
-                        <div className="mr-4 flex items-center">
-                          <Checkbox id="inline-checkbox" name="role" />
-                          <Label
-                            htmlFor="inline-checkbox"
-                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >
-                            Administrator
-                          </Label>
-                        </div>
-                        <div className="mr-4 flex items-center">
-                          <Checkbox id="inline-2-checkbox" name="role" />
-                          <Label
-                            htmlFor="inline-2-checkbox"
-                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >
-                            Member
-                          </Label>
-                        </div>
-                        <div className="mr-4 flex items-center">
-                          <Checkbox
-                            defaultChecked
-                            id="inline-checked-checkbox"
-                            name="role"
-                          />
-                          <Label
-                            htmlFor="inline-checked-checkbox"
-                            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                          >
-                            Viewer
-                          </Label>
-                        </div>
+                        {[
+                          { id: "inline-checkbox", label: "Administrator" },
+                          { id: "inline-2-checkbox", label: "Member" },
+                          {
+                            id: "inline-checked-checkbox",
+                            label: "Viewer",
+                            defaultChecked: true,
+                          },
+                        ].map((item, index) => (
+                          <div key={index} className="mr-4 flex items-center">
+                            <Checkbox
+                              id={item.id}
+                              name="role"
+                              defaultChecked={item.defaultChecked}
+                            />
+                            <Label
+                              htmlFor={item.id}
+                              className="ml-2 text-sm font-medium"
+                            >
+                              {item.label}
+                            </Label>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <div>
-                      <div className="mb-2 text-sm dark:text-white">Status</div>
+                      <div className="mb-2 text-sm">Status</div>
                       <div className="flex items-center gap-3">
                         <Switch
                           checked={userStatus}
                           id="status"
-                          className="dark:border-gray-500"
                           name="status"
                           onCheckedChange={() => setUserStatus(!userStatus)}
                         />
@@ -439,7 +376,7 @@ export function UpdateModalAccordion() {
               </AccordionItem>
               <AccordionItem value="additional">
                 <AccordionTrigger>Additional Information</AccordionTrigger>
-                <AccordionContent className="dark:bg-gray-800">
+                <AccordionContent>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="col-span-2">
                       <Label htmlFor="skills" className="mb-2 block">
@@ -447,7 +384,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="Tailwind CSS, ModernUI, React"
-                        className="dark:border-gray-500"
                         id="skills"
                         name="skills"
                         placeholder="Ex. Figma, HTML, Javascript"
@@ -460,7 +396,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="+1631 442 978"
-                        className="dark:border-gray-500"
                         id="phone-number"
                         name="phone-number"
                         placeholder="Ex. +1234 567 890"
@@ -473,7 +408,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="https://www.linkedin.com/in/bonniegreen/"
-                        className="dark:border-gray-500"
                         id="linkedin"
                         name="linkedin"
                         placeholder="Ex. https://www.linkedin.com/in/example/"
@@ -487,7 +421,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="https://www.facebook.com/bonniegreen"
-                        className="dark:border-gray-500"
                         id="facebook"
                         name="facebook"
                         placeholder="Ex. https://www.facebook.com/example"
@@ -501,7 +434,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="https://twitter.com/bonniegreen"
-                        className="dark:border-gray-500"
                         id="twitter"
                         name="twitter"
                         placeholder="Ex. https://twitter.com/example"
@@ -515,7 +447,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="https://modernui.com"
-                        className="dark:border-gray-500"
                         id="personal-website"
                         name="personal-website"
                         placeholder="Ex. https://website.com"
@@ -528,18 +459,24 @@ export function UpdateModalAccordion() {
                         Country
                       </Label>
                       <Select name="country">
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="United States" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="US">United States</SelectItem>
-                          <SelectItem value="AU">Australia</SelectItem>
-                          <SelectItem value="UK">United Kingdom</SelectItem>
-                          <SelectItem value="IT">Italy</SelectItem>
-                          <SelectItem value="DE">Germany</SelectItem>
-                          <SelectItem value="ES">Spain</SelectItem>
-                          <SelectItem value="FR">France</SelectItem>
-                          <SelectItem value="CA">Canada</SelectItem>
+                          {[
+                            { value: "US", label: "United States" },
+                            { value: "AU", label: "Australia" },
+                            { value: "UK", label: "United Kingdom" },
+                            { value: "IT", label: "Italy" },
+                            { value: "DE", label: "Germany" },
+                            { value: "ES", label: "Spain" },
+                            { value: "FR", label: "France" },
+                            { value: "CA", label: "Canada" },
+                          ].map((item, index) => (
+                            <SelectItem key={index} value={item.value}>
+                              {item.label}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -549,7 +486,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="92 Milles Drive, Newark, NJ 07123"
-                        className="dark:border-gray-500"
                         id="address"
                         name="address"
                         placeholder="Ex. 92 Milles Drive, Newark, NJ 07123"
@@ -562,7 +498,6 @@ export function UpdateModalAccordion() {
                       </Label>
                       <Input
                         defaultValue="GMT+3"
-                        className="dark:border-gray-500"
                         id="timezone"
                         name="timezone"
                         placeholder="Ex. GMT+2"
@@ -574,7 +509,6 @@ export function UpdateModalAccordion() {
                         Biography
                       </Label>
                       <Textarea
-                        className="dark:border-gray-500"
                         id="biography"
                         name="biography"
                         placeholder="Write your biography..."
@@ -596,20 +530,9 @@ export function UpdateModalAccordion() {
               <Button
                 color="failure"
                 variant={"outline"}
-                className="border-red-600 px-5 py-2.5"
+                className="border-red-600 px-5 py-2.5 hover:bg-red-600 hover:text-white"
               >
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="-ml-1 mr-1 size-5"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <HiTrash className="-ml-1 mr-1 size-5" />
                 Delete
               </Button>
             </div>

@@ -24,7 +24,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2"></div>
               <label
                 htmlFor="all"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 All
               </label>
@@ -37,7 +37,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2 border-green-400 bg-green-400"></div>
               <label
                 htmlFor="admitted"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 Admitted
               </label>
@@ -54,7 +54,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2 border-primary-500 bg-primary-500"></div>
               <label
                 htmlFor="temporarily-admitted"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 Temporarily admitted
               </label>
@@ -70,7 +70,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2 border-gray-200 bg-gray-200"></div>
               <label
                 htmlFor="awaiting-verification"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 Awaiting verification
               </label>
@@ -83,7 +83,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2 border-orange-300 bg-orange-300"></div>
               <label
                 htmlFor="requires-recheck"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 Requires recheck
               </label>
@@ -96,7 +96,7 @@ export function DropdownFilterStatus() {
               <div className="ml-2 size-3 rounded-full border-2 border-red-500 bg-red-500"></div>
               <label
                 htmlFor="rejected"
-                className="ml-1.5 flex items-center text-sm font-medium text-gray-900 dark:text-gray-100"
+                className="ml-1.5 flex items-center text-sm font-medium"
               >
                 Rejected
               </label>

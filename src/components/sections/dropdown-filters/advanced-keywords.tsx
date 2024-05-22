@@ -197,78 +197,33 @@ export function AdvancedDropdownFilterKeywords() {
               <AccordionTrigger>Rating</AccordionTrigger>
               <AccordionContent className="space-y-2 px-1 py-3 dark:bg-transparent">
                 <RadioGroup defaultValue="stars">
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="five-stars"
-                      value="zero"
-                      onClick={() => check("#five-stars")}
-                    />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="four-stars"
-                      value="one"
-                      onClick={() => check("#four-stars")}
-                    />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="three-stars"
-                      value="two"
-                      onClick={() => check("#three-stars")}
-                    />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="two-stars"
-                      value="three"
-                      onClick={() => check("#two-stars")}
-                    />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="one-stars"
-                      value="four"
-                      onClick={() => check("#one-stars")}
-                    />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarIcon className="size-5 text-yellow-300" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RadioGroupItem
-                      id="zero-stars"
-                      value="five"
-                      onClick={() => check("#zero-stars")}
-                    />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                    <StarFilledIcon className="size-5 text-yellow-300" />
-                  </div>
+                  {[...Array(6)].map((_, index) => {
+                    const starsCount = 5 - index;
+                    const starsFilled = Array(starsCount).fill(null);
+                    const starsUnfilled = Array(5 - starsCount).fill(null);
+
+                    return (
+                      <div key={index} className="flex items-center gap-2">
+                        <RadioGroupItem
+                          id={`${starsCount}-stars`}
+                          value={`${index}`}
+                          onClick={() => check(`#${starsCount}-stars`)}
+                        />
+                        {starsFilled.map((_, i) => (
+                          <StarFilledIcon
+                            key={i}
+                            className="size-5 text-yellow-300"
+                          />
+                        ))}
+                        {starsUnfilled.map((_, i) => (
+                          <StarIcon
+                            key={i}
+                            className="size-5 text-yellow-300"
+                          />
+                        ))}
+                      </div>
+                    );
+                  })}
                 </RadioGroup>
               </AccordionContent>
             </AccordionItem>

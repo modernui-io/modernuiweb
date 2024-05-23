@@ -3,8 +3,8 @@ import Link from "next/link";
 import { FigmaLogoIcon } from "@radix-ui/react-icons";
 import { ArrowRight, Earth } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 
@@ -124,8 +124,8 @@ const CardText: CardText[] = [
 
 export function CardCTAsWithIconsSection() {
   return (
-    <MuiLayout.Section className="bg-background ">
-      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 ">
+    <MuiLayout.Section className="bg-background">
+      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <Heading level={2} className="mb-4  font-extrabold tracking-tight">
           We didn't reinvent the wheel
         </Heading>
@@ -146,10 +146,10 @@ export function CardCTAsWithIconsSection() {
             <Link
               key={title}
               href={href}
-              className="inline-flex items-center justify-center rounded-lg bg-muted p-5 text-base font-medium text-muted-foreground hover:bg-primary-200 hover:text-secondary-foreground  "
+              className="inline-flex items-center justify-center rounded-lg bg-muted p-5 text-base font-medium text-muted-foreground hover:bg-primary-200 hover:text-secondary-foreground"
             >
               {icon}
-              <span className=" w-full">{title}</span>
+              <span className="w-full">{title}</span>
               <ArrowRight />
             </Link>
           ))}

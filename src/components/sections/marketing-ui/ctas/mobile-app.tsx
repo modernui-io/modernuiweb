@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";

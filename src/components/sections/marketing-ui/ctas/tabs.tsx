@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { ArrowRight, ChevronRight, CircleCheck } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -65,7 +65,7 @@ export function CTASectionWithTabsAndMobileApp() {
             <TabsList className="bg-background">
               <TabsTrigger
                 value="ios"
-                className="relative mx-6 flex items-center justify-center "
+                className="relative mx-6 flex items-center justify-center"
               >
                 <>
                   <span className="absolute -bottom-8 text-base font-medium text-muted-foreground">
@@ -75,7 +75,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 </>
               </TabsTrigger>
               <TabsTrigger
-                className="relative mx-6 flex items-center justify-center "
+                className="relative mx-6 flex items-center justify-center"
                 value="android"
               >
                 <>
@@ -129,7 +129,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 <Link
                   href="#"
                   title=""
-                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline "
+                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline"
                 >
                   Check out the iOS app features
                   <ChevronRight />
@@ -158,7 +158,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 <ul className="space-y-4">
                   {androidKeyPoint.map((point) => (
                     <li className="flex items-center gap-2.5" key={point}>
-                      <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground ">
+                      <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground">
                         <CircleCheck />
                       </div>
                       <span className="text-base font-medium text-secondary-foreground">
@@ -176,7 +176,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 <Link
                   href="#"
                   title=""
-                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline "
+                  className="inline-flex items-center text-base font-medium text-muted-foreground hover:underline"
                 >
                   Check out the Android app features
                   <ChevronRight />
@@ -244,7 +244,7 @@ export function CTASectionWithTabsAndMobileApp() {
               <ul className="space-y-4">
                 {keyPoints.map((point) => (
                   <li className="flex items-center gap-2.5" key={point}>
-                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground ">
+                    <div className="inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-muted text-secondary-foreground">
                       <CircleCheck />
                     </div>
                     <span className="text-base font-medium text-secondary-foreground">

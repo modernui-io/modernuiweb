@@ -1,5 +1,5 @@
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -11,7 +11,7 @@ export function HeadingWithCTAButtonSection() {
         <div className="mx-auto flex max-w-screen-sm flex-col items-center text-center">
           <Heading
             level={2}
-            className="mb-4 font-extrabold leading-tight tracking-tight "
+            className="mb-4 font-extrabold leading-tight tracking-tight"
           >
             Start your free trial today
           </Heading>

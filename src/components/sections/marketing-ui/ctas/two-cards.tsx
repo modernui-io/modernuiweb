@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { ArrowRight, Share2 } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -90,7 +90,7 @@ export function TwoCardsAndImagesCTASection() {
                 </CardHeader>
                 <CardContent>
                   <CardTitle>
-                    <Heading level={4} className=" font-bold leading-tight ">
+                    <Heading level={4} className=" font-bold leading-tight">
                       {title}
                     </Heading>
                   </CardTitle>
@@ -125,7 +125,7 @@ export function TwoCardsAndImagesCTASection() {
           <Link
             href="#"
             title=""
-            className="inline-flex items-center text-lg font-medium text-muted-foreground hover:underline "
+            className="inline-flex items-center text-lg font-medium text-muted-foreground hover:underline"
           >
             View all fundraising events
             <ArrowRight />

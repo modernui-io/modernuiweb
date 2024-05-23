@@ -1,5 +1,5 @@
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -62,7 +62,7 @@ export function FinancialTradingCTASection() {
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto flex max-w-screen-xl flex-col items-center px-4 py-8 text-center sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm">
-          <Heading level={2} className="mb-4  font-extrabold tracking-tight ">
+          <Heading level={2} className="mb-4  font-extrabold tracking-tight">
             Buy crypto at true cost
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg lg:mb-16">
@@ -78,7 +78,7 @@ export function FinancialTradingCTASection() {
                   <TableRow key={coin}>
                     <TableCell
                       scope="row"
-                      className="bg-transparent text-xl font-bold text-secondary-foreground "
+                      className="bg-transparent text-xl font-bold text-secondary-foreground"
                     >
                       {coinName}&nbsp;
                       <span className="text-muted-foreground">{coin}</span>
@@ -87,7 +87,7 @@ export function FinancialTradingCTASection() {
                       ${value}
                     </TableCell>
                     <TableCell
-                      className={`text-sm font-semibold ${isProfit ? " text-green-500" : " text-red-500"} `}
+                      className={`text-sm font-semibold ${isProfit ? "text-green-500" : "text-red-500"}`}
                     >
                       {change}
                     </TableCell>

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { ArrowRight } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -25,7 +25,7 @@ export function ImageWithCTAButtonSection() {
           className="hidden size-full rounded-tl-3xl object-cover dark:block"
         />
         <div className="mt-4 md:mt-0">
-          <Heading level={2} className="mb-4 font-extrabold tracking-tight ">
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Let's create more tools and ideas that brings us together.
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg">

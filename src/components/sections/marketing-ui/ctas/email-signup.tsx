@@ -7,8 +7,8 @@ import { Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -45,9 +45,9 @@ export function EmailSignUpCTASection() {
   }
   return (
     <MuiLayout.Section className="bg-background">
-      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 ">
+      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-md text-center">
-          <Heading level={2} className="mb-4 font-extrabold tracking-tight ">
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Get started with ModernUI web today
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg">
@@ -81,17 +81,17 @@ export function EmailSignUpCTASection() {
               />
               <Button type="submit">Submit</Button>
             </form>
-            <div className=" text-sm font-medium text-muted-foreground ">
+            <div className="text-sm font-medium text-muted-foreground">
               Instant signup. No credit card required.&nbsp;
               <Link
                 href="#"
-                className="text-secondary-foreground hover:underline "
+                className="text-secondary-foreground hover:underline"
               >
                 Terms of Service
               </Link>
               &nbsp;and&nbsp;
               <Link
-                className="text-secondary-foreground hover:underline "
+                className="text-secondary-foreground hover:underline"
                 href="#"
               >
                 Privacy Policy

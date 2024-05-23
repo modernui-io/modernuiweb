@@ -1,7 +1,7 @@
 import { Video } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Components Import
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -28,7 +28,7 @@ export function DefaultCTASection() {
               color="gray"
               variant="outline"
               size="lg"
-              className="bg-muted hover:bg-muted-foreground hover:text-background [&>span]:border-gray-300 "
+              className="bg-muted hover:bg-muted-foreground hover:text-background [&>span]:border-gray-300"
             >
               <Video className="mr-1" />
               View more

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { FeatureIconsCta } from "../feature-icons-cta";
 
 const meta = {
-  title: "sections/marketing-ui/feature-sections/feature-icons-cta",
+  title: "sections/Marketing UI/Feature/Feature Icon CTA",
   component: FeatureIconsCta,
 } satisfies Meta<typeof FeatureIconsCta>;
 

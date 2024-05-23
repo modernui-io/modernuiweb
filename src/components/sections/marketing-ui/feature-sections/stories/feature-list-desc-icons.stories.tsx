@@ -4,7 +4,7 @@ import { FeatureListDescriptionIcons } from "../feature-list-desc-icons";
 
 const meta = {
   title:
-    "sections/marketing-ui/feature-sections/feature-list-description-icons",
+    "sections/Marketing UI/Feature/Feature List Description Icons",
   component: FeatureListDescriptionIcons,
 } satisfies Meta<typeof FeatureListDescriptionIcons>;
 

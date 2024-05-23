@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ComparisonCards } from "../comparison-cards";
 
 const meta = {
-  title: "sections/marketing-ui/feature-sections/comparison-cards",
+  title: "sections/Marketing UI/Feature/Comparison Cards",
   component: ComparisonCards,
 } satisfies Meta<typeof ComparisonCards>;
 

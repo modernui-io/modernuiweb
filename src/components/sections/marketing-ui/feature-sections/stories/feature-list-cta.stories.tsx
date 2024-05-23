@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { FeatureListCTA } from "../feature-list-cta";
 
 const meta = {
-  title: "sections/marketing-ui/feature-sections/feature-list-cta",
+  title: "sections/Marketing UI/Feature/Feature List CTA",
   component: FeatureListCTA,
 } satisfies Meta<typeof FeatureListCTA>;
 

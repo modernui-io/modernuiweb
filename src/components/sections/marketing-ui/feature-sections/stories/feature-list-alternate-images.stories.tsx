@@ -4,7 +4,7 @@ import { FeatureListAlternateImage } from "../feature-list-alternate-image";
 
 const meta = {
   title:
-    "sections/marketing-ui/feature-sections/feature-list-with-alternate-image",
+    "sections/Marketing UI/Feature/Feature List with Alternate Image",
   component: FeatureListAlternateImage,
 } satisfies Meta<typeof FeatureListAlternateImage>;
 

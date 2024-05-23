@@ -1,3 +1,5 @@
+import { Video } from "lucide-react";
+
 import * as MuiLayout from "~/components/layouts";
 // Components Import
 import { Button } from "~/components/ui/button";
@@ -26,16 +28,9 @@ export function DefaultCTASection() {
               color="gray"
               variant="outline"
               size="lg"
-              className="[&>span]:border-gray-300 hover:[&>span]:text-secondary-foreground "
+              className="bg-muted hover:bg-muted-foreground hover:text-background [&>span]:border-gray-300 "
             >
-              <svg
-                className="-ml-1 mr-2 size-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-              </svg>
+              <Video className="mr-1" />
               View more
             </Button>
           </div>

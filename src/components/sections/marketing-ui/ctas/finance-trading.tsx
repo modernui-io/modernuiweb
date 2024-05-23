@@ -1,11 +1,61 @@
-import Image from "next/image";
-
 import * as MuiLayout from "~/components/layouts";
 // Components Import
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 import { Table, TableBody, TableCell, TableRow } from "~/components/ui/table";
+
+interface TableData {
+  coinName: string;
+  coin: string;
+  value: string;
+  change: string;
+  totalValue: string;
+  isProfit: boolean;
+}
+
+const TableData: TableData[] = [
+  {
+    coinName: "Bitcoin",
+    coin: "BTC",
+    value: "38,716.43",
+    change: "-10.82%",
+    totalValue: "729,729,745,340.82",
+    isProfit: false,
+  },
+  {
+    coinName: "Ethereum",
+    coin: "ETH",
+    value: "2,818.15",
+    change: "-13.88%",
+    totalValue: "333,396,739,452.23",
+    isProfit: false,
+  },
+  {
+    coinName: "Cardano",
+    coin: "ADA",
+    value: "1.22",
+    change: "	+3.76%",
+    totalValue: "40,465,663,783.16",
+    isProfit: true,
+  },
+  {
+    coinName: "Dogecoin",
+    coin: "DOGE",
+    value: "0.153765",
+    change: "+8.39%",
+    totalValue: "729,729,745,340.82",
+    isProfit: true,
+  },
+  {
+    coinName: "Polkadot",
+    coin: "DOT",
+    value: "22.24",
+    change: "-13.17%",
+    totalValue: "21,710,483,995.43",
+    isProfit: false,
+  },
+];
 
 export function FinancialTradingCTASection() {
   return (
@@ -23,111 +73,33 @@ export function FinancialTradingCTASection() {
         <div className="relative mb-8 w-full overflow-x-auto">
           <Table className="m-auto">
             <TableBody className="divide-y">
-              <TableRow>
-                <TableCell
-                  scope="row"
-                  className="bg-transparent text-xl font-bold text-secondary-foreground "
-                >
-                  Bitcoin&nbsp;
-                  <span className="text-muted-foreground">BTC</span>
-                </TableCell>
-                <TableCell className="text-xl font-bold text-secondary-foreground">
-                  $38,716.43
-                </TableCell>
-                <TableCell className="text-sm font-semibold text-red-500">
-                  -10.82%
-                </TableCell>
-                <TableCell className="font-semibold text-secondary-foreground">
-                  $729,729,745,340.82
-                </TableCell>
-                <TableCell className="flex justify-end">
-                  <Button color="info">Trade</Button>
-                </TableCell>
-              </TableRow>
-              <TableRow className="border-b dark:border-gray-700">
-                <TableCell
-                  scope="row"
-                  className="bg-transparent text-xl font-bold text-secondary-foreground"
-                >
-                  Ethereum&nbsp;
-                  <span className="text-muted-foreground">ETH</span>
-                </TableCell>
-                <TableCell className="text-xl font-bold text-secondary-foreground">
-                  $2,818.15
-                </TableCell>
-                <TableCell className="text-sm font-semibold text-red-500">
-                  -13.88%
-                </TableCell>
-                <TableCell className="font-semibold text-secondary-foreground">
-                  $333,396,739,452.23
-                </TableCell>
-                <TableCell className="flex justify-end">
-                  <Button color="info">Trade</Button>
-                </TableCell>
-              </TableRow>
-              <TableRow className="border-b dark:border-gray-700">
-                <TableCell
-                  scope="row"
-                  className="bg-transparent text-xl font-bold text-secondary-foreground"
-                >
-                  Cardano&nbsp;
-                  <span className="text-muted-foreground">ADA</span>
-                </TableCell>
-                <TableCell className="text-xl font-bold text-secondary-foreground">
-                  $1.22
-                </TableCell>
-                <TableCell className="text-sm font-semibold text-green-500">
-                  +3.76%
-                </TableCell>
-                <TableCell className="font-semibold text-secondary-foreground">
-                  $40,465,663,783.16
-                </TableCell>
-                <TableCell className="flex justify-end">
-                  <Button color="info">Trade</Button>
-                </TableCell>
-              </TableRow>
-              <TableRow className="border-b dark:border-gray-700">
-                <TableCell
-                  scope="row"
-                  className="bg-transparent text-xl font-bold text-secondary-foreground"
-                >
-                  Dogecoin&nbsp;
-                  <span className="text-muted-foreground">DOGE</span>
-                </TableCell>
-                <TableCell className="text-xl font-bold text-secondary-foreground">
-                  $0.153765
-                </TableCell>
-                <TableCell className="text-sm font-semibold text-green-500">
-                  +8.39%
-                </TableCell>
-                <TableCell className="font-semibold text-secondary-foreground">
-                  $729,729,745,340.82
-                </TableCell>
-                <TableCell className="flex justify-end">
-                  <Button color="info">Trade</Button>
-                </TableCell>
-              </TableRow>
-              <TableRow className="border-b dark:border-gray-700 ">
-                <TableCell
-                  scope="row"
-                  className="bg-transparent text-xl font-bold text-secondary-foreground"
-                >
-                  Polkadot&nbsp;
-                  <span className="text-muted-foreground">DOT</span>
-                </TableCell>
-                <TableCell className="text-xl font-bold text-secondary-foreground">
-                  $22.24
-                </TableCell>
-                <TableCell className="font-semibold text-red-500">
-                  -13.17%
-                </TableCell>
-                <TableCell className="font-semibold text-secondary-foreground">
-                  $21,710,483,995.43
-                </TableCell>
-                <TableCell className="flex justify-end">
-                  <Button color="info">Trade</Button>
-                </TableCell>
-              </TableRow>
+              {TableData.map(
+                ({ coinName, coin, value, totalValue, change, isProfit }) => (
+                  <TableRow key={coin}>
+                    <TableCell
+                      scope="row"
+                      className="bg-transparent text-xl font-bold text-secondary-foreground "
+                    >
+                      {coinName}&nbsp;
+                      <span className="text-muted-foreground">{coin}</span>
+                    </TableCell>
+                    <TableCell className="text-xl font-bold text-secondary-foreground">
+                      ${value}
+                    </TableCell>
+                    <TableCell
+                      className={`text-sm font-semibold ${isProfit ? " text-green-500" : " text-red-500"} `}
+                    >
+                      {change}
+                    </TableCell>
+                    <TableCell className="font-semibold text-secondary-foreground">
+                      ${totalValue}
+                    </TableCell>
+                    <TableCell className="flex justify-end">
+                      <Button color="info">Trade</Button>
+                    </TableCell>
+                  </TableRow>
+                ),
+              )}
             </TableBody>
           </Table>
         </div>

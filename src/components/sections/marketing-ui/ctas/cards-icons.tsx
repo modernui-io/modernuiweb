@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import { FigmaLogoIcon } from "@radix-ui/react-icons";
+import { ArrowRight, Earth } from "lucide-react";
+
 import * as MuiLayout from "~/components/layouts";
 // Components Import
 import { Heading } from "~/components/ui/custom/headings";
@@ -11,68 +14,7 @@ interface CardText {
   href: string;
 }
 
-const GlobSVG = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width="22"
-    height="30.1244"
-    fill="none"
-    stroke="#ba1c1c"
-    strokeWidth="1.75"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="mr-3 size-6"
-  >
-    <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-    <path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17" />
-    <path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
-    <circle cx="12" cy="12" r="10" />
-  </svg>
-);
-
-const FigmaLogoSVG = () => (
-  <svg
-    className="mr-3 size-5"
-    viewBox="0 0 22 31"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g clipPath="url(#clip0_4151_63004)">
-      <path
-        d="M5.50085 30.1242C8.53625 30.1242 10.9998 27.8749 10.9998 25.1035V20.0828H5.50085C2.46546 20.0828 0.00195312 22.332 0.00195312 25.1035C0.00195312 27.8749 2.46546 30.1242 5.50085 30.1242Z"
-        fill="#0ACF83"
-      />
-      <path
-        d="M0.00195312 15.062C0.00195312 12.2905 2.46546 10.0413 5.50085 10.0413H10.9998V20.0827H5.50085C2.46546 20.0827 0.00195312 17.8334 0.00195312 15.062Z"
-        fill="#A259FF"
-      />
-      <path
-        d="M0.00195312 5.02048C0.00195312 2.24904 2.46546 -0.000244141 5.50085 -0.000244141H10.9998V10.0412H5.50085C2.46546 10.0412 0.00195312 7.79193 0.00195312 5.02048Z"
-        fill="#F24E1E"
-      />
-      <path
-        d="M11 -0.000244141H16.4989C19.5343 -0.000244141 21.9978 2.24904 21.9978 5.02048C21.9978 7.79193 19.5343 10.0412 16.4989 10.0412H11V-0.000244141Z"
-        fill="#FF7262"
-      />
-      <path
-        d="M21.9978 15.062C21.9978 17.8334 19.5343 20.0827 16.4989 20.0827C13.4635 20.0827 11 17.8334 11 15.062C11 12.2905 13.4635 10.0413 16.4989 10.0413C19.5343 10.0413 21.9978 12.2905 21.9978 15.062Z"
-        fill="#1ABCFE"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_4151_63004">
-        <rect
-          width="22"
-          height="30.1244"
-          fill="white"
-          transform="translate(0 -0.000244141)"
-        />
-      </clipPath>
-    </defs>
-  </svg>
-);
-
+// This Logo is not available in Lucid/RadixUI
 const ThemesbergLogoSVG = () => (
   <svg
     className="mr-3 size-5"
@@ -129,6 +71,7 @@ const ThemesbergLogoSVG = () => (
   </svg>
 );
 
+// This Logo is not available in Lucid/RadixUI
 const TailwindCSSLogoSVG = () => (
   <svg
     className="mr-3 size-5"
@@ -156,14 +99,14 @@ const TailwindCSSLogoSVG = () => (
   </svg>
 );
 
-const CradText: CardText[] = [
+const CardText: CardText[] = [
   {
-    icon: <GlobSVG />,
+    icon: <Earth className="mr-3" />,
     title: "Explore ModernUI Web and take your marketplace to the next level.",
     href: "#",
   },
   {
-    icon: <FigmaLogoSVG />,
+    icon: <FigmaLogoIcon width={24} height={24} className="mr-3" />,
     title: " Get started with our Figma Design System",
     href: "#",
   },
@@ -199,26 +142,15 @@ export function CardCTAsWithIconsSection() {
           eliminate toil, and deploy changes with ease.
         </Text>
         <div className="grid gap-8 lg:grid-cols-2">
-          {CradText.map(({ title, href, icon }) => (
+          {CardText.map(({ title, href, icon }) => (
             <Link
               key={title}
               href={href}
               className="inline-flex items-center justify-center rounded-lg bg-muted p-5 text-base font-medium text-muted-foreground hover:bg-primary-200 hover:text-secondary-foreground  "
             >
               {icon}
-              <span className="w-full">{title}</span>
-              <svg
-                className="ml-3 size-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <span className=" w-full">{title}</span>
+              <ArrowRight />
             </Link>
           ))}
         </div>

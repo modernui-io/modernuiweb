@@ -139,7 +139,7 @@ export function SignUpFormWithCTAHero() {
                         <Input
                           id="email"
                           className="w-full"
-                          placeholder="name@flowbite.com"
+                          placeholder="name@modernUIWeb.com"
                           {...field}
                         />
                       </FormControl>

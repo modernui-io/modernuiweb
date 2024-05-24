@@ -211,7 +211,7 @@ export function InformationalCTAWithAppScreenshotHero() {
             &nbsp;for the 21st Century
           </Heading>
           <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-10 lg:text-xl">
-            Here at flowbite we focus on markets where technology, innovation,
+            Here at modernUIWeb we focus on markets where technology, innovation,
             and capital can unlock long-term value.
           </Text>
           <div className="mb-4 items-center justify-between space-y-4 rounded  bg-primary-200 p-4 sm:flex sm:space-y-0">

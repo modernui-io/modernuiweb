@@ -1,8 +1,8 @@
 import { ArrowRight, Bell, Calculator, Cloud, Settings } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
-import { Button } from "~/components/ui/button";
 //component imports
+import { Button } from "~/components/ui/button";
+import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 

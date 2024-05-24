@@ -7,7 +7,8 @@ import { ChevronRight, CodeXml, Lock } from "lucide-react";
 import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+//Image import
+import OfficeImage from "~/lib/assets/images/featureoffice1.png";
 
 interface ListData {
   icon: JSX.Element;
@@ -59,7 +60,7 @@ export function FeatureListImageCTA() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 lg:grid lg:grid-cols-2 lg:px-6 xl:gap-16">
         <Image
           alt=""
-          src={Placeholder}
+          src={OfficeImage}
           className="mb-4 w-full rounded-lg lg:mb-0"
         />
         <div className="text-muted-foreground sm:text-lg">

@@ -7,7 +7,7 @@ import { Loader2Icon } from "lucide-react";
 import { cn } from "~/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -23,6 +23,8 @@ const buttonVariants = cva(
           "bg-brand/5 text-brand-600 shadow-sm hover:bg-brand/10 hover:text-brand-700",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        getApp:
+          " text- border-0 bg-primary-700 hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-gray-300 text-background",
       },
       size: {
         default: "h-9 px-5 py-2",

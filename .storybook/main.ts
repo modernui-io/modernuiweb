@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "../src/components/ui/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/components/sections/**/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/components/ui/custom/stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/sections/marketing-ui/**/stories/**/*.stories.@(js|jsx|ts|tsx)",
     "./tokens/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [

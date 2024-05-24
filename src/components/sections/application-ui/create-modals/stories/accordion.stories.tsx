@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { CreateModalWithAccordion } from "~/components/sections/create-modals/accordion";
+import { CreateModalWithAccordion } from "~/components/sections/application-ui/create-modals/accordion";
 
 const meta = {
-  title: "sections/create-modals/accordion",
+  title: "sections/application-ui/create-modals/accordion",
   component: CreateModalWithAccordion,
   parameters: {
     layout: "centered",

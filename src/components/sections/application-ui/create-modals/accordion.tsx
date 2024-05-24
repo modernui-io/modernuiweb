@@ -2,7 +2,11 @@ import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { HiInformationCircle, HiPlus } from "react-icons/hi";
+import {
+  HiInformationCircle,
+  HiPlus,
+  HiQuestionMarkCircle,
+} from "react-icons/hi";
 import { z } from "zod";
 
 import {
@@ -13,6 +17,7 @@ import {
 } from "~/components/ui/accordion";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
+import { Text } from "~/components/ui/custom/text";
 import {
   Dialog,
   DialogClose,
@@ -107,19 +112,17 @@ export function CreateModalWithAccordion() {
       <DialogTrigger asChild>
         <Button>Create user</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-white p-5 shadow dark:bg-gray-800 md:min-w-[40rem]">
+      <DialogContent className="rounded-lg bg-white p-5 shadow md:min-w-[40rem]">
         <ScrollArea className="h-[40rem] overflow-hidden">
           <div className="flex items-center justify-between rounded-t p-5">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Add new user
-            </h3>
+            <h3 className="text-lg font-semibold">Add new user</h3>
           </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <Accordion type="single" collapsible defaultValue="general">
                 <AccordionItem value="general">
                   <AccordionTrigger>General Information</AccordionTrigger>
-                  <AccordionContent className="dark:bg-gray-800">
+                  <AccordionContent>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="sm:col-span-2">
                         <Label className="mb-2 block" htmlFor="file_input">
@@ -139,12 +142,12 @@ export function CreateModalWithAccordion() {
                               type="file"
                               {...form.register("file")}
                             />
-                            <p
+                            <Text
                               className="mb-3 mt-1 text-xs font-normal text-gray-500 dark:text-gray-300"
                               id="file_input_help"
                             >
                               SVG, PNG, JPG or GIF (MAX. 800x400px).
-                            </p>
+                            </Text>
                           </div>
                         </div>
                       </div>
@@ -192,37 +195,25 @@ export function CreateModalWithAccordion() {
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <button className="ml-1">
-                                  <svg
-                                    aria-hidden
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="size-4 text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
+                                  <HiQuestionMarkCircle className="size-4 text-gray-400" />
                                   <span className="sr-only">
                                     User permission details
                                   </span>
                                 </button>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>
+                                <Text>
                                   User permissions, part of the overall user
                                   management process, are access granted to
                                   users to specific resources such as files,
                                   applications, networks, or devices.
-                                </p>
+                                </Text>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
                         </Label>
                         <Select {...form.register("permissions")}>
-                          <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                          <SelectTrigger>
                             <SelectValue placeholder="Operational" />
                           </SelectTrigger>
                           <SelectContent>
@@ -270,13 +261,13 @@ export function CreateModalWithAccordion() {
                                 </button>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>Choose here your account type.</p>
+                                <Text>Choose here your account type.</Text>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
                         </Label>
                         <Select {...form.register("account")}>
-                          <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                          <SelectTrigger>
                             <SelectValue placeholder="Choose account type" />
                           </SelectTrigger>
                           <SelectContent>
@@ -302,18 +293,18 @@ export function CreateModalWithAccordion() {
                                 </button>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>
+                                <Text>
                                   Flowbite provides 7 predefined roles: Owner,
                                   Admin, Editor, Contributor and Viewer. Assign
                                   the most suitable role to each user, giving
                                   them the most appropriate level of control.
-                                </p>
+                                </Text>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
                         </Label>
                         <Select {...form.register("userRole")}>
-                          <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                          <SelectTrigger>
                             <SelectValue placeholder="Owner" />
                           </SelectTrigger>
                           <SelectContent>
@@ -348,17 +339,17 @@ export function CreateModalWithAccordion() {
                                 </button>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>
+                                <Text>
                                   As an administrator, you can view the status
                                   of a user's email. The status indicates
                                   whether a user's email is verified or not.
-                                </p>
+                                </Text>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
                         </Label>
                         <Select {...form.register("emailStatus")}>
-                          <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                          <SelectTrigger>
                             <SelectValue placeholder="Verified" />
                           </SelectTrigger>
                           <SelectContent>
@@ -589,19 +580,12 @@ export function CreateModalWithAccordion() {
                 </AccordionItem>
               </Accordion>
               <div className="flex items-center space-x-4 px-4 py-6">
-                <Button
-                  size="lg"
-                  type="submit"
-                  className="inline-flex w-full [&>span]:text-sm"
-                >
+                <Button type="submit" className="inline-flex w-full">
                   <HiPlus className="mr-2 size-4" />
                   Add new user
                 </Button>
                 <DialogClose asChild>
-                  <Button
-                    variant={"outline"}
-                    className="inline-flex w-full [&>span]:text-sm [&>span]:text-gray-500 hover:[&>span]:text-gray-900 [&>span]:dark:bg-gray-700 dark:[&>span]:enabled:hover:bg-gray-600"
-                  >
+                  <Button variant={"outline"} className="w-full">
                     Discard
                   </Button>
                 </DialogClose>

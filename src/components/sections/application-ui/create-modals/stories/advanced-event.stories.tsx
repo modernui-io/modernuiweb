@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { AdvancedCreateEventModal } from "~/components/sections/create-modals/advanced-event";
+import { AdvancedCreateEventModal } from "~/components/sections/application-ui/create-modals/advanced-event";
 
 const meta = {
-  title: "sections/create-modals/advanced-event",
+  title: "sections/application-ui/create-modals/advanced-event",
   component: AdvancedCreateEventModal,
   parameters: {
     layout: "centered",

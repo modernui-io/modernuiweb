@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { AdvancedCreateUserModal } from "~/components/sections/create-modals/advanced-user";
+import { AdvancedCreateUserModal } from "~/components/sections/application-ui/create-modals/advanced-user";
 
 const meta = {
-  title: "sections/create-modals/advanced-user",
+  title: "sections/application-ui/create-modals/advanced-user",
   component: AdvancedCreateUserModal,
   parameters: {
     layout: "centered",

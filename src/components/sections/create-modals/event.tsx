@@ -1,15 +1,16 @@
+import { useState } from "react";
+
 import {
   Avatar,
   Button,
   Datepicker,
   Label,
   Modal,
-  TextInput,
   Textarea,
+  TextInput,
   ToggleSwitch,
   Tooltip,
 } from "flowbite-react";
-import { useState } from "react";
 import {
   HiCalendar,
   HiCode,

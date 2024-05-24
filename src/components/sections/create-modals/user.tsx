@@ -1,5 +1,6 @@
-import { Button, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
+
+import { Button, Label, Modal, TextInput } from "flowbite-react";
 import { HiPlus, HiX } from "react-icons/hi";
 
 export function CreateUserModal() {

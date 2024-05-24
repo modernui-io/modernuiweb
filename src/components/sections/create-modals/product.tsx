@@ -1,13 +1,14 @@
+import { useState } from "react";
+
 import {
   Button,
   Checkbox,
   Label,
   Modal,
   Select,
-  TextInput,
   Textarea,
+  TextInput,
 } from "flowbite-react";
-import { useState } from "react";
 import { HiCalendar, HiCloudUpload, HiX } from "react-icons/hi";
 
 export function CreateProductModal() {

@@ -1,12 +1,13 @@
+import { useState } from "react";
+
 import {
   Button,
   Label,
   Modal,
   Select,
-  TextInput,
   Textarea,
+  TextInput,
 } from "flowbite-react";
-import { useState } from "react";
 import { HiPlus, HiX } from "react-icons/hi";
 
 export function DefaultCreateModal() {

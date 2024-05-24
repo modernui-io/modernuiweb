@@ -8,7 +8,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 //Image import
-import OfficeImage from "~/lib/assets/images/featureoffice1.png";
+import OfficeImage from "~/lib/assets/images/feature-office-1.png";
 
 interface ListData {
   icon: JSX.Element;

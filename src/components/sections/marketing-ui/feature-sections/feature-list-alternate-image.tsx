@@ -7,8 +7,8 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 //Image imports
-import FeatureOffice1 from "~/lib/assets/images/featureoffice1.png";
-import FeatureOffice2 from "~/lib/assets/images/featureoffice2.png";
+import FeatureOffice1 from "~/lib/assets/images/feature-office-1.png";
+import FeatureOffice2 from "~/lib/assets/images/feature-office-2.png";
 
 const FeatureList1: string[] = [
   "Continuous integration and deployment",

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { ArrowRight } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 //components
+import * as MuiLayout from "~/components/layouts";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import { AvatarGroup } from "~/components/ui/custom/avatar-group";

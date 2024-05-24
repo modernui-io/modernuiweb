@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { AppScreenshotWithCTAsHero } from "../cta-app-preview";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/cta-app-preview",
+  title: "sections/marketing-ui/hero-sections/CTA App Preview",
   component: AppScreenshotWithCTAsHero,
 } satisfies Meta<typeof AppScreenshotWithCTAsHero>;
 

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { ArrowRight, ChevronRight, Video } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 // Component Imports
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";

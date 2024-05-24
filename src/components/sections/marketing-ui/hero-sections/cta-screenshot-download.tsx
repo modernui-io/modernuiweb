@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { Download } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 //component
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";

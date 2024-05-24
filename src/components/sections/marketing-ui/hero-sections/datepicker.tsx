@@ -14,22 +14,14 @@ import { CalendarIcon, MapPin } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import * as MuiLayout from "~/components/layouts";
 // Component Imports
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Calendar } from "~/components/ui/calendar";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "~/components/ui/form";
+import { Form, FormControl, FormField, FormLabel } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -51,8 +43,6 @@ export function SearchBarDatepickerHeroSection() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       location: "",
-      checkIn: {} as Date,
-      checkOut: {} as Date,
       guest: 2,
     },
   });
@@ -122,12 +112,13 @@ export function SearchBarDatepickerHeroSection() {
                         variant={"outline"}
                         className="justify-start text-left font-normal text-primary-900"
                       >
-                        <CalendarIcon className="mr-2 size-4" />
-
                         {field.value ? (
                           format(field.value, "PPP")
                         ) : (
-                          <span>Check in</span>
+                          <>
+                            <CalendarIcon className="mr-2 size-4" />
+                            <span>Check in</span>
+                          </>
                         )}
                       </Button>
                     </PopoverTrigger>
@@ -152,11 +143,13 @@ export function SearchBarDatepickerHeroSection() {
                         variant={"outline"}
                         className="justify-start text-left font-normal text-foreground"
                       >
-                        <CalendarIcon className="mr-2 size-4" />
                         {field.value ? (
                           format(field.value, "PPP")
                         ) : (
-                          <span>Check out</span>
+                          <>
+                            <CalendarIcon className="mr-2 size-4" />
+                            <span>Check out</span>
+                          </>
                         )}
                       </Button>
                     </PopoverTrigger>

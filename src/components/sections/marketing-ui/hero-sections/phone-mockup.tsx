@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import * as MuiLayout from "~/components/layouts";
 // components
+import * as MuiLayout from "~/components/layouts";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { AvatarGroup } from "~/components/ui/custom/avatar-group";
 import { Heading } from "~/components/ui/custom/headings";

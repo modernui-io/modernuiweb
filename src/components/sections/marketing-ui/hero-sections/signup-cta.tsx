@@ -5,8 +5,8 @@ import { Video } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import * as MuiLayout from "~/components/layouts";
 // Component Imports
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Heading } from "~/components/ui/custom/headings";

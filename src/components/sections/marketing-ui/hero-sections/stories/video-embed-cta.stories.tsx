@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { VideoEmbedWithCTAHero } from "../video-embed-cta";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/video-embed-cta",
+  title: "sections/marketing-ui/hero-sections/Video Embed CTA",
   component: VideoEmbedWithCTAHero,
 } satisfies Meta<typeof VideoEmbedWithCTAHero>;
 

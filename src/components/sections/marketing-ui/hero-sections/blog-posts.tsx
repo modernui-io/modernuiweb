@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { ArrowRight, CodeXml, FileText, Mic } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 //components
+import * as MuiLayout from "~/components/layouts";
 import { Badge, type BadgeProps } from "~/components/ui/badge";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";

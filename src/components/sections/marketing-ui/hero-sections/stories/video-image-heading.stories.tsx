@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { VisualImageWithHeadingHero } from "../video-image-heading";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/video-image-heading",
+  title: "sections/marketing-ui/hero-sections/Video Image Heading",
   component: VisualImageWithHeadingHero,
 } satisfies Meta<typeof VisualImageWithHeadingHero>;
 

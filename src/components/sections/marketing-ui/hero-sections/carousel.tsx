@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { Video } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 //components
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import {
   Carousel,

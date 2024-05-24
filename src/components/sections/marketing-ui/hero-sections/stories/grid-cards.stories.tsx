@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { BackgroundImageCardsHero } from "../grid-cards";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/gift-cards",
+  title: "sections/marketing-ui/hero-sections/Grid Cards",
   component: BackgroundImageCardsHero,
 } satisfies Meta<typeof BackgroundImageCardsHero>;
 

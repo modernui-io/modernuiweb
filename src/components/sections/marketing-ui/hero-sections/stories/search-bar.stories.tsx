@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { HeroSectionWithSearchBar } from "../search-bar";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/search-bar",
+  title: "sections/marketing-ui/hero-sections/Search Bar",
   component: HeroSectionWithSearchBar,
 } satisfies Meta<typeof HeroSectionWithSearchBar>;
 

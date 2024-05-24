@@ -1,7 +1,7 @@
 import { Bitcoin, Euro } from "lucide-react";
 
-import * as MuiLayout from "~/components/layouts";
 //components
+import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DefaultHero } from "../default";
 
 const meta = {
-  title: "sections/marketing-ui/hero-sections/default-hero",
+  title: "sections/marketing-ui/hero-sections/Default Hero",
   component: DefaultHero,
 } satisfies Meta<typeof DefaultHero>;
 

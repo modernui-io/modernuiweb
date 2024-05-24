@@ -10,7 +10,10 @@ import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 // Image Import
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Tab1 from "~/lib/assets/images/cta-tabs-1.png";
+import Tab2 from "~/lib/assets/images/cta-tabs-2.png";
+import MockupDark from "~/lib/assets/images/mockup-2-dark.png";
+import Mockup from "~/lib/assets/images/mockup-2-light.png";
 
 const iosKeyPoints = [
   "Continuous integration and deployment",
@@ -193,12 +196,12 @@ export function CTASectionWithTabsAndMobileApp() {
               <div className="absolute right-[-17px] top-[142px] h-[64px] w-[3px] rounded-r-lg bg-gray-800"></div>
               <div className="h-[572px] w-[272px] overflow-hidden rounded-[2.5rem] bg-muted">
                 <Image
-                  src={Placeholder}
+                  src={Mockup}
                   className="h-[572px] w-[272px] dark:hidden"
-                  alt=""
+                  alt="Tab 1"
                 />
                 <Image
-                  src={Placeholder}
+                  src={MockupDark}
                   className="hidden h-[572px] w-[272px] dark:block"
                   alt=""
                 />
@@ -210,12 +213,12 @@ export function CTASectionWithTabsAndMobileApp() {
           <div className="hidden lg:block">
             <Image
               className="w-full object-cover dark:hidden"
-              src={Placeholder}
+              src={Tab1}
               alt="Feature illustration"
             />
             <Image
               className="hidden w-full object-cover dark:block"
-              src={Placeholder}
+              src={Tab2}
               alt="Feature illustration"
             />
           </div>

@@ -6,7 +6,7 @@ import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 // Image Import
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Iphone from "~/lib/assets/images/iphone-mockup.png";
 
 // Apple Icon is not available in Lucid/RadixUI
 const AppleIcon = () => (
@@ -81,7 +81,7 @@ export function MobileAppDownloadCTASection() {
         </div>
         <Image
           alt="mobile app"
-          src={Placeholder}
+          src={Iphone}
           className="mx-auto hidden w-64 md:flex"
         />
       </MuiLayout.Container>

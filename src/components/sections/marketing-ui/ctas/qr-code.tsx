@@ -5,7 +5,8 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 // Image Import
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import QRcodeDark from "~/lib/assets/images/qr-code-dark.png";
+import QRcode from "~/lib/assets/images/qr-code.png";
 
 export function QRCodeCTASection() {
   return (
@@ -19,14 +20,10 @@ export function QRCodeCTASection() {
             Compatible with multiple devices, start trading with safety and
             convenience.
           </Text>
+          <Image alt="" src={QRcode} className="mx-auto w-56 dark:hidden" />
           <Image
             alt=""
-            src={Placeholder}
-            className="mx-auto w-56 dark:hidden"
-          />
-          <Image
-            alt=""
-            src={Placeholder}
+            src={QRcodeDark}
             className="mx-auto hidden w-56 dark:block"
           />
         </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
 import { ArrowRight, Share2 } from "lucide-react";
@@ -18,7 +18,8 @@ import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 import { Progress } from "~/components/ui/progress";
 // Image Import
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Fundraising1 from "~/lib/assets/images/fundraising-1.png";
+import Fundraising2 from "~/lib/assets/images/fundraising-2.png";
 
 interface CardDetail {
   achievedAmount: string;
@@ -26,11 +27,13 @@ interface CardDetail {
   donar: string;
   title: string;
   description: string;
+  image: StaticImageData;
 }
 
 const CardDetail: CardDetail[] = [
   {
     achievedAmount: "376,856",
+    image: Fundraising1,
     target: "400K",
     donar: "2,756",
     title: "Thank you for supporting in planting trees work.",
@@ -39,6 +42,7 @@ const CardDetail: CardDetail[] = [
   },
   {
     achievedAmount: "75,856",
+    image: Fundraising2,
     target: "150K",
     donar: "568",
     title: "Thank you for supporting lifesaving work.",
@@ -65,12 +69,12 @@ export function TwoCardsAndImagesCTASection() {
         </div>
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:gap-12">
           {CardDetail.map(
-            ({ achievedAmount, target, description, donar, title }) => (
+            ({ achievedAmount, target, description, donar, title, image }) => (
               <Card key={title}>
                 <CardHeader>
                   <Image
                     alt=""
-                    src={Placeholder}
+                    src={image}
                     className="w-full rounded-lg object-cover shadow-lg"
                   />
                   <div className="flex items-center justify-between gap-6">

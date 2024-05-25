@@ -43,7 +43,7 @@ import {
 } from "~/components/ui/tooltip";
 
 export function DoubleDashboardNavbarWithProjectDropdown() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
 
   return (
     <header className="bg-background antialiased">

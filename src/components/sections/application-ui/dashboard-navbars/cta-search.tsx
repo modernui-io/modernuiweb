@@ -13,7 +13,7 @@ import {
 import { Input } from "~/components/ui/input";
 
 export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
 
   return (
     <header className="flex flex-col bg-background antialiased">

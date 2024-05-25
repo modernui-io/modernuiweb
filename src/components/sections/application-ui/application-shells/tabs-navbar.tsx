@@ -13,9 +13,8 @@ import {
   HiInboxIn,
   HiLightningBolt,
   HiLogout,
-  HiMenu,
+  HiMenuAlt2,
   HiOutlineChatAlt,
-  HiPlus,
   HiSearch,
   HiShoppingBag,
   HiUserAdd,
@@ -35,70 +34,64 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
 
-export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
+export function TabsNavbarApplicationShell() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
-    <header className="flex flex-col bg-background antialiased">
-      <nav className="order-1 border-b border-gray-200 px-4 py-2.5 lg:px-6">
-        <div className="order-1 px-4 py-2.5 lg:px-6">
-          <div className="flex items-center justify-between">
-            <div className="flex shrink-0 items-center justify-start">
-              <a href="#" className="mr-6 flex">
-                {/* TODO: Put ModernUI Logo */}
+    <>
+      <header className="fixed top-0 z-50 w-full bg-background">
+        <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+          <div className="flex w-full flex-wrap items-center justify-between">
+            <div className="flex items-center justify-start">
+              <button
+                onClick={toggleSidebar}
+                className="mr-2 cursor-pointer rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
+              >
+                <HiMenuAlt2 className="size-5" />
+                <span className="sr-only">Toggle sidebar</span>
+              </button>
+              <a href="https://flowbite.com" className="mr-4 flex">
                 <img
                   src="https://flowbite.s3.amazonaws.com/logo.svg"
                   className="mr-3 h-8"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                  ModernUI
+                  Flowbite
                 </span>
               </a>
-            </div>
-            <ul className="mt-0 hidden w-full flex-col justify-center text-sm font-medium text-gray-500 dark:text-gray-400 lg:flex lg:flex-row">
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Clients
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Marketing
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-            <div className="ml-4 flex shrink-0 items-center justify-between lg:order-2">
-              <Button className="mr-3 hidden lg:inline">
-                <div className="flex items-center gap-2">
-                  <HiPlus className="-ml-1 mr-1 size-4" />
-                  Upgrade
+              <form action="#" method="GET" className="hidden lg:block lg:pl-2">
+                <Label htmlFor="topbar-search" className="sr-only">
+                  Search
+                </Label>
+                <div className="relative mt-1 lg:w-96">
+                  <div className="relative flex items-center">
+                    <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
+                    <Input
+                      id="simple-search"
+                      name="simple-search"
+                      placeholder="Search"
+                      required
+                      type="search"
+                      className="pl-9"
+                    />
+                  </div>
                 </div>
-              </Button>
-
+              </form>
+            </div>
+            <div className="flex items-center gap-x-2 lg:order-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
@@ -398,98 +391,100 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                   </ul>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button
-                id="toggleMobileMenuButton"
-                className="lg:hidden"
-                variant={"ghost"}
-                data-collapse-toggle="toggleMobileMenu"
-                onClick={() => setIsNavVisible(!isNavVisible)}
-              >
-                <span className="sr-only">Open menu</span>
-                <HiMenu className="size-6" />
-              </Button>
             </div>
           </div>
-        </div>
-        {isNavVisible && (
-          <div className="order-3 border-t px-4 py-2.5 shadow-sm lg:order-2 lg:px-6">
-            <div className="flex w-full flex-col items-center justify-between lg:flex-row">
-              <ul className="order-2 mt-0 flex w-full flex-col rounded-lg border border-gray-200 bg-gray-50 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 lg:order-1 lg:flex-row lg:rounded-none lg:border-0 lg:bg-white dark:lg:bg-gray-900">
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-primary-600 hover:bg-gray-50 hover:text-primary-700 focus:ring-4 focus:ring-gray-200 dark:text-primary-500 dark:hover:bg-gray-800 dark:focus:ring-gray-700"
-                    aria-current="page"
-                  >
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Sales
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Team
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Workspaces
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Tasks
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Analytics
-                  </a>
-                </li>
-              </ul>
-              <form className="order-1 mb-4 flex w-full items-center justify-end lg:order-2 lg:mb-0 lg:ml-4 lg:max-w-sm">
-                <Label htmlFor="simple-search" className="sr-only">
-                  Search
-                </Label>
-                <div className="relative flex items-center">
-                  <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
-                  <Input
-                    id="search"
-                    name="search"
-                    placeholder="Find anything"
-                    required
-                    type="search"
-                    className="w-full pl-9 lg:w-fit"
-                  />
-                </div>
+        </nav>
 
-                <Button type="submit" className="ml-3 [&>span]:py-3">
-                  <HiSearch className="size-5" />
-                  <span className="sr-only">Search</span>
-                </Button>
-              </form>
-            </div>
+        <nav className="bg-gray-50 p-3 shadow-sm dark:bg-gray-800 lg:hidden">
+          <Select name="navigation">
+            <SelectTrigger>
+              <SelectValue placeholder="My account" />
+            </SelectTrigger>
+            <SelectContent>
+              {[
+                { value: "company", label: "Company" },
+                { value: "downloads", label: "Downloads" },
+                { value: "earnings", label: "Earnings" },
+                { value: "billing", label: "Billing" },
+                { value: "help", label: "Help & Support" },
+              ].map((item, index) => (
+                <SelectItem key={index} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </nav>
+      </header>
+
+      <div className="hidden items-center justify-center bg-gray-50 py-5 pt-20 dark:bg-gray-900 lg:flex">
+        <nav
+          id="toggleMobileMenu"
+          className="mx-auto block border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+        >
+          <div className="flex items-center">
+            <ul className="mt-0 flex w-full flex-col text-sm font-medium lg:flex-row">
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                >
+                  My account
+                </a>
+              </li>
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block border-b-2 border-primary-600 px-4 py-3 text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500"
+                  aria-current="page"
+                >
+                  Company
+                </a>
+              </li>
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                >
+                  Downloads
+                </a>
+              </li>
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                >
+                  Earnings
+                </a>
+              </li>
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                >
+                  Billing
+                </a>
+              </li>
+              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
+                <a
+                  href="#"
+                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                >
+                  Help & Support
+                </a>
+              </li>
+            </ul>
           </div>
-        )}
-      </nav>
-    </header>
+        </nav>
+      </div>
+
+      <main className="flex-1 space-y-4 bg-background p-4 pt-32 lg:pt-4">
+        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+      </main>
+    </>
   );
 }

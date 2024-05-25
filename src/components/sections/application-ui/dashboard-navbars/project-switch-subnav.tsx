@@ -37,7 +37,7 @@ import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
 export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
 
   return (
     <header className="bg-background antialiased">

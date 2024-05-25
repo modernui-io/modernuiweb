@@ -11,13 +11,15 @@ import {
   HiHeart,
   HiInbox,
   HiInboxIn,
+  HiInformationCircle,
   HiLightningBolt,
   HiLogout,
+  HiMail,
   HiMenu,
-  HiOutlineAdjustments,
   HiOutlineChatAlt,
-  HiPlus,
+  HiPlusCircle,
   HiSearch,
+  HiSelector,
   HiShoppingBag,
   HiUserAdd,
   HiUserCircle,
@@ -25,11 +27,9 @@ import {
   HiVideoCamera,
   HiViewGrid,
 } from "react-icons/hi";
-import { twMerge } from "tailwind-merge";
 
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
-import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,52 +40,49 @@ import {
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
-export function DoubleDashboardNavbarWithSearchInput() {
+export function StackedMultipleApplicationShell() {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
 
   return (
-    <header className="bg-background">
-      <nav className="border-gray-200 px-0 py-2.5 antialiased dark:bg-gray-900">
-        <div className="flex w-full flex-wrap items-center justify-between">
-          <div className="flex w-full items-center justify-start px-4 lg:px-6">
-            <a href="https://flowbite.com" className="mr-6 flex xl:mr-8">
-              <img
-                src="https://flowbite.s3.amazonaws.com/logo.svg"
-                className="mr-3 h-8"
-                alt=""
-              />
-              <span className="self-center whitespace-nowrap text-2xl font-semibold">
-                Flowbite
-              </span>
-            </a>
-            <div className="w-full items-center justify-between lg:order-1 lg:ml-6 lg:flex">
-              <nav className="hidden lg:block">
-                <ul className="flex gap-x-7">
-                  <a
-                    href="#"
-                    aria-current="page"
-                    className="text-blue-600 dark:text-blue-500"
-                  >
-                    Home
-                  </a>
-                  <a href="#">Company</a>
-                  <a href="#">Marketplace</a>
-                  <a href="#">Features</a>
-                  <a>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Text>Dropdown</Text>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent>
-                        <DropdownMenuItem>Dashboard</DropdownMenuItem>
-                        <DropdownMenuItem>Earnings</DropdownMenuItem>
-                        <DropdownMenuItem>Support</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </a>
-                </ul>
-              </nav>
-              <div className="flex items-center justify-end lg:order-2 lg:justify-between">
+    <>
+      <header className="fixed top-0 z-20 w-full bg-background antialiased">
+        <nav>
+          <div className="border-gray-200 px-4 py-2.5 lg:px-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center justify-start">
+                <a href="https://modernui.com" className="mr-6 flex">
+                  <img
+                    src="https://flowbite.s3.amazonaws.com/logo.svg"
+                    className="mr-3 h-8"
+                    alt=""
+                  />
+                  <span className="self-center whitespace-nowrap text-2xl font-semibold">
+                    ModernUI
+                  </span>
+                </a>
+                <form
+                  action="#"
+                  method="GET"
+                  className="hidden lg:block lg:pl-2"
+                >
+                  <Label htmlFor="topbar-search" className="sr-only">
+                    Search
+                  </Label>
+                  <div className="relative mt-1 lg:w-96">
+                    <div className="relative flex items-center">
+                      <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
+                      <Input
+                        id="topbar-search"
+                        name="topbar-search"
+                        placeholder="Jump to Favorites, Apps, Pipelines..."
+                        type="search"
+                        className="pl-9"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div className="flex items-center justify-between lg:order-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -244,7 +241,8 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     </a>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
+                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
+
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -328,84 +326,12 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     </div>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>modernui.com</Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-4"
-                              name="helper-checkbox"
-                            />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-checkbox-4"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>themesberg.com</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
-                                Free templates and themes
-                              </p>
-                            </Label>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-5"
-                              name="helper-checkbox"
-                            />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-checkbox-5"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>iconscale.com</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
-                                Open-source SVG icons
-                              </p>
-                            </Label>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-6"
-                              name="helper-checkbox"
-                            />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-checkbox-6"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>ui.glass</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
-                                Glassmorphism UI framework
-                              </p>
-                            </Label>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <span className="ml-2 mr-4 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
+
+                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
+
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      {" "}
                       <>
                         <span className="sr-only">Open user menu</span>
                         <img
@@ -425,107 +351,29 @@ export function DoubleDashboardNavbarWithSearchInput() {
                         name@flowbite.com
                       </span>
                     </div>
-                    <ul
-                      className="py-1  text-gray-500 dark:text-gray-400"
-                      aria-labelledby="userMenuDropdownButton"
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          My profile
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Account settings
-                        </a>
-                      </li>
-                    </ul>
-                    <ul
-                      className="py-1 text-gray-500 dark:text-gray-400"
-                      aria-labelledby="userMenuDropdownButton"
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          <svg
-                            className="mr-2 size-4 text-gray-400"
-                            aria-hidden
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 18"
-                          >
-                            <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
-                          </svg>
-                          My likes
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          <svg
-                            className="mr-2 size-4 text-gray-400"
-                            aria-hidden
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            {" "}
-                            <path d="m1.56 6.245 8 3.924a1 1 0 0 0 .88 0l8-3.924a1 1 0 0 0 0-1.8l-8-3.925a1 1 0 0 0-.88 0l-8 3.925a1 1 0 0 0 0 1.8Z" />{" "}
-                            <path d="M18 8.376a1 1 0 0 0-1 1v.163l-7 3.434-7-3.434v-.163a1 1 0 0 0-2 0v.786a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.786a1 1 0 0 0-1-1Z" />{" "}
-                            <path d="M17.993 13.191a1 1 0 0 0-1 1v.163l-7 3.435-7-3.435v-.163a1 1 0 1 0-2 0v.787a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.787a1 1 0 0 0-1-1Z" />{" "}
-                          </svg>
-                          Collections
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          <span className="flex items-center">
-                            <svg
-                              className="mr-2 size-4 text-primary-600 dark:text-primary-500"
-                              aria-hidden
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="m7.164 3.805-4.475.38L.327 6.546a1.114 1.114 0 0 0 .63 1.89l3.2.375 3.007-5.006ZM11.092 15.9l.472 3.14a1.114 1.114 0 0 0 1.89.63l2.36-2.362.38-4.475-5.102 3.067Zm8.617-14.283A1.613 1.613 0 0 0 18.383.291c-1.913-.33-5.811-.736-7.556 1.01-1.98 1.98-6.172 9.491-7.477 11.869a1.1 1.1 0 0 0 .193 1.316l.986.985.985.986a1.1 1.1 0 0 0 1.316.193c2.378-1.3 9.889-5.5 11.869-7.477 1.746-1.745 1.34-5.643 1.01-7.556Zm-3.873 6.268a2.63 2.63 0 1 1-3.72-3.72 2.63 2.63 0 0 1 3.72 3.72Z" />
-                            </svg>
-                            Pro version
-                          </span>
-                          <svg
-                            className="size-2.5 text-gray-400"
-                            aria-hidden
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                    <ul
-                      className="py-1  text-gray-500 dark:text-gray-400"
-                      aria-labelledby="dropdown"
-                    >
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>My profile</DropdownMenuItem>
+                    <DropdownMenuItem>Account settings</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <HiHeart className="mr-2 size-4 text-gray-400" />
+                      My links
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HiCollection className="mr-2 size-4 text-gray-400" />
+                      Collections
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <div className="flex w-full items-center justify-between">
+                        <span className="flex items-center">
+                          <HiLightningBolt className="mr-2 size-4 text-primary-600 dark:text-primary-500" />
+                          Pro version
+                        </span>
+                        <HiChevronRight className="size-4 text-gray-400" />
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <ul className="py-1 text-gray-500 dark:text-gray-400">
                       <li>
                         <a
                           href="#"
@@ -546,90 +394,87 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 >
                   <span className="sr-only">Open menu</span>
                   <HiMenu className="size-6" />
-                </Button>{" "}
+                </Button>
               </div>
             </div>
           </div>
-          <div className="mt-4 w-full dark:bg-gray-900">
-            <form className="w-full px-4 lg:max-w-xl lg:px-6">
-              <div className="flex">
-                <Label
-                  htmlFor="search-dropdown"
-                  className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Your Email
-                </Label>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>http + https</Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuContent></DropdownMenuContent>
-                    <DropdownMenuItem>https only</DropdownMenuItem>
-                    <DropdownMenuItem>http</DropdownMenuItem>
-                    <DropdownMenuItem>http + https</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <div className="relative flex w-full">
-                  <Input
-                    id="search-dropdown"
-                    placeholder="Domain or URL"
-                    required
-                    type="search"
-                    className="w-full [&_input]:rounded-r-none [&_input]:lg:rounded-l-none"
-                  />
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button className="rounded-none">
-                        <>
-                          <span className="hidden lg:inline">Subdomains</span>
-                          <HiOutlineAdjustments className="size-4 lg:hidden" />
-                        </>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuItem>Subfolders</DropdownMenuItem>
-                      <DropdownMenuItem>Subdomains</DropdownMenuItem>
-                      <DropdownMenuItem>Full domain</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <Button className="rounded-l-none" type="submit">
-                    <HiSearch className="size-5" />
-                    <span className="sr-only">Search</span>
-                  </Button>
-                </div>
-              </div>
-            </form>
-            <div className="lg:mt-4 lg:hidden">
-              <a className="px-4">
+          <nav className="bg-gray-50 dark:bg-gray-800">
+            <div className="flex flex-wrap items-center justify-between p-4 sm:pb-3 lg:px-6">
+              <div className="mb-4 flex items-center sm:mb-0">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
                       <>
-                        Website&nbsp;
-                        <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
-                          flowbite.com
-                        </span>
+                        <span className="sr-only">Open user menu</span>
+                        <div className="mr-2 flex items-center">
+                          <img
+                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                            className="mr-2 size-7 rounded-full"
+                            alt=""
+                          />
+                          <div className="text-left">
+                            <div className="text-sm font-semibold leading-none text-gray-900 dark:text-white">
+                              Personal
+                            </div>
+                          </div>
+                        </div>
+                        <HiSelector className="size-3 text-gray-500 dark:text-gray-400" />
                       </>
                     </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <a
+                      href="#"
+                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
+                      <div className="text-left">
+                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                          Company
+                        </div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">
+                          Created August, 2014
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
+                      <div className="text-left">
+                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                          Personal
+                        </div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">
+                          Created September, 2018
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+                <HiChevronRight className="mx-4 size-3 text-gray-500 dark:text-gray-400" />
+
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant={"ghost"}>modernui.com</Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
                       <li>
                         <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                           <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-4"
-                              name="helper-checkbox"
-                            />
+                            <Checkbox id="helper-radio-4" name="helper-radio" />
                           </div>
                           <div className="ml-2 text-sm">
                             <Label
-                              htmlFor="helper-checkbox-4"
+                              htmlFor="helper-radio-4"
                               className="font-medium text-gray-900 dark:text-gray-300"
                             >
                               <div>themesberg.com</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
+                              <p
+                                id="helper-radio-text-4"
+                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                              >
                                 Free templates and themes
                               </p>
                             </Label>
@@ -639,18 +484,18 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       <li>
                         <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                           <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-5"
-                              name="helper-checkbox"
-                            />
+                            <Checkbox id="helper-radio-5" name="helper-radio" />
                           </div>
                           <div className="ml-2 text-sm">
                             <Label
-                              htmlFor="helper-checkbox-5"
+                              htmlFor="helper-radio-5"
                               className="font-medium text-gray-900 dark:text-gray-300"
                             >
                               <div>iconscale.com</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
+                              <p
+                                id="helper-radio-text-5"
+                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                              >
                                 Open-source SVG icons
                               </p>
                             </Label>
@@ -660,18 +505,18 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       <li>
                         <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                           <div className="flex h-5 items-center">
-                            <Checkbox
-                              id="helper-checkbox-6"
-                              name="helper-checkbox"
-                            />
+                            <Checkbox id="helper-radio-6" name="helper-radio" />
                           </div>
                           <div className="ml-2 text-sm">
                             <Label
-                              htmlFor="helper-checkbox-6"
+                              htmlFor="helper-radio-6"
                               className="font-medium text-gray-900 dark:text-gray-300"
                             >
                               <div>ui.glass</div>
-                              <p className="text-xs font-normal text-gray-500 dark:text-gray-300">
+                              <p
+                                id="helper-radio-text-6"
+                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                              >
                                 Glassmorphism UI framework
                               </p>
                             </Label>
@@ -681,35 +526,128 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     </ul>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
-                Home
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
-                Company
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
-                Marketplace
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
-                Features
-              </a>
-              <a className="px-4">
+              </div>
+              <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:items-center">
+                <Button className="whitespace-nowrap [&>span]:text-xs">
+                  Open app
+                </Button>
+
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>Dropdown</Button>
+                    <Button variant={"ghost"}>
+                      <>
+                        <span>More&nbsp;</span>
+                        <HiSelector className="ml-1.5 size-2.5" />
+                      </>
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem>Dashboard</DropdownMenuItem>
-                    <DropdownMenuItem>Earnings</DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                      Create new app
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                      Inbox
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                      App info
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <HiInboxIn className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                      Edit app
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+          </nav>
+          {isNavVisible && (
+            <div>
+              <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
+                <a
+                  aria-current="page"
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+                >
+                  <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
+                    Home
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Company
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Team
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Features
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Marketplace
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Resources
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Forum
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                >
+                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    Support
+                  </span>
+                </a>
+              </div>
+            </div>
+          )}
+        </nav>
+      </header>
+      <main className="grid flex-1 grid-cols-1 gap-5 p-4 pt-48 dark:bg-gray-900 md:grid-cols-2">
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+      </main>
+    </>
   );
 }

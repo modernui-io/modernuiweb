@@ -32,7 +32,7 @@ export default function StepperOrientation() {
       >
         <Label
           htmlFor="horizontal"
-          className="hover:bg-gray-3 flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 [&:has([data-state=checked])]:border-primary"
+          className="flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 hover:bg-gray-300 [&:has([data-state=checked])]:border-primary"
         >
           <RadioGroupItem
             value="horizontal"
@@ -43,7 +43,7 @@ export default function StepperOrientation() {
         </Label>
         <Label
           htmlFor="vertical"
-          className="hover:bg-gray-3 flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 [&:has([data-state=checked])]:border-primary"
+          className="flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 hover:bg-gray-300 [&:has([data-state=checked])]:border-primary"
         >
           <RadioGroupItem value="vertical" id="vertical" className="sr-only" />
           <h2 className="font-medium">Vertical</h2>

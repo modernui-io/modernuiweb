@@ -42,11 +42,11 @@ const Hero = () => {
         </div>
 
         {/* Images */}
-        <div className="fit absolute bottom-0 right-0 flex items-end justify-end gap-2">
+        <div className="absolute bottom-0 right-0 flex w-fit items-end justify-end gap-2">
           {/* Image 1 */}
           <div className="hidden h-72 w-96 md:block">
             <Image
-              className="h-full w-full rounded-tl-3xl object-cover"
+              className="size-full rounded-tl-3xl object-cover"
               src={Placeholder}
               alt="placeholder"
             ></Image>
@@ -54,7 +54,7 @@ const Hero = () => {
           {/* Image 2 */}
           <div className="h-[420px] w-fit md:w-96">
             <Image
-              className="h-full w-full rounded-tl-3xl object-cover"
+              className="size-full rounded-tl-3xl object-cover"
               src={Placeholder}
               alt="placeholder"
             ></Image>
@@ -62,7 +62,7 @@ const Hero = () => {
         </div>
 
         {/* Circle CTA */}
-        <div className="absolute bottom-2 right-2 flex h-12 w-12 items-center justify-center rounded-full border bg-secondary p-12 text-center font-medium leading-4 transition-all hover:opacity-80">
+        <div className="absolute bottom-2 right-2 flex size-12 items-center justify-center rounded-full border bg-secondary p-12 text-center font-medium leading-4 transition-all hover:opacity-80">
           <Link className="-mt-1" href="#">
             Get Started
           </Link>

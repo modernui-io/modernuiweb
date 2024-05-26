@@ -1,7 +1,7 @@
 import React from "react";
 
 import { IconJarLogoIcon } from "@radix-ui/react-icons";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
@@ -101,7 +101,7 @@ export const Default: Story = {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
                     <IconJarLogoIcon></IconJarLogoIcon>
@@ -154,9 +154,9 @@ export const Default: Story = {
             height="24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="absolute ml-2 mr-4 w-10 flex-none text-slate-300 dark:text-slate-400"
             aria-hidden="true"
           >

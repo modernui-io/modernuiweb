@@ -17,7 +17,7 @@ export const TableSkeleton = () => {
       <div className="flex items-center justify-between bg-muted px-5 py-3">
         {commonNodes}
       </div>
-      <div className="datas">
+      <div className="">
         {[...Array(10)].map((_, index) => (
           <div
             key={index}

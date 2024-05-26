@@ -3,7 +3,7 @@ import mergeWith from "lodash/mergeWith";
 
 import { tw } from "~/lib/utils";
 
-import { RichTextEditorContext } from "./rte-context";
+import type { RichTextEditorContext } from "./rte-context";
 
 export const defaultClassNames: RichTextEditorContext["classNames"] = {
   root: tw`rte-root`,

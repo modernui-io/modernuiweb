@@ -98,7 +98,7 @@ export const WithIcon: Story = {
   },
   render: (args) => (
     <Button {...args}>
-      <Mail className="mr-2 h-4 w-4" /> Login with Email
+      <Mail className="mr-2 size-4" /> Login with Email
     </Button>
   ),
 };
@@ -114,7 +114,7 @@ export const Loading: Story = {
   },
   render: (args) => (
     <Button disabled {...args}>
-      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      <Loader2 className="mr-2 size-4 animate-spin" />
       Please wait
     </Button>
   ),

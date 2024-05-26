@@ -40,7 +40,9 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     ".storybook/*.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "eslint-local-rules.js",
+    "eslint-plugin-custom-rules/index.js"
   ],
   "exclude": ["dist", "es", "lib", "build", "node_modules"]
 }

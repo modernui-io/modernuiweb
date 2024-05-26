@@ -34,9 +34,9 @@ export function ResponsiveTooltip({
         >
           {children}
         </Drawer.Trigger>
-        <Drawer.Overlay className="fixed inset-0 z-40 bg-secondary bg-opacity-10 backdrop-blur" />
+        <Drawer.Overlay className="fixed inset-0 z-40 bg-secondary/10 backdrop-blur" />
         <Drawer.Portal>
-          <Drawer.Content className="fixed bottom-0 left-0 right-0 z-50 mt-24 rounded-xl border-t bg-background">
+          <Drawer.Content className="fixed inset-x-0 bottom-0 z-50 mt-24 rounded-xl border-t bg-background">
             <div className="sticky top-0 z-20 flex w-full items-center justify-center rounded-xl bg-inherit">
               <div className="my-3 h-1 w-12 rounded-full bg-secondary" />
             </div>
@@ -94,7 +94,7 @@ export function ResponsiveInfoTooltip({
 }) {
   return (
     <ResponsiveTooltip content={content}>
-      <Info className="h-4 w-4 text-muted-foreground" />
+      <Info className="size-4 text-muted-foreground" />
     </ResponsiveTooltip>
   );
 }

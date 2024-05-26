@@ -29,7 +29,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="mx-auto grid h-full w-full max-w-7xl grid-cols-1  gap-4 p-10 md:grid-cols-3 ">
+    <div className="mx-auto grid size-full max-w-7xl grid-cols-1 gap-4  p-10 md:grid-cols-3 ">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -81,7 +81,7 @@ const BlurImage = ({ card }: { card: Card }) => {
 
 const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
-    <div className="relative top-[690px] z-[60] flex h-full w-full flex-col justify-end rounded-lg bg-red-200 shadow-2xl">
+    <div className="relative top-[690px] z-[60] flex size-full flex-col justify-end rounded-lg bg-red-200 shadow-2xl">
       <motion.div
         initial={{
           opacity: 0,
@@ -89,7 +89,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         animate={{
           opacity: 0.6,
         }}
-        className="absolute inset-0 z-10 h-full w-full bg-black opacity-60"
+        className="absolute inset-0 z-10 size-full bg-black opacity-60"
       />
       <motion.div
         initial={{

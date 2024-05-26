@@ -22,6 +22,7 @@ const meta: Meta<typeof BentoGrid> = {
         Icon={ActivityLogIcon}
         description="Description 1"
         href="/"
+        key={1}
       />,
       <BentoCard
         name="Card 2"
@@ -29,6 +30,7 @@ const meta: Meta<typeof BentoGrid> = {
         Icon={ArchiveIcon}
         description="Description 2"
         href="/"
+        key={2}
       />,
       <BentoCard
         name="Card 3"
@@ -36,6 +38,7 @@ const meta: Meta<typeof BentoGrid> = {
         Icon={BookmarkIcon}
         description="Description 3"
         href="/"
+        key={3}
       />,
     ],
   },

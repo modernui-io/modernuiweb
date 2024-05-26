@@ -15,6 +15,7 @@ const Feature = () => {
           <Image
             src={Placeholder}
             alt="placeholder"
+            // eslint-disable-next-line tailwindcss/no-custom-classname
             className="fill object-cover"
           />
         </div>

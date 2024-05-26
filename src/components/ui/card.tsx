@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import * as LabelPrimitive from "@radix-ui/react-label";
+import type * as LabelPrimitive from "@radix-ui/react-label";
 
 import { cn } from "~/lib/utils";
 
@@ -23,6 +23,7 @@ const CardWithLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => (
+  // eslint-disable-next-line jsx-a11y/label-has-associated-control
   <label
     ref={ref}
     className={cn(

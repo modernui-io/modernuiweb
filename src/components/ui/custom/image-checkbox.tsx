@@ -37,7 +37,7 @@ export const ImageCheckbox = React.forwardRef<
     const checkboxId = id ?? defaultId;
 
     return (
-      <div className="flex h-full w-full">
+      <div className="flex size-full">
         <input
           ref={ref}
           type={type}
@@ -64,7 +64,7 @@ export const ImageCheckbox = React.forwardRef<
           )}
         >
           {image && (
-            <div className="h-8 w-8 p-1">
+            <div className="size-8 p-1">
               <Image
                 src={image}
                 alt={label}
@@ -74,7 +74,7 @@ export const ImageCheckbox = React.forwardRef<
               />
             </div>
           )}
-          <p className="max-w-full flex-shrink flex-grow-0 overflow-x-hidden text-ellipsis whitespace-nowrap">
+          <p className="max-w-full shrink grow-0 overflow-x-hidden text-ellipsis whitespace-nowrap">
             {label}
           </p>
         </CardWithLabel>
@@ -82,3 +82,4 @@ export const ImageCheckbox = React.forwardRef<
     );
   },
 );
+ImageCheckbox.displayName = "ImageCheckbox";

@@ -48,7 +48,7 @@ const AnimatedStepWrapper = ({
           {title}
         </h2>
         {description && (
-          <p className="text-tetiary-foreground leading-[30px] tracking-tight md:text-lg">
+          <p className="leading-[30px] tracking-tight text-muted-foreground md:text-lg">
             {description}
           </p>
         )}

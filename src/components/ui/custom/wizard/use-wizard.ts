@@ -9,7 +9,7 @@ const useWizard = () => {
   if (!context && process.env.NODE_ENV === "development") {
     throw Error("Wrap your step with `Wizard`");
   } else {
-    return context! as WizardValues;
+    return context!;
   }
 };
 

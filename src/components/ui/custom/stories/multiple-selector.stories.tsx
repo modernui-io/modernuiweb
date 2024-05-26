@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import {
   MultipleSelector,
-  Option,
+  type Option,
 } from "~/components/ui/custom/multiple-selector";
 
 const OPTIONS: Option[] = [

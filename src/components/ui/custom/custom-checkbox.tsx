@@ -57,7 +57,7 @@ export const Checkbox = React.forwardRef<
             "flex items-center justify-center",
           )}
         >
-          <CheckIcon className="h-2.5 w-2.5 text-white" />
+          <CheckIcon className="size-2.5 text-white" />
         </div>
         <p>{label}</p>
       </label>

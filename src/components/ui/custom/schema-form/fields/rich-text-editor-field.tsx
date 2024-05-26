@@ -39,7 +39,7 @@ export const RichTextEditorField = (
   return (
     <Shake
       $error={!!error?.errorMessage}
-      className="rounded-xs relative flex w-full flex-col gap-2 overflow-auto"
+      className="relative flex w-full flex-col gap-2 overflow-auto rounded-sm"
     >
       {label && (
         <label className="text-md font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70">

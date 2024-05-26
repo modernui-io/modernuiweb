@@ -14,7 +14,7 @@ const meta: Meta<typeof Checkbox> = {
     disabled: false,
   },
   render: (args) => (
-    <div className="items-top flex space-x-2">
+    <div className="flex items-start space-x-2">
       <Checkbox {...args} />
       <div className="grid gap-1.5 leading-none">
         <label

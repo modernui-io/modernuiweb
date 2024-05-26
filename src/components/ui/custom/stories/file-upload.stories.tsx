@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { DropzoneOptions } from "react-dropzone";
+import type { DropzoneOptions } from "react-dropzone";
 
 import {
   FileInput,

@@ -8,21 +8,21 @@ import { cn } from "~/lib/utils";
 import { type TagInputProps, type Tag as TagType } from "./tag-input";
 
 export const tagVariants = cva(
-  "transition-all border inline-flex items-center text-sm pl-2 rounded-md",
+  "inline-flex items-center rounded-md border pl-2 text-sm transition-all",
   {
     variants: {
       variant: {
         default: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         primary:
-          "bg-primary border-primary text-primary-foreground hover:bg-primary/90",
+          "border-primary bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
-          "bg-destructive border-destructive text-destructive-foreground hover:bg-destructive/90",
+          "border-destructive bg-destructive text-destructive-foreground hover:bg-destructive/90",
       },
       size: {
-        sm: "text-xs h-7",
-        md: "text-sm h-8",
-        lg: "text-base h-9",
-        xl: "text-lg h-10",
+        sm: "h-7 text-xs",
+        md: "h-8 text-sm",
+        lg: "h-9 text-base",
+        xl: "h-10 text-lg",
       },
       shape: {
         default: "rounded-sm",
@@ -139,7 +139,7 @@ export const Tag: React.FC<TagProps> = ({
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-x"
+          // className="lucide lucide-x"
         >
           <path d="M18 6 6 18"></path>
           <path d="m6 6 12 12"></path>

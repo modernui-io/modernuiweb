@@ -90,7 +90,7 @@ export default function Hero() {
           </Form>
           <div className="my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
             <Image
-              className="h-full w-full object-cover object-bottom"
+              className="size-full object-cover object-bottom"
               src={Placeholder}
               width={1920}
               height={1080}

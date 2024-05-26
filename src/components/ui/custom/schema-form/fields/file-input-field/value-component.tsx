@@ -34,7 +34,7 @@ function Value({
     return (
       <div className="flex items-center space-x-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={fileImage} alt={file.name} className="h-8 w-8 object-cover" />
+        <img src={fileImage} alt={file.name} className="size-8 object-cover" />
         <span
           style={{
             whiteSpace: "nowrap",
@@ -54,9 +54,10 @@ function Value({
   }
 
   return (
-    <div className="text-md rounded-xs flex items-center gap-2 bg-secondary px-2 py-1">
+    <div className="flex items-center gap-2 rounded-sm bg-secondary px-2 py-1 ">
       <Icon size={14} style={{ marginRight: 5 }} />
       <span
+        className="text-md"
         style={{
           whiteSpace: "nowrap",
           textOverflow: "ellipsis",

@@ -26,7 +26,7 @@ export const Default: Story = {
     <Popover {...args}>
       <PopoverTrigger asChild>
         <Button variant="outline" className="w-10 rounded-full p-0">
-          <Settings2 className="h-4 w-4" />
+          <Settings2 className="size-4" />
           <span className="sr-only">Open popover</span>
         </Button>
       </PopoverTrigger>

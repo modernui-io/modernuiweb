@@ -29,8 +29,8 @@ export const EmptyTable: React.FC<EmptyTableProps> = ({
   onButtonClick,
 }) => {
   return (
-    <div className="container flex h-full w-full flex-col items-center justify-center gap-6 text-center">
-      <EmptyTableIcon className="h-30 w-40" />
+    <div className="container flex size-full flex-col items-center justify-center gap-6 text-center">
+      <EmptyTableIcon className="h-32 w-40" />
       <div className="flex flex-col items-center justify-center gap-2 text-center">
         <Heading level={6} className="font-semibold text-muted-foreground">
           {title}

@@ -85,10 +85,10 @@ export const BaseVariant: Story = {
           <TimelineDot />
           <TimelineLine />
           <TimelineContent>
-            Once your software has passed rigorous testing, it's time to deploy
-            it. Consider the deployment environment, whether it's on-premises or
-            in the cloud. Ensure proper documentation and provide clear
-            instructions for installation and configuration.
+            Once your software has passed rigorous testing, it&#39;s time to
+            deploy it. Consider the deployment environment, whether it&#39;s
+            on-premises or in the cloud. Ensure proper documentation and provide
+            clear instructions for installation and configuration.
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -177,10 +177,10 @@ export const LabelsVariant: Story = {
           <TimelineDot />
           <TimelineLine />
           <TimelineContent side="left">
-            Once your software has passed rigorous testing, it's time to deploy
-            it. Consider the deployment environment, whether it's on-premises or
-            in the cloud. Ensure proper documentation and provide clear
-            instructions for installation and configuration.
+            Once your software has passed rigorous testing, it&#39;s time to
+            deploy it. Consider the deployment environment, whether it&#39;s
+            on-premises or in the cloud. Ensure proper documentation and provide
+            clear instructions for installation and configuration.
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -256,10 +256,10 @@ export const AlternateVariant: Story = {
           <TimelineDot />
           <TimelineLine />
           <TimelineContent side="left">
-            Once your software has passed rigorous testing, it's time to deploy
-            it. Consider the deployment environment, whether it's on-premises or
-            in the cloud. Ensure proper documentation and provide clear
-            instructions for installation and configuration.
+            Once your software has passed rigorous testing, it&#39;s time to
+            deploy it. Consider the deployment environment, whether it&#39;s
+            on-premises or in the cloud. Ensure proper documentation and provide
+            clear instructions for installation and configuration.
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -332,10 +332,10 @@ export const RightVariant: Story = {
           <TimelineDot />
           <TimelineLine />
           <TimelineContent side="left">
-            Once your software has passed rigorous testing, it's time to deploy
-            it. Consider the deployment environment, whether it's on-premises or
-            in the cloud. Ensure proper documentation and provide clear
-            instructions for installation and configuration.
+            Once your software has passed rigorous testing, it&#39;s time to
+            deploy it. Consider the deployment environment, whether it&#39;s
+            on-premises or in the cloud. Ensure proper documentation and provide
+            clear instructions for installation and configuration.
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>

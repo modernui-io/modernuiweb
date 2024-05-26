@@ -30,14 +30,14 @@ export default function StepperVariants() {
       >
         <Label
           htmlFor="circle"
-          className="hover:bg-gray-3 flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 [&:has([data-state=checked])]:border-primary"
+          className="flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 hover:bg-gray-300 [&:has([data-state=checked])]:border-primary"
         >
           <RadioGroupItem value="circle" id="circle" className="sr-only" />
           <h2 className="font-medium">circle</h2>
         </Label>
         <Label
           htmlFor="circle-alt"
-          className="hover:bg-gray-3 flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 [&:has([data-state=checked])]:border-primary"
+          className="flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 hover:bg-gray-300 [&:has([data-state=checked])]:border-primary"
         >
           <RadioGroupItem
             value="circle-alt"
@@ -48,7 +48,7 @@ export default function StepperVariants() {
         </Label>
         <Label
           htmlFor="line"
-          className="hover:bg-gray-3 flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 [&:has([data-state=checked])]:border-primary"
+          className="flex w-fit flex-col gap-3 rounded-md border bg-background px-2 py-1 hover:bg-gray-300 [&:has([data-state=checked])]:border-primary"
         >
           <RadioGroupItem value="line" id="line" className="sr-only" />
           <h2 className="font-medium">line</h2>

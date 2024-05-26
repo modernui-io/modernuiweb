@@ -13,13 +13,13 @@ export function ThemeToggle() {
 
   const stateMap = {
     light: {
-      icon: <SunIcon className="h-4 w-4" />,
+      icon: <SunIcon className="size-4" />,
     },
     dark: {
-      icon: <MoonIcon className="h-4 w-4" />,
+      icon: <MoonIcon className="size-4" />,
     },
     system: {
-      icon: <ComputerIcon className="h-4 w-4" />,
+      icon: <ComputerIcon className="size-4" />,
     },
   } satisfies Record<
     "light" | "dark" | "system",

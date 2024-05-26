@@ -34,3 +34,5 @@ pnpm-lock.yaml
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 **/public/fallback-*.
+
+storybook-static/

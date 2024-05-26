@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <MuiLayout.Section className="not-prose">
       <MuiLayout.Container>
-        <div className="m-auto flex h-full w-full max-w-5xl flex-col gap-8 px-4 py-4 md:px-6 md:py-10">
+        <div className="m-auto flex size-full max-w-5xl flex-col gap-8 p-4 md:px-6 md:py-10">
           {/* Large Text */}
           <Heading
             level={1}

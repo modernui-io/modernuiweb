@@ -6,7 +6,7 @@ export const RichTextEditor = dynamic(
   () => import("./rte").then((mod) => mod.RichTextEditorDoNotImportDirectly),
   {
     ssr: false,
-    loading: () => <Skeleton className="rounded-xs h-32 w-full" />,
+    loading: () => <Skeleton className="h-32 w-full rounded-sm" />,
   },
 );
 

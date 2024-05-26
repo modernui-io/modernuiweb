@@ -28,6 +28,9 @@ export default {
       },
     },
     extend: {
+      fontSize: {
+        md: [".9rem", "18px"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

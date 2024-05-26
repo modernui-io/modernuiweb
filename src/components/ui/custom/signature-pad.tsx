@@ -16,7 +16,7 @@ interface Point {
 const Drawing = forwardRef<SVGSVGElement, { lines: [Point][] }>(
   ({ lines }, ref) => {
     return (
-      <svg ref={ref} className="h-full w-full">
+      <svg ref={ref} className="size-full">
         {lines.map((line, index) => (
           <DrawingLine key={index} line={line} />
         ))}

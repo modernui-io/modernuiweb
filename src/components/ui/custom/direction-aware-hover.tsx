@@ -74,15 +74,15 @@ export const DirectionAwareHover = ({
     >
       <AnimatePresence mode="wait">
         <motion.div
-          className="relative h-full w-full"
+          className="relative size-full"
           initial="initial"
           whileHover={direction}
           exit="exit"
         >
-          <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/40 transition duration-500 group-hover/card:block" />
+          <motion.div className="absolute inset-0 z-10 hidden size-full bg-black/40 transition duration-500 group-hover/card:block" />
           <motion.div
             variants={variants}
-            className="relative h-full w-full bg-gray-50 dark:bg-black"
+            className="relative size-full bg-gray-50 dark:bg-black"
             transition={{
               duration: 0.2,
               ease: "easeOut",

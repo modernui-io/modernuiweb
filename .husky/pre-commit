@@ -1,4 +1,5 @@
 pnpm type-check
+pnpm lint:fix
 pnpm format:fix
 git add .
 pnpm lint-staged

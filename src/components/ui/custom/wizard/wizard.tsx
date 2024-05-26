@@ -165,7 +165,7 @@ const Wizard: React.FC<React.PropsWithChildren<WizardProps>> = React.memo(
     return (
       <WizardContext.Provider value={wizardValue}>
         {header}
-        <div className="max-h-calc-230 relative flex w-full flex-1 items-center justify-center">
+        <div className="relative flex max-h-[calc(100vh-10rem)] w-full flex-1 items-center justify-center">
           {enhancedActiveStepContent}
         </div>
         {footer}

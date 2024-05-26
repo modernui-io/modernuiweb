@@ -191,7 +191,7 @@ const RichTextEditorDoNotImportDirectly = memo(
         </RichTextEditorBase>
 
         {editor && showWordCount && (
-          <div className="character-count">
+          <div className="">
             {editor.storage.characterCount.characters()}
             {wordLimit && <span>/{wordLimit} characters</span>}
             <br />

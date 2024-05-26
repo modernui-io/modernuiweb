@@ -17,15 +17,15 @@ type Story = StoryObj<typeof FadeScroller>;
 export const Default: Story = {
   render: (args) => (
     <FadeScroller {...args}>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
     </FadeScroller>
   ),
 };
@@ -37,16 +37,16 @@ export const Vertical: Story = {
       className="no-scrollbar flex gap-5 overflow-x-auto md:w-auto md:shrink-0"
       {...restArgs}
     >
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
-      <div className="h-40 w-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
+      <div className="size-40 bg-red-500"></div>
     </FadeScroller>
   ),
 };

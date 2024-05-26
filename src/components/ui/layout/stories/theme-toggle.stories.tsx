@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeToggle } from "~/components/ui/layout/theme-toggle";
 

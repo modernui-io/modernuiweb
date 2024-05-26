@@ -2,7 +2,7 @@ import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Tag, TagInput } from "~/components/ui/custom/tag-input";
+import { TagInput, type Tag } from "~/components/ui/custom/tag-input";
 
 /**
  * A custom tag input component.

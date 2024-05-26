@@ -55,7 +55,7 @@ const WizardStepFooter = ({
         <Button
           size={"lg"}
           variant={"outline"}
-          className="w-30"
+          // className="w-30"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -67,7 +67,7 @@ const WizardStepFooter = ({
         <Button
           disabled={showLoading}
           size={"lg"}
-          className="w-30"
+          // className="w-30"
           type="submit"
         >
           Save

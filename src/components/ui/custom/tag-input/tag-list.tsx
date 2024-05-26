@@ -46,7 +46,7 @@ export const TagList: React.FC<TagListProps> = ({
       {draggable ? (
         <SortableList
           onSortEnd={onSortEnd}
-          className="list flex flex-wrap gap-2"
+          className="flex flex-wrap gap-2"
           dropTarget={<DropTarget />}
         >
           {tags.map((tagObj) => (

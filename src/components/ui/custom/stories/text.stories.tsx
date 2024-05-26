@@ -72,9 +72,6 @@ export const AllVariants: Story = {
       <Text {...args} level="sm">
         Small Text
       </Text>
-      <Text {...args} level="caption">
-        Caption Text
-      </Text>
       <Text {...args} level="xs">
         XSmall Text
       </Text>

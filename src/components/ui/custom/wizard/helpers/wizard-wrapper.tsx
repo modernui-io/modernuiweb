@@ -13,7 +13,7 @@ const Step = ({ num, isActive }: { num: number; isActive: boolean }) => {
   return (
     <div className="relative">
       <div
-        className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 text-sm font-semibold transition-colors duration-300 ${
+        className={`relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border-2 text-sm font-semibold transition-colors duration-300 ${
           isActive
             ? "border-indigo-600 bg-indigo-600 text-white"
             : "border-gray-300 text-gray-300"

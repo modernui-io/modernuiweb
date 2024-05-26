@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AlertTriangle, LucideIcon } from "lucide-react";
+import { AlertTriangle, type LucideIcon } from "lucide-react";
 
 import { Icons } from "~/components/ui/custom/icons";
 
@@ -26,9 +26,9 @@ type Story = StoryObj<typeof AlertTriangle>;
 export const AllIcons: Story = {
   render: (args) => (
     <div className="grid gap-2">
-      {Object.keys(Icons).map((icon) => {
+      {Object.keys(Icons).map((icon, index) => {
         const IconToRender = Icons[icon as keyof typeof Icons] as LucideIcon;
-        return <IconToRender {...args} />;
+        return <IconToRender {...args} key={index} />;
       })}
     </div>
   ),

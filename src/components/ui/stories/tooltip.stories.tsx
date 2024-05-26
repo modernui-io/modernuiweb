@@ -34,7 +34,7 @@ export const Default: Story = {
       <Tooltip {...args}>
         <TooltipTrigger asChild>
           <Button variant="outline" className="w-10 rounded-full p-0">
-            <Plus className="h-4 w-4" />
+            <Plus className="size-4" />
             <span className="sr-only">Add</span>
           </Button>
         </TooltipTrigger>

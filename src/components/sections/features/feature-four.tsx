@@ -27,11 +27,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="not-prose relative flex h-96 overflow-hidden rounded-lg border">
-          <Image
-            src={Placeholder}
-            alt="placeholder"
-            className="fill object-cover"
-          />
+          <Image src={Placeholder} alt="placeholder" className="object-cover" />
         </div>
       </MuiLayout.Container>
     </MuiLayout.Section>

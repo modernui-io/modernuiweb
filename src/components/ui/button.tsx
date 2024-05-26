@@ -24,13 +24,13 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         getApp:
-          " text- border-0 bg-primary-700 hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-gray-300 text-background",
+          "border-0 bg-primary-700 text-background hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-gray-300",
       },
       size: {
         default: "h-9 px-5 py-2",
         sm: "h-8 px-4 text-xs",
         lg: "h-10 px-8",
-        icon: "h-9 w-9",
+        icon: "size-9",
         none: "w-full hover:cursor-pointer",
       },
     },

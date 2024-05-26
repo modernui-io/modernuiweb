@@ -19,7 +19,7 @@ interface FeatureText {
 
 const featureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="size-6" />,
     title: "Lorem Ipsum",
     href: "/",
     description:
@@ -27,7 +27,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="size-6" />,
     title: "Lorem Ipsum",
     href: "/",
     description:
@@ -68,7 +68,7 @@ const Feature = () => {
                   </div>
                   {cta && (
                     <div className="flex h-fit items-center text-sm font-semibold">
-                      <Text>{cta}</Text> <ArrowRight className="ml-2 h-4 w-4" />
+                      <Text>{cta}</Text> <ArrowRight className="ml-2 size-4" />
                     </div>
                   )}
                 </Link>

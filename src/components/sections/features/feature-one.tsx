@@ -15,19 +15,19 @@ interface FeatureText {
 
 const featureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="size-6" />,
     title: "Lorem Ipsum",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="size-6" />,
     title: "Lorem Ipsum",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="size-6" />,
     title: "Lorem Ipsum",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",

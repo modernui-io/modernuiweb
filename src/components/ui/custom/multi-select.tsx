@@ -225,7 +225,7 @@ const MultiSelectTrigger = React.forwardRef<
         onTouchStart={disabled ? PreventClick : props.onTouchStart}
       >
         {children}
-        <CaretSortIcon aria-hidden className="h-4 w-4 shrink-0 opacity-50" />
+        <CaretSortIcon aria-hidden className="size-4 shrink-0 opacity-50" />
       </div>
     </PopoverPrimitive.Trigger>
   );
@@ -301,7 +301,7 @@ const MultiSelectValue = React.forwardRef<
                 }}
               >
                 <span>{child}</span>
-                <Cross2Icon className="ml-1 h-3 w-3 text-muted-foreground group-hover/multi-select-badge:text-foreground" />
+                <Cross2Icon className="ml-1 size-3 text-muted-foreground group-hover/multi-select-badge:text-foreground" />
               </Badge>
             );
 
@@ -323,6 +323,7 @@ const MultiSelectValue = React.forwardRef<
             return el;
           })}
           {renderRemain ? (
+            // eslint-disable-next-line tailwindcss/no-custom-classname
             <span className="py-.5 text-xs leading-4 text-muted-foreground">
               +{renderRemain}
             </span>
@@ -478,13 +479,16 @@ const MultiSelectItem = React.forwardRef<
     );
 
     const handleClick = () => {
+      if (!value) {
+        return;
+      }
       if (selected) {
-        onDeselectProp?.(value!, item!);
-        onDeselect(value!, item!);
+        onDeselectProp?.(value, item!);
+        onDeselect(value, item!);
       } else {
-        itemCache.set(value!, item!);
-        onSelectProp?.(value!, item!);
-        onSelect(value!, item!);
+        itemCache.set(value, item!);
+        onSelectProp?.(value, item!);
+        onSelect(value, item!);
       }
     };
 
@@ -500,10 +504,8 @@ const MultiSelectItem = React.forwardRef<
         onSelect={!disabled && value ? handleClick : undefined}
         ref={forwardedRef}
       >
-        <span className="mr-2 overflow-hidden text-ellipsis whitespace-nowrap">
-          {children ?? label ?? value}
-        </span>
-        {selected ? <CheckIcon className="ml-auto h-4 w-4 shrink-0" /> : null}
+        <span className="mr-2 truncate">{children ?? label ?? value}</span>
+        {selected ? <CheckIcon className="ml-auto size-4 shrink-0" /> : null}
       </CommandItem>
     );
   },

@@ -32,7 +32,7 @@ type Story = StoryObj<typeof SchemaForm>;
  */
 export const AllVariants: Story = {
   render: (args) => {
-    const handleCreateProgramFormSubmit = async (
+    const handleCreateProgramFormSubmit = (
       values: z.infer<typeof createProgramSchema>,
     ) => {
       console.log("CreateProgramForm onSubmit", values);

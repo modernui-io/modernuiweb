@@ -43,7 +43,7 @@ export function EmailSignUpCTASection() {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
-  
+
   return (
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">

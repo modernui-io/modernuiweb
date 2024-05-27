@@ -21,7 +21,8 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import SearchDark from "~/lib/assets/images/search-dark.png";
+import SearchLight from "~/lib/assets/images/search-light.png";
 
 const ToolIcon = () => (
   <svg
@@ -155,12 +156,12 @@ export function HeroSectionWithSearchBar() {
           </div>
           <div className="col-span-6">
             <Image
-              src={Placeholder}
+              src={SearchLight}
               className="h-[473px] w-[600px] dark:hidden"
               alt="mockup"
             />
             <Image
-              src={Placeholder}
+              src={SearchDark}
               className="hidden h-[473px] w-[600px] dark:block"
               alt="mockup"
             />

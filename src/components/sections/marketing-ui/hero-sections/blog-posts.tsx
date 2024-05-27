@@ -8,7 +8,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Badge, type BadgeProps } from "~/components/ui/badge";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Placeholder from "~/lib/assets/images/blog-featured.png";
 
 const MarketingSvg = () => (
   <svg

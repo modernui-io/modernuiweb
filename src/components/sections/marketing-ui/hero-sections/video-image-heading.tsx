@@ -7,7 +7,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Placeholder from "~/lib/assets/images/visual-image.png";
 
 export function VisualImageWithHeadingHero() {
   return (

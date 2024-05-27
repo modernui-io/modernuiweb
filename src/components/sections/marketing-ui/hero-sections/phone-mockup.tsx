@@ -8,7 +8,8 @@ import { AvatarGroup } from "~/components/ui/custom/avatar-group";
 import { Heading } from "~/components/ui/custom/headings";
 import { Ratings } from "~/components/ui/custom/ratings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import PhoneDark from "~/lib/assets/images/phone-dark.png";
+import PhoneLight from "~/lib/assets/images/phone-light.png";
 
 const AppleIcon = () => (
   <svg
@@ -96,12 +97,12 @@ export function PhoneMockupWithAppDownloadHero() {
             <div className="absolute right-[-17px] top-[142px] h-[64px] w-[3px] rounded-r-lg bg-gray-800 "></div>
             <div className="h-[572px] w-[272px] overflow-hidden rounded-[2.5rem] bg-white ">
               <Image
-                src={Placeholder}
+                src={PhoneLight}
                 className="h-[572px] w-[272px] dark:hidden"
                 alt=""
               />
               <Image
-                src={Placeholder}
+                src={PhoneDark}
                 className="hidden h-[572px] w-[272px] dark:block"
                 alt=""
               />

@@ -8,7 +8,8 @@ import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import ScreenShotDark from "~/lib/assets/images/screenshot-dark.svg";
+import ScreenShotLight from "~/lib/assets/images/screenshot-light.svg";
 
 const AirbnbLogo = () => (
   <svg
@@ -211,8 +212,8 @@ export function InformationalCTAWithAppScreenshotHero() {
             &nbsp;for the 21st Century
           </Heading>
           <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-10 lg:text-xl">
-            Here at modernUIWeb we focus on markets where technology, innovation,
-            and capital can unlock long-term value.
+            Here at modernUIWeb we focus on markets where technology,
+            innovation, and capital can unlock long-term value.
           </Text>
           <div className="mb-4 items-center justify-between space-y-4 rounded  bg-primary-200 p-4 sm:flex sm:space-y-0">
             {softwareSpecs.map(({ heading, caption }) => (
@@ -246,14 +247,14 @@ export function InformationalCTAWithAppScreenshotHero() {
             height={353}
             width={400}
             className="rounded-lg shadow-lg dark:hidden"
-            src={Placeholder}
+            src={ScreenShotLight}
             alt="mockup light"
           />
           <Image
             height={353}
             width={400}
             className="hidden rounded-lg shadow-lg dark:block"
-            src={Placeholder}
+            src={ScreenShotDark}
             alt="mockup dark"
           />
         </div>

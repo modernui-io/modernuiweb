@@ -20,7 +20,7 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Placeholder from "~/lib/assets/images/illustration.svg";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -55,8 +55,9 @@ export function IllustrationWithEmailSignupHero() {
             Building digital products &amp; brands.
           </Heading>
           <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-8 lg:text-xl">
-            Here at modernUIWeb we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            Here at modernUIWeb we focus on markets where technology,
+            innovation, and capital can unlock long-term value and drive
+            economic growth.
           </Text>
           <Form {...form}>
             <form

@@ -8,7 +8,8 @@ import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import AppDark from "~/lib/assets/images/app-preview-dark.svg";
+import AppLight from "~/lib/assets/images/app-preview-light.svg";
 
 const YoutubeLogo = () => (
   <svg
@@ -133,12 +134,12 @@ export function AppScreenshotWithCTAsHero() {
         </div>
         <Image
           className="z-10 mx-auto mb-5 rounded-lg border shadow-xl dark:hidden lg:mb-8"
-          src={Placeholder}
+          src={AppLight}
           alt="dashboard overview"
         />
         <Image
           className="z-10 mx-auto mb-5 hidden rounded-lg border shadow-xl dark:block lg:mb-8"
-          src={Placeholder}
+          src={AppDark}
           alt="dashboard overview dark"
         />
       </div>

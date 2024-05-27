@@ -10,7 +10,7 @@ import { AvatarGroup } from "~/components/ui/custom/avatar-group";
 import { Heading } from "~/components/ui/custom/headings";
 import { Ratings } from "~/components/ui/custom/ratings";
 import { Text } from "~/components/ui/custom/text";
-import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import Placeholder from "~/lib/assets/images/book-cover.png";
 
 export function HeroSectionWithBookCover() {
   return (

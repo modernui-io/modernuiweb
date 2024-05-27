@@ -40,10 +40,6 @@ export function AdvancedDropdownFilterKeywords() {
   const [isAustralia, setAustralia] = useState(true);
   const [isEurope, setEurope] = useState(false);
 
-  function check(id: string) {
-    document.querySelector(id)!.checked = true;
-  }
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -207,7 +203,6 @@ export function AdvancedDropdownFilterKeywords() {
                         <RadioGroupItem
                           id={`${starsCount}-stars`}
                           value={`${index}`}
-                          onClick={() => check(`#${starsCount}-stars`)}
                         />
                         {starsFilled.map((_, i) => (
                           <StarFilledIcon

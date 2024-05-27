@@ -17,7 +17,7 @@ export function AdvancedUserReadModal() {
             <div className="flex items-center">
               <img
                 alt="Helene avatar"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
+                src="https://github.com/shadcn.png"
                 className="mr-2 size-12 rounded-full sm:mr-4"
               ></img>
               <div>

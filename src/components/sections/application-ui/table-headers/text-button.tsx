@@ -10,7 +10,7 @@ export function TableHeaderWithTextAndButton() {
         <div className="relative overflow-hidden shadow-md sm:rounded-lg">
           <div className="flex-row items-center justify-between space-y-3 p-4 sm:flex sm:space-x-4 sm:space-y-0">
             <div>
-              <h5 className="mr-3 font-semibold">Flowbite Users</h5>
+              <h5 className="mr-3 font-semibold">ModernUI Users</h5>
               <Text className="text-gray-500">
                 Manage all your existing users or add a new one
               </Text>

@@ -48,15 +48,14 @@ export function UserProfileSideNavigation() {
 
   return (
     <>
-      <button
+      <Button
+        variant={"ghost"}
         onClick={toggleSidebar}
-        aria-controls="default-sidebar"
-        type="button"
         className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
-      </button>
+      </Button>
 
       <aside
         id="default-sidebar"
@@ -76,7 +75,7 @@ export function UserProfileSideNavigation() {
           <div className="text-center text-gray-500 dark:text-gray-400">
             <img
               className="mx-auto mb-4 size-20 rounded-full"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+              src="https://github.com/shadcn.png"
               alt="Micheal Avatar"
             />
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -93,30 +92,23 @@ export function UserProfileSideNavigation() {
               Logout
             </a>
             <ul className="mb-4 flex justify-center space-x-1">
-              <li>
-                <a
-                  href="#"
-                  className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  <HiViewGrid className="size-6" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  <HiBell className="size-6" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  <HiOutlineQuestionMarkCircle className="size-6" />
-                </a>
-              </li>
+              {[
+                { icon: <HiViewGrid className="size-6" />, label: "View Grid" },
+                { icon: <HiBell className="size-6" />, label: "Bell" },
+                {
+                  icon: <HiOutlineQuestionMarkCircle className="size-6" />,
+                  label: "Help",
+                },
+              ].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  >
+                    {item.icon}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -133,11 +125,9 @@ export function UserProfileSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-pages"
-                    data-collapse-toggle="dropdown-pages"
                   >
                     <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -145,34 +135,24 @@ export function UserProfileSideNavigation() {
                       Pages
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-pages" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Kanban
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Calendar
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Settings" },
+                      { href: "#", label: "Kanban" },
+                      { href: "#", label: "Calendar" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -180,11 +160,9 @@ export function UserProfileSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-sales"
-                    data-collapse-toggle="dropdown-sales"
                   >
                     <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -192,34 +170,24 @@ export function UserProfileSideNavigation() {
                       Sales
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-sales" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Products
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Invoice
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Products" },
+                      { href: "#", label: "Billing" },
+                      { href: "#", label: "Invoice" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -239,11 +207,9 @@ export function UserProfileSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-authentication"
-                    data-collapse-toggle="dropdown-authentication"
                   >
                     <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
@@ -251,67 +217,60 @@ export function UserProfileSideNavigation() {
                     </span>
 
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-authentication" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign In
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Forgot Password
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Sign In" },
+                      { href: "#", label: "Sign Up" },
+                      { href: "#", label: "Forgot Password" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
             </li>
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Docs</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Components</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Help</span>
-              </a>
-            </li>
+            {[
+              {
+                icon: (
+                  <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Docs",
+              },
+              {
+                icon: (
+                  <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Components",
+              },
+              {
+                icon: (
+                  <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Help",
+              },
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  {item.icon}
+                  <span className="ml-3">{item.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 border-r border-gray-200 p-4 dark:border-gray-700 lg:flex">

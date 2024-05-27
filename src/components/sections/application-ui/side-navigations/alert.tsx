@@ -44,15 +44,14 @@ export function AlertSideNavigation() {
 
   return (
     <>
-      <button
+      <Button
+        variant={"ghost"}
         onClick={toggleSidebar}
-        aria-controls="default-sidebar"
-        type="button"
         className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
-      </button>
+      </Button>
 
       <aside
         id="default-sidebar"
@@ -70,11 +69,11 @@ export function AlertSideNavigation() {
         </Button>
         <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
           <a
-            href="https://flowbite.com"
+            href="https://modernui.com"
             className="mb-5 flex items-center pl-2"
           >
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
               className="mr-3 h-6 sm:h-8"
               alt="ModernUI Logo"
             />
@@ -94,12 +93,10 @@ export function AlertSideNavigation() {
             </li>
             <li>
               <Collapsible>
-                <CollapsibleTrigger>
-                  <button
-                    type="button"
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-pages"
-                    data-collapse-toggle="dropdown-pages"
                   >
                     <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
 
@@ -107,46 +104,35 @@ export function AlertSideNavigation() {
                       Pages
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-pages" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Kanban
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Calendar
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Settings" },
+                      { href: "#", label: "Kanban" },
+                      { href: "#", label: "Calendar" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
             </li>
             <li>
               <Collapsible>
-                <CollapsibleTrigger>
-                  <button
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
                     type="button"
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-sales"
-                    data-collapse-toggle="dropdown-sales"
                   >
                     <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
 
@@ -154,34 +140,24 @@ export function AlertSideNavigation() {
                       Sales
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-sales" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Products
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Invoice
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Products" },
+                      { href: "#", label: "Billing" },
+                      { href: "#", label: "Invoice" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -200,12 +176,10 @@ export function AlertSideNavigation() {
             </li>
             <li>
               <Collapsible>
-                <CollapsibleTrigger>
-                  <button
-                    type="button"
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-authentication"
-                    data-collapse-toggle="dropdown-authentication"
                   >
                     <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
@@ -213,34 +187,24 @@ export function AlertSideNavigation() {
                     </span>
 
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-authentication" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign In
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Forgot Password
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Sign In" },
+                      { href: "#", label: "Sign Up" },
+                      { href: "#", label: "Forgot Password" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -295,7 +259,7 @@ export function AlertSideNavigation() {
               </button>
             </div>
             <div className="mb-3 text-sm font-light text-primary-700 dark:text-primary-300">
-              Preview the new Flowbite v2.0! You can turn the new features off
+              Preview the new ModernUI v2.0! You can turn the new features off
               for a limited time in your settings page.
             </div>
             <a

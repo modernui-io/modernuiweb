@@ -176,7 +176,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -365,7 +365,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -527,7 +527,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-2.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -687,7 +687,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -875,7 +875,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-4.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -1037,7 +1037,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-5.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -1199,7 +1199,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-6.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -1361,7 +1361,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-7.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -1535,7 +1535,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-8.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />
@@ -1669,7 +1669,7 @@ export function AdvancedUserManagementTable() {
                   >
                     <div className="flex items-center">
                       <img
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-9.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                         className="mr-3 h-8 w-auto rounded-full"
                       />

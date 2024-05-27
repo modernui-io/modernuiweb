@@ -9,6 +9,7 @@ import {
   HiHome,
   HiInboxIn,
   HiMenuAlt2,
+  HiPlus,
   HiPresentationChartLine,
   HiSelector,
   HiX,
@@ -35,15 +36,14 @@ export function ProjectsTeamSwitchSideNavigation() {
 
   return (
     <>
-      <button
+      <Button
+        variant={"ghost"}
         onClick={toggleSidebar}
-        aria-controls="default-sidebar"
-        type="button"
         className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
-      </button>
+      </Button>
 
       <aside
         id="default-sidebar"
@@ -70,9 +70,9 @@ export function ProjectsTeamSwitchSideNavigation() {
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
                   <img
-                    src="https://flowbite.com/docs/images/logo.svg"
+                    src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                     className="mr-3 h-7"
-                    alt="Flowbite Logo"
+                    alt="ModernUI Logo"
                   />
                   <div>
                     <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">
@@ -169,45 +169,31 @@ export function ProjectsTeamSwitchSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    aria-controls="dropdown-tasks"
-                    data-collapse-toggle="dropdown-tasks"
                   >
                     <HiClipboardList className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
                       My Tasks
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-tasks" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >
-                        To do
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >
-                        In progress
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                      >
-                        Completed
-                      </a>
-                    </li>
+                    {["To do", "In progress", "Completed"].map(
+                      (item, index) => (
+                        <li key={index}>
+                          <a
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      ),
+                    )}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -262,7 +248,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-primary-600"></span>
-                <span className="ml-3">Flowbite library</span>
+                <span className="ml-3">ModernUI library</span>
               </a>
             </li>
             <li>
@@ -280,7 +266,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-orange-300"></span>
-                <span className="ml-3">Flowbite blocks</span>
+                <span className="ml-3">ModernUI blocks</span>
               </a>
             </li>
             <li>
@@ -297,18 +283,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 dark:text-gray-200"
               >
-                <svg
-                  className="size-4 rounded border border-gray-200 dark:border-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+                <HiPlus className="size-4 rounded border border-gray-200 dark:border-gray-400" />
                 <span className="ml-3 text-gray-500 hover:underline dark:text-gray-400">
                   Add new project
                 </span>
@@ -343,14 +318,12 @@ export function ProjectsTeamSwitchSideNavigation() {
               <Button
                 variant={"ghost"}
                 id="dropdownUserNameButton"
-                data-dropdown-toggle="dropdownUserName"
                 className="my-4 flex w-full items-center justify-between rounded-lg p-2 focus:outline-none focus:ring-4"
-                type="button"
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
                   />
@@ -359,7 +332,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                       Bonnie Green
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      bonnie@flowbite.com
+                      bonnie@modernui.com
                     </div>
                   </div>
                 </div>
@@ -377,7 +350,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Michael avatar"
                   />
@@ -386,7 +359,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                       Michael Gough
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      michael@flowbite.com
+                      michael@modernui.com
                     </div>
                   </div>
                 </a>
@@ -395,7 +368,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Roberta avatar"
                   />
@@ -404,7 +377,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                       Roberta Casas
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      roberta@flowbite.com
+                      roberta@modernui.com
                     </div>
                   </div>
                 </a>

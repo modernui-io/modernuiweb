@@ -105,7 +105,7 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                         Visibility
                       </Button>
                       <Button className="md:rounded-l-none">
-                        All for flowbite.com
+                        All for modernui.com
                       </Button>
                     </div>
                     <a

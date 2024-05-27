@@ -30,42 +30,22 @@ export function TasksDoubleSideNavigation() {
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4 sm:hidden">
           <ul className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiCalendar className="size-6" />
-                <span className="sr-only">Calendar</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiClipboardList className="size-6" />
-                <span className="sr-only">Tasks</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiShoppingBag className="size-6" />
-                <span className="sr-only">Products</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiInboxIn className="size-6" />
-                <span className="sr-only">Inbox</span>
-              </a>
-            </li>
+            {[
+              { icon: <HiCalendar className="size-6" />, label: "Calendar" },
+              { icon: <HiClipboardList className="size-6" />, label: "Tasks" },
+              { icon: <HiShoppingBag className="size-6" />, label: "Products" },
+              { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >
+                  {item.icon}
+                  <span className="sr-only">{item.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
           <a
             href="#"
@@ -78,16 +58,14 @@ export function TasksDoubleSideNavigation() {
         <div className="hidden h-full w-64 overflow-y-auto border-r border-gray-200 px-3 py-4 dark:border-gray-700 sm:block">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button
-                id="dropdownUserNameButton"
-                data-dropdown-toggle="dropdownUserName"
+              <Button
+                variant={"ghost"}
                 className="flex w-full items-center justify-between rounded-lg p-2 hover:bg-gray-50 dark:hover:bg-gray-700"
-                type="button"
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
                   />
@@ -101,7 +79,7 @@ export function TasksDoubleSideNavigation() {
                   </div>
                 </div>
                 <HiSelector className="size-5 text-gray-500 dark:text-gray-400" />
-              </button>
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <div
@@ -150,23 +128,13 @@ export function TasksDoubleSideNavigation() {
             </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
-                  id="dropdownDefault"
-                  data-dropdown-toggle="dropdown"
-                  type="button"
+                <Button
+                  variant={"ghost"}
                   className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 >
-                  <svg
-                    aria-hidden="true"
-                    className="size-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                  </svg>
+                  <HiDotsHorizontal className="size-5" />
                   <span className="sr-only">Settings</span>
-                </button>
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <div
@@ -177,82 +145,53 @@ export function TasksDoubleSideNavigation() {
                     className="py-1 text-sm"
                     aria-labelledby="dropdownDefault"
                   >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Mark all as done
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Remove all items
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Add to my day
-                      </a>
-                    </li>
+                    {[
+                      "Mark all as done",
+                      "Remove all items",
+                      "Add to my day",
+                    ].map((item, index) => (
+                      <li key={index}>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
           <ul className="space-y-4">
-            <li>
-              <div className="flex items-center">
-                <Checkbox id="task-1" />
-                <Label className="ml-2 text-sm text-gray-500 dark:text-gray-300">
-                  Message from Payoneer’s Account Approval Department
-                </Label>
-              </div>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Checkbox id="task-2" />
-                <Label className="ml-2 text-sm text-gray-500 dark:text-gray-300">
-                  Develop and update Bergside Management System
-                </Label>
-              </div>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Checkbox id="task-3" />
-                <Label className="ml-2 text-sm text-gray-500 dark:text-gray-300">
-                  Talk with newcomers about our main office
-                </Label>
-              </div>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Checkbox id="task-4" />
-                <Label className="ml-2 text-sm text-gray-500 dark:text-gray-300">
-                  Design and code new charts for Flowbite library
-                </Label>
-              </div>
-            </li>
+            {[
+              "Message from Payoneer’s Account Approval Department",
+              "Develop and update Bergside Management System",
+              "Talk with newcomers about our main office",
+              "Design and code new charts for ModernUI library",
+            ].map((task, index) => (
+              <li key={index}>
+                <div className="flex items-center">
+                  <Checkbox id={`task-${index + 1}`} />
+                  <Label className="ml-2 text-sm text-gray-500 dark:text-gray-300">
+                    {task}
+                  </Label>
+                </div>
+              </li>
+            ))}
           </ul>
           <div className="my-4 flex items-center justify-between border-t border-gray-200 pt-4 text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">
             Completed
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
-                  id="dropdownDefaultCompleted"
-                  data-dropdown-toggle="dropdownCompleted"
-                  type="button"
+                <Button
+                  variant={"ghost"}
                   className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 >
                   <HiDotsHorizontal className="size-5" />
                   <span className="sr-only">Settings</span>
-                </button>
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <div
@@ -263,30 +202,20 @@ export function TasksDoubleSideNavigation() {
                     className="py-1 text-sm"
                     aria-labelledby="dropdownDefaultCompleted"
                   >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Mark all as done
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Remove all items
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Add to my day
-                      </a>
-                    </li>
+                    {[
+                      "Mark all as done",
+                      "Remove all items",
+                      "Add to my day",
+                    ].map((item, index) => (
+                      <li key={index}>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </DropdownMenuContent>

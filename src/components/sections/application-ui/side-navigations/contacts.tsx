@@ -29,15 +29,14 @@ export function ContactsSideNavigation() {
 
   return (
     <>
-      <button
+      <Button
+        variant={"ghost"}
         onClick={toggleSidebar}
-        aria-controls="default-sidebar"
-        type="button"
         className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
-      </button>
+      </Button>
 
       <aside
         id="default-sidebar"
@@ -55,11 +54,11 @@ export function ContactsSideNavigation() {
         </Button>
         <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
           <a
-            href="https://flowbite.com"
+            href="https://modernui.com"
             className="mb-5 flex items-center pl-2"
           >
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
               className="mr-3 h-6 sm:h-8"
               alt="ModernUI Logo"
             />
@@ -80,46 +79,33 @@ export function ContactsSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-pages"
-                    data-collapse-toggle="dropdown-pages"
                   >
                     <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
                       Pages
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-pages" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Kanban
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Calendar
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Settings" },
+                      { href: "#", label: "Kanban" },
+                      { href: "#", label: "Calendar" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -127,11 +113,9 @@ export function ContactsSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-sales"
-                    data-collapse-toggle="dropdown-sales"
                   >
                     <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -139,34 +123,24 @@ export function ContactsSideNavigation() {
                       Sales
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-sales" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Products
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Invoice
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Products" },
+                      { href: "#", label: "Billing" },
+                      { href: "#", label: "Invoice" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -186,11 +160,9 @@ export function ContactsSideNavigation() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-authentication"
-                    data-collapse-toggle="dropdown-authentication"
                   >
                     <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
@@ -198,200 +170,111 @@ export function ContactsSideNavigation() {
                     </span>
 
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-authentication" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign In
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Forgot Password
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Sign In" },
+                      { href: "#", label: "Sign Up" },
+                      { href: "#", label: "Forgot Password" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
             </li>
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                    alt="jese avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Jese Leos
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                    alt="bonnie avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Bonnie Green
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-                    alt="Joseph avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-red-400 dark:border-gray-800"></span>
-                </div>
-                Joseph McFall
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                    alt="Lana avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-red-400 dark:border-gray-800"></span>
-                </div>
-                Lana Byrd
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                    alt="Leslie avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Leslie Livingston
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png"
-                    alt="Thomas avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Thomas Lean
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
-                    alt="Robert avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-red-400 dark:border-gray-800"></span>
-                </div>
-                Robert Brown
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
-                    alt="Micheal avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Micheal Gough
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                    alt="Roberta avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Roberta Casas
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
-              >
-                <div className="relative mr-2.5">
-                  <img
-                    className="size-6 rounded-full"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png"
-                    alt="Neil avatar"
-                  />
-                  <span className="absolute left-4 top-0 size-3 rounded-full border-2 border-white bg-green-400 dark:border-gray-800"></span>
-                </div>
-                Neil Sims
-              </a>
-            </li>
+            {[
+              {
+                href: "#",
+                name: "Jese Leos",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Bonnie Green",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Joseph McFall",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-red-400",
+              },
+              {
+                href: "#",
+                name: "Lana Byrd",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-red-400",
+              },
+              {
+                href: "#",
+                name: "Leslie Livingston",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Thomas Lean",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Robert Brown",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-red-400",
+              },
+              {
+                href: "#",
+                name: "Micheal Gough",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Roberta Casas",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+              {
+                href: "#",
+                name: "Neil Sims",
+                imgSrc: "https://github.com/shadcn.png",
+                status: "bg-green-400",
+              },
+            ].map((user, index) => (
+              <li key={index}>
+                <a
+                  href={user.href}
+                  className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
+                >
+                  <div className="relative mr-2.5">
+                    <img
+                      className="size-6 rounded-full"
+                      src={user.imgSrc}
+                      alt={`${user.name} avatar`}
+                    />
+                    <span
+                      className={`absolute left-4 top-0 size-3 rounded-full border-2 border-white ${user.status} dark:border-gray-800`}
+                    ></span>
+                  </div>
+                  {user.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 p-4 lg:flex">

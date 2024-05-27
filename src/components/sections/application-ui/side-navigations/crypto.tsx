@@ -64,30 +64,39 @@ export function CryptoSideNavigation() {
                     className="space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownMarketCapButton"
                   >
-                    <li>
-                      <div className="flex items-center">
-                        <Checkbox id="checkbox-market-1" value="" />
-                        <Label className="ml-2 text-sm font-medium">
-                          Market cap
-                        </Label>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex items-center">
-                        <Checkbox checked id="checkbox-market-2" value="" />
-                        <Label className="ml-2 text-sm font-medium">
-                          Price
-                        </Label>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="flex items-center">
-                        <Checkbox id="checkbox-market-3" value="" />
-                        <Label className="ml-2 text-sm font-medium">
-                          Volume
-                        </Label>
-                      </div>
-                    </li>
+                    {[
+                      {
+                        id: "checkbox-market-1",
+                        label: "Market cap",
+                        checked: false,
+                      },
+                      {
+                        id: "checkbox-market-2",
+                        label: "Price",
+                        checked: true,
+                      },
+                      {
+                        id: "checkbox-market-3",
+                        label: "Volume",
+                        checked: false,
+                      },
+                    ].map((item, index) => (
+                      <li key={index}>
+                        <div className="flex items-center">
+                          <Checkbox
+                            id={item.id}
+                            checked={item.checked}
+                            value=""
+                          />
+                          <Label
+                            htmlFor={item.id}
+                            className="ml-2 text-sm font-medium"
+                          >
+                            {item.label}
+                          </Label>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </DropdownMenuContent>

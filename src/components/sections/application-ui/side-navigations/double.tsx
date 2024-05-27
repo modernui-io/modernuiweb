@@ -14,6 +14,7 @@ import {
   HiUser,
 } from "react-icons/hi";
 
+import { Button } from "~/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
@@ -37,52 +38,28 @@ export function DoubleSideNavigation() {
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
           <a href="#">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
               className="mb-6 h-7 pl-2"
-              alt="Flowbite Logo"
+              alt="ModernUI Logo"
             />
           </a>
           <ul className="space-y-2">
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiHome className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiUser className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiChartPie className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiInboxIn className="size-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
-                <HiLockClosed className="size-6" />
-              </a>
-            </li>
+            {[
+              { icon: <HiHome className="size-6" /> },
+              { icon: <HiUser className="size-6" /> },
+              { icon: <HiChartPie className="size-6" /> },
+              { icon: <HiInboxIn className="size-6" /> },
+              { icon: <HiLockClosed className="size-6" /> },
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >
+                  {item.icon}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         {isSidebarOpen && (
@@ -119,30 +96,16 @@ export function DoubleSideNavigation() {
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <ul id="dropdown-pages" className="space-y-2 py-2">
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Settings
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Kanban
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Calendar
-                        </a>
-                      </li>
+                      {["Settings", "Kanban", "Calendar"].map((link, index) => (
+                        <li key={index}>
+                          <a
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </CollapsibleContent>
                 </Collapsible>
@@ -150,11 +113,9 @@ export function DoubleSideNavigation() {
               <li>
                 <Collapsible>
                   <CollapsibleTrigger asChild>
-                    <button
-                      type="button"
+                    <Button
+                      variant={"ghost"}
                       className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      aria-controls="dropdown-sales"
-                      data-collapse-toggle="dropdown-sales"
                     >
                       <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -162,34 +123,24 @@ export function DoubleSideNavigation() {
                         Sales
                       </span>
                       <HiChevronDown className="size-6" />
-                    </button>
+                    </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <ul id="dropdown-sales" className="space-y-2 py-2">
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Products
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Billing
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Invoice
-                        </a>
-                      </li>
+                      {[
+                        { label: "Products" },
+                        { label: "Billing" },
+                        { label: "Invoice" },
+                      ].map((item, index) => (
+                        <li key={index}>
+                          <a
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </CollapsibleContent>
                 </Collapsible>
@@ -211,11 +162,9 @@ export function DoubleSideNavigation() {
               <li>
                 <Collapsible>
                   <CollapsibleTrigger asChild>
-                    <button
-                      type="button"
+                    <Button
+                      variant={"ghost"}
                       className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      aria-controls="dropdown-authentication"
-                      data-collapse-toggle="dropdown-authentication"
                     >
                       <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                       <span className="ml-3 flex-1 whitespace-nowrap text-left">
@@ -223,34 +172,24 @@ export function DoubleSideNavigation() {
                       </span>
 
                       <HiChevronDown className="size-6" />
-                    </button>
+                    </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <ul id="dropdown-authentication" className="space-y-2 py-2">
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Sign In
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Sign Up
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                        >
-                          Forgot Password
-                        </a>
-                      </li>
+                      {[
+                        { label: "Sign In" },
+                        { label: "Sign Up" },
+                        { label: "Forgot Password" },
+                      ].map((item, index) => (
+                        <li key={index}>
+                          <a
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </CollapsibleContent>
                 </Collapsible>
@@ -288,17 +227,15 @@ export function DoubleSideNavigation() {
           </div>
         )}
 
-        <button
-          id="hide-secondary-sidenav-button"
-          aria-controls="secondary-sidenav"
-          type="button"
+        <Button
+          variant={"ghost"}
           className="absolute bottom-2 left-20 inline-flex cursor-pointer rounded-full p-2 text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
           <HiChevronLeft
             className={`size-6 ${!isSidebarOpen && "rotate-180"}`}
             onClick={toggleSidebar}
           />
-        </button>
+        </Button>
       </aside>
     </>
   );

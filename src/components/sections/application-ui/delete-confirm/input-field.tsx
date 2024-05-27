@@ -44,7 +44,7 @@ export function DeleteConfirmationWithInputField() {
             This action&nbsp;
             <span className="font-semibold">CANNOT</span>
             &nbsp;be undone. This will permanently delete the&nbsp;
-            <span className="font-semibold">bergside/flowbite-library</span>
+            <span className="font-semibold">bergside/modernui-library</span>
             &nbsp;file, wiki, issues and comments, and remove all collaborator
             assosiations.
           </Text>
@@ -59,12 +59,17 @@ export function DeleteConfirmationWithInputField() {
                 </Label>
                 <Input
                   id="repository-name-input"
-                  placeholder="Ex. bergside/flowbite-library"
+                  placeholder="Ex. bergside/modernui-library"
                   required
                   {...form.register("name")}
                 />
               </div>
-              <Button type="submit" size="sm" className="w-full bg-red-500">
+              <Button
+                variant={"destructive"}
+                type="submit"
+                size="sm"
+                className="w-full"
+              >
                 I understand, delete this repository
               </Button>
             </form>

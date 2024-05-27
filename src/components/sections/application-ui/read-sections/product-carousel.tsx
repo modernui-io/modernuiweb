@@ -26,26 +26,26 @@ export function ReadProductSectionWithCarousel() {
             <Carousel className="mb-4 h-64">
               <CarouselContent>
                 <CarouselItem>
-                  <div className="flex h-full items-center justify-center bg-gray-100 dark:bg-gray-700">
+                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
                     <img
                       alt="iMac side"
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                      src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                     />
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="flex h-full items-center justify-center bg-gray-100 dark:bg-gray-700">
+                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
                     <img
                       alt="iMac front"
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                     />
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="flex h-full items-center justify-center bg-gray-100 dark:bg-gray-700">
+                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
                     <img
                       alt="iMac back"
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                     />
                   </div>
                 </CarouselItem>

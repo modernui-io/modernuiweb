@@ -32,7 +32,7 @@ export function ReadEventModal() {
           <dt className="mb-2 font-semibold leading-none">Details</dt>
           <dd className="text-gray-500 dark:text-gray-400">
             The 4th Digital Transformation and Industry 4.0 Free Online
-            Conference Organized by Flowbite and Themesberg, Live on Saturday
+            Conference Organized by ModernUI and Themesberg, Live on Saturday
             26th Nov at 02:00 pm GMT | 04:00 pm EET on Zoom Webinars
           </dd>
         </dl>

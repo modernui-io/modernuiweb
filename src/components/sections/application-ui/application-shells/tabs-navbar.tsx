@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   HiBell,
   HiChevronRight,
@@ -23,6 +25,7 @@ import {
   HiVideoCamera,
   HiViewGrid,
 } from "react-icons/hi";
+import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
 import {
@@ -42,8 +45,25 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 
+const formSchema = z.object({
+  search: z.string(),
+});
+
 export function TabsNavbarApplicationShell() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -55,24 +75,28 @@ export function TabsNavbarApplicationShell() {
         <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
-              <button
+              <Button
+                variant={"ghost"}
                 onClick={toggleSidebar}
                 className="mr-2 cursor-pointer rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
               >
                 <HiMenuAlt2 className="size-5" />
                 <span className="sr-only">Toggle sidebar</span>
-              </button>
-              <a href="https://flowbite.com" className="mr-4 flex">
+              </Button>
+              <a href="https://modernui.com" className="mr-4 flex">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
+                  src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                   className="mr-3 h-8"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                  Flowbite
+                  ModernUI
                 </span>
               </a>
-              <form action="#" method="GET" className="hidden lg:block lg:pl-2">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="hidden lg:block lg:pl-2"
+              >
                 <Label htmlFor="topbar-search" className="sr-only">
                   Search
                 </Label>
@@ -81,11 +105,11 @@ export function TabsNavbarApplicationShell() {
                     <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                     <Input
                       id="simple-search"
-                      name="simple-search"
                       placeholder="Search"
                       required
                       type="search"
                       className="pl-9"
+                      {...form.register("search")}
                     />
                   </div>
                 </div>
@@ -95,10 +119,8 @@ export function TabsNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View notifications</span>
-                      <HiBell className="size-5" />
-                    </>
+                    <span className="sr-only">View notifications</span>
+                    <HiBell className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -113,7 +135,7 @@ export function TabsNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -138,7 +160,7 @@ export function TabsNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -164,7 +186,7 @@ export function TabsNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -190,7 +212,7 @@ export function TabsNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -220,7 +242,7 @@ export function TabsNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -254,10 +276,8 @@ export function TabsNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View apps</span>
-                      <HiViewGrid className="size-5" />
-                    </>
+                    <span className="sr-only">View apps</span>
+                    <HiViewGrid className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -265,72 +285,71 @@ export function TabsNavbarApplicationShell() {
                     Apps
                   </div>
                   <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Sales</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Users</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Inbox</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Profile</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Settings</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Products</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Pricing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Billing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Logout</div>
-                    </a>
+                    {[
+                      {
+                        icon: (
+                          <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Sales",
+                      },
+                      {
+                        icon: (
+                          <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Users",
+                      },
+                      {
+                        icon: (
+                          <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Inbox",
+                      },
+                      {
+                        icon: (
+                          <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Profile",
+                      },
+                      {
+                        icon: (
+                          <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Settings",
+                      },
+                      {
+                        icon: (
+                          <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Products",
+                      },
+                      {
+                        icon: (
+                          <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Pricing",
+                      },
+                      {
+                        icon: (
+                          <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Billing",
+                      },
+                      {
+                        icon: (
+                          <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Logout",
+                      },
+                    ].map((item, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {item.icon}
+                        <div className="text-sm font-medium">{item.label}</div>
+                      </a>
+                    ))}
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -338,14 +357,12 @@ export function TabsNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="size-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                        alt=""
-                      />
-                    </>
+                    <span className="sr-only">Open user menu</span>
+                    <img
+                      className="size-8 rounded-full"
+                      src="https://github.com/shadcn.png"
+                      alt=""
+                    />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -354,7 +371,7 @@ export function TabsNavbarApplicationShell() {
                       Neil Sims
                     </span>
                     <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                      name@flowbite.com
+                      name@modernui.com
                     </span>
                   </div>
                   <DropdownMenuSeparator />
@@ -423,67 +440,31 @@ export function TabsNavbarApplicationShell() {
           className="mx-auto block border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
         >
           <div className="flex items-center">
-            <ul className="mt-0 flex w-full flex-col text-sm font-medium lg:flex-row">
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                >
-                  My account
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block border-b-2 border-primary-600 px-4 py-3 text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500"
-                  aria-current="page"
-                >
-                  Company
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                >
-                  Downloads
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                >
-                  Billing
-                </a>
-              </li>
-              <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
-                  href="#"
-                  className="block px-4 py-3 text-gray-500 hover:border-b-2 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
-                >
-                  Help & Support
-                </a>
-              </li>
+            <ul className="mt-0 flex w-full flex-col gap-5 text-sm font-medium lg:flex-row">
+              {[
+                { text: "My account", href: "#" },
+                { text: "Company", href: "#", current: true },
+                { text: "Downloads", href: "#" },
+                { text: "Earnings", href: "#" },
+                { text: "Billing", href: "#" },
+                { text: "Help & Support", href: "#" },
+              ].map((item, index) => (
+                <li key={index}>
+                  <a href={item.href}>{item.text}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>
       </div>
 
       <main className="flex-1 space-y-4 bg-background p-4 pt-32 lg:pt-4">
-        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <div
+            key={index}
+            className="h-96 flex-1 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"
+          ></div>
+        ))}
       </main>
     </>
   );

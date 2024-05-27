@@ -203,7 +203,7 @@ export function UpdateProductModal() {
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
                   <img
                     alt="iMac Side"
-                    src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                    src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                   />
                   <button
                     type="button"
@@ -216,7 +216,7 @@ export function UpdateProductModal() {
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
                   <img
                     alt="iMac Front"
-                    src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
                   <button
                     type="button"
@@ -229,7 +229,7 @@ export function UpdateProductModal() {
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
                   <img
                     alt="iMac Back"
-                    src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                    src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
                   <button
                     type="button"
@@ -242,7 +242,7 @@ export function UpdateProductModal() {
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
                   <img
                     alt="iMac Back"
-                    src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                    src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
                   <button
                     type="button"

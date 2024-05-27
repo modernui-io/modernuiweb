@@ -316,19 +316,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -411,19 +411,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -505,19 +505,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -600,19 +600,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -694,19 +694,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -789,19 +789,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -885,19 +885,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -979,19 +979,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
@@ -1075,13 +1075,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                     </div>
@@ -1160,19 +1160,19 @@ export function AdvancedProjectManagementTableForUserTasks() {
                       <Avatar>
                         <AvatarImage
                           alt="Helene Engels"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-10.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Robert Brown"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-1.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>
                         <AvatarImage
                           alt="Bonnie Green"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/avatar-3.png"
+                          src="https://github.com/shadcn.png"
                         />
                       </Avatar>
                       <Avatar>

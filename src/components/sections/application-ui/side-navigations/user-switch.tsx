@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   HiAcademicCap,
   HiBookOpen,
@@ -18,6 +20,7 @@ import {
   HiUsers,
   HiX,
 } from "react-icons/hi";
+import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
 import {
@@ -27,8 +30,25 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Input } from "~/components/ui/input";
 
+const formSchema = z.object({
+  search: z.string(),
+});
+
 export function UserSwitchSideNavigation() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -36,15 +56,14 @@ export function UserSwitchSideNavigation() {
 
   return (
     <>
-      <button
+      <Button
+        variant={"ghost"}
         onClick={toggleSidebar}
-        aria-controls="default-sidebar"
-        type="button"
         className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
-      </button>
+      </Button>
 
       <aside
         id="default-sidebar"
@@ -65,15 +84,13 @@ export function UserSwitchSideNavigation() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant={"ghost"}
-                id="dropdownUserNameButton"
-                data-dropdown-toggle="dropdownUserName"
                 className="my-4 flex w-full items-center justify-between rounded-lg p-2 focus:outline-none focus:ring-4"
                 type="button"
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
                   />
@@ -82,7 +99,7 @@ export function UserSwitchSideNavigation() {
                       Bonnie Green
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      bonnie@flowbite.com
+                      bonnie@modernui.com
                     </div>
                   </div>
                 </div>
@@ -100,7 +117,7 @@ export function UserSwitchSideNavigation() {
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Michael avatar"
                   />
@@ -109,7 +126,7 @@ export function UserSwitchSideNavigation() {
                       Michael Gough
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      michael@flowbite.com
+                      michael@modernui.com
                     </div>
                   </div>
                 </a>
@@ -118,7 +135,7 @@ export function UserSwitchSideNavigation() {
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   <img
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                    src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Roberta avatar"
                   />
@@ -127,14 +144,17 @@ export function UserSwitchSideNavigation() {
                       Roberta Casas
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      roberta@flowbite.com
+                      roberta@modernui.com
                     </div>
                   </div>
                 </a>
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
-          <form className="mb-4 flex items-center">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="mb-4 flex items-center"
+          >
             <label htmlFor="simple-search" className="sr-only">
               Search
             </label>
@@ -148,6 +168,7 @@ export function UserSwitchSideNavigation() {
                 className="w-full border-gray-300 p-2.5 pl-10 text-sm"
                 placeholder="Search projects"
                 required
+                {...form.register("search")}
               />
             </div>
           </form>

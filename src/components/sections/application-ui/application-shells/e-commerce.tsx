@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   HiBell,
   HiChartPie,
@@ -16,13 +18,16 @@ import {
   HiInboxIn,
   HiLogout,
   HiOutlineChatAlt,
+  HiSearch,
   HiShoppingCart,
   HiStar,
   HiTruck,
   HiUser,
   HiUserAdd,
   HiVideoCamera,
+  HiViewList,
 } from "react-icons/hi";
+import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
 import {
@@ -39,8 +44,25 @@ import {
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
+const formSchema = z.object({
+  search: z.string(),
+});
+
 export function ECommerceApplicationShell() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -53,28 +75,31 @@ export function ECommerceApplicationShell() {
           <nav className="inset-x-0 top-0 z-50 border-b border-gray-200 px-4 py-2.5 dark:border-gray-700">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-center">
-                <a href="https://flowbite.com" className="mr-6 flex">
+                <a href="https://modernui.com" className="mr-6 flex">
                   <img
-                    src="https://flowbite.s3.amazonaws.com/logo.svg"
+                    src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                     className="mr-3 h-8"
-                    alt="Flowbite Logo"
+                    alt="ModernUI Logo"
                   />
                   <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                     ModernUI
                   </span>
                 </a>
 
-                <form action="#" method="get" className="hidden md:block">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="hidden md:block"
+                >
                   <div className="flex">
-                    <label
+                    <Label
                       htmlFor="search-dropdown"
                       className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Your Email
-                    </label>
+                    </Label>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button className="rounded-r-none py-5">
+                        <Button className="rounded-r-none border border-primary py-5">
                           All categories
                           <HiChevronDown className="ml-1 size-4" />
                         </Button>
@@ -82,40 +107,40 @@ export function ECommerceApplicationShell() {
                       <DropdownMenuContent>
                         <div id="dropdown" className="w-44">
                           <ul
-                            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            className="text-sm text-gray-700 dark:text-gray-200"
                             aria-labelledby="dropdown-button"
                           >
                             <DropdownMenuItem>
-                              <button
-                                type="button"
-                                className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              <Button
+                                variant={"ghost"}
+                                className="inline-flex w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 Electronics
-                              </button>
+                              </Button>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                              <button
-                                type="button"
-                                className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              <Button
+                                variant={"ghost"}
+                                className="inline-flex w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 Vehicles
-                              </button>
+                              </Button>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                              <button
-                                type="button"
-                                className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              <Button
+                                variant={"ghost"}
+                                className="inline-flex w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 Instruments
-                              </button>
+                              </Button>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                              <button
-                                type="button"
-                                className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              <Button
+                                variant={"ghost"}
+                                className="inline-flex w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 Clothings
-                              </button>
+                              </Button>
                             </DropdownMenuItem>
                           </ul>
                         </div>
@@ -128,28 +153,15 @@ export function ECommerceApplicationShell() {
                         placeholder="Search Products... (ie. iPhone 12)"
                         required
                         className="w-72 rounded-none py-5"
+                        {...form.register("search")}
                       />
-                      <button
+                      <Button
                         type="submit"
-                        className="absolute right-0 top-0 rounded-r-lg border border-primary-700 bg-primary-700 p-2.5 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                        className="absolute -right-3 top-0 rounded-l-none rounded-r-lg border border-primary p-2.5 py-5 text-sm font-medium"
                       >
-                        <svg
-                          aria-hidden="true"
-                          className="size-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                          ></path>
-                        </svg>
+                        <HiSearch className="size-5" />
                         <span className="sr-only">Search</span>
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </form>
@@ -193,35 +205,18 @@ export function ECommerceApplicationShell() {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <button
-                  type="button"
-                  data-drawer-toggle="sidebar"
+                <Button
+                  variant={"ghost"}
                   className="mr-1 rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600 md:hidden"
                 >
                   <span className="sr-only">Search</span>
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    ></path>
-                  </svg>
-                </button>
+                  <HiSearch className="size-6" />
+                </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">View notifications</span>
-                        <HiBell className="size-5" />
-                      </>
+                      <span className="sr-only">View notifications</span>
+                      <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -236,7 +231,7 @@ export function ECommerceApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -261,7 +256,7 @@ export function ECommerceApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -287,7 +282,7 @@ export function ECommerceApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -313,7 +308,7 @@ export function ECommerceApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -343,7 +338,7 @@ export function ECommerceApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -385,30 +380,14 @@ export function ECommerceApplicationShell() {
                   </div>
                   <span className="ml-1 hidden sm:inline">My Cart</span>
                 </a>
-                <button
-                  type="button"
-                  id="drawer-navigation-button"
-                  data-drawer-target="sidebar"
-                  data-drawer-toggle="sidebar"
-                  aria-controls="sidebar"
+                <Button
+                  variant={"ghost"}
                   onClick={toggleSidebar}
                   className="items-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600 lg:hidden"
                 >
                   <span className="sr-only">Open menu</span>
-                  <svg
-                    className="size-6"
-                    aria-hidden="true"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
+                  <HiViewList className="size-6" />
+                </Button>
               </div>
             </div>
           </nav>
@@ -419,73 +398,36 @@ export function ECommerceApplicationShell() {
             <div className="px-4 py-2">
               <div className="flex items-center">
                 <ul className="flex items-center text-sm font-medium text-gray-900">
-                  <li className="block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
+                  {[
+                    { text: "Home" },
+                    { text: "Shop" },
+                    { text: "Today's deals" },
+                    { text: "Blog", hidden: "md:block lg:inline" },
+                    { text: "Contact", hidden: "md:block lg:inline" },
+                    { text: "Forum", hidden: "md:block lg:inline" },
+                    { text: "Support", hidden: "md:block lg:inline" },
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className={`block lg:inline ${item.hidden}`}
                     >
-                      Home
-                    </a>
-                  </li>
-                  <li className="block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Shop
-                    </a>
-                  </li>
-                  <li className="block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Today's deals
-                    </a>
-                  </li>
-                  <li className="hidden md:block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                  <li className="hidden md:block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li className="hidden md:block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Forum
-                    </a>
-                  </li>
-                  <li className="hidden md:block lg:inline">
-                    <a
-                      href="#"
-                      className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
-                    >
-                      Support
-                    </a>
-                  </li>
+                      <a
+                        href="#"
+                        className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
+                      >
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
                   <li className="block md:hidden">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <button
-                          id="navigationDropdownButton"
-                          aria-expanded="false"
-                          data-dropdown-toggle="navigationDropdown"
+                        <Button
+                          variant={"ghost"}
                           className="inline-flex items-center justify-center rounded-xl p-2 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600"
                         >
                           <HiDotsHorizontal className="size-5" />
-                        </button>
+                        </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
                         <div id="navigationDropdown">
@@ -493,62 +435,24 @@ export function ECommerceApplicationShell() {
                             className="py-1 text-gray-700 dark:text-gray-300"
                             aria-labelledby="navigationDropdownButton"
                           >
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Overview
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Sales
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Billing
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Team
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Resources
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Messages
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >
-                                Support
-                              </a>
-                            </li>
+                            {[
+                              "Overview",
+                              "Sales",
+                              "Billing",
+                              "Team",
+                              "Resources",
+                              "Messages",
+                              "Support",
+                            ].map((item, index) => (
+                              <li key={index}>
+                                <a
+                                  href="#"
+                                  className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                >
+                                  {item}
+                                </a>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </DropdownMenuContent>
@@ -569,41 +473,32 @@ export function ECommerceApplicationShell() {
                 `}
               aria-label="Sidebar"
             >
-              <form action="#" method="get" className="px-3 pt-3 md:hidden">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="px-3 pt-3 md:hidden"
+              >
                 <Label className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Search
                 </Label>
                 <div className="relative">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <svg
-                      aria-hidden="true"
-                      className="size-5 text-gray-500 dark:text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      ></path>
-                    </svg>
+                    <HiSearch className="size-5 text-gray-500 dark:text-gray-400" />
                   </div>
-                  <input
+                  <Input
                     type="search"
                     id="default-search"
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-6 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="Search..."
                     required
+                    {...form.register("search")}
                   />
-                  <button
+                  <Button
+                    size={"sm"}
                     type="submit"
                     className="absolute bottom-2 right-2.5 rounded-lg bg-blue-700 px-3 py-1 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Search
-                  </button>
+                  </Button>
                 </div>
               </form>
 
@@ -616,7 +511,7 @@ export function ECommerceApplicationShell() {
                   <span className="sr-only">Open user menu</span>
                   <div className="flex items-center">
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                      src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt="Bonnie avatar"
                     />
@@ -625,7 +520,7 @@ export function ECommerceApplicationShell() {
                         Bonnie Green
                       </div>
                       <div className="text-sm text-gray-500 dark:text-gray-400">
-                        bonnie@flowbite.com
+                        bonnie@modernui.com
                       </div>
                     </div>
                   </div>
@@ -688,53 +583,34 @@ export function ECommerceApplicationShell() {
                   <li>
                     <Collapsible>
                       <CollapsibleTrigger asChild>
-                        <button
-                          type="button"
+                        <Button
+                          variant={"ghost"}
                           className="group flex w-full items-center rounded-lg p-2 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                          aria-controls="dropdown-orders"
-                          data-collapse-toggle="dropdown-orders"
                         >
                           <HiTruck className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                           <span className="ml-3 flex-1 whitespace-nowrap text-left">
                             Orders
                           </span>
                           <HiChevronDown className="size-6" />
-                        </button>
+                        </Button>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <ul id="dropdown-orders" className="space-y-2 py-2">
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Completed orders
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Orders in delivery
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Canceled orders
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Returns
-                            </a>
-                          </li>
+                          {[
+                            "Completed orders",
+                            "Orders in delivery",
+                            "Canceled orders",
+                            "Returns",
+                          ].map((text, index) => (
+                            <li key={index}>
+                              <a
+                                href="#"
+                                className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                              >
+                                {text}
+                              </a>
+                            </li>
+                          ))}
                         </ul>
                       </CollapsibleContent>
                     </Collapsible>
@@ -742,45 +618,31 @@ export function ECommerceApplicationShell() {
                   <li>
                     <Collapsible>
                       <CollapsibleTrigger asChild>
-                        <button
-                          type="button"
+                        <Button
+                          variant={"ghost"}
                           className="group flex w-full items-center rounded-lg p-2 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                          aria-controls="dropdown-payments"
-                          data-collapse-toggle="dropdown-payments"
                         >
                           <HiCreditCard className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                           <span className="ml-3 flex-1 whitespace-nowrap text-left">
                             Payments
                           </span>
                           <HiChevronDown className="size-6" />
-                        </button>
+                        </Button>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <ul id="dropdown-payments" className="space-y-2 py-2">
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Invoices
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Payouts
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            >
-                              Billing information
-                            </a>
-                          </li>
+                          {["Invoices", "Payouts", "Billing information"].map(
+                            (text, index) => (
+                              <li key={index}>
+                                <a
+                                  href="#"
+                                  className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >
+                                  {text}
+                                </a>
+                              </li>
+                            ),
+                          )}
                         </ul>
                       </CollapsibleContent>
                     </Collapsible>
@@ -885,23 +747,42 @@ export function ECommerceApplicationShell() {
 
           <main className="h-full flex-1 overflow-y-auto pb-4 lg:pl-4">
             <div className="mb-4 grid grid-cols-2 gap-4 xl:grid-cols-4">
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
-              <div className="rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
+              {Array.from({ length: 4 }, (_, index) => (
+                <div
+                  key={index}
+                  className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"
+                ></div>
+              ))}
             </div>
+
+            {/* Grid 2 */}
             <div className="mb-4 grid grid-cols-2 gap-4">
-              <div className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"></div>
-              <div className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"></div>
+              {Array.from({ length: 2 }, (_, index) => (
+                <div
+                  key={index}
+                  className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"
+                ></div>
+              ))}
             </div>
+
+            {/* Grid 3 */}
             <div className="mb-4 grid grid-cols-3 gap-4">
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
-              <div className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"></div>
+              {Array.from({ length: 3 }, (_, index) => (
+                <div
+                  key={index}
+                  className="h-32 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"
+                ></div>
+              ))}
             </div>
+
+            {/* Grid 4 */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"></div>
-              <div className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"></div>
+              {Array.from({ length: 2 }, (_, index) => (
+                <div
+                  key={index}
+                  className="h-48 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-96"
+                ></div>
+              ))}
             </div>
           </main>
         </div>

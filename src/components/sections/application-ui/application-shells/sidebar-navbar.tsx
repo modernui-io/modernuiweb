@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   HiBell,
   HiChartPie,
@@ -29,6 +31,7 @@ import {
   HiVideoCamera,
   HiViewGrid,
 } from "react-icons/hi";
+import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
 import {
@@ -53,8 +56,25 @@ import {
   TooltipTrigger,
 } from "~/components/ui/tooltip";
 
+const formSchema = z.object({
+  search: z.string(),
+});
+
 export function SidebarNavbarApplicationShell() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -66,24 +86,28 @@ export function SidebarNavbarApplicationShell() {
         <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
-              <button
+              <Button
+                variant={"ghost"}
                 onClick={toggleSidebar}
                 className="mr-2 cursor-pointer rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:bg-gray-700 dark:focus:ring-gray-700 md:hidden"
               >
                 <HiMenuAlt2 className="size-5" />
                 <span className="sr-only">Toggle sidebar</span>
-              </button>
-              <a href="https://flowbite.com" className="mr-4 flex">
+              </Button>
+              <a href="https://modernui.com" className="mr-4 flex">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
+                  src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                   className="mr-3 h-8"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                  Flowbite
+                  ModernUI
                 </span>
               </a>
-              <form action="#" method="GET" className="hidden lg:block lg:pl-2">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="hidden lg:block lg:pl-2"
+              >
                 <Label htmlFor="topbar-search" className="sr-only">
                   Search
                 </Label>
@@ -92,11 +116,11 @@ export function SidebarNavbarApplicationShell() {
                     <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                     <Input
                       id="simple-search"
-                      name="simple-search"
                       placeholder="Search"
                       required
                       type="search"
                       className="pl-9"
+                      {...form.register("search")}
                     />
                   </div>
                 </div>
@@ -106,10 +130,8 @@ export function SidebarNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View notifications</span>
-                      <HiBell className="size-5" />
-                    </>
+                    <span className="sr-only">View notifications</span>
+                    <HiBell className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -124,7 +146,7 @@ export function SidebarNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -149,7 +171,7 @@ export function SidebarNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -175,7 +197,7 @@ export function SidebarNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -201,7 +223,7 @@ export function SidebarNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -231,7 +253,7 @@ export function SidebarNavbarApplicationShell() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -265,10 +287,8 @@ export function SidebarNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View apps</span>
-                      <HiViewGrid className="size-5" />
-                    </>
+                    <span className="sr-only">View apps</span>
+                    <HiViewGrid className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -276,72 +296,71 @@ export function SidebarNavbarApplicationShell() {
                     Apps
                   </div>
                   <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Sales</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Users</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Inbox</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Profile</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Settings</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Products</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Pricing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Billing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Logout</div>
-                    </a>
+                    {[
+                      {
+                        icon: (
+                          <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Sales",
+                      },
+                      {
+                        icon: (
+                          <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Users",
+                      },
+                      {
+                        icon: (
+                          <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Inbox",
+                      },
+                      {
+                        icon: (
+                          <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Profile",
+                      },
+                      {
+                        icon: (
+                          <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Settings",
+                      },
+                      {
+                        icon: (
+                          <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Products",
+                      },
+                      {
+                        icon: (
+                          <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Pricing",
+                      },
+                      {
+                        icon: (
+                          <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Billing",
+                      },
+                      {
+                        icon: (
+                          <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Logout",
+                      },
+                    ].map((item, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {item.icon}
+                        <div className="text-sm font-medium">{item.label}</div>
+                      </a>
+                    ))}
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -349,14 +368,12 @@ export function SidebarNavbarApplicationShell() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="size-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                        alt=""
-                      />
-                    </>
+                    <span className="sr-only">Open user menu</span>
+                    <img
+                      className="size-8 rounded-full"
+                      src="https://github.com/shadcn.png"
+                      alt=""
+                    />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -365,7 +382,7 @@ export function SidebarNavbarApplicationShell() {
                       Neil Sims
                     </span>
                     <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                      name@flowbite.com
+                      name@modernui.com
                     </span>
                   </div>
                   <DropdownMenuSeparator />
@@ -428,11 +445,9 @@ export function SidebarNavbarApplicationShell() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-pages"
-                    data-collapse-toggle="dropdown-pages"
                   >
                     <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -440,34 +455,24 @@ export function SidebarNavbarApplicationShell() {
                       Pages
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-pages" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Kanban
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Calendar
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Settings" },
+                      { href: "#", label: "Kanban" },
+                      { href: "#", label: "Calendar" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -475,11 +480,9 @@ export function SidebarNavbarApplicationShell() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-sales"
-                    data-collapse-toggle="dropdown-sales"
                   >
                     <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
 
@@ -487,34 +490,24 @@ export function SidebarNavbarApplicationShell() {
                       Sales
                     </span>
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-sales" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Products
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Invoice
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Products" },
+                      { href: "#", label: "Billing" },
+                      { href: "#", label: "Invoice" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -534,11 +527,9 @@ export function SidebarNavbarApplicationShell() {
             <li>
               <Collapsible>
                 <CollapsibleTrigger asChild>
-                  <button
-                    type="button"
+                  <Button
+                    variant={"ghost"}
                     className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    aria-controls="dropdown-authentication"
-                    data-collapse-toggle="dropdown-authentication"
                   >
                     <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                     <span className="ml-3 flex-1 whitespace-nowrap text-left">
@@ -546,67 +537,60 @@ export function SidebarNavbarApplicationShell() {
                     </span>
 
                     <HiChevronDown className="size-6" />
-                  </button>
+                  </Button>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-authentication" className="space-y-2 py-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign In
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Forgot Password
-                      </a>
-                    </li>
+                    {[
+                      { href: "#", label: "Sign In" },
+                      { href: "#", label: "Sign Up" },
+                      { href: "#", label: "Forgot Password" },
+                    ].map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
             </li>
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Docs</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Components</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                <span className="ml-3">Help</span>
-              </a>
-            </li>
+            {[
+              {
+                icon: (
+                  <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Docs",
+              },
+              {
+                icon: (
+                  <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Components",
+              },
+              {
+                icon: (
+                  <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                ),
+                label: "Help",
+              },
+            ].map((item, index) => (
+              <li key={index}>
+                <a
+                  href="#"
+                  className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  {item.icon}
+                  <span className="ml-3">{item.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 lg:flex">
@@ -673,24 +657,30 @@ export function SidebarNavbarApplicationShell() {
       </aside>
       <main className="h-auto bg-background p-4 pt-20 md:ml-64">
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"></div>
-          <div className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"></div>
-          <div className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"></div>
-          <div className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"></div>
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"
+            ></div>
+          ))}
         </div>
         <div className="mb-4 h-96 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
         <div className="mb-4 grid grid-cols-2 gap-4">
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"
+            ></div>
+          ))}
         </div>
         <div className="mb-4 h-96 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
         <div className="grid grid-cols-2 gap-4">
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
-          <div className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"></div>
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"
+            ></div>
+          ))}
         </div>
       </main>
     </>

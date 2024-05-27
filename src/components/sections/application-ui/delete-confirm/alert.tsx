@@ -18,7 +18,7 @@ export function ConfirmDeleteWithAlert() {
       <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5">
         <h3 className="mb-2 text-lg font-semibold">Confirm user removal</h3>
         <Text className="mb-4 text-gray-500 dark:text-gray-400">
-          Are you sure you want to delete this user from the Flowbite platform?
+          Are you sure you want to delete this user from the ModernUI platform?
         </Text>
         <div className="mb-4 rounded-lg bg-orange-100 p-5 text-left text-orange-700 dark:bg-gray-700 dark:text-orange-300">
           <div className="mb-1 items-center">
@@ -35,7 +35,7 @@ export function ConfirmDeleteWithAlert() {
           <DialogClose asChild>
             <Button size="sm">No, cancel</Button>
           </DialogClose>
-          <Button type="submit" size="sm" className="bg-red-500">
+          <Button type="submit" size="sm" variant={"destructive"}>
             <HiTrash className="-ml-1 mr-1.5 size-4" />
             Yes, confirm delete
           </Button>

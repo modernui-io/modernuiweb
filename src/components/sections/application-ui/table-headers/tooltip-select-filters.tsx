@@ -32,7 +32,7 @@ export function TableHeaderWithTooltipAndSelectFilters() {
         <div className="relative shadow-md sm:rounded-lg">
           <div className="mx-4 flex flex-col items-center justify-between space-y-3 border-b py-4 md:flex-row md:space-x-4 md:space-y-0">
             <div className="flex w-full items-center space-x-3">
-              <h5 className="font-semibold">Flowbite Products</h5>
+              <h5 className="font-semibold">ModernUI Products</h5>
               <div className="font-medium text-gray-500">6,560 results</div>
               <TooltipProvider>
                 <Tooltip>

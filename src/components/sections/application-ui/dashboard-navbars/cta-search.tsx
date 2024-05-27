@@ -22,9 +22,8 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
               <a href="#" className="mr-6 flex">
-                {/* TODO: Put ModernUI Logo */}
                 <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
+                  src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                   className="mr-3 h-8"
                   alt=""
                 />
@@ -40,7 +39,7 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                       <span className="sr-only">Open user menu</span>
                       <div className="flex items-center">
                         <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                          src="https://github.com/shadcn.png"
                           className="mr-3 size-8 rounded-full"
                           alt=""
                         />
@@ -58,7 +57,7 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                 <DropdownMenuContent>
                   <DropdownMenuItem>
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                      src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt=""
                     />
@@ -74,7 +73,7 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                      src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt=""
                     />
@@ -122,10 +121,8 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
               </ul>
               <Button className="hidden lg:inline">Feedback</Button>
               <Button
-                id="toggleMobileMenuButton"
                 className="lg:hidden"
                 variant={"ghost"}
-                data-collapse-toggle="toggleMobileMenu"
                 onClick={() => setIsNavVisible(!isNavVisible)}
               >
                 <span className="sr-only">Open menu</span>

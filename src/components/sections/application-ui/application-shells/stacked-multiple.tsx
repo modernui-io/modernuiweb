@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   HiBell,
   HiChevronRight,
@@ -27,6 +29,7 @@ import {
   HiVideoCamera,
   HiViewGrid,
 } from "react-icons/hi";
+import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
@@ -40,8 +43,25 @@ import {
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
+const formSchema = z.object({
+  search: z.string(),
+});
+
 export function StackedMultipleApplicationShell() {
   const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
 
   return (
     <>
@@ -52,7 +72,7 @@ export function StackedMultipleApplicationShell() {
               <div className="flex items-center justify-start">
                 <a href="https://modernui.com" className="mr-6 flex">
                   <img
-                    src="https://flowbite.s3.amazonaws.com/logo.svg"
+                    src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                     className="mr-3 h-8"
                     alt=""
                   />
@@ -61,8 +81,7 @@ export function StackedMultipleApplicationShell() {
                   </span>
                 </a>
                 <form
-                  action="#"
-                  method="GET"
+                  onSubmit={form.handleSubmit(onSubmit)}
                   className="hidden lg:block lg:pl-2"
                 >
                   <Label htmlFor="topbar-search" className="sr-only">
@@ -73,10 +92,10 @@ export function StackedMultipleApplicationShell() {
                       <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                       <Input
                         id="topbar-search"
-                        name="topbar-search"
                         placeholder="Jump to Favorites, Apps, Pipelines..."
                         type="search"
                         className="pl-9"
+                        {...form.register("search")}
                       />
                     </div>
                   </div>
@@ -86,10 +105,8 @@ export function StackedMultipleApplicationShell() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">View notifications</span>
-                        <HiBell className="size-5" />
-                      </>
+                      <span className="sr-only">View notifications</span>
+                      <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -104,7 +121,7 @@ export function StackedMultipleApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -129,7 +146,7 @@ export function StackedMultipleApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -155,7 +172,7 @@ export function StackedMultipleApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -181,7 +198,7 @@ export function StackedMultipleApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -211,7 +228,7 @@ export function StackedMultipleApplicationShell() {
                         <div className="shrink-0">
                           <img
                             className="size-11 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                            src="https://github.com/shadcn.png"
                             alt=""
                           />
                           <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -246,10 +263,8 @@ export function StackedMultipleApplicationShell() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">View apps</span>
-                        <HiViewGrid className="size-5" />
-                      </>
+                      <span className="sr-only">View apps</span>
+                      <HiViewGrid className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -257,72 +272,71 @@ export function StackedMultipleApplicationShell() {
                       Apps
                     </div>
                     <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Sales</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Users</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Inbox</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Profile</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                        <div className="text-sm font-medium">Settings</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                        <div className="text-sm font-medium">Products</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                        <div className="text-sm font-medium">Pricing</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Billing</div>
-                      </a>
-                      <a
-                        href="#"
-                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                      >
-                        <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                        <div className="text-sm font-medium">Logout</div>
-                      </a>
+                      {[
+                        {
+                          icon: (
+                            <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Sales",
+                        },
+                        {
+                          icon: (
+                            <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Users",
+                        },
+                        {
+                          icon: (
+                            <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Inbox",
+                        },
+                        {
+                          icon: (
+                            <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Profile",
+                        },
+                        {
+                          icon: (
+                            <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Settings",
+                        },
+                        {
+                          icon: (
+                            <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Products",
+                        },
+                        {
+                          icon: (
+                            <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Pricing",
+                        },
+                        {
+                          icon: (
+                            <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Billing",
+                        },
+                        {
+                          icon: (
+                            <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                          ),
+                          text: "Logout",
+                        },
+                      ].map((item, index) => (
+                        <a
+                          key={index}
+                          href="#"
+                          className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
+                        >
+                          {item.icon}
+                          <div className="text-sm font-medium">{item.text}</div>
+                        </a>
+                      ))}
                     </div>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -332,14 +346,12 @@ export function StackedMultipleApplicationShell() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">Open user menu</span>
-                        <img
-                          className="size-8 rounded-full"
-                          src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                          alt=""
-                        />
-                      </>
+                      <span className="sr-only">Open user menu</span>
+                      <img
+                        className="size-8 rounded-full"
+                        src="https://github.com/shadcn.png"
+                        alt=""
+                      />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -348,7 +360,7 @@ export function StackedMultipleApplicationShell() {
                         Neil Sims
                       </span>
                       <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                        name@flowbite.com
+                        name@modernui.com
                       </span>
                     </div>
                     <DropdownMenuSeparator />
@@ -404,22 +416,20 @@ export function StackedMultipleApplicationShell() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">Open user menu</span>
-                        <div className="mr-2 flex items-center">
-                          <img
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                            className="mr-2 size-7 rounded-full"
-                            alt=""
-                          />
-                          <div className="text-left">
-                            <div className="text-sm font-semibold leading-none text-gray-900 dark:text-white">
-                              Personal
-                            </div>
+                      <span className="sr-only">Open user menu</span>
+                      <div className="mr-2 flex items-center">
+                        <img
+                          src="https://github.com/shadcn.png"
+                          className="mr-2 size-7 rounded-full"
+                          alt=""
+                        />
+                        <div className="text-left">
+                          <div className="text-sm font-semibold leading-none text-gray-900 dark:text-white">
+                            Personal
                           </div>
                         </div>
-                        <HiSelector className="size-3 text-gray-500 dark:text-gray-400" />
-                      </>
+                      </div>
+                      <HiSelector className="size-3 text-gray-500 dark:text-gray-400" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -460,69 +470,48 @@ export function StackedMultipleApplicationShell() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox id="helper-radio-4" name="helper-radio" />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-radio-4"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>themesberg.com</div>
-                              <p
-                                id="helper-radio-text-4"
-                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                      {[
+                        {
+                          id: "helper-radio-4",
+                          name: "helper-radio",
+                          title: "themesberg.com",
+                          description: "Free templates and themes",
+                        },
+                        {
+                          id: "helper-radio-5",
+                          name: "helper-radio",
+                          title: "iconscale.com",
+                          description: "Open-source SVG icons",
+                        },
+                        {
+                          id: "helper-radio-6",
+                          name: "helper-radio",
+                          title: "ui.glass",
+                          description: "Glassmorphism UI framework",
+                        },
+                      ].map((item) => (
+                        <li key={item.id}>
+                          <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <div className="flex h-5 items-center">
+                              <Checkbox id={item.id} name={item.name} />
+                            </div>
+                            <div className="ml-2 text-sm">
+                              <Label
+                                htmlFor={item.id}
+                                className="font-medium text-gray-900 dark:text-gray-300"
                               >
-                                Free templates and themes
-                              </p>
-                            </Label>
+                                <div>{item.title}</div>
+                                <p
+                                  id={`helper-radio-text-${item.id}`}
+                                  className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                                >
+                                  {item.description}
+                                </p>
+                              </Label>
+                            </div>
                           </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox id="helper-radio-5" name="helper-radio" />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-radio-5"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>iconscale.com</div>
-                              <p
-                                id="helper-radio-text-5"
-                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                              >
-                                Open-source SVG icons
-                              </p>
-                            </Label>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                          <div className="flex h-5 items-center">
-                            <Checkbox id="helper-radio-6" name="helper-radio" />
-                          </div>
-                          <div className="ml-2 text-sm">
-                            <Label
-                              htmlFor="helper-radio-6"
-                              className="font-medium text-gray-900 dark:text-gray-300"
-                            >
-                              <div>ui.glass</div>
-                              <p
-                                id="helper-radio-text-6"
-                                className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                              >
-                                Glassmorphism UI framework
-                              </p>
-                            </Label>
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                      ))}
                     </ul>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -542,22 +531,37 @@ export function StackedMultipleApplicationShell() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem>
-                      <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                      Create new app
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                      Inbox
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                      App info
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <HiInboxIn className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                      Edit app
-                    </DropdownMenuItem>
+                    {[
+                      {
+                        icon: (
+                          <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                        ),
+                        text: "Create new app",
+                      },
+                      {
+                        icon: (
+                          <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                        ),
+                        text: "Inbox",
+                      },
+                      {
+                        icon: (
+                          <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                        ),
+                        text: "App info",
+                      },
+                      {
+                        icon: (
+                          <HiInboxIn className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
+                        ),
+                        text: "Edit app",
+                      },
+                    ].map((item, index) => (
+                      <DropdownMenuItem key={index}>
+                        {item.icon}
+                        {item.text}
+                      </DropdownMenuItem>
+                    ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
@@ -566,87 +570,39 @@ export function StackedMultipleApplicationShell() {
           {isNavVisible && (
             <div>
               <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-                <a
-                  aria-current="page"
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-                >
-                  <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
-                    Home
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Company
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Team
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Features
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Marketplace
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Resources
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Forum
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                >
-                  <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                    Support
-                  </span>
-                </a>
+                {[
+                  { label: "Home", href: "#" },
+                  { label: "Company", href: "#" },
+                  { label: "Team", href: "#" },
+                  { label: "Features", href: "#" },
+                  { label: "Marketplace", href: "#" },
+                  { label: "Resources", href: "#" },
+                  { label: "Forum", href: "#" },
+                  { label: "Support", href: "#" },
+                ].map((item, index) => (
+                  <li key={index}>
+                    <a
+                      href={item.href}
+                      className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                    >
+                      <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                        {item.label}
+                      </span>
+                    </a>
+                  </li>
+                ))}
               </div>
             </div>
           )}
         </nav>
       </header>
       <main className="grid flex-1 grid-cols-1 gap-5 p-4 pt-48 dark:bg-gray-900 md:grid-cols-2">
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
-        <div className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"></div>
+        {Array.from({ length: 10 }, (_, index) => (
+          <div
+            key={index}
+            className="h-96 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600"
+          ></div>
+        ))}
       </main>
     </>
   );

@@ -39,7 +39,11 @@ export function DeleteConfirmationWithItemsList() {
           <DialogClose asChild>
             <Button>No, cancel</Button>
           </DialogClose>
-          <Button type="submit" className="bg-red-500 [&>span]:items-center">
+          <Button
+            type="submit"
+            variant={"destructive"}
+            className="[&>span]:items-center"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-4" />
             Yes, delete
           </Button>

@@ -22,25 +22,25 @@ export function ReadProductModal() {
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700 md:size-36">
             <img
               alt="iMac Side"
-              src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+              src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
             />
           </div>
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700 md:size-36">
             <img
               alt="iMac Front"
-              src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
             />
           </div>
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700 md:size-36">
             <img
               alt="iMac Back"
-              src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
             />
           </div>
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700 md:size-36">
             <img
               alt="iMac Back"
-              src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
             />
           </div>
         </div>
@@ -65,11 +65,11 @@ export function ReadProductModal() {
         <dl className="mb-4 grid grid-cols-2 gap-4 sm:mb-5 sm:grid-cols-3">
           <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-700">
             <dt className="mb-2 font-semibold leading-none">Sold by</dt>
-            <dd className="text-gray-500 dark:text-gray-400">Flowbite</dd>
+            <dd className="text-gray-500 dark:text-gray-400">ModernUI</dd>
           </div>
           <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-700">
             <dt className="mb-2 font-semibold leading-none">Ships from</dt>
-            <dd className="text-gray-500 dark:text-gray-400">Flowbite</dd>
+            <dd className="text-gray-500 dark:text-gray-400">ModernUI</dd>
           </div>
           <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-700">
             <dt className="mb-2 font-semibold leading-none">Product State</dt>

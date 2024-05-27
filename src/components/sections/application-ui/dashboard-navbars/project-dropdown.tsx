@@ -51,9 +51,9 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
         <div className="w-full px-4 py-3.5 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
-              <a href="https://flowbite.com" className="mr-4 flex">
+              <a href="https://modernui.com" className="mr-4 flex">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
+                  src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                   className="mr-3 h-8"
                   alt=""
                 />
@@ -84,7 +84,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -109,7 +109,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -135,7 +135,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -161,7 +161,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -191,7 +191,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <div className="shrink-0">
                         <img
                           className="size-11 rounded-full"
-                          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                          src="https://github.com/shadcn.png"
                           alt=""
                         />
                         <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -237,72 +237,71 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                     Apps
                   </div>
                   <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Sales</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Users</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Inbox</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Profile</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Settings</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Products</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-
-                      <div className="text-sm font-medium">Pricing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Billing</div>
-                    </a>
-                    <a
-                      href="#"
-                      className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                    >
-                      <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                      <div className="text-sm font-medium">Logout</div>
-                    </a>
+                    {[
+                      {
+                        icon: (
+                          <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Sales",
+                      },
+                      {
+                        icon: (
+                          <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Users",
+                      },
+                      {
+                        icon: (
+                          <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Inbox",
+                      },
+                      {
+                        icon: (
+                          <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Profile",
+                      },
+                      {
+                        icon: (
+                          <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Settings",
+                      },
+                      {
+                        icon: (
+                          <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Products",
+                      },
+                      {
+                        icon: (
+                          <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Pricing",
+                      },
+                      {
+                        icon: (
+                          <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Billing",
+                      },
+                      {
+                        icon: (
+                          <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Logout",
+                      },
+                    ].map((item, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {item.icon}
+                        <div className="text-sm font-medium">{item.label}</div>
+                      </a>
+                    ))}
                   </div>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -419,7 +418,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="size-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                     </>
@@ -431,7 +430,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       Neil Sims
                     </span>
                     <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                      name@flowbite.com
+                      name@modernui.com
                     </span>
                   </div>
                   <DropdownMenuSeparator />
@@ -519,7 +518,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                       Neil Sims
                     </span>
                     <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                      name@flowbite.com
+                      name@modernui.com
                     </span>
                   </div>
                   <DropdownMenuSeparator />

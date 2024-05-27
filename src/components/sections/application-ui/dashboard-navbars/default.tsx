@@ -78,14 +78,14 @@ export function DefaultDashboardNavbar() {
               </svg>
               <span className="sr-only">Toggle sidebar</span>
             </button>
-            <a href="https://flowbite.com" className="mr-4 flex">
+            <a href="https://modernui.com" className="mr-4 flex">
               <img
-                src="https://flowbite.s3.amazonaws.com/logo.svg"
+                src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
                 className="mr-3 h-8"
                 alt=""
               />
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                Flowbite
+                ModernUI
               </span>
             </a>
             <form action="#" method="GET" className="hidden lg:block lg:pl-2">
@@ -143,7 +143,7 @@ export function DefaultDashboardNavbar() {
                     <div className="shrink-0">
                       <img
                         className="size-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                       <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
@@ -168,7 +168,7 @@ export function DefaultDashboardNavbar() {
                     <div className="shrink-0">
                       <img
                         className="size-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                       <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
@@ -194,7 +194,7 @@ export function DefaultDashboardNavbar() {
                     <div className="shrink-0">
                       <img
                         className="size-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                       <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
@@ -220,7 +220,7 @@ export function DefaultDashboardNavbar() {
                     <div className="shrink-0">
                       <img
                         className="size-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                       <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
@@ -248,7 +248,7 @@ export function DefaultDashboardNavbar() {
                     <div className="shrink-0">
                       <img
                         className="size-11 rounded-full"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                        src="https://github.com/shadcn.png"
                         alt=""
                       />
                       <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
@@ -370,7 +370,7 @@ export function DefaultDashboardNavbar() {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="size-8 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                      src="https://github.com/shadcn.png"
                       alt=""
                     />
                   </>
@@ -380,7 +380,7 @@ export function DefaultDashboardNavbar() {
                 <div className="px-4 py-3">
                   <span className="block text-sm font-semibold">Neil Sims</span>
                   <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                    name@flowbite.com
+                    name@modernui.com
                   </span>
                 </div>
                 <DropdownMenuSeparator />

@@ -54,21 +54,21 @@ export function AdvancedReadEventSection() {
                 <Avatar className="size-8">
                   <AvatarImage
                     alt="Helene Engels"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
+                    src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>HE</AvatarFallback>
                 </Avatar>
                 <Avatar className="size-8">
                   <AvatarImage
                     alt="Robert Brown"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                    src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>RB</AvatarFallback>
                 </Avatar>
                 <Avatar className="size-8">
                   <AvatarImage
                     alt="Bonnie Green"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                    src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>BG</AvatarFallback>
                 </Avatar>

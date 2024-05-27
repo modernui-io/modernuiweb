@@ -362,7 +362,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -441,7 +441,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -520,7 +520,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-iphone-14.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -597,7 +597,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-ipad-air.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -676,7 +676,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-s.png"
+                      src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -755,7 +755,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/playstation-5.png"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -834,7 +834,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-x.png"
+                      src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -913,7 +913,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-watch-se.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -990,7 +990,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/nikon-d850.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />
@@ -1069,7 +1069,7 @@ export function AdvancedTableWithSortableRows() {
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/benq-ex2710q.png"
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt="iMac Front"
                       className="mr-3 h-8 w-auto"
                     />

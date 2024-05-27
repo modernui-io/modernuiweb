@@ -38,21 +38,21 @@ export function AdvancedReadEventModal() {
               <Avatar className="size-8">
                 <AvatarImage
                   alt="Helene Engels"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
+                  src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>HE</AvatarFallback>
               </Avatar>
               <Avatar className="size-8">
                 <AvatarImage
                   alt="Robert Brown"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
+                  src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>RB</AvatarFallback>
               </Avatar>
               <Avatar className="size-8">
                 <AvatarImage
                   alt="Bonnie Green"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                  src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>BG</AvatarFallback>
               </Avatar>
@@ -73,7 +73,7 @@ export function AdvancedReadEventModal() {
             <dt className="mb-2 font-semibold leading-none">Details</dt>
             <dd className="text-gray-500 dark:text-gray-400">
               The 4th Digital Transformation and Industry 4.0 Free Online
-              Conference Organized by Flowbite and Themesberg, Live on Saturday
+              Conference Organized by ModernUI and Themesberg, Live on Saturday
               26th Nov at 02:00 pm GMT | 04:00 pm EET on Zoom Webinars
             </dd>
           </dl>

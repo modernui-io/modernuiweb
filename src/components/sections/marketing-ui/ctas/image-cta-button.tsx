@@ -27,7 +27,7 @@ export function ImageWithCTAButtonSection() {
         />
         <div className="mt-4 md:mt-0">
           <Heading level={2} className="mb-4 font-extrabold tracking-tight">
-            Let's create more tools and ideas that brings us together.
+            Let&#39;s create more tools and ideas that brings us together.
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg">
             ModernUi Web helps you connect with friends and communities of

@@ -127,7 +127,7 @@ export function CardCTAsWithIconsSection() {
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <Heading level={2} className="mb-4  font-extrabold tracking-tight">
-          We didn't reinvent the wheel
+          We didn&#39;t reinvent the wheel
         </Heading>
         <Text className="mb-3 text-muted-foreground sm:text-xl">
           Track work across the enterprise through an open, collaborative

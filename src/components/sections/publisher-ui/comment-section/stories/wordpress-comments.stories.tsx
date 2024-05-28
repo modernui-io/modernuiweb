@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import WordpressComments from "../wordpress-comments";
 
+import WordpressComments from "../wordpress-comments";
 
 const meta = {
   title: "sections/Publisher UI/Comments/Wordpress Comments",

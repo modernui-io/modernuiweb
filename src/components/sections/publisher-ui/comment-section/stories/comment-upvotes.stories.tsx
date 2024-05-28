@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CommentsUpvotes } from "../comment-upvotes";
 
+import { CommentsUpvotes } from "../comment-upvotes";
 
 const meta = {
   title: "sections/Publisher UI/Comments/Comment Section with Upvotes",

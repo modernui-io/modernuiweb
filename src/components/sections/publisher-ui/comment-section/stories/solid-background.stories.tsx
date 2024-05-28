@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CommentsSolidBackground } from "../solid-background";
 
+import { CommentsSolidBackground } from "../solid-background";
 
 const meta = {
   title: "sections/Publisher UI/Comments/Comments with solid background",

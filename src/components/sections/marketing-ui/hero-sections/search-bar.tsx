@@ -108,7 +108,7 @@ export function HeroSectionWithSearchBar() {
               </span>
               &nbsp;
               <span className="text-sm font-medium">
-                Flowbite is out! See what's new
+                modernUIWeb is out! See what&apos;s new
               </span>{" "}
               <ChevronRight className="ml-1 size-4 text-foreground" />
             </Link>
@@ -116,11 +116,11 @@ export function HeroSectionWithSearchBar() {
               level={"lgDisplay"}
               className="mb-4 font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl"
             >
-              We invest in the world’s potential
+              We invest in the world&apos;s potential
             </Heading>
             <Text className="mx-auto mb-6 max-w-xl text-primary-600 md:text-lg lg:mx-0 xl:mb-8 xl:text-xl">
-              Here at Flowbite we focus on markets where innovation can unlock
-              long-term value and drive economic growth.
+              Here at modernUIWeb we focus on markets where innovation can
+              unlock long-term value and drive economic growth.
             </Text>
             <Form {...form}>
               <form

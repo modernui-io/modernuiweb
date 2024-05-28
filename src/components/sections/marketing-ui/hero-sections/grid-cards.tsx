@@ -1,3 +1,5 @@
+// Note - the flowbite is used in url of images we need them to load images
+/* eslint-disable local-rules/no-flowbite */
 import Link from "next/link";
 
 //components

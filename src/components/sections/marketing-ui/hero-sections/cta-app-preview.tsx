@@ -122,8 +122,8 @@ export function AppScreenshotWithCTAsHero() {
           We invest in the world’s potential
         </Heading>
         <Text className="mb-8 text-secondary-foreground sm:px-16 md:text-lg lg:text-xl xl:px-48">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Here at modernUIWeb we focus on markets where technology, innovation,
+          and capital can unlock long-term value and drive economic growth.
         </Text>
         <div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 lg:mb-16">
           <Button size="lg">Free trial for 30 days</Button>

@@ -22,7 +22,7 @@ export function VisualImageWithHeadingHero() {
           </Heading>
           <Text className="mb-6 max-w-2xl text-muted-foreground md:text-lg lg:mb-8 lg:text-xl">
             From checkout to global sales tax compliance, companies around the
-            world use Flowbite to simplify their payment stack.
+            world use modernUIWeb to simplify their payment stack.
           </Text>
           <div className="flex w-fit items-center gap-5">
             <Button className="[&>span]:items-center">

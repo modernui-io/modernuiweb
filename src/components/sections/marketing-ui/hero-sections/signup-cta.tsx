@@ -77,8 +77,9 @@ export function SignUpFormWithCTAHero() {
             Discover new product and best possibilities
           </Heading>
           <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-8 lg:text-xl">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            Here at modernUIWeb we focus on markets where technology,
+            innovation, and capital can unlock long-term value and drive
+            economic growth.
           </Text>
           <Button className="w-fit [&>span]:items-center" size="lg">
             <Video className="-ml-1 mr-2 size-5" />

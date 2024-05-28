@@ -231,7 +231,7 @@ export function InformationalCTAWithAppScreenshotHero() {
             </Button>
           </div>
           <div className="text-sm text-primary-500">
-            By using Flowbite, you agree to its&nbsp;
+            By using modernUIWeb, you agree to its&nbsp;
             <Link href="#" className=" text-primary-600 hover:underline">
               license
             </Link>

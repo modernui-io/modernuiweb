@@ -21,9 +21,9 @@ export function VideoEmbedWithCTAHero() {
           Your Dream Vacation
         </Heading>
         <Text className="mb-8 text-secondary-foreground sm:px-16 md:text-lg lg:text-xl xl:px-48">
-          Here at Flowbite we compare a wide range of destinations, flights and
-          hotels to conjure up cheap holidays for you to enjoy, time and time
-          again.
+          Here at modernUIWeb we compare a wide range of destinations, flights
+          and hotels to conjure up cheap holidays for you to enjoy, time and
+          time again.
         </Text>
         <div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 lg:mb-16">
           <Button size="lg">Discover locations</Button>

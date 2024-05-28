@@ -37,8 +37,9 @@ export function CoverImageWithCTAsHero() {
             Discover new product and best possibilities
           </Heading>
           <Text className="mb-6 text-primary-700 md:text-lg lg:mb-8 lg:text-xl">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            Here at modernUIWeb we focus on markets where technology,
+            innovation, and capital can unlock long-term value and drive
+            economic growth.
           </Text>
           <div className="items-center gap-16 sm:flex">
             <div className="mb-8 text-secondary-foreground sm:mb-0">
@@ -50,8 +51,9 @@ export function CoverImageWithCTAsHero() {
                 28 November 2021
               </Heading>
               <Text className="mb-4 font-light text-primary-600">
-                Join us at Flowbite 2021 to understand what’s next as the global
-                tech and startup ecosystem, rethinks the future of everything.
+                Join us at modernUIWeb 2021 to understand what’s next as the
+                global tech and startup ecosystem, rethinks the future of
+                everything.
               </Text>
               <Button className="w-fit">
                 Conference

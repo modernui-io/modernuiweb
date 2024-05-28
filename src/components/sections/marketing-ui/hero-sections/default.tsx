@@ -125,7 +125,7 @@ export function DefaultHero() {
           </span>
           &nbsp;
           <span className="text-sm font-medium">
-            Flowbite is out! See what's new
+            modernUIWeb is out! See what&apos;s new
           </span>
           <ChevronRight className="w-4 text-foreground" />
         </Link>
@@ -136,8 +136,8 @@ export function DefaultHero() {
           We invest in the world’s potential
         </Heading>
         <Text className="mb-8 text-lg font-normal text-secondary-foreground sm:px-16 lg:text-xl xl:px-48">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Here at modernUIWeb we focus on markets where technology, innovation,
+          and capital can unlock long-term value and drive economic growth.
         </Text>
         <div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 lg:mb-16">
           <Button className="[&>span]:items-center">

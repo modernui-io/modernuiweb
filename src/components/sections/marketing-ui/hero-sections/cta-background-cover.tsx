@@ -15,7 +15,7 @@ const footerList = [
   },
   {
     heading: "Zero emissions",
-    caption: "Flowbite aims to achieve net-zero emissions",
+    caption: "modernUIWeb aims to achieve net-zero emissions",
   },
   {
     heading: "New York",
@@ -29,20 +29,21 @@ const footerList = [
 
 export function BackgroundCoverImageWithCTAsHero() {
   return (
-    <MuiLayout.Section className="bg-slate-700 bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply ">
+    <MuiLayout.Section className="bg-slate-700 bg-[url('https://modernUIWeb.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply ">
       <MuiLayout.Container className="relative z-10 mx-auto max-w-screen-xl px-4 py-8 lg:py-16">
         <div className="mb-6 max-w-screen-lg lg:mb-0">
           <Heading
             level={"lgDisplay"}
             className="mb-4 font-extrabold leading-none tracking-tight text-white"
           >
-            We invest in the world’s potential
+            We invest in the world&apos;s potential
           </Heading>
           <Text className="mb-6 text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-            The need for energy is universal. That's why Flowbite scientists and
-            engineers are pioneering new research and pursuing new technologies
-            to reduce emissions while creating more efficient fuels. We're
-            committed to responsibly meeting the world's energy needs.
+            The need for energy is universal. That&apos;s why modernUIWeb
+            scientists and engineers are pioneering new research and pursuing
+            new technologies to reduce emissions while creating more efficient
+            fuels. We&apos;re committed to responsibly meeting the world&apos;s
+            energy needs.
           </Text>
           <Button size="lg" className="text-white [&>span]:items-center">
             Learn more about the plan

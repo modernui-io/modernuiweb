@@ -26,8 +26,9 @@ const avatarBadgeVariants = cva(
 export interface AvatarBadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof avatarBadgeVariants> {
-  children?:
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  children?: // Note the children can be of any react elemnt type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
     | null
     | never[];
 }

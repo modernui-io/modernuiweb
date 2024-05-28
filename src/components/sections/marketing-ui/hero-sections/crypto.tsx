@@ -51,7 +51,7 @@ export function FinancialExchangeCryptoHero() {
           <Text className="text-base font-normal text-secondary-foreground lg:mb-8 lg:text-xl xl:mb-12">
             Buy, trade, and hold&nbsp;
             <span className="font-medium">600+</span>
-            &nbsp;cryptocurrencies on Flowbite
+            &nbsp;cryptocurrencies on modernUIWeb
           </Text>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-8 xl:grid-cols-5">

@@ -55,7 +55,7 @@ export function SearchBarDatepickerHeroSection() {
   }
 
   return (
-    <MuiLayout.Section className="bg-gray-700 bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply">
+    <MuiLayout.Section className="bg-gray-700 bg-[url('https://modernUIWeb.s3.amazonaws.com/blocks/marketing-ui/hero/coast-house-view.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply">
       <MuiLayout.Container className="relative z-10 mx-auto max-w-screen-xl px-4 py-8 text-white lg:py-16">
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <Heading
@@ -65,8 +65,8 @@ export function SearchBarDatepickerHeroSection() {
             Every home is a destination
           </Heading>
           <Text className="mb-6 text-slate-300 md:text-lg lg:mb-8 lg:text-xl">
-            The best of Luxury Retreats is now Flowbite Luxe—offering the
-            world's most extraordinary homes with the highest standard of
+            The best of Luxury Retreats is now modernUIWeb Luxe—offering the
+            world&apos;s most extraordinary homes with the highest standard of
             service.
           </Text>
           <Link

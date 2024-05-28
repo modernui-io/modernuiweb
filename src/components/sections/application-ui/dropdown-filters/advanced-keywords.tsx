@@ -41,6 +41,10 @@ export function AdvancedDropdownFilterKeywords() {
   const [isAustralia, setAustralia] = useState(true);
   const [isEurope, setEurope] = useState(false);
 
+  function check(id: string) {
+    document.querySelector<HTMLInputElement>(id)!.checked = true;
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

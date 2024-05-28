@@ -307,7 +307,7 @@ export function AdvancedCreateUserModal() {
                     <Avatar>
                       <AvatarImage
                         alt="Helene Engels"
-                        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
+                        src="https://github.com/shadcn.png"
                       />
                       <AvatarFallback>HE</AvatarFallback>
                     </Avatar>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { HiPlus, HiRefresh, HiShoppingCart, HiUpload } from "react-icons/hi";
@@ -108,8 +109,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -196,8 +199,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -284,8 +289,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-iphone-14.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -372,8 +379,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-ipad-air.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -460,8 +469,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-s.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -548,8 +559,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/playstation-5.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -636,8 +649,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-x.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -724,8 +739,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/apple-watch-se.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -812,8 +829,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/nikon-d850.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -900,8 +919,10 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/benq-ex2710q.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />

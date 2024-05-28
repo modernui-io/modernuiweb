@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { FaDribbble, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import { HiPencilAlt, HiTrash } from "react-icons/hi";
 
@@ -15,11 +18,13 @@ export function AdvancedUserReadModal() {
         <div className="mb-4 flex justify-between rounded-t sm:mb-5">
           <div className="text-lg md:text-xl">
             <div className="flex items-center">
-              <img
+              <Image
+                width={100}
+                height={100}
                 alt="Helene avatar"
                 src="https://github.com/shadcn.png"
                 className="mr-2 size-12 rounded-full sm:mr-4"
-              ></img>
+              />
               <div>
                 <h3 className="text-lg font-bold md:text-xl">Helene Engels</h3>
                 <Text className="text-base text-gray-500 dark:text-gray-400">
@@ -85,36 +90,36 @@ export function AdvancedUserReadModal() {
           <dl>
             <dt className="mb-2 font-semibold leading-none">Biography</dt>
             <dd className="mb-4 text-gray-500 dark:text-gray-400 sm:mb-5">
-              Hello, I'm Helene Engels, USA Designer, Creating things that stand
-              out, Featured by Adobe, Figma, Webflow and others, Daily design
-              tips & resources, Exploring Web3.
+              Hello, I&apos;m Helene Engels, USA Designer, Creating things that
+              stand out, Featured by Adobe, Figma, Webflow and others, Daily
+              design tips & resources, Exploring Web3.
             </dd>
             <dt className="mb-2 font-semibold leading-none">Social</dt>
             <dd className="inline-flex items-center space-x-1">
-              <a
+              <Link
                 href="#"
                 className="rounded-lg p-2 text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <FaFacebook className="size-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="rounded-lg p-2 text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <FaInstagram className="size-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="rounded-lg p-2 text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <FaGithub className="size-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="rounded-lg p-2 text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <FaDribbble className="size-5" />
-              </a>
+              </Link>
             </dd>
           </dl>
         </div>

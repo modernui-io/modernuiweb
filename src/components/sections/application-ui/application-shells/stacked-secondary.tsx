@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { HiDotsHorizontal } from "react-icons/hi";
 
 import {
@@ -15,9 +18,11 @@ export function StackedSecondaryApplicationShell() {
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start">
                 <a href="https://modernui.com" className="mr-6 flex">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                    className="mr-3 h-8"
+                    className="mr-3 h-8 w-auto"
                     alt="ModernUI Logo"
                   />
                   <span className="self-center whitespace-nowrap text-2xl font-semibold">
@@ -26,19 +31,19 @@ export function StackedSecondaryApplicationShell() {
                 </a>
               </div>
               <div className="flex items-center justify-between space-x-4 text-sm lg:order-2">
-                <a
+                <Link
                   href="#"
                   className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                 >
                   My profile
-                </a>
+                </Link>
                 <div className="mx-2 h-4 w-px border dark:border-gray-700"></div>
-                <a
+                <Link
                   href="#"
                   className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                 >
                   Logout
-                </a>
+                </Link>
               </div>
             </div>
           </nav>
@@ -63,12 +68,12 @@ export function StackedSecondaryApplicationShell() {
                       key={index}
                       className={`block ${item.hidden ? "hidden md:block" : ""} lg:inline`}
                     >
-                      <a
+                      <Link
                         href="#"
                         className="inline-block rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600"
                       >
                         {item.text}
-                      </a>
+                      </Link>
                     </li>
                   ))}
 
@@ -100,12 +105,12 @@ export function StackedSecondaryApplicationShell() {
                               "Support",
                             ].map((item, index) => (
                               <li key={index}>
-                                <a
+                                <Link
                                   href="#"
                                   className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                   {item}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>

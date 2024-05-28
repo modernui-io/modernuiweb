@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { HiCloudUpload, HiTrash, HiUpload } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
@@ -200,8 +202,11 @@ export function UpdateProductModal() {
             <div className="mb-4">
               <span className="mb-2 block">Product Images</span>
               <div className="mb-4 grid grid-cols-3 gap-4 sm:grid-cols-4">
-                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
-                  <img
+                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
+                  <Image
+                    className="w-auto sm:h-36"
+                    width={100}
+                    height={100}
                     alt="iMac Side"
                     src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                   />
@@ -213,8 +218,11 @@ export function UpdateProductModal() {
                     <span className="sr-only">Delete image</span>
                   </button>
                 </div>
-                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
-                  <img
+                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
+                  <Image
+                    className="w-auto sm:h-36"
+                    width={100}
+                    height={100}
                     alt="iMac Front"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
@@ -226,8 +234,11 @@ export function UpdateProductModal() {
                     <span className="sr-only">Delete image</span>
                   </button>
                 </div>
-                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
-                  <img
+                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
+                  <Image
+                    className="w-auto sm:h-36"
+                    width={100}
+                    height={100}
                     alt="iMac Back"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
@@ -239,8 +250,11 @@ export function UpdateProductModal() {
                     <span className="sr-only">Delete image</span>
                   </button>
                 </div>
-                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700 sm:size-36">
-                  <img
+                <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
+                  <Image
+                    className="w-auto sm:h-36"
+                    width={100}
+                    height={100}
                     alt="iMac Back"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -76,9 +78,11 @@ export function ECommerceApplicationShell() {
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-center">
                 <a href="https://modernui.com" className="mr-6 flex">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                    className="mr-3 h-8"
+                    className="mr-3 h-8 w-auto"
                     alt="ModernUI Logo"
                   />
                   <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
@@ -224,12 +228,14 @@ export function ECommerceApplicationShell() {
                       Notifications
                     </div>
                     <div className="border-t dark:border-gray-600">
-                      <a
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -242,19 +248,22 @@ export function ECommerceApplicationShell() {
                           <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                             New message from&nbsp;
                             <span className="font-semibold">Bonnie Green</span>:
-                            "Hey, what's up? All set for the presentation?"
+                            &quot;Hey, what&apos;s up? All set for the
+                            presentation?&quot;
                           </div>
                           <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                             a few moments ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -274,13 +283,15 @@ export function ECommerceApplicationShell() {
                             10 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -300,13 +311,15 @@ export function ECommerceApplicationShell() {
                             44 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -330,13 +343,15 @@ export function ECommerceApplicationShell() {
                             1 hour ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -355,9 +370,9 @@ export function ECommerceApplicationShell() {
                             3 hours ago
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
-                    <a
+                    <Link
                       href="#"
                       className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                     >
@@ -365,10 +380,10 @@ export function ECommerceApplicationShell() {
                         <HiEye className="mr-2 size-5" />
                         View all
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <a
+                <Link
                   href="#"
                   className="inline-flex items-center rounded-lg p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-800"
                 >
@@ -379,7 +394,7 @@ export function ECommerceApplicationShell() {
                     </span>
                   </div>
                   <span className="ml-1 hidden sm:inline">My Cart</span>
-                </a>
+                </Link>
                 <Button
                   variant={"ghost"}
                   onClick={toggleSidebar}
@@ -411,12 +426,12 @@ export function ECommerceApplicationShell() {
                       key={index}
                       className={`block lg:inline ${item.hidden}`}
                     >
-                      <a
+                      <Link
                         href="#"
                         className="inline-block rounded-lg px-3 py-2 hover:bg-gray-200 hover:text-gray-900 dark:text-white dark:hover:bg-gray-600"
                       >
                         {item.text}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                   <li className="block md:hidden">
@@ -445,12 +460,12 @@ export function ECommerceApplicationShell() {
                               "Support",
                             ].map((item, index) => (
                               <li key={index}>
-                                <a
+                                <Link
                                   href="#"
                                   className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                   {item}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -503,14 +518,16 @@ export function ECommerceApplicationShell() {
               </form>
 
               <div className="h-full overflow-y-auto px-3 py-5 lg:rounded-lg">
-                <a
+                <Link
                   href="#"
-                  className="dark:hover-bg-gray-700 mb-5 flex w-full items-center justify-between rounded-lg p-2 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  className="mb-5 flex w-full items-center justify-between rounded-lg p-2 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                   type="button"
                 >
                   <span className="sr-only">Open user menu</span>
                   <div className="flex items-center">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt="Bonnie avatar"
@@ -524,12 +541,12 @@ export function ECommerceApplicationShell() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
 
                 <div className="my-5 border-y border-gray-100 py-5 dark:border-gray-700">
                   <ul className="grid grid-cols-3 gap-2">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="group flex flex-col items-center justify-center rounded-xl bg-primary-50 p-2.5 hover:bg-primary-100 dark:bg-primary-900 dark:hover:bg-primary-800"
                       >
@@ -539,10 +556,10 @@ export function ECommerceApplicationShell() {
                         <span className="text-sm font-medium text-primary-600 dark:text-primary-300">
                           Profile
                         </span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="group flex flex-col items-center justify-center rounded-xl bg-purple-50 p-2.5 hover:bg-purple-100 dark:bg-purple-900 dark:hover:bg-purple-800"
                       >
@@ -552,10 +569,10 @@ export function ECommerceApplicationShell() {
                         <span className="text-sm font-medium text-purple-600 dark:text-purple-300">
                           Gifts
                         </span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="group flex flex-col items-center justify-center rounded-xl bg-teal-50 p-2.5 hover:bg-teal-100 dark:bg-teal-900 dark:hover:bg-teal-800"
                       >
@@ -565,20 +582,20 @@ export function ECommerceApplicationShell() {
                         <span className="text-sm font-medium text-teal-600 dark:text-teal-300">
                           Support
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
 
                 <ul className="space-y-2">
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                       <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                       <span className="ml-3">Overview</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Collapsible>
@@ -603,12 +620,12 @@ export function ECommerceApplicationShell() {
                             "Returns",
                           ].map((text, index) => (
                             <li key={index}>
-                              <a
+                              <Link
                                 href="#"
                                 className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                               >
                                 {text}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -634,12 +651,12 @@ export function ECommerceApplicationShell() {
                           {["Invoices", "Payouts", "Billing information"].map(
                             (text, index) => (
                               <li key={index}>
-                                <a
+                                <Link
                                   href="#"
                                   className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                 >
                                   {text}
-                                </a>
+                                </Link>
                               </li>
                             ),
                           )}
@@ -648,7 +665,7 @@ export function ECommerceApplicationShell() {
                     </Collapsible>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -659,10 +676,10 @@ export function ECommerceApplicationShell() {
                       <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                         5
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -670,10 +687,10 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Reviews
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -681,10 +698,10 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Recently viewed
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -692,12 +709,12 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Favourite items
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -705,10 +722,10 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Settings
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -716,10 +733,10 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Personal info
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
@@ -727,10 +744,10 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Subscriptions
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center rounded-lg p-2 text-base font-medium text-red-600 hover:bg-red-100 dark:text-red-500 dark:hover:bg-gray-700"
                     >
@@ -738,7 +755,7 @@ export function ECommerceApplicationShell() {
                       <span className="ml-3 flex-1 whitespace-nowrap">
                         Log out
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

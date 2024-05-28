@@ -1,22 +1,20 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiBell,
-  HiChevronRight,
   HiClipboardList,
   HiCog,
-  HiCollection,
   HiCurrencyDollar,
   HiEye,
   HiHeart,
   HiInbox,
   HiInboxIn,
-  HiLightningBolt,
   HiLogout,
   HiMenu,
   HiOutlineAdjustments,
   HiOutlineChatAlt,
-  HiPlus,
   HiSearch,
   HiShoppingBag,
   HiUserAdd,
@@ -25,7 +23,6 @@ import {
   HiVideoCamera,
   HiViewGrid,
 } from "react-icons/hi";
-import { twMerge } from "tailwind-merge";
 
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
@@ -48,30 +45,32 @@ export function DoubleDashboardNavbarWithSearchInput() {
       <nav className="border-gray-200 px-0 py-2.5 antialiased dark:bg-gray-900">
         <div className="flex w-full flex-wrap items-center justify-between">
           <div className="flex w-full items-center justify-start px-4 lg:px-6">
-            <a href="https://modernui.com" className="mr-6 flex xl:mr-8">
-              <img
+            <Link href="https://modernui.com" className="mr-6 flex xl:mr-8">
+              <Image
+                width={100}
+                height={100}
                 src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                className="mr-3 h-8"
+                className="mr-3 h-8 w-auto"
                 alt=""
               />
               <span className="self-center whitespace-nowrap text-2xl font-semibold">
                 ModernUI
               </span>
-            </a>
+            </Link>
             <div className="w-full items-center justify-between lg:order-1 lg:ml-6 lg:flex">
               <nav className="hidden lg:block">
                 <ul className="flex gap-x-7">
-                  <a
+                  <Link
                     href="#"
                     aria-current="page"
                     className="text-blue-600 dark:text-blue-500"
                   >
                     Home
-                  </a>
-                  <a href="#">Company</a>
-                  <a href="#">Marketplace</a>
-                  <a href="#">Features</a>
-                  <a>
+                  </Link>
+                  <Link href="#">Company</Link>
+                  <Link href="#">Marketplace</Link>
+                  <Link href="#">Features</Link>
+                  <Link href="#">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Text>Dropdown</Text>
@@ -82,7 +81,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                         <DropdownMenuItem>Support</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
-                  </a>
+                  </Link>
                 </ul>
               </nav>
               <div className="flex items-center justify-end lg:order-2 lg:justify-between">
@@ -100,12 +99,14 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       Notifications
                     </div>
                     <div className="border-t dark:border-gray-600">
-                      <a
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -118,19 +119,22 @@ export function DoubleDashboardNavbarWithSearchInput() {
                           <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                             New message from&nbsp;
                             <span className="font-semibold">Bonnie Green</span>:
-                            "Hey, what's up? All set for the presentation?"
+                            &quot;Hey, what&apos;s up? All set for the
+                            presentation?&quot;
                           </div>
                           <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                             a few moments ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -150,13 +154,15 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             10 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -176,13 +182,15 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             44 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -206,13 +214,15 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             1 hour ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -231,9 +241,9 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             3 hours ago
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
-                    <a
+                    <Link
                       href="#"
                       className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                     >
@@ -241,7 +251,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                         <HiEye className="mr-2 size-5" />
                         View all
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
@@ -315,14 +325,14 @@ export function DoubleDashboardNavbarWithSearchInput() {
                           text: "Logout",
                         },
                       ].map((item, index) => (
-                        <a
+                        <Link
                           key={index}
                           href="#"
                           className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                         >
                           {item.icon}
                           <div className="text-sm font-medium">{item.text}</div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </DropdownMenuContent>
@@ -404,15 +414,14 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      {" "}
-                      <>
-                        <span className="sr-only">Open user menu</span>
-                        <img
-                          className="size-8 rounded-full"
-                          src="https://github.com/shadcn.png"
-                          alt=""
-                        />
-                      </>
+                      <span className="sr-only">Open user menu</span>
+                      <Image
+                        width={100}
+                        height={100}
+                        className="size-8 rounded-full"
+                        src="https://github.com/shadcn.png"
+                        alt=""
+                      />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -429,20 +438,20 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       aria-labelledby="userMenuDropdownButton"
                     >
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           My profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Account settings
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                     <ul
@@ -450,7 +459,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       aria-labelledby="userMenuDropdownButton"
                     >
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
@@ -464,10 +473,10 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
                           </svg>
                           My likes
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
@@ -484,10 +493,10 @@ export function DoubleDashboardNavbarWithSearchInput() {
                             <path d="M17.993 13.191a1 1 0 0 0-1 1v.163l-7 3.435-7-3.435v-.163a1 1 0 1 0-2 0v.787a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.787a1 1 0 0 0-1-1Z" />{" "}
                           </svg>
                           Collections
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
@@ -518,7 +527,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                               d="m1 9 4-4-4-4"
                             />
                           </svg>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                     <ul
@@ -526,12 +535,12 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       aria-labelledby="dropdown"
                     >
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Sign out
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </DropdownMenuContent>
@@ -600,7 +609,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
               </div>
             </form>
             <div className="lg:mt-4 lg:hidden">
-              <a className="px-4">
+              <Link href="#" className="px-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -680,20 +689,20 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     </ul>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
+              </Link>
+              <Link href="#" className="px-4 text-sm font-medium">
                 Home
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
+              </Link>
+              <Link href="#" className="px-4 text-sm font-medium">
                 Company
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
+              </Link>
+              <Link href="#" className="px-4 text-sm font-medium">
                 Marketplace
-              </a>
-              <a href="#" className="px-4 text-sm font-medium">
+              </Link>
+              <Link href="#" className="px-4 text-sm font-medium">
                 Features
-              </a>
-              <a className="px-4">
+              </Link>
+              <Link href="#" className="px-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>Dropdown</Button>
@@ -704,7 +713,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     <DropdownMenuItem>Support</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

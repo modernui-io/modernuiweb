@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiChevronDown,
@@ -69,9 +71,11 @@ export function ProjectsTeamSwitchSideNavigation() {
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                    className="mr-3 h-7"
+                    className="mr-3 h-7 w-auto"
                     alt="ModernUI Logo"
                   />
                   <div>
@@ -87,7 +91,7 @@ export function ProjectsTeamSwitchSideNavigation() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
@@ -153,18 +157,18 @@ export function ProjectsTeamSwitchSideNavigation() {
                     Personal plan
                   </div>
                 </div>
-              </a>
+              </Link>
             </DropdownMenuContent>
           </DropdownMenu>
           <ul className="mt-5 space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiHome className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Home</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -185,12 +189,12 @@ export function ProjectsTeamSwitchSideNavigation() {
                     {["To do", "In progress", "Completed"].map(
                       (item, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                           >
                             {item}
-                          </a>
+                          </Link>
                         </li>
                       ),
                     )}
@@ -199,7 +203,7 @@ export function ProjectsTeamSwitchSideNavigation() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
@@ -208,34 +212,34 @@ export function ProjectsTeamSwitchSideNavigation() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiPresentationChartLine className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Reporting</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiFolderOpen className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Portfolios</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiFlag className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Goals</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mb-4 mt-5 border-t border-gray-200 pl-2 pt-5 text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
@@ -243,43 +247,43 @@ export function ProjectsTeamSwitchSideNavigation() {
           </div>
           <ul className="space-y-4 pl-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-primary-600"></span>
                 <span className="ml-3">ModernUI library</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-teal-400"></span>
                 <span className="ml-3">Themesberg</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-orange-300"></span>
                 <span className="ml-3">ModernUI blocks</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 hover:underline dark:text-white"
               >
                 <span className="size-4 rounded bg-purple-500"></span>
                 <span className="ml-3">Iconscale</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg text-base font-medium text-gray-900 transition duration-75 dark:text-gray-200"
               >
@@ -287,29 +291,29 @@ export function ProjectsTeamSwitchSideNavigation() {
                 <span className="ml-3 text-gray-500 hover:underline dark:text-gray-400">
                   Add new project
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 z-20 w-full justify-center p-4">
           <ul className="mb-4 space-y-2 border-b border-gray-200 pb-4 pl-2 dark:border-gray-700">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               >
                 <HiClipboardList className="size-4 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-2">Settings</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               >
                 <HiCollection className="size-4 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-2">Help & getting started</span>
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -322,7 +326,9 @@ export function ProjectsTeamSwitchSideNavigation() {
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
@@ -345,11 +351,13 @@ export function ProjectsTeamSwitchSideNavigation() {
                 className="w-60 divide-y divide-gray-100 rounded shadow"
                 data-popper-placement="bottom"
               >
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Michael avatar"
@@ -362,12 +370,14 @@ export function ProjectsTeamSwitchSideNavigation() {
                       michael@modernui.com
                     </div>
                   </div>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Roberta avatar"
@@ -380,17 +390,17 @@ export function ProjectsTeamSwitchSideNavigation() {
                       roberta@modernui.com
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
-          <a
+          <Link
             href="#"
             className="group flex items-center pl-2 text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
           >
             <HiCollection className="size-4 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             <span className="ml-2">Invite team members</span>
-          </a>
+          </Link>
         </div>
       </aside>
     </>

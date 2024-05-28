@@ -8,7 +8,7 @@ export function DefaultReadSection() {
     <section className="bg-background">
       <div className="mx-auto max-w-2xl px-4 py-8 lg:py-16">
         <h2 className="mb-2 text-xl font-semibold leading-none md:text-2xl">
-          Apple iMac 25"
+          Apple iMac 25&quot;
         </h2>
         <Text className="mb-4 text-xl font-extrabold leading-none md:text-2xl">
           $2999

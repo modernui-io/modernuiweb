@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiChartPie,
@@ -36,13 +38,15 @@ export function DoubleSideNavigation() {
         aria-label="Sidenav"
       >
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <a href="#">
-            <img
+          <Link href="#">
+            <Image
+              width={100}
+              height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
               className="mb-6 h-7 pl-2"
               alt="ModernUI Logo"
             />
-          </a>
+          </Link>
           <ul className="space-y-2">
             {[
               { icon: <HiHome className="size-6" /> },
@@ -52,12 +56,12 @@ export function DoubleSideNavigation() {
               { icon: <HiLockClosed className="size-6" /> },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   {item.icon}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -69,13 +73,13 @@ export function DoubleSideNavigation() {
           >
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal"
                 >
                   <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                   <span className="ml-3">Overview</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Collapsible>
@@ -98,12 +102,12 @@ export function DoubleSideNavigation() {
                     <ul id="dropdown-pages" className="space-y-2 py-2">
                       {["Settings", "Kanban", "Calendar"].map((link, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {link}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -133,12 +137,12 @@ export function DoubleSideNavigation() {
                         { label: "Invoice" },
                       ].map((item, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -146,7 +150,7 @@ export function DoubleSideNavigation() {
                 </Collapsible>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal"
                 >
@@ -157,7 +161,7 @@ export function DoubleSideNavigation() {
                   <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                     6
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Collapsible>
@@ -182,12 +186,12 @@ export function DoubleSideNavigation() {
                         { label: "Forgot Password" },
                       ].map((item, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -197,31 +201,31 @@ export function DoubleSideNavigation() {
             </ul>
             <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                   <span className="ml-3">Docs</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                   <span className="ml-3">Components</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                   <span className="ml-3">Help</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

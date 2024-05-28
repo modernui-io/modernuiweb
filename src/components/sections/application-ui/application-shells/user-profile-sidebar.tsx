@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiBell,
@@ -65,13 +67,13 @@ export function UserProfileSidebarApplicationShell() {
         <div className="h-full overflow-y-auto border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -144,7 +146,7 @@ export function UserProfileSidebarApplicationShell() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -153,7 +155,7 @@ export function UserProfileSidebarApplicationShell() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -213,13 +215,13 @@ export function UserProfileSidebarApplicationShell() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -305,24 +307,26 @@ export function UserProfileSidebarApplicationShell() {
       >
         <div className="h-full overflow-y-auto border-r border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center text-gray-500 dark:text-gray-400">
-            <img
+            <Image
+              width={100}
+              height={100}
               className="mx-auto mb-4 size-20 rounded-full"
               src="https://github.com/shadcn.png"
               alt="Micheal Avatar"
             />
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#">Michael Gough</a>
+              <Link href="#">Michael Gough</Link>
             </h3>
             <Text className="font-light text-gray-500 dark:text-gray-400">
               name@company.com
             </Text>
-            <a
+            <Link
               href="#"
               className="my-5 inline-flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
             >
               <HiLogout className="mr-1 size-5" />
               Logout
-            </a>
+            </Link>
             <ul className="mb-4 flex justify-center space-x-1">
               {[
                 { icon: <HiViewGrid className="size-6" />, label: "View Grid" },
@@ -333,12 +337,12 @@ export function UserProfileSidebarApplicationShell() {
                 },
               ].map((item, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href="#"
                     className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                   >
                     {item.icon}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -346,13 +350,13 @@ export function UserProfileSidebarApplicationShell() {
 
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -425,7 +429,7 @@ export function UserProfileSidebarApplicationShell() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -434,7 +438,7 @@ export function UserProfileSidebarApplicationShell() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -494,13 +498,13 @@ export function UserProfileSidebarApplicationShell() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

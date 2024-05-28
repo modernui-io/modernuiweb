@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FaDribbble, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import {
   HiBriefcase,
@@ -56,12 +58,12 @@ export function AdvancedReadUserSection() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a
+                      <Link
                         href="#"
                         className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <FaFacebook className="size-5" />
-                      </a>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <Text>Facebook profile</Text>
@@ -71,12 +73,12 @@ export function AdvancedReadUserSection() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a
+                      <Link
                         href="#"
                         className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <FaInstagram className="size-5" />
-                      </a>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <Text>Instagram profile</Text>
@@ -86,12 +88,12 @@ export function AdvancedReadUserSection() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a
+                      <Link
                         href="#"
                         className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <FaGithub className="size-5" />
-                      </a>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <Text>GitHub profile</Text>
@@ -101,12 +103,12 @@ export function AdvancedReadUserSection() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <a
+                      <Link
                         href="#"
                         className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <FaDribbble className="size-5" />
-                      </a>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent>
                       <Text>Dribbble profile</Text>
@@ -151,13 +153,13 @@ export function AdvancedReadUserSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href="#"
                       className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <InDesignIcon />
                       <span className="sr-only">inDesign</span>
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <Text>inDesign</Text>
@@ -168,13 +170,13 @@ export function AdvancedReadUserSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href="#"
                       className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <SketchIcon />
                       <span className="sr-only">Sketch</span>
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <Text>Sketch</Text>
@@ -184,13 +186,13 @@ export function AdvancedReadUserSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href="#"
                       className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <FigmaIcon />
                       <span className="sr-only">Figma</span>
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <Text>Figma</Text>
@@ -200,13 +202,13 @@ export function AdvancedReadUserSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href="#"
                       className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <HTMLIcon />
                       <span className="sr-only">HTML</span>
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <Text>HTML</Text>
@@ -216,13 +218,13 @@ export function AdvancedReadUserSection() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
+                    <Link
                       href="#"
                       className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <AdobeXDIcon />
                       <span className="sr-only">Adobe XD</span>
-                    </a>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent>
                     <Text>Adobe XD</Text>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -199,12 +200,12 @@ export function AdvancedProjectManagementTableForUserTasks() {
                             </Label>
                           </li>
                         </ul>
-                        <a
+                        <Link
                           href="#"
                           className="ml-1.5 mt-4 flex items-center text-sm font-medium hover:underline"
                         >
                           Apply to all projects
-                        </a>
+                        </Link>
                       </div>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -347,13 +348,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -442,13 +443,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -536,13 +537,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -631,13 +632,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -725,13 +726,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -820,13 +821,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -916,13 +917,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -1010,13 +1011,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -1097,13 +1098,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">
@@ -1191,13 +1192,13 @@ export function AdvancedProjectManagementTableForUserTasks() {
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2 font-medium">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center font-medium hover:underline"
                     >
                       <HiExternalLink className="mr-1 size-4" />
                       Website
-                    </a>
+                    </Link>
                   </TableCell>
                   <TableCell className="whitespace-nowrap px-4 py-2">
                     <div className="inline-flex items-center rounded-lg border px-2 py-1 text-xs font-medium">

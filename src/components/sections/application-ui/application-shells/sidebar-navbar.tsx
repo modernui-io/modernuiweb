@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -95,9 +97,11 @@ export function SidebarNavbarApplicationShell() {
                 <span className="sr-only">Toggle sidebar</span>
               </Button>
               <a href="https://modernui.com" className="mr-4 flex">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                  className="mr-3 h-8"
+                  className="mr-3 h-8 w-auto"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
@@ -139,12 +143,14 @@ export function SidebarNavbarApplicationShell() {
                     Notifications
                   </div>
                   <div className="border-t dark:border-gray-600">
-                    <a
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -157,19 +163,22 @@ export function SidebarNavbarApplicationShell() {
                         <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                           New message from&nbsp;
                           <span className="font-semibold">Bonnie Green</span>:
-                          "Hey, what's up? All set for the presentation?"
+                          &quot;Hey, what&apos;s up? All set for the
+                          presentation?&quot;
                         </div>
                         <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                           a few moments ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -189,13 +198,15 @@ export function SidebarNavbarApplicationShell() {
                           10 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -215,13 +226,15 @@ export function SidebarNavbarApplicationShell() {
                           44 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -245,13 +258,15 @@ export function SidebarNavbarApplicationShell() {
                           1 hour ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -270,9 +285,9 @@ export function SidebarNavbarApplicationShell() {
                           3 hours ago
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
-                  <a
+                  <Link
                     href="#"
                     className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                   >
@@ -280,7 +295,7 @@ export function SidebarNavbarApplicationShell() {
                       <HiEye className="mr-2 size-5" />
                       View all
                     </div>
-                  </a>
+                  </Link>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -352,14 +367,14 @@ export function SidebarNavbarApplicationShell() {
                         label: "Logout",
                       },
                     ].map((item, index) => (
-                      <a
+                      <Link
                         key={index}
                         href="#"
                         className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         {item.icon}
                         <div className="text-sm font-medium">{item.label}</div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </DropdownMenuContent>
@@ -369,7 +384,9 @@ export function SidebarNavbarApplicationShell() {
                 <DropdownMenuTrigger asChild>
                   <Button variant={"ghost"}>
                     <span className="sr-only">Open user menu</span>
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       className="size-8 rounded-full"
                       src="https://github.com/shadcn.png"
                       alt=""
@@ -409,12 +426,12 @@ export function SidebarNavbarApplicationShell() {
                   <DropdownMenuSeparator />
                   <ul className="py-1 text-gray-500 dark:text-gray-400">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Sign out
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </DropdownMenuContent>
@@ -434,13 +451,13 @@ export function SidebarNavbarApplicationShell() {
         <div className="h-full overflow-y-auto border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -513,7 +530,7 @@ export function SidebarNavbarApplicationShell() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -522,7 +539,7 @@ export function SidebarNavbarApplicationShell() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -582,13 +599,13 @@ export function SidebarNavbarApplicationShell() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

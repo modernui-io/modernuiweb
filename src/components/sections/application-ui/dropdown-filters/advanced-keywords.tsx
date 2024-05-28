@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import {
   MagnifyingGlassIcon,
@@ -52,18 +53,18 @@ export function AdvancedDropdownFilterKeywords() {
           <div className="flex items-center justify-between pt-2">
             <Text className="text-sm font-medium">Filters</Text>
             <div className="flex items-center space-x-3">
-              <a
+              <Link
                 href="#"
                 className="flex items-center text-sm font-medium text-primary-600 hover:underline"
               >
                 Save view
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="flex items-center text-sm font-medium text-primary-600 hover:underline"
               >
                 Clear all
-              </a>
+              </Link>
             </div>
           </div>
           <div className="pb-2 pt-3">
@@ -108,12 +109,12 @@ export function AdvancedDropdownFilterKeywords() {
                         </Label>
                       </li>
                     ))}
-                    <a
+                    <Link
                       href="#"
                       className="flex items-center text-sm font-medium text-primary-600 hover:underline"
                     >
                       View all
-                    </a>
+                    </Link>
                   </ul>
                 </div>
               </AccordionContent>

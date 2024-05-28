@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiBell,
@@ -45,16 +47,18 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
         <div className="border-gray-200 px-4 py-2.5 lg:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
-              <a href="https://modernui.com" className="mr-6 flex">
-                <img
+              <Link href="https://modernui.com" className="mr-6 flex">
+                <Image
+                  width={100}
+                  height={100}
                   src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                  className="mr-3 h-8"
+                  className="mr-3 h-8 w-auto"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold">
                   ModernUI
                 </span>
-              </a>
+              </Link>
               <form action="#" method="GET" className="hidden lg:block lg:pl-2">
                 <Label htmlFor="topbar-search" className="sr-only">
                   Search
@@ -88,12 +92,14 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                     Notifications
                   </div>
                   <div className="border-t dark:border-gray-600">
-                    <a
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -106,19 +112,22 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                         <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                           New message from&nbsp;
                           <span className="font-semibold">Bonnie Green</span>:
-                          "Hey, what's up? All set for the presentation?"
+                          &quot;Hey, what&apos;s up? All set for the
+                          presentation?&quot;
                         </div>
                         <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                           a few moments ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -138,13 +147,15 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                           10 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -164,13 +175,15 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                           44 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -194,13 +207,15 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                           1 hour ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -219,9 +234,9 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                           3 hours ago
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
-                  <a
+                  <Link
                     href="#"
                     className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                   >
@@ -229,7 +244,7 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                       <HiEye className="mr-2 size-5" />
                       View all
                     </div>
-                  </a>
+                  </Link>
                 </DropdownMenuContent>
               </DropdownMenu>
               <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
@@ -304,14 +319,14 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                         label: "Logout",
                       },
                     ].map((item, index) => (
-                      <a
+                      <Link
                         key={index}
                         href="#"
                         className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         {item.icon}
                         <div className="text-sm font-medium">{item.label}</div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </DropdownMenuContent>
@@ -324,7 +339,9 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                   <Button variant={"ghost"}>
                     <>
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-8 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -365,12 +382,12 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                   <DropdownMenuSeparator />
                   <ul className="py-1 text-gray-500 dark:text-gray-400">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Sign out
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </DropdownMenuContent>
@@ -397,7 +414,9 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                     <>
                       <span className="sr-only">Open user menu</span>
                       <div className="mr-2 flex items-center">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           src="https://github.com/shadcn.png"
                           className="mr-2 size-7 rounded-full"
                           alt=""
@@ -427,7 +446,7 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                   >
@@ -439,8 +458,8 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                         Created August, 2014
                       </div>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                   >
@@ -452,7 +471,7 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                         Created September, 2018
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -644,7 +663,7 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
         {isNavVisible && (
           <div>
             <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-              <a
+              <Link
                 aria-current="page"
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
@@ -652,63 +671,63 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                 <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
                   Home
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Company
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Team
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Features
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Marketplace
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Resources
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Forum
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Support
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         )}

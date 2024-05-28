@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import {
   HiCalendar,
   HiClipboardList,
@@ -37,23 +40,23 @@ export function TasksDoubleSideNavigation() {
               { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   {item.icon}
                   <span className="sr-only">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <a
+          <Link
             href="#"
             className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 group-hover:text-white hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <HiDotsHorizontal className="size-5" />
             <span className="sr-only">Add new item</span>
-          </a>
+          </Link>
         </div>
         <div className="hidden h-full w-64 overflow-y-auto border-r border-gray-200 px-3 py-4 dark:border-gray-700 sm:block">
           <DropdownMenu>
@@ -64,7 +67,9 @@ export function TasksDoubleSideNavigation() {
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
@@ -87,7 +92,7 @@ export function TasksDoubleSideNavigation() {
                 className="z-10 w-60 divide-y divide-gray-100 rounded shadow dark:divide-gray-600"
                 data-popper-placement="bottom"
               >
-                <a
+                <Link
                   href="#"
                   className="flex items-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
@@ -100,8 +105,8 @@ export function TasksDoubleSideNavigation() {
                       My calendar
                     </div>
                   </div>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="flex items-center px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
@@ -114,18 +119,18 @@ export function TasksDoubleSideNavigation() {
                       My collections
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
           <div className="my-4 flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-700">
-            <a
+            <Link
               href="#"
               className="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               <HiPlus className="mr-1 size-5" />
               Add a task
-            </a>
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -151,12 +156,12 @@ export function TasksDoubleSideNavigation() {
                       "Add to my day",
                     ].map((item, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           {item}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -208,12 +213,12 @@ export function TasksDoubleSideNavigation() {
                       "Add to my day",
                     ].map((item, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           {item}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

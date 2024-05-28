@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -89,7 +91,9 @@ export function UserSwitchSideNavigation() {
               >
                 <span className="sr-only">Open user menu</span>
                 <div className="flex items-center">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Bonnie avatar"
@@ -112,11 +116,13 @@ export function UserSwitchSideNavigation() {
                 className="w-60 divide-y divide-gray-100 rounded shadow"
                 data-popper-placement="bottom"
               >
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Michael avatar"
@@ -129,12 +135,14 @@ export function UserSwitchSideNavigation() {
                       michael@modernui.com
                     </div>
                   </div>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://github.com/shadcn.png"
                     className="mr-3 size-8 rounded-full"
                     alt="Roberta avatar"
@@ -147,7 +155,7 @@ export function UserSwitchSideNavigation() {
                       roberta@modernui.com
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -174,114 +182,114 @@ export function UserSwitchSideNavigation() {
           </form>
           <ul className="space-y-1.5">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiIdentification className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Activity</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiBookOpen className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Contacts</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiClipboardList className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Tasks</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mb-2 mt-5 flex items-center justify-between border-t border-gray-200 pl-2 pt-3 text-sm font-medium uppercase text-gray-500 dark:border-gray-700 dark:text-gray-400">
             <h3>Collections</h3>
-            <a
+            <Link
               href="#"
               className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               <HiPlusCircle className="size-5" />
-            </a>
+            </Link>
           </div>
           <ul className="space-y-1.5">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiShoppingCart className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Sales</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiColorSwatch className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Design</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiSpeakerphone className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Fundraising</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiPresentationChartBar className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Internal</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiLightBulb className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Customer Success</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiUsers className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Networking</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiAcademicCap className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Legal</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiPlus className="size-6 text-gray-400 transition duration-75" />
                 <span className="ml-3">Add collection</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

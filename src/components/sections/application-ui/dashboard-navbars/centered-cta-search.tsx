@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiBell,
@@ -45,49 +47,51 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
         <div className="order-1 px-4 py-2.5 lg:px-6">
           <div className="flex items-center justify-between">
             <div className="flex shrink-0 items-center justify-start">
-              <a href="#" className="mr-6 flex">
-                <img
+              <Link href="#" className="mr-6 flex">
+                <Image
+                  width={100}
+                  height={100}
                   src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                  className="mr-3 h-8"
+                  className="mr-3 h-8 w-auto"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                   ModernUI
                 </span>
-              </a>
+              </Link>
             </div>
             <ul className="mt-0 hidden w-full flex-col justify-center text-sm font-medium text-gray-500 dark:text-gray-400 lg:flex lg:flex-row">
               <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
+                <Link
                   href="#"
                   className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
+                <Link
                   href="#"
                   className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
                 >
                   Clients
-                </a>
+                </Link>
               </li>
               <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
+                <Link
                   href="#"
                   className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
                 >
                   Marketing
-                </a>
+                </Link>
               </li>
               <li className="block border-b dark:border-gray-700 lg:inline lg:border-b-0">
-                <a
+                <Link
                   href="#"
                   className="block rounded-lg px-4 py-3 hover:text-gray-900 dark:hover:text-white"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="ml-4 flex shrink-0 items-center justify-between lg:order-2">
@@ -112,12 +116,14 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                     Notifications
                   </div>
                   <div className="border-t dark:border-gray-600">
-                    <a
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -130,19 +136,22 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                         <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                           New message from&nbsp;
                           <span className="font-semibold">Bonnie Green</span>:
-                          "Hey, what's up? All set for the presentation?"
+                          &quot;Hey, what&apos;s up? All set for the
+                          presentation?&quot;
                         </div>
                         <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                           a few moments ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -162,13 +171,15 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                           10 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -188,13 +199,15 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                           44 minutes ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -218,13 +231,15 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                           1 hour ago
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                     >
                       <div className="shrink-0">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           className="size-11 rounded-full"
                           src="https://github.com/shadcn.png"
                           alt=""
@@ -243,9 +258,9 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                           3 hours ago
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
-                  <a
+                  <Link
                     href="#"
                     className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                   >
@@ -253,7 +268,7 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                       <HiEye className="mr-2 size-5" />
                       View all
                     </div>
-                  </a>
+                  </Link>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -327,14 +342,14 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                         label: "Logout",
                       },
                     ].map((item, index) => (
-                      <a
+                      <Link
                         key={index}
                         href="#"
                         className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         {item.icon}
                         <div className="text-sm font-medium">{item.label}</div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </DropdownMenuContent>
@@ -345,7 +360,9 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                   <Button variant={"ghost"}>
                     <>
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-8 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -386,12 +403,12 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                   <DropdownMenuSeparator />
                   <ul className="py-1 text-gray-500 dark:text-gray-400">
                     <li>
-                      <a
+                      <Link
                         href="#"
                         className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Sign out
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </DropdownMenuContent>
@@ -414,53 +431,53 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
             <div className="flex w-full flex-col items-center justify-between lg:flex-row">
               <ul className="order-2 mt-0 flex w-full flex-col rounded-lg border border-gray-200 bg-gray-50 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 lg:order-1 lg:flex-row lg:rounded-none lg:border-0 lg:bg-white dark:lg:bg-gray-900">
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-primary-600 hover:bg-gray-50 hover:text-primary-700 focus:ring-4 focus:ring-gray-200 dark:text-primary-500 dark:hover:bg-gray-800 dark:focus:ring-gray-700"
                     aria-current="page"
                   >
                     Projects
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
                   >
                     Sales
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
                   >
                     Team
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
                   >
                     Workspaces
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
                   >
                     Tasks
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
                   >
                     Analytics
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="order-1 mb-4 flex w-full items-center justify-end lg:order-2 lg:mb-0 lg:ml-4 lg:max-w-sm">

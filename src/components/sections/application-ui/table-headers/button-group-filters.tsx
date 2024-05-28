@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { CrossCircledIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 import { FaChevronDown } from "react-icons/fa";
 import {
@@ -57,13 +59,13 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                   </TooltipProvider>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <a
+                  <Link
                     href="#"
                     className="flex items-center text-sm font-medium text-primary-600 hover:underline"
                   >
                     <HiDocumentSearch className="mr-1 size-5" />
                     View SERP
-                  </a>
+                  </Link>
                   <Button>
                     <HiUpload className="mr-2 size-4" />
                     Export
@@ -108,13 +110,13 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                         All for modernui.com
                       </Button>
                     </div>
-                    <a
+                    <Link
                       href="#"
                       className="flex shrink-0 items-center text-sm font-medium text-primary-600 hover:underline"
                     >
                       <PlusCircledIcon className="mr-1 size-4" />
                       More options
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex w-full shrink-0 flex-col items-stretch justify-end space-y-2 sm:w-auto sm:flex-row sm:items-center sm:space-x-3 sm:space-y-0">

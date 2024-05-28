@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 import { QuestionMarkCircledIcon, UploadIcon } from "@radix-ui/react-icons";
 import { HiTrash } from "react-icons/hi";
@@ -56,7 +57,9 @@ export function UpdateModalAccordion() {
                         Upload avatar
                       </Label>
                       <div className="w-full items-center sm:flex">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           alt="Helene avatar"
                           src="https://github.com/shadcn.png"
                           className="mb-4 size-20 rounded-full sm:mb-0 sm:mr-4"
@@ -282,8 +285,8 @@ export function UpdateModalAccordion() {
                             <TooltipContent>
                               <Text>
                                 As an administrator, you can view the status of
-                                a user's email. The status indicates whether a
-                                user's email is verified or not.
+                                a user&apos;s email. The status indicates
+                                whether a user&apos;s email is verified or not.
                               </Text>
                             </TooltipContent>
                           </Tooltip>
@@ -514,9 +517,10 @@ export function UpdateModalAccordion() {
                         placeholder="Write your biography..."
                         rows={4}
                       >
-                        Hello, I'm Helene Engels, USA Designer, Creating things
-                        that stand out, Featured by Adobe, Figma, Webflow and
-                        others, Daily design tips & resources, Exploring Web3.
+                        Hello, I&apos;m Helene Engels, USA Designer, Creating
+                        things that stand out, Featured by Adobe, Figma, Webflow
+                        and others, Daily design tips & resources, Exploring
+                        Web3.
                       </Textarea>
                     </div>
                   </div>

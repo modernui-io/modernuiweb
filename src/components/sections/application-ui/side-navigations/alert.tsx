@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiChartPie,
@@ -68,28 +70,30 @@ export function AlertSideNavigation() {
           <HiX className="size-4" />
         </Button>
         <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <a
+          <Link
             href="https://modernui.com"
             className="mb-5 flex items-center pl-2"
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-              className="mr-3 h-6 sm:h-8"
+              className="mr-3 h-6 w-auto sm:h-8"
               alt="ModernUI Logo"
             />
             <span className="self-center whitespace-nowrap text-2xl font-semibold">
               ModernUI
             </span>
-          </a>
+          </Link>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -114,12 +118,12 @@ export function AlertSideNavigation() {
                       { href: "#", label: "Calendar" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -150,12 +154,12 @@ export function AlertSideNavigation() {
                       { href: "#", label: "Invoice" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -163,7 +167,7 @@ export function AlertSideNavigation() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -172,7 +176,7 @@ export function AlertSideNavigation() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -197,12 +201,12 @@ export function AlertSideNavigation() {
                       { href: "#", label: "Forgot Password" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -212,31 +216,31 @@ export function AlertSideNavigation() {
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
                 <span className="ml-3">Docs</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
                 <span className="ml-3">Components</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900" />
                 <span className="ml-3">Help</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div
@@ -262,12 +266,12 @@ export function AlertSideNavigation() {
               Preview the new ModernUI v2.0! You can turn the new features off
               for a limited time in your settings page.
             </div>
-            <a
+            <Link
               href="#"
               className="text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-300"
             >
               Turn new features off
-            </a>
+            </Link>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 border-r border-gray-200 p-4 dark:border-gray-700 lg:flex">

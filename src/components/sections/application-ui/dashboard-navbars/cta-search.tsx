@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { HiMenu, HiPlus, HiSearch, HiSelector, HiUsers } from "react-icons/hi";
 
@@ -21,16 +23,18 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
         <div className="py-2.5g:px-6 order-1 mb-3 border-gray-200 px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
-              <a href="#" className="mr-6 flex">
-                <img
+              <Link href="#" className="mr-6 flex">
+                <Image
+                  width={100}
+                  height={100}
                   src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                  className="mr-3 h-8"
+                  className="mr-3 h-8 w-auto"
                   alt=""
                 />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold">
                   ModernUI
                 </span>
-              </a>
+              </Link>
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -38,7 +42,9 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                     <>
                       <span className="sr-only">Open user menu</span>
                       <div className="flex items-center">
-                        <img
+                        <Image
+                          width={100}
+                          height={100}
                           src="https://github.com/shadcn.png"
                           className="mr-3 size-8 rounded-full"
                           alt=""
@@ -56,7 +62,9 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt=""
@@ -72,7 +80,9 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://github.com/shadcn.png"
                       className="mr-3 size-8 rounded-full"
                       alt=""
@@ -92,31 +102,31 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
             <div className="flex items-center justify-between lg:order-2">
               <ul className="mr-4 mt-0 hidden w-full flex-col text-sm font-medium lg:flex lg:flex-row">
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="px-4 py-3 hover:text-primary-600 dark:hover:text-primary-500"
                     aria-current="page"
                   >
                     Changelog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="px-4 py-3 hover:text-primary-600 dark:hover:text-primary-500"
                     aria-current="page"
                   >
                     Support
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="px-4 py-3 hover:text-primary-600 dark:hover:text-primary-500"
                     aria-current="page"
                   >
                     Docs
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <Button className="hidden lg:inline">Feedback</Button>
@@ -134,7 +144,7 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
         {isNavVisible && (
           <div className="order-3 lg:order-2">
             <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-              <a
+              <Link
                 aria-current="page"
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
@@ -142,63 +152,63 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                 <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
                   Overview
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Company
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Team
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Features
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Marketplace
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Resources
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Forum
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                   Support
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         )}

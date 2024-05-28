@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import {
   HiChartPie,
@@ -70,13 +71,13 @@ export function DefaultSideNavigation() {
           </Button>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -101,12 +102,12 @@ export function DefaultSideNavigation() {
                       { href: "#", label: "Calendar" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -136,12 +137,12 @@ export function DefaultSideNavigation() {
                       { href: "#", label: "Invoice" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -149,7 +150,7 @@ export function DefaultSideNavigation() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -158,7 +159,7 @@ export function DefaultSideNavigation() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -183,12 +184,12 @@ export function DefaultSideNavigation() {
                       { href: "#", label: "Forgot Password" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -218,13 +219,13 @@ export function DefaultSideNavigation() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

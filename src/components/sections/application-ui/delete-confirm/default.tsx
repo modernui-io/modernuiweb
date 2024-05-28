@@ -25,7 +25,7 @@ export function DefaultDeleteConfirmationModal() {
             <Button>No, cancel</Button>
           </DialogClose>
           <Button variant={"destructive"} type="submit">
-            Yes, I'm sure
+            Yes, I&apos;m sure
           </Button>
         </div>
       </DialogContent>

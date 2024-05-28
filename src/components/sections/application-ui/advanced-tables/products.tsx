@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { HiPlus, HiRefresh, HiShoppingCart, HiUpload } from "react-icons/hi";
@@ -108,7 +109,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -196,7 +199,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -284,7 +289,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -372,7 +379,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -460,7 +469,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -548,7 +559,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -636,7 +649,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -724,7 +739,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -812,7 +829,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
@@ -900,7 +919,9 @@ export function AdvancedTableWithProducts() {
                     scope="row"
                     className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"

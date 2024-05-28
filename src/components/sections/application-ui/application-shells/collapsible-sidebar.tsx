@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -91,9 +93,11 @@ export function CollapsibleSidebarApplicationShell() {
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start">
                 <a href="https://modernui.com" className="mr-6 flex">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                    className="mr-3 h-8"
+                    className="mr-3 h-8 w-auto"
                     alt=""
                   />
                   <span className="self-center whitespace-nowrap text-2xl font-semibold">
@@ -136,12 +140,14 @@ export function CollapsibleSidebarApplicationShell() {
                       Notifications
                     </div>
                     <div className="border-t dark:border-gray-600">
-                      <a
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -154,19 +160,22 @@ export function CollapsibleSidebarApplicationShell() {
                           <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                             New message from&nbsp;
                             <span className="font-semibold">Bonnie Green</span>:
-                            "Hey, what's up? All set for the presentation?"
+                            &quot;Hey, what&apos;s up? All set for the
+                            presentation?&quot;
                           </div>
                           <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                             a few moments ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -186,13 +195,15 @@ export function CollapsibleSidebarApplicationShell() {
                             10 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -212,13 +223,15 @@ export function CollapsibleSidebarApplicationShell() {
                             44 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -242,13 +255,15 @@ export function CollapsibleSidebarApplicationShell() {
                             1 hour ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -267,9 +282,9 @@ export function CollapsibleSidebarApplicationShell() {
                             3 hours ago
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
-                    <a
+                    <Link
                       href="#"
                       className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                     >
@@ -277,7 +292,7 @@ export function CollapsibleSidebarApplicationShell() {
                         <HiEye className="mr-2 size-5" />
                         View all
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
@@ -350,14 +365,14 @@ export function CollapsibleSidebarApplicationShell() {
                           text: "Logout",
                         },
                       ].map((item, index) => (
-                        <a
+                        <Link
                           key={index}
                           href="#"
                           className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                         >
                           {item.icon}
                           <div className="text-sm font-medium">{item.text}</div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </DropdownMenuContent>
@@ -369,7 +384,9 @@ export function CollapsibleSidebarApplicationShell() {
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-8 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -409,12 +426,12 @@ export function CollapsibleSidebarApplicationShell() {
                     <DropdownMenuSeparator />
                     <ul className="py-1 text-gray-500 dark:text-gray-400">
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Sign out
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </DropdownMenuContent>
@@ -439,7 +456,9 @@ export function CollapsibleSidebarApplicationShell() {
                       <>
                         <span className="sr-only">Open user menu</span>
                         <div className="mr-2 flex items-center">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             src="https://github.com/shadcn.png"
                             className="mr-2 size-7 rounded-full"
                             alt=""
@@ -455,7 +474,7 @@ export function CollapsibleSidebarApplicationShell() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <a
+                    <Link
                       href="#"
                       className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
@@ -467,8 +486,8 @@ export function CollapsibleSidebarApplicationShell() {
                           Created August, 2014
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
@@ -480,7 +499,7 @@ export function CollapsibleSidebarApplicationShell() {
                           Created September, 2018
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
 
@@ -625,53 +644,55 @@ export function CollapsibleSidebarApplicationShell() {
         aria-label="Sidenav"
       >
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <a href="#">
-            <img
+          <Link href="#">
+            <Image
+              width={100}
+              height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
               className="mb-6 h-7 pl-2"
               alt="ModernUI Logo"
             />
-          </a>
+          </Link>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiHome className="size-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiUser className="size-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiChartPie className="size-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiInboxIn className="size-6" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center rounded-lg p-2 text-gray-400 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <HiLockClosed className="size-6" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -682,13 +703,13 @@ export function CollapsibleSidebarApplicationShell() {
           >
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal"
                 >
                   <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                   <span className="ml-3">Overview</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Collapsible>
@@ -709,12 +730,12 @@ export function CollapsibleSidebarApplicationShell() {
                     <ul id="dropdown-pages" className="space-y-2 py-2">
                       {["Settings", "Kanban", "Calendar"].map((link, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {link}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -744,12 +765,12 @@ export function CollapsibleSidebarApplicationShell() {
                         { label: "Invoice" },
                       ].map((item, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -757,7 +778,7 @@ export function CollapsibleSidebarApplicationShell() {
                 </Collapsible>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal"
                 >
@@ -768,7 +789,7 @@ export function CollapsibleSidebarApplicationShell() {
                   <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                     6
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Collapsible>
@@ -793,12 +814,12 @@ export function CollapsibleSidebarApplicationShell() {
                         { label: "Forgot Password" },
                       ].map((item, index) => (
                         <li key={index}>
-                          <a
+                          <Link
                             href="#"
                             className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -828,13 +849,13 @@ export function CollapsibleSidebarApplicationShell() {
                 },
               ].map((item, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href="#"
                     className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     {item.icon}
                     <span className="ml-3">{item.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -866,23 +887,23 @@ export function CollapsibleSidebarApplicationShell() {
               { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   {item.icon}
                   <span className="sr-only">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <a
+          <Link
             href="#"
             className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 group-hover:text-white hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <HiDotsHorizontal className="size-5" />
             <span className="sr-only">Add new item</span>
-          </a>
+          </Link>
         </div>
       </aside>
 

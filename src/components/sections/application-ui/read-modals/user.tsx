@@ -26,9 +26,9 @@ export function ReadUserModal() {
           </dd>
           <dt className="mb-2 font-semibold leading-none">Biography</dt>
           <dd className="mb-4 text-gray-500 dark:text-gray-400 sm:mb-5">
-            Hello, I'm Helene Engels, USA Designer, Creating things that stand
-            out, Featured by Adobe, Figma, Webflow and others, Daily design tips
-            & resources, Exploring Web3.
+            Hello, I&apos;m Helene Engels, USA Designer, Creating things that
+            stand out, Featured by Adobe, Figma, Webflow and others, Daily
+            design tips & resources, Exploring Web3.
           </dd>
         </dl>
         <div className="flex items-center justify-between">

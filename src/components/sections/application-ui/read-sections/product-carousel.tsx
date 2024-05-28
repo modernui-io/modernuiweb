@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { HiPencilAlt, HiStar, HiTrash } from "react-icons/hi";
 
 import { Badge } from "~/components/ui/badge";
@@ -16,7 +18,7 @@ export function ReadProductSectionWithCarousel() {
     <section className="bg-background">
       <div className="mx-auto max-w-6xl px-4 py-8 lg:py-16">
         <h2 className="mb-2 text-xl font-semibold leading-none md:text-2xl">
-          Apple iMac 25"
+          Apple iMac 25&quot;
         </h2>
         <Text className="mb-4 text-xl font-extrabold leading-none md:text-2xl">
           $2999
@@ -26,24 +28,33 @@ export function ReadProductSectionWithCarousel() {
             <Carousel className="mb-4 h-64">
               <CarouselContent>
                 <CarouselItem>
-                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
-                    <img
+                  <div className="flex items-center justify-center bg-gray-100 dark:bg-gray-700">
+                    <Image
+                      className="h-60 w-auto"
+                      width={100}
+                      height={100}
                       alt="iMac side"
                       src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                     />
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
-                    <img
+                  <div className="flex items-center justify-center bg-gray-100 dark:bg-gray-700">
+                    <Image
+                      className="h-60 w-auto"
+                      width={100}
+                      height={100}
                       alt="iMac front"
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                     />
                   </div>
                 </CarouselItem>
                 <CarouselItem>
-                  <div className="flex h-60 items-center justify-center bg-gray-100 dark:bg-gray-700">
-                    <img
+                  <div className="flex items-center justify-center bg-gray-100 dark:bg-gray-700">
+                    <Image
+                      className="h-60 w-auto"
+                      width={100}
+                      height={100}
                       alt="iMac back"
                       src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                     />

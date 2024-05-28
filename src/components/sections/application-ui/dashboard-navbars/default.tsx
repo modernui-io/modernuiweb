@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import {
   HiBell,
   HiChevronRight,
@@ -78,16 +81,18 @@ export function DefaultDashboardNavbar() {
               </svg>
               <span className="sr-only">Toggle sidebar</span>
             </button>
-            <a href="https://modernui.com" className="mr-4 flex">
-              <img
+            <Link href="https://modernui.com" className="mr-4 flex">
+              <Image
+                width={100}
+                height={100}
                 src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                className="mr-3 h-8"
+                className="mr-3 h-8 w-auto"
                 alt=""
               />
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                 ModernUI
               </span>
-            </a>
+            </Link>
             <form action="#" method="GET" className="hidden lg:block lg:pl-2">
               <Label htmlFor="topbar-search" className="sr-only">
                 Search
@@ -136,12 +141,14 @@ export function DefaultDashboardNavbar() {
                   Notifications
                 </div>
                 <div className="border-t dark:border-gray-600">
-                  <a
+                  <Link
                     href="#"
                     className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                   >
                     <div className="shrink-0">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-11 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -154,19 +161,22 @@ export function DefaultDashboardNavbar() {
                       <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                         New message from&nbsp;
                         <span className="font-semibold">Bonnie Green</span>:
-                        "Hey, what's up? All set for the presentation?"
+                        &quot;Hey, what&apos;s up? All set for the
+                        presentation?&quot;
                       </div>
                       <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                         a few moments ago
                       </div>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                   >
                     <div className="shrink-0">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-11 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -186,13 +196,15 @@ export function DefaultDashboardNavbar() {
                         10 minutes ago
                       </div>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                   >
                     <div className="shrink-0">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-11 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -212,13 +224,15 @@ export function DefaultDashboardNavbar() {
                         44 minutes ago
                       </div>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                   >
                     <div className="shrink-0">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-11 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -240,13 +254,15 @@ export function DefaultDashboardNavbar() {
                         1 hour ago
                       </div>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <div className="shrink-0">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-11 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -265,9 +281,9 @@ export function DefaultDashboardNavbar() {
                         3 hours ago
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
-                <a
+                <Link
                   href="#"
                   className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                 >
@@ -275,7 +291,7 @@ export function DefaultDashboardNavbar() {
                     <HiEye className="mr-2 size-5" />
                     View all
                   </div>
-                </a>
+                </Link>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -293,72 +309,72 @@ export function DefaultDashboardNavbar() {
                   Apps
                 </div>
                 <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                  <a
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Sales</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Users</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Inbox</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Profile</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
 
                     <div className="text-sm font-medium">Settings</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
 
                     <div className="text-sm font-medium">Products</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
 
                     <div className="text-sm font-medium">Pricing</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Billing</div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
                     <div className="text-sm font-medium">Logout</div>
-                  </a>
+                  </Link>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -368,7 +384,9 @@ export function DefaultDashboardNavbar() {
                 <Button variant={"ghost"}>
                   <>
                     <span className="sr-only">Open user menu</span>
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       className="size-8 rounded-full"
                       src="https://github.com/shadcn.png"
                       alt=""
@@ -407,12 +425,12 @@ export function DefaultDashboardNavbar() {
                 <DropdownMenuSeparator />
                 <ul className="py-1 text-gray-500 dark:text-gray-400">
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Sign out
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </DropdownMenuContent>

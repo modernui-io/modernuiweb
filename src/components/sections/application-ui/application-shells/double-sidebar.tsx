@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -90,16 +92,18 @@ export function DoubleSidebarApplicationShell() {
           <div className="border-gray-200 px-4 py-2.5 lg:px-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start">
-                <a href="https://modernui.com" className="mr-6 flex">
-                  <img
+                <Link href="https://modernui.com" className="mr-6 flex">
+                  <Image
+                    width={100}
+                    height={100}
                     src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-                    className="mr-3 h-8"
+                    className="mr-3 h-8 w-auto"
                     alt=""
                   />
                   <span className="self-center whitespace-nowrap text-2xl font-semibold">
                     ModernUI
                   </span>
-                </a>
+                </Link>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="hidden lg:block lg:pl-2"
@@ -134,12 +138,14 @@ export function DoubleSidebarApplicationShell() {
                       Notifications
                     </div>
                     <div className="border-t dark:border-gray-600">
-                      <a
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -152,19 +158,22 @@ export function DoubleSidebarApplicationShell() {
                           <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
                             New message from&nbsp;
                             <span className="font-semibold">Bonnie Green</span>:
-                            "Hey, what's up? All set for the presentation?"
+                            &quot;Hey, what&apos;s up? All set for the
+                            presentation?&quot;
                           </div>
                           <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
                             a few moments ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -184,13 +193,15 @@ export function DoubleSidebarApplicationShell() {
                             10 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -210,13 +221,15 @@ export function DoubleSidebarApplicationShell() {
                             44 minutes ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -240,13 +253,15 @@ export function DoubleSidebarApplicationShell() {
                             1 hour ago
                           </div>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         <div className="shrink-0">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             className="size-11 rounded-full"
                             src="https://github.com/shadcn.png"
                             alt=""
@@ -265,9 +280,9 @@ export function DoubleSidebarApplicationShell() {
                             3 hours ago
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
-                    <a
+                    <Link
                       href="#"
                       className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                     >
@@ -275,7 +290,7 @@ export function DoubleSidebarApplicationShell() {
                         <HiEye className="mr-2 size-5" />
                         View all
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
@@ -348,14 +363,14 @@ export function DoubleSidebarApplicationShell() {
                           text: "Logout",
                         },
                       ].map((item, index) => (
-                        <a
+                        <Link
                           key={index}
                           href="#"
                           className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                         >
                           {item.icon}
                           <div className="text-sm font-medium">{item.text}</div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </DropdownMenuContent>
@@ -367,7 +382,9 @@ export function DoubleSidebarApplicationShell() {
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         className="size-8 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
@@ -407,12 +424,12 @@ export function DoubleSidebarApplicationShell() {
                     <DropdownMenuSeparator />
                     <ul className="py-1 text-gray-500 dark:text-gray-400">
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Sign out
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </DropdownMenuContent>
@@ -437,7 +454,9 @@ export function DoubleSidebarApplicationShell() {
                       <>
                         <span className="sr-only">Open user menu</span>
                         <div className="mr-2 flex items-center">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             src="https://github.com/shadcn.png"
                             className="mr-2 size-7 rounded-full"
                             alt=""
@@ -453,7 +472,7 @@ export function DoubleSidebarApplicationShell() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <a
+                    <Link
                       href="#"
                       className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
@@ -465,8 +484,8 @@ export function DoubleSidebarApplicationShell() {
                           Created August, 2014
                         </div>
                       </div>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
@@ -478,7 +497,7 @@ export function DoubleSidebarApplicationShell() {
                           Created September, 2018
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
 
@@ -599,14 +618,14 @@ export function DoubleSidebarApplicationShell() {
                   { label: "Support", href: "#" },
                 ].map((item, index) => (
                   <li key={index}>
-                    <a
+                    <Link
                       href={item.href}
                       className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
                     >
                       <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
                         {item.label}
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </div>
@@ -629,23 +648,23 @@ export function DoubleSidebarApplicationShell() {
               { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   {item.icon}
                   <span className="sr-only">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <a
+          <Link
             href="#"
             className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 group-hover:text-white hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <HiDotsHorizontal className="size-5" />
             <span className="sr-only">Add new item</span>
-          </a>
+          </Link>
         </div>
       </aside>
 
@@ -657,13 +676,13 @@ export function DoubleSidebarApplicationShell() {
         <div className="h-full overflow-y-auto border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -688,12 +707,12 @@ export function DoubleSidebarApplicationShell() {
                       { href: "#", label: "Calendar" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -723,12 +742,12 @@ export function DoubleSidebarApplicationShell() {
                       { href: "#", label: "Invoice" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -736,7 +755,7 @@ export function DoubleSidebarApplicationShell() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -745,7 +764,7 @@ export function DoubleSidebarApplicationShell() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -770,12 +789,12 @@ export function DoubleSidebarApplicationShell() {
                       { href: "#", label: "Forgot Password" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -805,13 +824,13 @@ export function DoubleSidebarApplicationShell() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

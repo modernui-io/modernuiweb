@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import { HiDotsHorizontal, HiMenuAlt2 } from "react-icons/hi";
 
@@ -104,7 +105,7 @@ export function CryptoSideNavigation() {
           </div>
           <ul className="space-y-4 pb-4 dark:border-gray-700">
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -131,10 +132,10 @@ export function CryptoSideNavigation() {
                   36,988
                   <span className="ml-1 text-green-400">3%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -177,10 +178,10 @@ export function CryptoSideNavigation() {
                   2,515
                   <span className="ml-1 text-green-400">1%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -207,10 +208,10 @@ export function CryptoSideNavigation() {
                   1.00
                   <span className="ml-1 text-red-500">-4%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     className="size-6"
@@ -248,10 +249,10 @@ export function CryptoSideNavigation() {
                   357.37
                   <span className="ml-1 text-green-400">9%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -317,10 +318,10 @@ export function CryptoSideNavigation() {
                   34.67
                   <span className="ml-1 text-green-400">5%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -343,10 +344,10 @@ export function CryptoSideNavigation() {
                   1.57
                   <span className="ml-1 text-red-500">-3%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -373,10 +374,10 @@ export function CryptoSideNavigation() {
                   1.57
                   <span className="ml-1 text-green-400">8%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -411,10 +412,10 @@ export function CryptoSideNavigation() {
                   0.6758
                   <span className="ml-1 text-red-500">-1%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -437,7 +438,7 @@ export function CryptoSideNavigation() {
                   24.65
                   <span className="ml-1 text-red-500">-6%</span>
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
           <Button variant={"outline"}>View more</Button>
@@ -488,7 +489,7 @@ export function CryptoSideNavigation() {
           </div>
           <ul className="space-y-4 pb-4 dark:border-gray-700">
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -543,10 +544,10 @@ export function CryptoSideNavigation() {
                   12.34
                   <span className="ml-1 text-green-400">12%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -612,10 +613,10 @@ export function CryptoSideNavigation() {
                   39.99
                   <span className="ml-1 text-red-500">-2%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -646,10 +647,10 @@ export function CryptoSideNavigation() {
                   166.34
                   <span className="ml-1 text-green-400">4%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -672,10 +673,10 @@ export function CryptoSideNavigation() {
                   357.37
                   <span className="ml-1 text-green-400">7%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -702,10 +703,10 @@ export function CryptoSideNavigation() {
                   1.37
                   <span className="ml-1 text-red-500">-3%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -732,10 +733,10 @@ export function CryptoSideNavigation() {
                   7.36
                   <span className="ml-1 text-green-400">8%</span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="flex items-center justify-between">
+              <Link href="#" className="flex items-center justify-between">
                 <span className="flex items-center space-x-2 font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
                   <svg
                     aria-hidden="true"
@@ -758,7 +759,7 @@ export function CryptoSideNavigation() {
                   0.07345
                   <span className="ml-1 text-green-400">5%</span>
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
           <Button variant={"outline"}>View more</Button>

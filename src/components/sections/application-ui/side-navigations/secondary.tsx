@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiDotsHorizontal,
@@ -44,20 +46,20 @@ export function SecondarySideNavigation() {
           <div className="mb-4 flex items-center justify-between text-sm font-medium text-gray-500 dark:text-gray-400">
             <h3 className="uppercase">Contacts</h3>
             <div className="flex items-center space-x-1">
-              <a
+              <Link
                 href="#"
                 className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
               >
                 <HiVideoCamera className="size-5" />
                 <span className="sr-only">Video call</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
               >
                 <HiSearch className="size-5" />
                 <span className="sr-only">Search contacts</span>
-              </a>
+              </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -80,12 +82,12 @@ export function SecondarySideNavigation() {
                       {["Dashboard", "Settings", "Earnings", "Sign out"].map(
                         (item, index) => (
                           <li key={index}>
-                            <a
+                            <Link
                               href="#"
                               className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                             >
                               {item}
-                            </a>
+                            </Link>
                           </li>
                         ),
                       )}
@@ -159,48 +161,54 @@ export function SecondarySideNavigation() {
               },
             ].map((user, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                 >
                   <div className="relative mr-2.5">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       className="size-8 rounded-full"
                       src={user.avatar}
                       alt={`${user.name} avatar`}
                     />
                     <span
-                      className={`absolute -top-0.5 left-5 size-3 rounded-full border-2 border-white bg-${user.status}-400 dark:border-gray-800`}
+                      className={`absolute -top-0.5 left-5 size-3 rounded-full border-2 border-white dark:border-gray-800`}
                     ></span>
                   </div>
                   {user.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
           <div className="mb-4 flex items-center justify-between pt-5 text-sm font-medium text-gray-500 dark:text-gray-400">
             <h3 className="uppercase">Group conversations</h3>
-            <a
+            <Link
               href="#"
               className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               <HiPlus className="size-5" />
               <span className="sr-only">Create new group</span>
-            </a>
+            </Link>
           </div>
           <ul className="space-y-4">
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center space-x-2 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               >
                 <div className="flex -space-x-5">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     className="size-8 rounded-full border-2 border-white dark:border-gray-800"
                     src="https://github.com/shadcn.png"
                     alt="Jese avatar"
                   />
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     className="size-8 rounded-full border-2 border-white dark:border-gray-800"
                     src="https://github.com/shadcn.png"
                     alt="Bonnie avatar"
@@ -214,20 +222,24 @@ export function SecondarySideNavigation() {
                     Bonnie: Wait! What test?
                   </span>
                 </div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center space-x-2 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               >
                 <div className="flex -space-x-5">
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     className="size-8 rounded-full border-2 border-white dark:border-gray-800"
                     src="https://github.com/shadcn.png"
                     alt="Jese avatar"
                   />
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     className="size-8 rounded-full border-2 border-white dark:border-gray-800"
                     src="https://github.com/shadcn.png"
                     alt="Micheal avatar"
@@ -241,7 +253,7 @@ export function SecondarySideNavigation() {
                     Jese: Beautiful day!
                   </span>
                 </div>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

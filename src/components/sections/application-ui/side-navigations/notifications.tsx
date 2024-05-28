@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiArrowNarrowRight,
@@ -55,28 +57,30 @@ export function NotificationsSideNavigation() {
           <HiX className="size-4" />
         </Button>
         <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <a
+          <Link
             href="https://modernui.com"
             className="mb-5 flex items-center pl-2"
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-              className="mr-3 h-6 sm:h-8"
+              className="mr-3 h-6 w-auto sm:h-8"
               alt="ModernUI Logo"
             />
             <span className="self-center whitespace-nowrap text-2xl font-semibold">
               ModernUI
             </span>
-          </a>
+          </Link>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -101,12 +105,12 @@ export function NotificationsSideNavigation() {
                       { href: "#", label: "Calendar" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -136,12 +140,12 @@ export function NotificationsSideNavigation() {
                       { href: "#", label: "Invoice" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -149,7 +153,7 @@ export function NotificationsSideNavigation() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -158,7 +162,7 @@ export function NotificationsSideNavigation() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -183,12 +187,12 @@ export function NotificationsSideNavigation() {
                       { href: "#", label: "Forgot Password" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -218,13 +222,13 @@ export function NotificationsSideNavigation() {
               },
             ].map((item, index) => (
               <li key={index}>
-                <a
+                <Link
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {item.icon}
                   <span className="ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -251,13 +255,13 @@ export function NotificationsSideNavigation() {
             <div className="mb-3 text-sm text-gray-700 dark:text-gray-300">
               A new system update is available today.
             </div>
-            <a
+            <Link
               href="#"
               className="inline-flex items-center text-sm font-medium text-purple-600 hover:underline dark:text-purple-500"
             >
               Update now
               <HiArrowNarrowRight className="ml-1 size-5" />
-            </a>
+            </Link>
           </div>
           <div
             id="alert-new-feature"
@@ -277,13 +281,13 @@ export function NotificationsSideNavigation() {
             <div className="mb-3 text-sm text-gray-700 dark:text-gray-300">
               ModernUI Widget Generator is now ready.
             </div>
-            <a
+            <Link
               href="#"
               className="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               Download
               <HiArrowNarrowRight className="ml-1 size-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </aside>

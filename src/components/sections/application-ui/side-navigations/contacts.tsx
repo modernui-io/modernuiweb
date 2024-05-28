@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   HiAdjustments,
@@ -53,28 +55,30 @@ export function ContactsSideNavigation() {
           <HiX className="size-4" />
         </Button>
         <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <a
+          <Link
             href="https://modernui.com"
             className="mb-5 flex items-center pl-2"
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-              className="mr-3 h-6 sm:h-8"
+              className="mr-3 h-6 w-auto sm:h-8"
               alt="ModernUI Logo"
             />
             <span className="self-center whitespace-nowrap text-2xl font-semibold">
               ModernUI
             </span>
-          </a>
+          </Link>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
                 <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -98,12 +102,12 @@ export function ContactsSideNavigation() {
                       { href: "#", label: "Calendar" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -133,12 +137,12 @@ export function ContactsSideNavigation() {
                       { href: "#", label: "Invoice" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -146,7 +150,7 @@ export function ContactsSideNavigation() {
               </Collapsible>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-normal"
               >
@@ -155,7 +159,7 @@ export function ContactsSideNavigation() {
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
                   6
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
               <Collapsible>
@@ -180,12 +184,12 @@ export function ContactsSideNavigation() {
                       { href: "#", label: "Forgot Password" },
                     ].map((link, index) => (
                       <li key={index}>
-                        <a
+                        <Link
                           href={link.href}
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -257,12 +261,14 @@ export function ContactsSideNavigation() {
               },
             ].map((user, index) => (
               <li key={index}>
-                <a
+                <Link
                   href={user.href}
                   className="flex items-center space-x-4 font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 hover:dark:text-white"
                 >
                   <div className="relative mr-2.5">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       className="size-6 rounded-full"
                       src={user.imgSrc}
                       alt={`${user.name} avatar`}
@@ -272,27 +278,27 @@ export function ContactsSideNavigation() {
                     ></span>
                   </div>
                   {user.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 p-4 lg:flex">
-          <a
+          <Link
             href="#"
             className="inline-flex cursor-pointer items-center rounded p-2 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
           >
             <HiAdjustments className="mr-1 size-4" />
             Settings
-          </a>
-          <a
+          </Link>
+          <Link
             href="#"
             data-tooltip-target="tooltip-settings"
             className="inline-flex cursor-pointer items-center rounded p-2 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
           >
             <HiInformationCircle className="mr-1 size-4" />
             Help
-          </a>
+          </Link>
         </div>
       </aside>
     </>

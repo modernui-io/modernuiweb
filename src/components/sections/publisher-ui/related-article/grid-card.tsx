@@ -23,7 +23,7 @@ const GridLayoutCard = () => {
   const ArticleData: ArticleData[] = [
     {
       image: Blog2,
-      title: "Flowbite enables IT to automate Apple device configuration",
+      title: "ModernUI Web enables IT to automate Apple device configuration",
       link: "#",
       alt: "Image 1",
     },

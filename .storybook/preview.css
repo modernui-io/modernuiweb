@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Newsreader:wght@600;700&family=Lexend:wght@400;500&family=Source+Code+Pro&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Newsreader:wght@600;700&family=Lexend:wght@400;500&family=Source+Code+Pro&display=swap"); */
 
 :root {
   --storybook-background-color-light: #fafafa;
   --storybook-background-color-dark: #171717;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 html {

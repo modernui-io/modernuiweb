@@ -49,7 +49,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
 
   return (
     <header className="bg-background antialiased">
-      <nav className="border-gray-200 px-4 py-2.5 lg:px-6">
+      <nav className="border-gray-200 py-2.5 lg:px-6">
         <div className="w-full px-4 py-3.5 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
@@ -498,277 +498,275 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
           </div>
         </div>
 
-        {isNavVisible && (
-          <div className="flex flex-col lg:flex-row">
-            <div className="lg:hidden">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    <span className="flex w-full items-center justify-between text-sm font-medium lg:p-0 lg:hover:underline">
-                      <span>
-                        Account&nbsp;
-                        <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
-                          Bonnie @ 1234-567-890
-                        </span>
+        <div
+          className={`flex-col lg:flex lg:flex-row ${isNavVisible ? "flex" : "hidden"}`}
+        >
+          <div className="lg:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" variant={"ghost"}>
+                  <span className="flex w-full items-center justify-between text-sm font-medium lg:p-0 lg:hover:underline">
+                    <span>
+                      Account&nbsp;
+                      <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
+                        Bonnie @ 1234-567-890
                       </span>
+                    </span>
+                    <svg
+                      className="size-2.5 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <div className="px-4 py-3">
+                  <span className="block text-sm font-semibold">Neil Sims</span>
+                  <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
+                    name@modernui.com
+                  </span>
+                </div>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>My profile</DropdownMenuItem>
+                <DropdownMenuItem>Account settings</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <svg
+                    className="mr-2 size-4 text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 18"
+                  >
+                    <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
+                  </svg>
+                  My links
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <svg
+                    className="mr-2 size-4 text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="m1.56 6.245 8 3.924a1 1 0 0 0 .88 0l8-3.924a1 1 0 0 0 0-1.8l-8-3.925a1 1 0 0 0-.88 0l-8 3.925a1 1 0 0 0 0 1.8Z" />{" "}
+                    <path d="M18 8.376a1 1 0 0 0-1 1v.163l-7 3.434-7-3.434v-.163a1 1 0 0 0-2 0v.786a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.786a1 1 0 0 0-1-1Z" />{" "}
+                    <path d="M17.993 13.191a1 1 0 0 0-1 1v.163l-7 3.435-7-3.435v-.163a1 1 0 1 0-2 0v.787a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.787a1 1 0 0 0-1-1Z" />{" "}
+                  </svg>
+                  Collections
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <div className="flex w-full items-center justify-between">
+                    <span className="flex items-center">
                       <svg
-                        className="size-2.5 text-gray-500 dark:text-gray-400"
+                        className="mr-2 size-4 text-primary-600 dark:text-primary-500"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 6 10"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
                       >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="m1 9 4-4-4-4"
-                        />
+                        <path d="m7.164 3.805-4.475.38L.327 6.546a1.114 1.114 0 0 0 .63 1.89l3.2.375 3.007-5.006ZM11.092 15.9l.472 3.14a1.114 1.114 0 0 0 1.89.63l2.36-2.362.38-4.475-5.102 3.067Zm8.617-14.283A1.613 1.613 0 0 0 18.383.291c-1.913-.33-5.811-.736-7.556 1.01-1.98 1.98-6.172 9.491-7.477 11.869a1.1 1.1 0 0 0 .193 1.316l.986.985.985.986a1.1 1.1 0 0 0 1.316.193c2.378-1.3 9.889-5.5 11.869-7.477 1.746-1.745 1.34-5.643 1.01-7.556Zm-3.873 6.268a2.63 2.63 0 1 1-3.72-3.72 2.63 2.63 0 0 1 3.72 3.72Z" />
                       </svg>
+                      Pro version
                     </span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <div className="px-4 py-3">
-                    <span className="block text-sm font-semibold">
-                      Neil Sims
-                    </span>
-                    <span className="block truncate text-sm text-gray-500 dark:text-gray-400">
-                      name@modernui.com
-                    </span>
+                    <svg
+                      className="size-2.5 text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
                   </div>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>My profile</DropdownMenuItem>
-                  <DropdownMenuItem>Account settings</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-400"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 18"
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <ul className="py-1 text-gray-500 dark:text-gray-400">
+                  <li>
+                    <Link
+                      href="#"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
-                    </svg>
-                    My links
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-400"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="m1.56 6.245 8 3.924a1 1 0 0 0 .88 0l8-3.924a1 1 0 0 0 0-1.8l-8-3.925a1 1 0 0 0-.88 0l-8 3.925a1 1 0 0 0 0 1.8Z" />{" "}
-                      <path d="M18 8.376a1 1 0 0 0-1 1v.163l-7 3.434-7-3.434v-.163a1 1 0 0 0-2 0v.786a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.786a1 1 0 0 0-1-1Z" />{" "}
-                      <path d="M17.993 13.191a1 1 0 0 0-1 1v.163l-7 3.435-7-3.435v-.163a1 1 0 1 0-2 0v.787a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.787a1 1 0 0 0-1-1Z" />{" "}
-                    </svg>
-                    Collections
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <div className="flex w-full items-center justify-between">
-                      <span className="flex items-center">
-                        <svg
-                          className="mr-2 size-4 text-primary-600 dark:text-primary-500"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="m7.164 3.805-4.475.38L.327 6.546a1.114 1.114 0 0 0 .63 1.89l3.2.375 3.007-5.006ZM11.092 15.9l.472 3.14a1.114 1.114 0 0 0 1.89.63l2.36-2.362.38-4.475-5.102 3.067Zm8.617-14.283A1.613 1.613 0 0 0 18.383.291c-1.913-.33-5.811-.736-7.556 1.01-1.98 1.98-6.172 9.491-7.477 11.869a1.1 1.1 0 0 0 .193 1.316l.986.985.985.986a1.1 1.1 0 0 0 1.316.193c2.378-1.3 9.889-5.5 11.869-7.477 1.746-1.745 1.34-5.643 1.01-7.556Zm-3.873 6.268a2.63 2.63 0 1 1-3.72-3.72 2.63 2.63 0 0 1 3.72 3.72Z" />
-                        </svg>
-                        Pro version
-                      </span>
-                      <svg
-                        className="size-2.5 text-gray-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 6 10"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="m1 9 4-4-4-4"
-                        />
-                      </svg>
-                    </div>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <ul className="py-1 text-gray-500 dark:text-gray-400">
-                    <li>
-                      <Link
-                        href="#"
-                        className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Sign out
-                      </Link>
-                    </li>
-                  </ul>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                      Sign out
+                    </Link>
+                  </li>
+                </ul>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    <span className="flex w-full items-center justify-between text-sm font-medium lg:p-0 lg:hover:underline">
-                      <span>
-                        Regions&nbsp;
-                        <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
-                          US East (N. Virginia)
-                        </span>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="sm" variant={"ghost"}>
+                  <span className="flex w-full items-center justify-between text-sm font-medium lg:p-0 lg:hover:underline">
+                    <span>
+                      Regions&nbsp;
+                      <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
+                        US East (N. Virginia)
                       </span>
-                      <svg
-                        className="size-2.5 text-gray-500 dark:text-gray-400"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 6 10"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="m1 9 4-4-4-4"
-                        />
-                      </svg>
                     </span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
-                    <li>
-                      <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                        <div className="flex h-5 items-center">
-                          <Checkbox
-                            id="helper-checkbox-4"
-                            name="helper-checkbox"
-                          />
-                        </div>
-                        <div className="ml-2 text-sm">
-                          <label
-                            htmlFor="helper-checkbox-4"
-                            className="font-medium text-gray-900 dark:text-gray-300"
-                          >
-                            <div>New York</div>
-                            <p
-                              id="helper-checkbox-text-4"
-                              className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                            >
-                              Dynamic server switching
-                            </p>
-                          </label>
-                        </div>
+                    <svg
+                      className="size-2.5 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
+                  <li>
+                    <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+                      <div className="flex h-5 items-center">
+                        <Checkbox
+                          id="helper-checkbox-4"
+                          name="helper-checkbox"
+                        />
                       </div>
-                    </li>
-                    <li>
-                      <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                        <div className="flex h-5 items-center">
-                          <Checkbox
-                            id="helper-checkbox-5"
-                            name="helper-checkbox"
-                          />
-                        </div>
-                        <div className="ml-2 text-sm">
-                          <label
-                            htmlFor="helper-checkbox-5"
-                            className="font-medium text-gray-900 dark:text-gray-300"
+                      <div className="ml-2 text-sm">
+                        <label
+                          htmlFor="helper-checkbox-4"
+                          className="font-medium text-gray-900 dark:text-gray-300"
+                        >
+                          <div>New York</div>
+                          <p
+                            id="helper-checkbox-text-4"
+                            className="text-xs font-normal text-gray-500 dark:text-gray-300"
                           >
-                            <div>N. Virginia</div>
-                            <p
-                              id="helper-checkbox-text-5"
-                              className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                            >
-                              Auto-scaling adapter
-                            </p>
-                          </label>
-                        </div>
+                            Dynamic server switching
+                          </p>
+                        </label>
                       </div>
-                    </li>
-                    <li>
-                      <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                        <div className="flex h-5 items-center">
-                          <Checkbox
-                            id="helper-checkbox-6"
-                            name="helper-checkbox"
-                          />
-                        </div>
-                        <div className="ml-2 text-sm">
-                          <label
-                            htmlFor="helper-checkbox-6"
-                            className="font-medium text-gray-900 dark:text-gray-300"
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+                      <div className="flex h-5 items-center">
+                        <Checkbox
+                          id="helper-checkbox-5"
+                          name="helper-checkbox"
+                        />
+                      </div>
+                      <div className="ml-2 text-sm">
+                        <label
+                          htmlFor="helper-checkbox-5"
+                          className="font-medium text-gray-900 dark:text-gray-300"
+                        >
+                          <div>N. Virginia</div>
+                          <p
+                            id="helper-checkbox-text-5"
+                            className="text-xs font-normal text-gray-500 dark:text-gray-300"
                           >
-                            <div>Washington DC.</div>
-                            <p
-                              id="helper-checkbox-text-6"
-                              className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                            >
-                              Automatic backups included
-                            </p>
-                          </label>
-                        </div>
+                            Auto-scaling adapter
+                          </p>
+                        </label>
                       </div>
-                    </li>
-                  </ul>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Company
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Team
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Features
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Marketplace
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Resources
-            </Link>
-            <Link
-              href="#"
-              className="px-4 py-2.5 text-sm font-medium hover:underline lg:mr-8"
-            >
-              Forum
-            </Link>
-            <Link
-              href="#"
-              className="border-b-0 px-4 py-2.5 text-sm font-medium hover:underline"
-            >
-              Support
-            </Link>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+                      <div className="flex h-5 items-center">
+                        <Checkbox
+                          id="helper-checkbox-6"
+                          name="helper-checkbox"
+                        />
+                      </div>
+                      <div className="ml-2 text-sm">
+                        <label
+                          htmlFor="helper-checkbox-6"
+                          className="font-medium text-gray-900 dark:text-gray-300"
+                        >
+                          <div>Washington DC.</div>
+                          <p
+                            id="helper-checkbox-text-6"
+                            className="text-xs font-normal text-gray-500 dark:text-gray-300"
+                          >
+                            Automatic backups included
+                          </p>
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
-        )}
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Home
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Company
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Team
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Features
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Marketplace
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Resources
+          </Link>
+          <Link
+            href="#"
+            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
+          >
+            Forum
+          </Link>
+          <Link
+            href="#"
+            className="border-b-0 py-2.5 pl-5 text-sm font-medium hover:underline lg:pl-0"
+          >
+            Support
+          </Link>
+        </div>
       </nav>
     </header>
   );

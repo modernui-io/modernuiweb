@@ -10,7 +10,7 @@ import {
 
 export function DefaultDashboardFooter() {
   return (
-    <footer className="bg-background py-5">
+    <footer className="flex flex-col items-center justify-between bg-background px-10 py-5 md:flex-row">
       <Text className="mb-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:mb-0">
         &copy; 2019-2022&nbsp;
         <a
@@ -31,7 +31,7 @@ export function DefaultDashboardFooter() {
                 <FaFacebookF className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Like us on Facebook</Text>
             </TooltipContent>
           </Tooltip>
@@ -43,7 +43,7 @@ export function DefaultDashboardFooter() {
                 <FaTwitter className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Follow us on Twitter</Text>
             </TooltipContent>
           </Tooltip>
@@ -55,7 +55,7 @@ export function DefaultDashboardFooter() {
                 <FaGithub className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Star us on GitHub</Text>
             </TooltipContent>
           </Tooltip>
@@ -67,7 +67,7 @@ export function DefaultDashboardFooter() {
                 <FaDribbble className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Follow us on Dribble</Text>
             </TooltipContent>
           </Tooltip>

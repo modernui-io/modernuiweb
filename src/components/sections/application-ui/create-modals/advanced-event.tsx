@@ -85,7 +85,7 @@ export function AdvancedCreateEventModal() {
     defaultValues: {
       title: "",
       location: "",
-      date: new Date().toString(),
+      date: "",
       guests: [],
       permissions: {
         modifyEvent: false,
@@ -112,11 +112,9 @@ export function AdvancedCreateEventModal() {
       <DialogTrigger asChild>
         <Button>Create event</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-5 md:min-w-[55rem] lg:min-w-[60rem]">
+      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5 md:min-w-[55rem] lg:min-w-[60rem]">
         <div className="mb-2 flex items-center justify-between pb-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Add new event
-          </h3>
+          <h3 className="text-lg font-semibold">Add new event</h3>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -125,7 +123,7 @@ export function AdvancedCreateEventModal() {
                 <div>
                   <Label
                     htmlFor="title"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium"
                   >
                     Title
                   </Label>
@@ -140,14 +138,14 @@ export function AdvancedCreateEventModal() {
                 <div>
                   <Label
                     htmlFor="location"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium"
                   >
                     Location
                   </Label>
                   <div className="relative flex items-center">
                     <HiLocationMarker className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
                     <Input
-                      className="pl-7 dark:border-gray-500"
+                      className="pl-8 dark:border-gray-500"
                       id="location"
                       placeholder="Enter location"
                       {...form.register("location")}
@@ -157,21 +155,20 @@ export function AdvancedCreateEventModal() {
                 <div>
                   <Label
                     htmlFor="location"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium"
                   >
                     Select Date
                   </Label>
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "justify-start text-left font-normal dark:bg-gray-600 dark:text-white",
-                        )}
-                      >
-                        <CalendarIcon className="mr-2 size-4" />
-                        <span>Pick a date</span>
-                      </Button>
+                      <div className="relative flex items-center">
+                        <HiCalendar className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
+                        <Input
+                          placeholder="Pick a date"
+                          className="justify-start pl-8 text-left font-normal dark:border-gray-500"
+                          {...form.register("date")}
+                        />
+                      </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
                       <Calendar
@@ -187,9 +184,7 @@ export function AdvancedCreateEventModal() {
                   className="flex text-sm text-gray-500 dark:text-gray-400"
                 >
                   Thursday, April 22
-                  <span className="ml-2 font-semibold text-gray-900 dark:text-white">
-                    04:30 - 05:30
-                  </span>
+                  <span className="ml-2 font-semibold">04:30 - 05:30</span>
                 </time>
                 <div className="items-center sm:flex sm:space-x-4">
                   <div className="mb-4 flex space-x-[-20px] sm:mb-0 [&_img]:ring-white dark:[&_img]:ring-0">
@@ -220,14 +215,14 @@ export function AdvancedCreateEventModal() {
                   </div>
                   <Button
                     variant={"outline"}
-                    className="mr-3 inline-flex text-xs text-gray-400 hover:text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
+                    className="mr-3 inline-flex text-xs dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
                   >
                     <HiPlus className="-ml-1 mr-1 size-4" />
                     Add member
                   </Button>
                   <Button
                     variant={"outline"}
-                    className="mr-3 inline-flex text-xs text-gray-400 hover:text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
+                    className="mr-3 inline-flex text-xs dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
                   >
                     <HiClock className="-ml-1 mr-1 size-4" />
                     Find a time
@@ -235,7 +230,7 @@ export function AdvancedCreateEventModal() {
                 </div>
                 <div>
                   <Label
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium"
                     htmlFor="guest-permission-checkbox"
                   >
                     Guest Permissions
@@ -287,7 +282,7 @@ export function AdvancedCreateEventModal() {
                   </div>
                 </div>
                 <div>
-                  <div className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                  <div className="mb-2 block text-sm font-medium">
                     Tag Color
                   </div>
                   <div className="flex items-center space-x-2">
@@ -306,11 +301,11 @@ export function AdvancedCreateEventModal() {
               <div>
                 <Label
                   htmlFor="description"
-                  className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Description
                 </Label>
-                <div className="mb-4 w-full rounded-lg border border-gray-200 bg-gray-100 dark:border-gray-600 dark:bg-gray-600">
+                <div className="mb-4 w-full rounded-lg border">
                   <div className="flex items-center justify-between border-b px-3 py-2 dark:border-gray-600">
                     <div className="flex flex-wrap items-center divide-gray-200 dark:divide-gray-600 sm:divide-x">
                       <div className="flex items-center space-x-1 sm:pr-4">
@@ -349,7 +344,7 @@ export function AdvancedCreateEventModal() {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <button className="cursor-pointer rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white sm:ml-auto">
+                          <button className="cursor-pointer rounded p-2">
                             <HiArrowsExpand className="size-5" />
                             <span className="sr-only">Full screen</span>
                           </button>
@@ -360,21 +355,19 @@ export function AdvancedCreateEventModal() {
                       </Tooltip>
                     </TooltipProvider>
                   </div>
-                  <div className="rounded-b-lg bg-gray-50 px-4 py-2 dark:bg-gray-700">
+                  <div className="rounded-b-lg px-4 py-2">
                     <Textarea
                       id="description"
                       placeholder="Write a description here"
                       required
                       rows={8}
-                      className="block w-full border-0 bg-gray-50 px-0 text-sm text-gray-800 focus:ring-0 dark:border-gray-500 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400"
+                      className="block w-full border-0 px-0 text-sm shadow-none"
                       {...form.register("description")}
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
-                    Reminder
-                  </div>
+                  <div className="mb-2 block text-sm font-medium">Reminder</div>
                   <div className="space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
                     <div className="w-full">
                       <Label htmlFor="reminder-type" className="sr-only">

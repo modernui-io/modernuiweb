@@ -141,79 +141,79 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
             </div>
           </div>
         </div>
-        {isNavVisible && (
-          <div className="order-3 lg:order-2">
-            <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-              <Link
-                aria-current="page"
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
-                  Overview
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Company
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Team
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Features
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Marketplace
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Resources
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Forum
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Support
-                </span>
-              </Link>
-            </div>
+        <div className="order-3 lg:order-2">
+          <div
+            className={`w-full flex-col items-center shadow-sm lg:flex lg:flex-row [&_li]:w-full lg:[&_li]:w-auto ${isNavVisible ? "flex" : "hidden"}`}
+          >
+            <Link
+              aria-current="page"
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
+                Overview
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Company
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Team
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Features
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Marketplace
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Resources
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Forum
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                Support
+              </span>
+            </Link>
           </div>
-        )}
+        </div>
 
-        <nav className="order-2 border-b border-gray-200 lg:order-3">
+        <nav className="order-2 border-b border-gray-200 bg-gray-50 dark:bg-gray-800 lg:order-3">
           <div className="flex flex-col items-center px-4 py-3 lg:flex-row lg:px-6">
             <form className="relative mb-4 w-full lg:mb-0 lg:mr-4 lg:max-w-sm">
               <div className="relative flex items-center">

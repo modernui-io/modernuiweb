@@ -304,7 +304,10 @@ export function CreateProductModal() {
                   Schedule
                 </Button>
                 <DialogClose asChild>
-                  <Button className="w-full text-sm sm:w-auto">
+                  <Button
+                    className="w-full text-sm sm:w-auto"
+                    variant={"outline"}
+                  >
                     <HiX className="-ml-1 mr-1 size-5" />
                     Discard
                   </Button>

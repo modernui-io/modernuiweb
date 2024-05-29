@@ -13,11 +13,16 @@ import {
   HiHeart,
   HiInbox,
   HiInboxIn,
+  HiInformationCircle,
   HiLightningBolt,
   HiLogout,
+  HiMail,
   HiMenu,
   HiOutlineChatAlt,
+  HiPencilAlt,
+  HiPlusCircle,
   HiSearch,
+  HiSelector,
   HiShoppingBag,
   HiUserAdd,
   HiUserCircle,
@@ -571,88 +576,26 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
-                    <>
-                      <span>More&nbsp;</span>
-                      <svg
-                        className="ml-1.5 size-2.5"
-                        aria-hidden
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 16"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 5 5 1 1 5m0 6 4 4 4-4"
-                        />
-                      </svg>
-                    </>
+                  <Button variant={"outline"}>
+                    <span>More&nbsp;</span>
+                    <HiSelector className="ml-1.5 size-3" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-500 dark:text-gray-300"
-                      aria-hidden
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
                     Create new app
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-500 dark:text-gray-300"
-                      aria-hidden
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
+                    <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
                     Inbox
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-500 dark:text-gray-300"
-                      aria-hidden
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
                     App info
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <svg
-                      className="mr-2 size-4 text-gray-500 dark:text-gray-300"
-                      aria-hidden
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <HiPencilAlt className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
                     Edit app
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -660,77 +603,75 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
             </div>
           </div>
         </nav>
-        {isNavVisible && (
-          <div>
-            <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-              <Link
-                aria-current="page"
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-              >
-                <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
-                  Home
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Company
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Team
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Features
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Marketplace
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Resources
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Forum
-                </span>
-              </Link>
-              <Link
-                href="#"
-                className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-              >
-                <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                  Support
-                </span>
-              </Link>
-            </div>
-          </div>
-        )}
+        <div
+          className={`${isNavVisible ? "flex" : "hidden"} w-full flex-col items-center border-b border-gray-200 shadow-sm dark:border-gray-800 lg:flex lg:flex-row`}
+        >
+          <Link
+            aria-current="page"
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+          >
+            <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
+              Home
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Company
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Team
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Features
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Marketplace
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Resources
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Forum
+            </span>
+          </Link>
+          <Link
+            href="#"
+            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+          >
+            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+              Support
+            </span>
+          </Link>
+        </div>
       </nav>
     </header>
   );

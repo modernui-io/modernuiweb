@@ -417,7 +417,6 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                 id="toggleMobileMenuButton"
                 className="lg:hidden"
                 variant={"ghost"}
-                data-collapse-toggle="toggleMobileMenu"
                 onClick={() => setIsNavVisible(!isNavVisible)}
               >
                 <span className="sr-only">Open menu</span>
@@ -426,84 +425,85 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
             </div>
           </div>
         </div>
-        {isNavVisible && (
-          <div className="order-3 border-t px-4 py-2.5 shadow-sm lg:order-2 lg:px-6">
-            <div className="flex w-full flex-col items-center justify-between lg:flex-row">
-              <ul className="order-2 mt-0 flex w-full flex-col rounded-lg border border-gray-200 bg-gray-50 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 lg:order-1 lg:flex-row lg:rounded-none lg:border-0 lg:bg-white dark:lg:bg-gray-900">
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-primary-600 hover:bg-gray-50 hover:text-primary-700 focus:ring-4 focus:ring-gray-200 dark:text-primary-500 dark:hover:bg-gray-800 dark:focus:ring-gray-700"
-                    aria-current="page"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Sales
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Team
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Workspaces
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Tasks
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
-                  >
-                    Analytics
-                  </Link>
-                </li>
-              </ul>
-              <form className="order-1 mb-4 flex w-full items-center justify-end lg:order-2 lg:mb-0 lg:ml-4 lg:max-w-sm">
-                <Label htmlFor="simple-search" className="sr-only">
-                  Search
-                </Label>
-                <div className="relative flex items-center">
-                  <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
-                  <Input
-                    id="search"
-                    name="search"
-                    placeholder="Find anything"
-                    required
-                    type="search"
-                    className="w-full pl-9 lg:w-fit"
-                  />
-                </div>
+        {isNavVisible}
+        <div
+          className={`order-3 border-t px-4 py-2.5 lg:order-2 lg:flex lg:px-6 ${isNavVisible ? "flex" : "hidden"} `}
+        >
+          <div className="flex w-full flex-col items-center justify-between lg:flex-row">
+            <ul className="order-2 mt-0 flex w-full flex-col rounded-lg border border-gray-200 bg-gray-50 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 lg:order-1 lg:flex-row lg:rounded-none lg:border-0 lg:bg-white dark:lg:bg-gray-900">
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-primary-600 hover:bg-gray-50 hover:text-primary-700 focus:ring-4 focus:ring-gray-200 dark:text-primary-500 dark:hover:bg-gray-800 dark:focus:ring-gray-700"
+                  aria-current="page"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Sales
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Workspaces
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Tasks
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="block rounded-lg px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Analytics
+                </Link>
+              </li>
+            </ul>
+            <form className="order-1 mb-4 flex w-full items-center justify-end lg:order-2 lg:mb-0 lg:ml-4 lg:max-w-sm">
+              <Label htmlFor="simple-search" className="sr-only">
+                Search
+              </Label>
+              <div className="relative flex items-center">
+                <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
+                <Input
+                  id="search"
+                  name="search"
+                  placeholder="Find anything"
+                  required
+                  type="search"
+                  className="w-full pl-9 lg:w-fit"
+                />
+              </div>
 
-                <Button type="submit" className="ml-3 [&>span]:py-3">
-                  <HiSearch className="size-5" />
-                  <span className="sr-only">Search</span>
-                </Button>
-              </form>
-            </div>
+              <Button type="submit" className="ml-3 [&>span]:py-3">
+                <HiSearch className="size-5" />
+                <span className="sr-only">Search</span>
+              </Button>
+            </form>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

@@ -50,7 +50,7 @@ const formSchema = z.object({
 });
 
 export function StackedMultipleApplicationShell() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -273,90 +273,6 @@ export function StackedMultipleApplicationShell() {
                     </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <span className="sr-only">View apps</span>
-                      <HiViewGrid className="size-5" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
-                      Apps
-                    </div>
-                    <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
-                      {[
-                        {
-                          icon: (
-                            <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Sales",
-                        },
-                        {
-                          icon: (
-                            <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Users",
-                        },
-                        {
-                          icon: (
-                            <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Inbox",
-                        },
-                        {
-                          icon: (
-                            <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Profile",
-                        },
-                        {
-                          icon: (
-                            <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Settings",
-                        },
-                        {
-                          icon: (
-                            <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Products",
-                        },
-                        {
-                          icon: (
-                            <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Pricing",
-                        },
-                        {
-                          icon: (
-                            <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Billing",
-                        },
-                        {
-                          icon: (
-                            <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
-                          ),
-                          text: "Logout",
-                        },
-                      ].map((item, index) => (
-                        <Link
-                          key={index}
-                          href="#"
-                          className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
-                        >
-                          {item.icon}
-                          <div className="text-sm font-medium">{item.text}</div>
-                        </Link>
-                      ))}
-                    </div>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -481,7 +397,7 @@ export function StackedMultipleApplicationShell() {
                   </DropdownMenuContent>
                 </DropdownMenu>
 
-                <HiChevronRight className="mx-4 size-3 text-gray-500 dark:text-gray-400" />
+                <HiChevronRight className="size-6 text-gray-500 dark:text-gray-400" />
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -536,17 +452,13 @@ export function StackedMultipleApplicationShell() {
                 </DropdownMenu>
               </div>
               <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:items-center">
-                <Button className="whitespace-nowrap [&>span]:text-xs">
-                  Open app
-                </Button>
+                <Button className="whitespace-nowrap">Open app</Button>
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <>
-                        <span>More&nbsp;</span>
-                        <HiSelector className="ml-1.5 size-2.5" />
-                      </>
+                    <Button variant={"outline"}>
+                      <span>More&nbsp;</span>
+                      <HiSelector className="ml-1.5 size-2.5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -586,33 +498,33 @@ export function StackedMultipleApplicationShell() {
               </div>
             </div>
           </nav>
-          {isNavVisible && (
-            <div>
-              <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-                {[
-                  { label: "Home", href: "#" },
-                  { label: "Company", href: "#" },
-                  { label: "Team", href: "#" },
-                  { label: "Features", href: "#" },
-                  { label: "Marketplace", href: "#" },
-                  { label: "Resources", href: "#" },
-                  { label: "Forum", href: "#" },
-                  { label: "Support", href: "#" },
-                ].map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                    >
-                      <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                        {item.label}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </div>
-            </div>
-          )}
+          <div>
+            <ul
+              className={`${isNavVisible ? "flex" : "hidden"} flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 md:flex-row lg:flex`}
+            >
+              {[
+                { label: "Home", href: "#" },
+                { label: "Company", href: "#" },
+                { label: "Team", href: "#" },
+                { label: "Features", href: "#" },
+                { label: "Marketplace", href: "#" },
+                { label: "Resources", href: "#" },
+                { label: "Forum", href: "#" },
+                { label: "Support", href: "#" },
+              ].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                  >
+                    <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                      {item.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       </header>
       <main className="grid flex-1 grid-cols-1 gap-5 p-4 pt-48 dark:bg-gray-900 md:grid-cols-2">

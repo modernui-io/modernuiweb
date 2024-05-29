@@ -21,14 +21,18 @@ import {
   HiInbox,
   HiInboxIn,
   HiInformationCircle,
+  HiLightBulb,
   HiLightningBolt,
+  HiLocationMarker,
   HiLockClosed,
   HiLogout,
   HiMail,
   HiMenuAlt2,
   HiOutlineAdjustments,
   HiOutlineChatAlt,
+  HiPlus,
   HiPlusCircle,
+  HiPresentationChartBar,
   HiQuestionMarkCircle,
   HiSearch,
   HiSelector,
@@ -87,7 +91,7 @@ export function DoubleSidebarApplicationShell() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full bg-background antialiased">
+      <header className="fixed top-0 z-50 w-full border-b bg-background antialiased">
         <nav>
           <div className="border-gray-200 px-4 py-2.5 lg:px-6">
             <div className="flex items-center justify-between">
@@ -116,7 +120,7 @@ export function DoubleSidebarApplicationShell() {
                       <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                       <Input
                         id="topbar-search"
-                        placeholder="Jump to Favorites, Apps, Pipelines..."
+                        placeholder="Search"
                         type="search"
                         className="pl-9"
                         {...form.register("search")}
@@ -293,7 +297,6 @@ export function DoubleSidebarApplicationShell() {
                     </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -376,8 +379,6 @@ export function DoubleSidebarApplicationShell() {
                   </DropdownMenuContent>
                 </DropdownMenu>
 
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
-
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -445,165 +446,7 @@ export function DoubleSidebarApplicationShell() {
               </div>
             </div>
           </div>
-          <nav className="bg-gray-50 dark:bg-gray-800">
-            <div className="flex flex-wrap items-center justify-between p-4 sm:pb-3 lg:px-6">
-              <div className="mb-4 flex items-center sm:mb-0">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">Open user menu</span>
-                        <div className="mr-2 flex items-center">
-                          <Image
-                            width={100}
-                            height={100}
-                            src="https://github.com/shadcn.png"
-                            className="mr-2 size-7 rounded-full"
-                            alt=""
-                          />
-                          <div className="text-left">
-                            <div className="text-sm font-semibold leading-none text-gray-900 dark:text-white">
-                              Personal
-                            </div>
-                          </div>
-                        </div>
-                        <HiSelector className="size-3 text-gray-500 dark:text-gray-400" />
-                      </>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <Link
-                      href="#"
-                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
-                    >
-                      <div className="text-left">
-                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                          Company
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Created August, 2014
-                        </div>
-                      </div>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
-                    >
-                      <div className="text-left">
-                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                          Personal
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Created September, 2018
-                        </div>
-                      </div>
-                    </Link>
-                  </DropdownMenuContent>
-                </DropdownMenu>
 
-                <HiChevronRight className="mx-4 size-3 text-gray-500 dark:text-gray-400" />
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>modernui.com</Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
-                      {[
-                        {
-                          id: "helper-radio-4",
-                          name: "helper-radio",
-                          title: "themesberg.com",
-                          description: "Free templates and themes",
-                        },
-                        {
-                          id: "helper-radio-5",
-                          name: "helper-radio",
-                          title: "iconscale.com",
-                          description: "Open-source SVG icons",
-                        },
-                        {
-                          id: "helper-radio-6",
-                          name: "helper-radio",
-                          title: "ui.glass",
-                          description: "Glassmorphism UI framework",
-                        },
-                      ].map((item) => (
-                        <li key={item.id}>
-                          <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <div className="flex h-5 items-center">
-                              <Checkbox id={item.id} name={item.name} />
-                            </div>
-                            <div className="ml-2 text-sm">
-                              <Label
-                                htmlFor={item.id}
-                                className="font-medium text-gray-900 dark:text-gray-300"
-                              >
-                                <div>{item.title}</div>
-                                <p
-                                  id={`helper-radio-text-${item.id}`}
-                                  className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                                >
-                                  {item.description}
-                                </p>
-                              </Label>
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-              <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:items-center">
-                <Button className="whitespace-nowrap [&>span]:text-xs">
-                  Open app
-                </Button>
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <span>More&nbsp;</span>
-                      <HiSelector className="ml-1.5 size-2.5" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {[
-                      {
-                        icon: (
-                          <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Create new app",
-                      },
-                      {
-                        icon: (
-                          <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Inbox",
-                      },
-                      {
-                        icon: (
-                          <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "App info",
-                      },
-                      {
-                        icon: (
-                          <HiInboxIn className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Edit app",
-                      },
-                    ].map((item, index) => (
-                      <DropdownMenuItem key={index}>
-                        {item.icon}
-                        {item.text}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-            </div>
-          </nav>
           {isNavVisible && (
             <div>
               <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
@@ -636,18 +479,34 @@ export function DoubleSidebarApplicationShell() {
 
       <aside
         id="sidebar-contacts"
-        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-32 transition-transform"
+        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-12 transition-transform"
         aria-label="Sidebar"
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4">
-          <ul className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
+          <ul>
             {[
               { icon: <HiCalendar className="size-6" />, label: "Calendar" },
+              { icon: <HiLightBulb className="size-6" />, label: "Notes" },
               { icon: <HiClipboardList className="size-6" />, label: "Tasks" },
-              { icon: <HiShoppingBag className="size-6" />, label: "Products" },
-              { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
+              { icon: <HiUsers className="size-6" />, label: "Users" },
+              { icon: <HiVideoCamera className="size-6" />, label: "Media" },
+              {
+                icon: <HiPresentationChartBar className="size-6" />,
+                label: "Statistics",
+              },
+              {
+                icon: <HiLocationMarker className="size-6" />,
+                label: "Locations",
+              },
+              {
+                icon: <HiPlus className="size-6" />,
+                label: "Add new item",
+              },
             ].map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className={`${index === 4 && "mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700"}`}
+              >
                 <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
@@ -658,19 +517,12 @@ export function DoubleSidebarApplicationShell() {
               </li>
             ))}
           </ul>
-          <Link
-            href="#"
-            className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 group-hover:text-white hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <HiDotsHorizontal className="size-5" />
-            <span className="sr-only">Add new item</span>
-          </Link>
         </div>
       </aside>
 
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 h-screen w-64 border-r bg-background pt-32 transition-transform md:translate-x-0"
+        className="fixed left-0 top-0 z-40 h-screen w-64 border-r bg-background pt-12 transition-transform md:translate-x-0"
         aria-label="Sidenav"
       >
         <div className="h-full overflow-y-auto border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
@@ -897,7 +749,7 @@ export function DoubleSidebarApplicationShell() {
           </DropdownMenu>
         </div>
       </aside>
-      <main className="mr-16 h-auto bg-background p-4 pt-48 md:ml-64">
+      <main className="mr-16 h-auto bg-background p-4 pt-20 md:ml-64">
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <div

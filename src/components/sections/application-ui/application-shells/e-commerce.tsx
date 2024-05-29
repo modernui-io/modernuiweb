@@ -72,7 +72,7 @@ export function ECommerceApplicationShell() {
 
   return (
     <>
-      <div className="bg-background antialiased">
+      <div className="bg-gray-50 antialiased dark:bg-gray-800">
         <header>
           <nav className="inset-x-0 top-0 z-50 border-b border-gray-200 px-4 py-2.5 dark:border-gray-700">
             <div className="flex items-center justify-between">
@@ -179,7 +179,7 @@ export function ECommerceApplicationShell() {
                       className="flex items-center gap-2"
                     >
                       <USFlagIcon />
-                      English (US)
+                      English (US) <HiChevronDown className="size-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -216,6 +216,7 @@ export function ECommerceApplicationShell() {
                   <span className="sr-only">Search</span>
                   <HiSearch className="size-6" />
                 </Button>
+                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -383,6 +384,7 @@ export function ECommerceApplicationShell() {
                     </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
+                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
                 <Link
                   href="#"
                   className="inline-flex items-center rounded-lg p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-800"
@@ -408,7 +410,7 @@ export function ECommerceApplicationShell() {
           </nav>
           <nav
             id="toggleMobileMenu"
-            className="border-b border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-700 lg:hidden"
+            className="border-b border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-700"
           >
             <div className="px-4 py-2">
               <div className="flex items-center">

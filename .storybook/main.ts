@@ -17,6 +17,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "@storybook/addon-themes",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -31,5 +32,11 @@ const config: StorybookConfig = {
   },
   // staticDirs: [resolve(__dirname, "../", "public")],
   // staticDirs: ["../public"],
+  // previewHead: (head) => `
+  //   ${head}
+  //   ${
+  //     process.env.ANALYTICS_ID ? '<script src="https://cdn.example.com/analytics.js"></script>' : ''
+  //   }
+  // `,
 };
 export default config;

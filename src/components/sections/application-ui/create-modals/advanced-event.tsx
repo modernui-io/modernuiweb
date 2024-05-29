@@ -164,6 +164,7 @@ export function AdvancedCreateEventModal() {
                       <div className="relative flex items-center">
                         <HiCalendar className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
                         <Input
+                          type="date"
                           placeholder="Pick a date"
                           className="justify-start pl-8 text-left font-normal dark:border-gray-500"
                           {...form.register("date")}

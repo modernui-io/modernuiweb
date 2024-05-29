@@ -145,71 +145,32 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
           <div
             className={`w-full flex-col items-center shadow-sm lg:flex lg:flex-row [&_li]:w-full lg:[&_li]:w-auto ${isNavVisible ? "flex" : "hidden"}`}
           >
-            <Link
-              aria-current="page"
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
-                Overview
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Company
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Team
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Features
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Marketplace
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Resources
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Forum
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-            >
-              <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                Support
-              </span>
-            </Link>
+            {[
+              { href: "#", label: "Overview" },
+              { href: "#", label: "Company" },
+              { href: "#", label: "Team" },
+              { href: "#", label: "Features" },
+              { href: "#", label: "Marketplace" },
+              { href: "#", label: "Resources" },
+              { href: "#", label: "Forum" },
+              { href: "#", label: "Support" },
+            ].map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+              >
+                <span
+                  className={`block border-b-2 px-4 py-3 text-sm font-medium ${
+                    link.label === "Overview"
+                      ? "border-primary-600 text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500"
+                      : "border-transparent text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                  }`}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
 

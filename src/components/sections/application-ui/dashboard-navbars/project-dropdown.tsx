@@ -514,7 +514,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
                     </span>
                     <svg
                       className="size-2.5 text-gray-500 dark:text-gray-400"
-                      aria-hidden="true"
+                      aria-label="Arrow Icon"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 6 10"
@@ -718,54 +718,26 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Home
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Company
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Team
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Features
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Marketplace
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Resources
-          </Link>
-          <Link
-            href="#"
-            className="py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 lg:pl-0"
-          >
-            Forum
-          </Link>
-          <Link
-            href="#"
-            className="border-b-0 py-2.5 pl-5 text-sm font-medium hover:underline lg:pl-0"
-          >
-            Support
-          </Link>
+          {[
+            { href: "#", label: "Home" },
+            { href: "#", label: "Company" },
+            { href: "#", label: "Team" },
+            { href: "#", label: "Features" },
+            { href: "#", label: "Marketplace" },
+            { href: "#", label: "Resources" },
+            { href: "#", label: "Forum" },
+            { href: "#", label: "Support" },
+          ].map((link, index) => (
+            <Link
+              key={index}
+              href={link.href}
+              className={`py-2.5 pl-5 text-sm font-medium hover:underline lg:mr-8 ${
+                link.label === "Support" ? "border-b-0 lg:pl-0" : "lg:pl-0"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

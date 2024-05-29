@@ -606,71 +606,34 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
         <div
           className={`${isNavVisible ? "flex" : "hidden"} w-full flex-col items-center border-b border-gray-200 shadow-sm dark:border-gray-800 lg:flex lg:flex-row`}
         >
-          <Link
-            aria-current="page"
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
-          >
-            <span className="block border-b-2 border-primary-600 px-4 py-3 text-sm font-medium text-primary-600 hover:text-primary-600 dark:border-primary-500 dark:text-primary-500">
-              Home
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Company
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Team
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Features
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Marketplace
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Resources
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Forum
-            </span>
-          </Link>
-          <Link
-            href="#"
-            className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-          >
-            <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-              Support
-            </span>
-          </Link>
+          {[
+            { href: "#", label: "Home", current: true },
+            { href: "#", label: "Company", current: false },
+            { href: "#", label: "Team", current: false },
+            { href: "#", label: "Features", current: false },
+            { href: "#", label: "Marketplace", current: false },
+            { href: "#", label: "Resources", current: false },
+            { href: "#", label: "Forum", current: false },
+            { href: "#", label: "Support", current: false },
+          ].map((link, index) => (
+            <Link
+              key={index}
+              aria-current={link.current ? "page" : undefined}
+              aria-label={link.label}
+              href={link.href}
+              className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+            >
+              <span
+                className={`block border-b-2 px-4 py-3 text-sm font-medium ${
+                  link.current
+                    ? "border-primary-600 text-primary-600 dark:border-primary-500 dark:text-primary-500"
+                    : "border-transparent text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500"
+                }`}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

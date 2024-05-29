@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-import { HiCog, HiDotsHorizontal, HiFilter, HiSearch } from "react-icons/hi";
+import {
+  HiCog,
+  HiDotsHorizontal,
+  HiFilter,
+  HiSearch,
+  HiUpload,
+} from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
 
 import { Badge } from "~/components/ui/badge";
@@ -35,23 +41,9 @@ export function AdvancedTableWithSortableRows() {
                 <h5 className="font-semibold">All products</h5>
               </div>
               <div className="flex shrink-0 flex-row items-center justify-end space-x-3">
-                <Button>View JSON</Button>
-                <Button>
-                  <svg
-                    className="mr-2 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    aria-hidden
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                    />
-                  </svg>
+                <Button variant={"outline"}>View JSON</Button>
+                <Button variant={"outline"}>
+                  <HiUpload className="mr-2 size-4" />
                   Export
                 </Button>
               </div>
@@ -86,7 +78,7 @@ export function AdvancedTableWithSortableRows() {
                 <div className="flex items-center space-x-4">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button>
+                      <Button variant={"outline"}>
                         <HiFilter className="mr-2 size-4" />
                         Filter
                       </Button>
@@ -149,7 +141,7 @@ export function AdvancedTableWithSortableRows() {
 
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button>
+                      <Button variant={"outline"}>
                         <HiCog className="mr-2 size-4" />
                         Configurations
                       </Button>

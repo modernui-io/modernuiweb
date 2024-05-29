@@ -5,8 +5,12 @@ import {
   HiChevronDown,
   HiInformationCircle,
   HiLocationMarker,
+  HiPencilAlt,
+  HiPlus,
   HiSelector,
   HiStar,
+  HiTemplate,
+  HiTrash,
 } from "react-icons/hi";
 
 import { Badge } from "~/components/ui/badge";
@@ -68,32 +72,11 @@ export function AdvancedTableWithExpandableRows() {
             </div>
             <div className="flex w-full flex-row items-center justify-end space-x-3 md:w-fit">
               <Button className="w-full whitespace-nowrap">
-                <svg
-                  className="mr-2 size-3.5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden
-                >
-                  <path
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                  />
-                </svg>
+                <HiPlus className="mr-2 size-3.5" />
                 Add new product
               </Button>
-              <Button className="w-full whitespace-nowrap">
-                <svg
-                  className="mr-2 size-3"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  viewBox="0 0 12 13"
-                  aria-hidden
-                >
-                  <path d="M1 2V1h10v3H1V2Zm0 4h5v6H1V6Zm8 0h2v6H9V6Z" />
-                </svg>
+              <Button variant={"ghost"} className="w-full whitespace-nowrap">
+                <HiTemplate className="mr-2 size-3" />
                 Manage Columns
               </Button>
             </div>
@@ -103,7 +86,7 @@ export function AdvancedTableWithExpandableRows() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"outline"}>
-                    <HiChevronDown className="mr-3 size-3" /> Actions
+                    <HiChevronDown className="mr-1 size-4" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -223,34 +206,34 @@ export function AdvancedTableWithExpandableRows() {
                   <TableHead className="px-4 py-3">
                     <span className="sr-only">Expand/Collapse Row</span>
                   </TableHead>
-                  <TableHead className="min-w-56 px-4 py-3">Product</TableHead>
-                  <TableHead className="min-w-40 px-4 py-3">
+                  <TableHead className="px-4 py-3">Product</TableHead>
+                  <TableHead className="px-4 py-3">
                     Category
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
-                  <TableHead className="min-w-24 px-4 py-3">
+                  <TableHead className="px-4 py-3">
                     Brand
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
-                  <TableHead className="min-w-24 px-4 py-3">
+                  <TableHead className="px-4 py-3">
                     Price
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
-                  <TableHead className="min-w-24 px-4 py-3">
+                  <TableHead className="px-4 py-3">
                     Stock
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
-                  <TableHead className="min-w-48 px-4 py-3">
+                  <TableHead className="px-4 py-3">
                     Total Sales
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
-                  <TableHead className="min-w-28 px-4 py-3">
+                  <TableHead className="px-4 py-3">
                     Status
                     <HiSelector className="ml-1 inline-block size-4" />
                   </TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody className="w-full">
+              <TableBody>
                 <TableRow
                   className="cursor-pointer border-b transition hover:bg-gray-200 dark:hover:bg-gray-700"
                   id="table-column-header-0"
@@ -259,7 +242,6 @@ export function AdvancedTableWithExpandableRows() {
                       .querySelector("#table-column-body-0")
                       ?.classList.toggle("hidden")
                   }
-                  aria-controls="table-column-body-0"
                 >
                   <TableCell width={"100%"} className="w-4 px-4 py-3">
                     <div className="flex items-center">
@@ -282,7 +264,7 @@ export function AdvancedTableWithExpandableRows() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
                     <Image
                       width={100}
@@ -338,7 +320,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -347,7 +329,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -356,7 +338,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -365,7 +347,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -379,7 +361,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -388,7 +370,7 @@ export function AdvancedTableWithExpandableRows() {
                       </div>
                     </div>
                     <div className="mt-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex flex-col items-start justify-between rounded-lg p-3">
+                      <div className="relative flex flex-col items-start justify-between rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Product State
                         </h6>
@@ -397,7 +379,7 @@ export function AdvancedTableWithExpandableRows() {
                           New
                         </Badge>
                       </div>
-                      <div className="relative flex flex-col justify-between rounded-lg p-3">
+                      <div className="relative flex flex-col justify-between rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Shipping
                         </h6>
@@ -406,7 +388,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -419,7 +401,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -427,7 +409,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -435,7 +417,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -443,7 +425,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -451,7 +433,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -462,37 +444,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -585,7 +542,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -594,7 +551,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -603,7 +560,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -612,7 +569,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -626,7 +583,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -653,7 +610,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -666,7 +623,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -674,7 +631,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -682,7 +639,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -690,7 +647,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -698,7 +655,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -709,37 +666,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -832,7 +764,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -841,7 +773,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -850,7 +782,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -859,7 +791,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -873,7 +805,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -882,7 +814,7 @@ export function AdvancedTableWithExpandableRows() {
                       </div>
                     </div>
                     <div className="mt-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex flex-col items-start justify-between rounded-lg p-3">
+                      <div className="relative flex flex-col items-start justify-between rounded-lg">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Product State
                         </h6>
@@ -900,7 +832,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -913,7 +845,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -921,7 +853,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -929,7 +861,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -937,7 +869,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -945,7 +877,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -956,37 +888,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -1079,7 +986,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1088,7 +995,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1097,7 +1004,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1106,7 +1013,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1120,7 +1027,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -1147,7 +1054,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -1160,7 +1067,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -1168,7 +1075,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -1176,7 +1083,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -1184,7 +1091,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -1192,7 +1099,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -1203,37 +1110,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -1326,7 +1208,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1335,7 +1217,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1344,7 +1226,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1353,7 +1235,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1367,7 +1249,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -1394,7 +1276,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -1407,7 +1289,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -1415,7 +1297,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -1423,7 +1305,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -1431,7 +1313,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -1439,7 +1321,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -1450,37 +1332,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -1573,7 +1430,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1582,7 +1439,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1591,7 +1448,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1600,7 +1457,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1614,7 +1471,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -1641,7 +1498,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -1654,7 +1511,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -1662,7 +1519,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -1670,7 +1527,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -1678,7 +1535,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -1686,7 +1543,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -1697,37 +1554,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -1820,7 +1652,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1829,7 +1661,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1838,7 +1670,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1847,7 +1679,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -1861,7 +1693,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -1888,7 +1720,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -1901,7 +1733,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -1909,7 +1741,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -1917,7 +1749,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -1925,7 +1757,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -1933,7 +1765,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -1944,37 +1776,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -2067,7 +1874,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2076,7 +1883,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2085,7 +1892,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2094,7 +1901,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2108,7 +1915,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -2135,7 +1942,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -2148,7 +1955,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -2156,7 +1963,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -2164,7 +1971,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -2172,7 +1979,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -2180,7 +1987,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -2191,37 +1998,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -2314,7 +2096,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2323,7 +2105,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2332,7 +2114,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2341,7 +2123,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2355,7 +2137,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -2382,7 +2164,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -2395,7 +2177,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -2403,7 +2185,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -2411,7 +2193,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -2419,7 +2201,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -2427,7 +2209,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -2438,37 +2220,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>
@@ -2561,7 +2318,7 @@ export function AdvancedTableWithExpandableRows() {
                     colSpan={9}
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2570,7 +2327,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2579,7 +2336,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2588,7 +2345,7 @@ export function AdvancedTableWithExpandableRows() {
                           className="h-full w-auto"
                         />
                       </div>
-                      <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
+                      <div className="relative flex h-32 items-center justify-center rounded-lg bg-gray-50 p-2 dark:bg-transparent sm:h-36 sm:w-full">
                         <Image
                           width={100}
                           height={100}
@@ -2602,7 +2359,7 @@ export function AdvancedTableWithExpandableRows() {
                       <h6 className="mb-2 text-base font-medium leading-none">
                         Details
                       </h6>
-                      <div className="max-w-screen-md text-base text-gray-500 dark:text-gray-400">
+                      <div className="max-w-screen-md text-wrap text-base text-gray-500 dark:text-gray-400">
                         Standard glass, 3.8GHz 8-core 10th-generation Intel Core
                         i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz
                         DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6
@@ -2629,7 +2386,7 @@ export function AdvancedTableWithExpandableRows() {
                           Worldwide
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Colors
                         </h6>
@@ -2642,7 +2399,7 @@ export function AdvancedTableWithExpandableRows() {
                           <div className="size-6 rounded-full bg-green-300"></div>
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Brand
                         </h6>
@@ -2650,7 +2407,7 @@ export function AdvancedTableWithExpandableRows() {
                           Apple
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Sold by
                         </h6>
@@ -2658,7 +2415,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Ships from
                         </h6>
@@ -2666,7 +2423,7 @@ export function AdvancedTableWithExpandableRows() {
                           ModernUI
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Dimensions (cm)
                         </h6>
@@ -2674,7 +2431,7 @@ export function AdvancedTableWithExpandableRows() {
                           105 x 15 x 23
                         </div>
                       </div>
-                      <div className="relative rounded-lg p-3">
+                      <div className="relative rounded-lg bg-gray-50 p-3 dark:bg-gray-800">
                         <h6 className="mb-2 text-base font-medium leading-none">
                           Item weight
                         </h6>
@@ -2685,37 +2442,12 @@ export function AdvancedTableWithExpandableRows() {
                     </div>
                     <div className="mt-4 flex items-center space-x-3">
                       <Button>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <HiPencilAlt className="mr-1 size-4" />
                         Edit
                       </Button>
-                      <Button>Preview</Button>
-                      <Button color="failure">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="mr-1 size-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <Button variant={"outline"}>Preview</Button>
+                      <Button variant={"destructive"}>
+                        <HiTrash className="mr-1 size-4" />
                         Delete
                       </Button>
                     </div>

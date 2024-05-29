@@ -115,7 +115,7 @@ export function AdvancedProjectManagementTableForUserTasks() {
                 <div className="flex items-center space-x-4">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button>
+                      <Button variant={"outline"}>
                         <HiFilter className="mr-2 size-4" />
                         Filter
                       </Button>
@@ -212,7 +212,7 @@ export function AdvancedProjectManagementTableForUserTasks() {
 
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button>
+                      <Button variant={"outline"}>
                         <HiCog className="mr-2 size-4" />
                         Configurations
                       </Button>
@@ -1243,31 +1243,33 @@ export function AdvancedProjectManagementTableForUserTasks() {
               &nbsp;of&nbsp;
               <span className="font-semibold">1000</span>
             </span>
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious title="" onClick={() => onPageChange} />
-                </PaginationItem>
-                {Array.from({ length: 3 }, (_, index) => index + 1).map(
-                  (page) => (
-                    <PaginationItem key={page}>
-                      <PaginationLink
-                        isActive={currentPage === page}
-                        onClick={() => setCurrentPage(page)}
-                      >
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem>
-                  ),
-                )}
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext onClick={() => onPageChange} />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <div>
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                  </PaginationItem>
+                  {Array.from({ length: 3 }, (_, index) => index + 1).map(
+                    (page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          isActive={currentPage === page}
+                          onClick={() => setCurrentPage(page)}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ),
+                  )}
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationNext onClick={() => onPageChange} />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
           </nav>
         </div>
       </div>

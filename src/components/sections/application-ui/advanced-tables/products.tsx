@@ -52,11 +52,11 @@ export function AdvancedTableWithProducts() {
                 <HiPlus className="mr-2 size-3.5" />
                 Add new product
               </Button>
-              <Button color="gray">
+              <Button variant={"outline"}>
                 <HiRefresh className="mr-2 size-4" />
                 Update stocks 1/250
               </Button>
-              <Button color="gray">
+              <Button variant={"outline"}>
                 <HiUpload className="mr-2 size-4" />
                 Export
               </Button>
@@ -107,7 +107,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-64 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -197,7 +197,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -287,7 +287,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -377,7 +377,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -467,7 +467,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -557,7 +557,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -647,7 +647,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -737,7 +737,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -827,7 +827,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -917,7 +917,7 @@ export function AdvancedTableWithProducts() {
                   <TableCell
                     width={"100%"}
                     scope="row"
-                    className="flex items-center whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex min-w-72 items-center whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <Image
                       width={100}
@@ -1001,31 +1001,33 @@ export function AdvancedTableWithProducts() {
               &nbsp;of&nbsp;
               <span className="font-semibold">1000</span>
             </span>
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious title="" onClick={() => onPageChange} />
-                </PaginationItem>
-                {Array.from({ length: 3 }, (_, index) => index + 1).map(
-                  (page) => (
-                    <PaginationItem key={page}>
-                      <PaginationLink
-                        isActive={currentPage === page}
-                        onClick={() => setCurrentPage(page)}
-                      >
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem>
-                  ),
-                )}
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext onClick={() => onPageChange} />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <div>
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                  </PaginationItem>
+                  {Array.from({ length: 3 }, (_, index) => index + 1).map(
+                    (page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          isActive={currentPage === page}
+                          onClick={() => setCurrentPage(page)}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ),
+                  )}
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationNext onClick={() => onPageChange} />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
           </nav>
         </div>
       </div>

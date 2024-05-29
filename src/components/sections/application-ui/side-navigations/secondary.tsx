@@ -42,7 +42,7 @@ export function SecondarySideNavigation() {
         `}
         aria-label="Sidebar"
       >
-        <div className="h-full overflow-y-auto border-l border-gray-200 px-3 py-4">
+        <div className="h-full overflow-y-auto border-l border-gray-200 px-3 py-4 dark:border-gray-800">
           <div className="mb-4 flex items-center justify-between text-sm font-medium text-gray-500 dark:text-gray-400">
             <h3 className="uppercase">Contacts</h3>
             <div className="flex items-center space-x-1">
@@ -174,7 +174,7 @@ export function SecondarySideNavigation() {
                       alt={`${user.name} avatar`}
                     />
                     <span
-                      className={`absolute -top-0.5 left-5 size-3 rounded-full border-2 border-white dark:border-gray-800`}
+                      className={`absolute -top-0.5 left-5 size-3 rounded-full border-2 border-white bg-green-500 dark:border-gray-800`}
                     ></span>
                   </div>
                   {user.name}

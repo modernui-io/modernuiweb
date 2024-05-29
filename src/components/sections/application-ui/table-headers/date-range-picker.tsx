@@ -3,6 +3,7 @@ import { HiUpload } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
 import { Calendar } from "~/components/ui/calendar";
+import { Input } from "~/components/ui/input";
 import {
   Popover,
   PopoverContent,
@@ -15,7 +16,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
-import { cn } from "~/lib/utils";
 
 export function TableHeaderWithDateRangePickerFilter() {
   return (
@@ -28,8 +28,8 @@ export function TableHeaderWithDateRangePickerFilter() {
                 <h5 className="font-semibold">Total data used</h5>
               </div>
               <div className="flex items-center space-x-2 md:space-x-4">
-                <Button>View JSON</Button>
-                <Button>
+                <Button variant={"outline"}>View JSON</Button>
+                <Button variant={"outline"}>
                   <HiUpload className="mr-2 size-4" />
                   Export
                 </Button>
@@ -40,13 +40,13 @@ export function TableHeaderWithDateRangePickerFilter() {
                 <div className="flex flex-col space-y-1 md:mr-5 md:flex-row md:items-center md:space-y-0">
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className={cn("justify-start text-left font-normal")}
-                      >
-                        <CalendarIcon className="mr-2 size-4" />
-                        <span>Pick a date</span>
-                      </Button>
+                      <div className="relative flex items-center">
+                        <CalendarIcon className="absolute left-3 size-4" />
+                        <Input
+                          className="pl-8"
+                          placeholder="Select start date"
+                        />
+                      </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
                       <Calendar mode="single" initialFocus />
@@ -56,13 +56,10 @@ export function TableHeaderWithDateRangePickerFilter() {
                   <span className="px-3 text-center">&nbsp;to&nbsp;</span>
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className={cn("justify-start text-left font-normal")}
-                      >
-                        <CalendarIcon className="mr-2 size-4" />
-                        <span>Pick a date</span>
-                      </Button>
+                      <div className="relative flex items-center">
+                        <CalendarIcon className="absolute left-3 size-4" />
+                        <Input className="pl-8" placeholder="Select end date" />
+                      </div>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
                       <Calendar mode="single" initialFocus />

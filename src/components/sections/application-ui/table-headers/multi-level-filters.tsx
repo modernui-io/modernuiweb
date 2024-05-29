@@ -50,8 +50,8 @@ export function MultiLevelTableHeadersWithFilters() {
               </h5>
             </div>
             <div className="flex items-center space-x-3">
-              <Button>View JSON</Button>
-              <Button>
+              <Button variant={"outline"}>View JSON</Button>
+              <Button variant={"outline"}>
                 <HiUpload className="mr-2 size-4" />
                 Export
               </Button>
@@ -83,7 +83,7 @@ export function MultiLevelTableHeadersWithFilters() {
               <div className="flex items-center space-x-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
+                    <Button variant={"outline"}>
                       <FaFilter className="mr-3 size-3" />
                       Filter
                     </Button>
@@ -117,7 +117,7 @@ export function MultiLevelTableHeadersWithFilters() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
+                    <Button variant={"outline"}>
                       <FaCog className="mr-2 size-4" />
                       Configurations
                     </Button>

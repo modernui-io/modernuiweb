@@ -24,7 +24,7 @@ export function UpdateProductModal() {
       <DialogTrigger>
         <Button className="mx-auto">Update product</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-background p-4 shadow sm:min-w-[40rem] sm:p-5">
+      <DialogContent className="rounded-lg bg-background p-4 shadow sm:min-w-[60rem] sm:p-5">
         <ScrollArea className="h-[40rem] overflow-hidden">
           <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 dark:border-gray-600 sm:mb-5">
             <h3 className="text-lg font-semibold">Update Product</h3>
@@ -210,13 +210,13 @@ export function UpdateProductModal() {
                     alt="iMac Side"
                     src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                   />
-                  <button
-                    type="button"
-                    className="absolute bottom-1 left-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
+                  <Button
+                    variant={"ghost"}
+                    className="absolute bottom-1 left-1 px-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
                   >
                     <HiTrash className="size-5" />
                     <span className="sr-only">Delete image</span>
-                  </button>
+                  </Button>
                 </div>
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
                   <Image
@@ -226,13 +226,13 @@ export function UpdateProductModal() {
                     alt="iMac Front"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
-                  <button
-                    type="button"
-                    className="absolute bottom-1 left-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
+                  <Button
+                    variant={"ghost"}
+                    className="absolute bottom-1 left-1 px-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
                   >
                     <HiTrash className="size-5" />
                     <span className="sr-only">Delete image</span>
-                  </button>
+                  </Button>
                 </div>
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
                   <Image
@@ -242,13 +242,13 @@ export function UpdateProductModal() {
                     alt="iMac Back"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
-                  <button
-                    type="button"
-                    className="absolute bottom-1 left-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
+                  <Button
+                    variant={"ghost"}
+                    className="absolute bottom-1 left-1 px-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
                   >
                     <HiTrash className="size-5" />
                     <span className="sr-only">Delete image</span>
-                  </button>
+                  </Button>
                 </div>
                 <div className="relative rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
                   <Image
@@ -258,13 +258,13 @@ export function UpdateProductModal() {
                     alt="iMac Back"
                     src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                   />
-                  <button
-                    type="button"
-                    className="absolute bottom-1 left-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
+                  <Button
+                    variant={"ghost"}
+                    className="absolute bottom-1 left-1 px-1 text-red-600 hover:text-red-500 dark:text-red-500 dark:hover:text-red-400"
                   >
                     <HiTrash className="size-5" />
                     <span className="sr-only">Delete image</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
               <div className="flex w-full items-center justify-center">

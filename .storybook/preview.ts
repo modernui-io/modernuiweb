@@ -1,6 +1,7 @@
 import "./preview.css";
 import "../src/styles/globals.css";
 
+import { withThemeByClassName } from "@storybook/addon-themes";
 // import { withThemeByClassName } from "@storybook/addon-styling";
 import { MINIMAL_VIEWPORTS as viewports } from "@storybook/addon-viewport";
 import type { Preview } from "@storybook/react";
@@ -45,5 +46,15 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+  }),
+];
 
 export default preview;

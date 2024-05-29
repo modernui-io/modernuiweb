@@ -19,8 +19,11 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
 
-    --primary: 174.2 90.3% 40.6%; /* brand color - #0ac5b3 */
-    --primary-foreground: 210 40% 98%; /* slate-50  - #f8fafc */
+    --brand: 174.2 90.3% 40.6%; /* brand color - #0ac5b3 */
+    --brand-foreground: 210 40% 98%; /* slate-50  - #f8fafc */
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -31,8 +34,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    /* --ring: 215 20.2% 65.1%; */
-    --ring: 170.6 76.9% 64.3%; /* teal-300  - #5eead4 */
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
 
@@ -102,8 +104,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
 
-    --primary: 174.2 90.3% 40.6%; /* brand color - #0ac5b3 */
-    --primary-foreground: 222.2 47.4% 11.2%; /* slate-900  - #0f172a */
+    --brand: 174.2 90.3% 40.6%; /* brand color - #0ac5b3 */
+    --brand-foreground: 222.2 47.4% 11.2%; /* slate-900  - #0f172a */
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -115,8 +120,7 @@
     --destructive-foreground: 210 40% 98%;
     /* --destructive-foreground: 0 85.7% 97.3%; */
 
-    /* --ring: 217.2 32.6% 17.5%; */
-    --ring: 175.3 77.4% 26.1%; /* teal-700  - #0f766e */
+    --ring: 212.7 26.8% 83.9;
 
     --black: 0 0% 100%; /* white - #ffffff */
     --white: 222.2 47.4% 11.2%; /* slate-900  - #0f172a */

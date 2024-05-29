@@ -11,7 +11,7 @@ coverage
 # next.js
 .next/
 out/
-next-env.d.ts
+# next-env.d.ts
 
 # nitro
 .nitro/
@@ -46,3 +46,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 storybook-static/
+*storybook.log

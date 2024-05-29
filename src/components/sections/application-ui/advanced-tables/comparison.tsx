@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
   HiCheckCircle,
   HiInformationCircle,
@@ -80,26 +82,33 @@ export function AdvancedComparisonTable() {
               </li>
             </ul>
           </div>
+
           <div className="flex w-full justify-between px-4 py-3 dark:bg-transparent">
             <div className="text-lg">
-              <img
-                src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-s.png"
+              <Image
+                width={100}
+                height={100}
+                src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                 alt="iMac Front"
                 className="h-32 w-auto"
               />
               <div className="mt-4">Xbox Series S</div>
             </div>
             <div className="text-lg">
-              <img
-                src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/playstation-5.png"
+              <Image
+                width={100}
+                height={100}
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
                 alt="iMac Front"
                 className="h-32 w-auto"
               />
               <div className="mt-4">PlayStation 5</div>
             </div>
             <div className="text-lg">
-              <img
-                src="https://flowbite.s3.amazonaws.com/blocks/application-ui/devices/xbox-series-x.png"
+              <Image
+                width={100}
+                height={100}
+                src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
                 alt="iMac Front"
                 className="h-32 w-auto"
               />

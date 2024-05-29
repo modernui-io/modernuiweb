@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -129,9 +130,11 @@ export function CreateModalWithAccordion() {
                           Upload avatar
                         </Label>
                         <div className="w-full items-center sm:flex">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             alt="Helene avatar"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
+                            src="https://github.com/shadcn.png"
                             className="mb-4 size-20 rounded-full sm:mb-0 sm:mr-4"
                           />
                           <div className="w-full">
@@ -294,7 +297,7 @@ export function CreateModalWithAccordion() {
                               </TooltipTrigger>
                               <TooltipContent>
                                 <Text>
-                                  Flowbite provides 7 predefined roles: Owner,
+                                  ModernUI provides 7 predefined roles: Owner,
                                   Admin, Editor, Contributor and Viewer. Assign
                                   the most suitable role to each user, giving
                                   them the most appropriate level of control.
@@ -341,8 +344,9 @@ export function CreateModalWithAccordion() {
                               <TooltipContent>
                                 <Text>
                                   As an administrator, you can view the status
-                                  of a user's email. The status indicates
-                                  whether a user's email is verified or not.
+                                  of a user&apos;s email. The status indicates
+                                  whether a user&apos;s email is verified or
+                                  not.
                                 </Text>
                               </TooltipContent>
                             </Tooltip>

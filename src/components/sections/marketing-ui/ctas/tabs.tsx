@@ -228,7 +228,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 level={2}
                 className=" font-extrabold leading-tight sm:text-4xl"
               >
-                We invest in the world's potential
+                We invest in the world&#39;s potential
               </Heading>
               <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
                 <span className="font-semibold text-secondary-foreground">

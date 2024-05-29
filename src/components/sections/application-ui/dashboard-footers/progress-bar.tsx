@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Progress } from "~/components/ui/progress";
 
 export function FooterWithProgressBar() {
@@ -24,9 +26,9 @@ export function FooterWithProgressBar() {
         </p>
         <div className="order-2 mb-4 text-sm text-gray-500 dark:text-gray-400 lg:order-3 lg:mb-0 lg:text-right">
           <p>Last account activity: 12 hours ago</p>
-          <a href="#" className="font-medium underline hover:no-underline">
+          <Link href="#" className="font-medium underline hover:no-underline">
             Details
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

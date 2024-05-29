@@ -57,7 +57,7 @@ export function MobileAppDownloadCTASection() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
         <div>
           <Heading level={2} className="mb-4 font-extrabold tracking-tight">
-            Let's create more tools and ideas that brings us together.
+            Let&#39;s create more tools and ideas that brings us together.
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg">
             ModernUI Web helps you connect with friends and communities of

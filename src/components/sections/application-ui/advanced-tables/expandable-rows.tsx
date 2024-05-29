@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { FaChevronDown } from "react-icons/fa";
 import {
   HiChevronDown,
@@ -282,8 +284,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -335,29 +339,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -420,7 +432,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -428,7 +440,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -519,8 +531,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -572,29 +586,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -657,7 +679,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -665,7 +687,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -756,8 +778,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -809,29 +833,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -894,7 +926,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -902,7 +934,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -993,8 +1025,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -1046,29 +1080,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -1131,7 +1173,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1139,7 +1181,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1230,8 +1272,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -1283,29 +1327,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -1368,7 +1420,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1376,7 +1428,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1467,8 +1519,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -1520,29 +1574,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -1605,7 +1667,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1613,7 +1675,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1704,8 +1766,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -1757,29 +1821,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -1842,7 +1914,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1850,7 +1922,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -1941,8 +2013,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -1994,29 +2068,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -2079,7 +2161,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -2087,7 +2169,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -2178,8 +2260,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -2231,29 +2315,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -2316,7 +2408,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -2324,7 +2416,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -2415,8 +2507,10 @@ export function AdvancedTableWithExpandableRows() {
                     width={"100%"}
                     className="flex items-center whitespace-nowrap px-4 py-3 font-medium"
                   >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                       alt=""
                       className="mr-3 h-8 w-auto"
                     />
@@ -2468,29 +2562,37 @@ export function AdvancedTableWithExpandableRows() {
                   >
                     <div className="mb-4 grid grid-cols-4 gap-4">
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Front"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-side-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
                           alt="iMac Side"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
                       </div>
                       <div className="relative flex h-32 items-center justify-center rounded-lg p-2 sm:h-36 sm:w-full">
-                        <img
-                          src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-back-image.png"
+                        <Image
+                          width={100}
+                          height={100}
+                          src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
                           alt="iMac Back"
                           className="h-full w-auto"
                         />
@@ -2553,7 +2655,7 @@ export function AdvancedTableWithExpandableRows() {
                           Sold by
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">
@@ -2561,7 +2663,7 @@ export function AdvancedTableWithExpandableRows() {
                           Ships from
                         </h6>
                         <div className="flex items-center text-gray-500 dark:text-gray-400">
-                          Flowbite
+                          ModernUI
                         </div>
                       </div>
                       <div className="relative rounded-lg p-3">

@@ -131,6 +131,17 @@ export default {
             inverted: "#ffffff", // white
           },
         },
+        highlight: {
+          default: "var(--highlight-default)",
+          purple: "var(--highlight-purple)",
+          red: "var(--highlight-red)",
+          yellow: "var(--highlight-yellow)",
+          blue: "var(--highlight-blue)",
+          green: "var(--highlight-green)",
+          orange: "var(--highlight-orange)",
+          pink: "var(--highlight-pink)",
+          gray: "var(--highlight-gray)",
+        },
         // dark mode
         "dark-tremor": {
           brand: {

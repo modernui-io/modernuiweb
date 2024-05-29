@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FaChevronDown } from "react-icons/fa";
 
 import { Button } from "~/components/ui/button";
@@ -79,12 +81,12 @@ export function DropdownFilterCategory() {
               </li>
             </ul>
           </RadioGroup>
-          <a
+          <Link
             href="#"
             className="ml-1.5 mt-4 flex items-center text-sm font-medium text-primary-600 hover:underline"
           >
             Apply to all projects
-          </a>
+          </Link>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

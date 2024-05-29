@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Cross1Icon, PlusIcon, TrashIcon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
@@ -267,13 +269,13 @@ export function DropdownFilterProperties() {
                 <span className="sr-only">Delete</span>
               </button>
             </div>
-            <a
+            <Link
               href="#"
               className="flex items-center border-b pb-2 text-sm font-medium text-primary-600 hover:underline"
             >
               <PlusIcon className="mr-2 size-4" />
               Add Property
-            </a>
+            </Link>
             <div className="flex items-center justify-between">
               <Button type="submit" className="[&>span]:px-5 [&>span]:py-2.5">
                 Apply

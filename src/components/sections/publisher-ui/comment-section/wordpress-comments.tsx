@@ -45,7 +45,7 @@ const DropDownMenu = () => (
       <div id="dropdownComment1">
         <ul
           className="text-sm text-primary-700"
-          aria-labelledby="dropdownMenuIconHorizontalButton"
+          aria-labelledby="dropdownCommentButton"
         >
           {["Edit", "Remove", "Report"].map((name, index) => (
             <li key={index}>
@@ -250,7 +250,7 @@ const WordpressComments = () => {
                     <FormLabel className="sr-only">First Name</FormLabel>
                     <FormControl>
                       <Textarea
-                        id="Textarea"
+                        id="message"
                         rows={5}
                         className="block w-full rounded-lg border border-primary-300 bg-primary-50 p-2.5 text-sm text-foreground shadow-sm focus:border-primary-500 focus:ring-primary-500"
                         placeholder=""

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,7 +25,6 @@ import * as z from "zod";
 
 //component imports
 import * as MuiLayout from "~/components/layouts";
-import { Avatar, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -105,7 +105,8 @@ const additionalButtons = [
   { icon: <DownloadIcon className="size-4" />, label: "Download" },
 ];
 
-const DropDownMenu = () => (
+// eslint-disable-next-line react/display-name
+const DropDownMenu = React.memo(() => (
   <Popover>
     <PopoverTrigger asChild>
       <Button
@@ -138,7 +139,7 @@ const DropDownMenu = () => (
       </div>
     </PopoverContent>
   </Popover>
-);
+));
 
 const formSchema = z.object({
   comment: z.string().optional(),
@@ -183,7 +184,7 @@ export const CommentsUpvotes = () => {
               width={36}
               className="size-9 rounded-full"
               src="https://xsgames.co/randomusers/assets/avatars/female/3.jpg"
-              alt="Michael Burry"
+              alt="User profile picture of Michael Burry"
             />
           </div>
           <Form {...form}>

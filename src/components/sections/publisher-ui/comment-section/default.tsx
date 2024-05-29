@@ -154,7 +154,7 @@ export function DefaultCommentSection() {
         </Form>
         {comments.map(({ comment, date, name, profilePic, isReply }, index) => {
           return (
-            <div key={index}>
+            <div key={`${index}${name}`}>
               <article
                 className={`rounded-lg  bg-background p-6 text-base ${index !== 0 ? "mb-3 border-t border-gray-200 " : ""} ${isReply ? "ml-6" : ""}`}
               >

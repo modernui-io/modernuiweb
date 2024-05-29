@@ -212,50 +212,48 @@ export const CommentsSolidBackground = () => {
           </form>
         </Form>
         {comments.map((comment, index) => (
-          <>
-            <article
-              key={index}
-              className={`mb-6 rounded-lg bg-primary-50 p-6 text-base ${comment.isReply ? "ml-12" : ""}`}
-            >
-              <footer className="mb-2 flex items-center justify-between">
-                <div className="flex items-center">
-                  <Text className="mr-3 inline-flex items-center text-sm font-semibold text-foreground">
-                    <Image
-                      width={24}
-                      height={24}
-                      className="mr-2 size-6 rounded-full"
-                      src={comment.profilePicture}
-                      alt={comment.name}
-                    />
-                    {comment.name}
-                  </Text>
-                  <Text className="text-sm text-primary-600">
-                    <time dateTime={comment.datetime} title={comment.title}>
-                      {comment.date}
-                    </time>
-                  </Text>
-                </div>
-                <DropDownMenu />
-              </footer>
-              <Text className="text-primary-500">{comment.content}</Text>
-              <div className="mt-4 flex items-center space-x-1">
-                <Button
-                  variant={"link"}
-                  className="flex items-center px-2 text-sm font-medium text-primary-500 hover:underline"
-                >
-                  <Heart className="mr-1 size-3" />
-                  {comment.likes} Likes
-                </Button>
-                <Button
-                  variant={"link"}
-                  className="flex items-center px-2 text-sm font-medium text-primary-500 hover:underline"
-                >
-                  <MessageCircle className="mr-1.5 size-3" />
-                  Reply
-                </Button>
+          <article
+            key={index}
+            className={`mb-6 rounded-lg bg-primary-50 p-6 text-base ${comment.isReply ? "ml-12" : ""}`}
+          >
+            <footer className="mb-2 flex items-center justify-between">
+              <div className="flex items-center">
+                <Text className="mr-3 inline-flex items-center text-sm font-semibold text-foreground">
+                  <Image
+                    width={24}
+                    height={24}
+                    className="mr-2 size-6 rounded-full"
+                    src={comment.profilePicture}
+                    alt={comment.name}
+                  />
+                  {comment.name}
+                </Text>
+                <Text className="text-sm text-primary-600">
+                  <time dateTime={comment.datetime} title={comment.title}>
+                    {comment.date}
+                  </time>
+                </Text>
               </div>
-            </article>
-          </>
+              <DropDownMenu />
+            </footer>
+            <Text className="text-primary-500">{comment.content}</Text>
+            <div className="mt-4 flex items-center space-x-1">
+              <Button
+                variant={"link"}
+                className="flex items-center px-2 text-sm font-medium text-primary-500 hover:underline"
+              >
+                <Heart className="mr-1 size-3" />
+                {comment.likes} Likes
+              </Button>
+              <Button
+                variant={"link"}
+                className="flex items-center px-2 text-sm font-medium text-primary-500 hover:underline"
+              >
+                <MessageCircle className="mr-1.5 size-3" />
+                Reply
+              </Button>
+            </div>
+          </article>
         ))}
       </MuiLayout.Container>
     </MuiLayout.Section>

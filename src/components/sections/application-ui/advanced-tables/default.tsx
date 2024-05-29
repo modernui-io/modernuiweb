@@ -2,7 +2,13 @@ import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { HiChevronDown, HiFilter, HiPlus, HiSearch } from "react-icons/hi";
+import {
+  HiChevronDown,
+  HiDotsHorizontal,
+  HiFilter,
+  HiPlus,
+  HiSearch,
+} from "react-icons/hi";
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
@@ -71,7 +77,7 @@ export function DefaultAdvancedTable() {
                   <Label htmlFor="simple-search" className="sr-only">
                     Search
                   </Label>
-                  <div className="relative flex items-center">
+                  <div className="relative flex w-full items-center">
                     <HiSearch className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
                     <Input
                       id="simple-search"
@@ -87,13 +93,13 @@ export function DefaultAdvancedTable() {
             </div>
             <div className="flex w-full shrink-0 flex-col items-stretch justify-end space-y-2 md:w-auto md:flex-row md:items-center md:space-x-3 md:space-y-0">
               <Button>
-                <HiPlus className="mr-3 size-3" /> Add Product Add product
+                <HiPlus className="mr-1 size-4" /> Add product
               </Button>
               <div className="flex w-full items-center space-x-3 md:w-auto">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <HiChevronDown className="mr-3 size-3" /> Actions
+                      <HiChevronDown className="mr-1 size-5" /> Actions
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -106,8 +112,8 @@ export function DefaultAdvancedTable() {
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
                       <HiFilter className="mr-2 size-4" />
-
                       <span>Filter</span>
+                      <HiChevronDown className="ml-1 size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="p-3">
@@ -141,7 +147,7 @@ export function DefaultAdvancedTable() {
           </div>
           <div className="overflow-x-auto">
             <Table className="text-sm">
-              <TableHeader className="text-xs uppercase">
+              <TableHeader className="bg-gray-50 text-xs uppercase dark:bg-gray-800">
                 <TableRow>
                   <TableHead className="px-4 py-3">Product name</TableHead>
                   <TableHead className="px-4 py-3">Category</TableHead>
@@ -151,25 +157,36 @@ export function DefaultAdvancedTable() {
                   <TableHead className="px-4 py-3">
                     <span className="sr-only">Actions</span>
                   </TableHead>
-                </TableRow>{" "}
+                </TableRow>
               </TableHeader>
-              <TableBody className="min-w-full">
-                <TableRow className="min-w-full">
+              <TableBody>
+                <TableRow>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-3 font-medium"
                   >
                     Apple iMac 27&quot;
                   </TableCell>
-                  <TableCell className="px-4 py-3">PC</TableCell>
-                  <TableCell className="px-4 py-3">Apple</TableCell>
-                  <TableCell className="px-4 py-3">300</TableCell>
-                  <TableCell className="px-4 py-3">$2999</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    PC
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Apple
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    300
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $2999
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -181,18 +198,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Apple iMac 20&quot;
                   </TableCell>
-                  <TableCell className="px-4 py-3">PC</TableCell>
-                  <TableCell className="px-4 py-3">Apple</TableCell>
-                  <TableCell className="px-4 py-3">200</TableCell>
-                  <TableCell className="px-4 py-3">$1499</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    PC
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Apple
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    200
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $1499
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -204,18 +235,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Apple iPhone 14&quot;
                   </TableCell>
-                  <TableCell className="px-4 py-3">PC</TableCell>
-                  <TableCell className="px-4 py-3">Apple</TableCell>
-                  <TableCell className="px-4 py-3">1237</TableCell>
-                  <TableCell className="px-4 py-3">$2999</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    PC
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Apple
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    1237
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $2999
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -227,18 +272,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Apple iPad Air
                   </TableCell>
-                  <TableCell className="px-4 py-3">PC</TableCell>
-                  <TableCell className="px-4 py-3">Apple</TableCell>
-                  <TableCell className="px-4 py-3">4578</TableCell>
-                  <TableCell className="px-4 py-3">$1199</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    PC
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Apple
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    4578
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $1199
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -250,18 +309,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Xbox Series S
                   </TableCell>
-                  <TableCell className="px-4 py-3">Gaming/Console</TableCell>
-                  <TableCell className="px-4 py-3">Microsoft</TableCell>
-                  <TableCell className="px-4 py-3">256</TableCell>
-                  <TableCell className="px-4 py-3">$299</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Gaming/Console
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Microsoft
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    256
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $299
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -273,18 +346,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     PlayStation 5
                   </TableCell>
-                  <TableCell className="px-4 py-3">Gaming/Console</TableCell>
-                  <TableCell className="px-4 py-3">Sony</TableCell>
-                  <TableCell className="px-4 py-3">78</TableCell>
-                  <TableCell className="px-4 py-3">$799</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Gaming/Console
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Sony
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    78
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $799
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -296,18 +383,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Xbox Series X
                   </TableCell>
-                  <TableCell className="px-4 py-3">Gaming/Console</TableCell>
-                  <TableCell className="px-4 py-3">Microsoft</TableCell>
-                  <TableCell className="px-4 py-3">200</TableCell>
-                  <TableCell className="px-4 py-3">$699</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Gaming/Console
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Microsoft
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    200
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $699
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -319,18 +420,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Apple Watch SE
                   </TableCell>
-                  <TableCell className="px-4 py-3">Watch</TableCell>
-                  <TableCell className="px-4 py-3">Apple</TableCell>
-                  <TableCell className="px-4 py-3">657</TableCell>
-                  <TableCell className="px-4 py-3">$399</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Watch
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Apple
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    657
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $399
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -342,18 +457,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     NIKON D850
                   </TableCell>
-                  <TableCell className="px-4 py-3">Camera</TableCell>
-                  <TableCell className="px-4 py-3">Nikon</TableCell>
-                  <TableCell className="px-4 py-3">465</TableCell>
-                  <TableCell className="px-4 py-3">$599</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Camera
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    Nikon
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    465
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $599
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -365,18 +494,32 @@ export function DefaultAdvancedTable() {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-3 font-medium"
+                  >
                     Monitor BenQ EX2710Q
                   </TableCell>
-                  <TableCell className="px-4 py-3">TV/Monitor</TableCell>
-                  <TableCell className="px-4 py-3">BenQ</TableCell>
-                  <TableCell className="px-4 py-3">354</TableCell>
-                  <TableCell className="px-4 py-3">$499</TableCell>
-                  <TableCell className="flex items-center justify-end px-4 py-3">
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    TV/Monitor
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    BenQ
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    354
+                  </TableCell>
+                  <TableCell width={"100%"} className="px-4 py-3">
+                    $499
+                  </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="flex items-center justify-end px-4 py-3"
+                  >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button>
-                          <HiPlus className="mr-3 size-3" /> Add Product
+                        <Button variant={"ghost"}>
+                          <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -400,31 +543,33 @@ export function DefaultAdvancedTable() {
               &nbsp;of&nbsp;
               <span className="font-semibold">1000</span>
             </span>
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious title="" onClick={() => onPageChange} />
-                </PaginationItem>
-                {Array.from({ length: 3 }, (_, index) => index + 1).map(
-                  (page) => (
-                    <PaginationItem key={page}>
-                      <PaginationLink
-                        isActive={currentPage === page}
-                        onClick={() => setCurrentPage(page)}
-                      >
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem>
-                  ),
-                )}
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext onClick={() => onPageChange} />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <div>
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                  </PaginationItem>
+                  {Array.from({ length: 3 }, (_, index) => index + 1).map(
+                    (page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          isActive={currentPage === page}
+                          onClick={() => setCurrentPage(page)}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ),
+                  )}
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationNext onClick={() => onPageChange} />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
           </nav>
         </div>
       </div>

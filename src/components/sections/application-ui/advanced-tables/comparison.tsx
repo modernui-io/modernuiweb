@@ -10,7 +10,14 @@ import {
 
 import { Button } from "~/components/ui/button";
 import { Text } from "~/components/ui/custom/text";
-import { Table, TableBody, TableCell, TableRow } from "~/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
 import {
   Tooltip,
   TooltipContent,
@@ -59,7 +66,7 @@ export function AdvancedComparisonTable() {
                 </svg>
                 Add new product
               </Button>
-              <Button>
+              <Button variant={"outline"}>
                 <HiOutlineRefresh className="mr-2 size-4" />
                 Reset all
               </Button>
@@ -69,61 +76,71 @@ export function AdvancedComparisonTable() {
           <div className="flex flex-col items-center justify-between space-y-3 p-4 md:flex-row md:space-x-4 md:space-y-0">
             <ul className="hidden flex-wrap gap-3 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:flex">
               <li className="mr-4">
-                <Button>General Information</Button>
+                <Button variant={"outline"}>General Information</Button>
               </li>
               <li className="mr-4">
                 <Button>Technical Information</Button>
               </li>
               <li className="mr-4">
-                <Button>Delivery Information</Button>
+                <Button variant={"outline"}>Delivery Information</Button>
               </li>
               <li className="mr-4">
-                <Button>Ratings</Button>
+                <Button variant={"outline"}>Ratings</Button>
               </li>
             </ul>
           </div>
 
-          <div className="flex w-full justify-between px-4 py-3 dark:bg-transparent">
-            <div className="text-lg">
-              <Image
-                width={100}
-                height={100}
-                src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
-                alt="iMac Front"
-                className="h-32 w-auto"
-              />
-              <div className="mt-4">Xbox Series S</div>
-            </div>
-            <div className="text-lg">
-              <Image
-                width={100}
-                height={100}
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
-                alt="iMac Front"
-                className="h-32 w-auto"
-              />
-              <div className="mt-4">PlayStation 5</div>
-            </div>
-            <div className="text-lg">
-              <Image
-                width={100}
-                height={100}
-                src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
-                alt="iMac Front"
-                className="h-32 w-auto"
-              />
-              <div className="mt-4">Xbox Series X</div>
-            </div>
-          </div>
           <Table className="w-full text-sm text-gray-500 dark:text-gray-400">
+            <TableHeader>
+              <TableHead></TableHead>
+              <TableHead>
+                <div className="text-lg">
+                  <Image
+                    width={100}
+                    height={100}
+                    src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
+                    alt="iMac Front"
+                    className="h-32 w-auto"
+                  />
+                  <div className="mt-4">Xbox Series S</div>
+                </div>
+              </TableHead>
+              <TableHead>
+                <div className="text-lg">
+                  <Image
+                    width={100}
+                    height={100}
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/900px-PlayStation_5_and_DualSense_with_transparent_background.png"
+                    alt="iMac Front"
+                    className="h-32 w-auto"
+                  />
+                  <div className="mt-4">PlayStation 5</div>
+                </div>
+              </TableHead>
+              <TableHead>
+                <div className="text-lg">
+                  <Image
+                    width={100}
+                    height={100}
+                    src="https://pngimg.com/uploads/xbox/xbox_PNG101375.png"
+                    alt="iMac Front"
+                    className="h-32 w-auto"
+                  />
+                  <div className="mt-4">Xbox Series X</div>
+                </div>
+              </TableHead>
+            </TableHeader>
             <TableBody className="w-full">
-              <TableRow>
+              <TableRow className="bg-gray-50 dark:bg-gray-800">
                 <TableCell
                   width={"100%"}
                   className="whitespace-nowrap px-4 py-3 font-medium"
                 >
                   General Information
                 </TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="whitespace-nowrap px-4 py-3 font-normal">
@@ -195,10 +212,13 @@ export function AdvancedComparisonTable() {
                   $299
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow className="w-full bg-gray-50 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
                   Technical Information
                 </TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="whitespace-nowrap px-4 py-3 font-normal">
@@ -340,10 +360,13 @@ export function AdvancedComparisonTable() {
                   Ethernet/Wi-Fi
                 </TableCell>
               </TableRow>
-              <TableRow>
+              <TableRow className="w-full bg-gray-50 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap px-4 py-3 font-medium">
                   Delivery
                 </TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
+                <TableCell></TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="whitespace-nowrap px-4 py-3 font-normal">

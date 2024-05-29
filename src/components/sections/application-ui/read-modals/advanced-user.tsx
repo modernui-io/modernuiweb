@@ -14,7 +14,7 @@ export function AdvancedUserReadModal() {
       <DialogTrigger asChild>
         <Button>Read user</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5">
+      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5 lg:min-w-[50rem]">
         <div className="mb-4 flex justify-between rounded-t sm:mb-5">
           <div className="text-lg md:text-xl">
             <div className="flex items-center">
@@ -129,9 +129,15 @@ export function AdvancedUserReadModal() {
               <HiPencilAlt className="-ml-1 mr-1 size-5" />
               Edit
             </Button>
-            <Button size="lg">Preview</Button>
+            <Button size="lg" variant={"outline"}>
+              Preview
+            </Button>
           </div>
-          <Button size="lg" className="inline-flex bg-red-500 [&>span]:text-sm">
+          <Button
+            variant={"destructive"}
+            size="lg"
+            className="inline-flex [&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

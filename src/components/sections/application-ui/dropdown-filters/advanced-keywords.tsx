@@ -81,10 +81,10 @@ export function AdvancedDropdownFilterKeywords() {
               />
             </div>
           </div>
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible defaultValue="category">
             <AccordionItem value="category">
               <AccordionTrigger>Category</AccordionTrigger>
-              <AccordionContent className="p-1 dark:bg-transparent">
+              <AccordionContent className="dark:bg-transparent">
                 <div className="py-2 font-light">
                   <ul className="space-y-2">
                     {[
@@ -121,7 +121,7 @@ export function AdvancedDropdownFilterKeywords() {
             </AccordionItem>
             <AccordionItem value="price">
               <AccordionTrigger>Price</AccordionTrigger>
-              <AccordionContent className="p-1 dark:bg-transparent">
+              <AccordionContent className="p-1 py-3 dark:bg-transparent">
                 <div className="grid w-full grid-cols-2 items-center gap-x-3 py-2 font-light">
                   <Select name="price-from">
                     <SelectTrigger className="py-2 sm:text-xs">
@@ -149,7 +149,7 @@ export function AdvancedDropdownFilterKeywords() {
             </AccordionItem>
             <AccordionItem value="worldwide">
               <AccordionTrigger>Worldwide Shipping</AccordionTrigger>
-              <AccordionContent className="p-1 dark:bg-transparent">
+              <AccordionContent className="p-1 py-3 dark:bg-transparent">
                 <div className="space-y-2 py-2">
                   <div className="flex gap-2">
                     <Switch
@@ -194,7 +194,7 @@ export function AdvancedDropdownFilterKeywords() {
               <AccordionTrigger>Rating</AccordionTrigger>
               <AccordionContent className="space-y-2 px-1 py-3 dark:bg-transparent">
                 <RadioGroup defaultValue="stars">
-                  {[...Array(6)].map((_, index) => {
+                  {[...Array(5)].map((_, index) => {
                     const starsCount = 5 - index;
                     const starsFilled = Array(starsCount).fill(null);
                     const starsUnfilled = Array(5 - starsCount).fill(null);

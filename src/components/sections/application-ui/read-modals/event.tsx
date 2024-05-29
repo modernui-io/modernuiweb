@@ -44,7 +44,8 @@ export function ReadEventModal() {
             </Button>
             <Button
               size="lg"
-              className="inline-flex bg-red-500 [&>span]:text-sm"
+              variant={"destructive"}
+              className="inline-flex [&>span]:text-sm"
             >
               <HiTrash className="-ml-1 mr-1.5 size-5" />
               Delete

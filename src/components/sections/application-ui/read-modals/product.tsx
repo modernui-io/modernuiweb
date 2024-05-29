@@ -36,7 +36,7 @@ export function ReadProductModal() {
               width={200}
               height={200}
               alt="iMac Front"
-              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
+              src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
             />
           </div>
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
@@ -45,7 +45,7 @@ export function ReadProductModal() {
               width={200}
               height={200}
               alt="iMac Back"
-              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
+              src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
             />
           </div>
           <div className="rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
@@ -54,7 +54,7 @@ export function ReadProductModal() {
               width={200}
               height={200}
               alt="iMac Back"
-              src="https://png.pngtree.com/png-vector/20240229/ourmid/pngtree-imac-computer-black-front-png-image_11793344.png"
+              src="https://png.pngtree.com/png-vector/20231223/ourmid/pngtree-imac-computer-on-white-background-mockup-background-png-image_11201386.png"
             />
           </div>
         </div>
@@ -116,9 +116,15 @@ export function ReadProductModal() {
               <HiPencilAlt className="-ml-1 mr-1 size-5" />
               Edit
             </Button>
-            <Button size="lg">Preview</Button>
+            <Button size="lg" variant={"outline"}>
+              Preview
+            </Button>
           </div>
-          <Button size="lg" className="inline-flex bg-red-500 [&>span]:text-sm">
+          <Button
+            variant={"destructive"}
+            size="lg"
+            className="inline-flex [&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

@@ -36,9 +36,15 @@ export function DefaultReadModal() {
               <HiPencilAlt className="-ml-1 mr-1 size-5" />
               Edit
             </Button>
-            <Button size="lg">Preview</Button>
+            <Button size="lg" variant={"outline"}>
+              Preview
+            </Button>
           </div>
-          <Button size="lg" className="inline-flex bg-red-500 [&>span]:text-sm">
+          <Button
+            variant={"destructive"}
+            size="lg"
+            className="inline-flex [&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

@@ -38,7 +38,11 @@ export function ReadUserModal() {
               Edit
             </Button>
           </div>
-          <Button size="lg" className="inline-flex bg-red-500 [&>span]:text-sm">
+          <Button
+            variant={"destructive"}
+            size="lg"
+            className="inline-flex [&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

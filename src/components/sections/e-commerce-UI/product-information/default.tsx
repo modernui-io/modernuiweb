@@ -42,10 +42,7 @@ export const ProductInformationDefault = () => {
     <MuiLayout.Section className="bg-primary-50 py-8 antialiased md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <div className="mx-auto max-w-5xl">
-          <Heading
-            level={"xsDisplay"}
-            className="font-semibold text-foreground sm:text-2xl"
-          >
+          <Heading level={"xsDisplay"} className="font-semibold sm:text-2xl">
             Product description
           </Heading>
           <div className="my-8 xl:mb-16 xl:mt-12">

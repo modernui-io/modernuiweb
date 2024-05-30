@@ -106,7 +106,7 @@ export const ProductInformationSpecificationTable = () => {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <Heading
           level={"xsDisplay"}
-          className="mb-6 font-semibold text-foreground sm:mb-8 sm:text-2xl lg:mb-8"
+          className="mb-6 font-semibold sm:mb-8 sm:text-2xl lg:mb-8"
         >
           Product description
         </Heading>
@@ -122,12 +122,12 @@ export const ProductInformationSpecificationTable = () => {
                     <Image
                       className="w-full dark:hidden"
                       src={image.light}
-                      alt=""
+                      alt="light product image"
                     />
                     <Image
                       className="hidden w-full dark:block"
                       src={image.dark}
-                      alt=""
+                      alt="dark product image"
                     />
                   </div>
                 )}
@@ -167,7 +167,7 @@ export const ProductInformationSpecificationTable = () => {
 
         <Heading
           level={"xsDisplay"}
-          className="mb-6 font-semibold text-foreground sm:mb-8 sm:text-2xl lg:mb-8"
+          className="mb-6 font-semibold sm:mb-8 sm:text-2xl lg:mb-8"
         >
           Technical details
         </Heading>

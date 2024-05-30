@@ -382,7 +382,7 @@ const ReviewDialog = () => {
         <DialogHeader>
           <DialogTitle>
             {" "}
-            <Heading level={3} className="mb-1 text-lg font-semibold">
+            <Heading level={4} className="mb-1 font-semibold">
               Add a review for:
             </Heading>
           </DialogTitle>
@@ -570,10 +570,7 @@ const ReviewDialog = () => {
               >
                 Add review
               </Button>
-              <Button
-                data-modal-toggle="review-modal"
-                className="me-2 rounded-lg border border-primary-200 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4"
-              >
+              <Button className="me-2 rounded-lg border border-primary-200 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4">
                 Cancel
               </Button>
             </div>
@@ -643,7 +640,7 @@ export const ProductInfoTabs = () => {
                         >
                           <Heading
                             level={3}
-                            className="text-left font-semibold text-foreground"
+                            className="text-left font-semibold "
                           >
                             {spec.title}
                           </Heading>
@@ -826,10 +823,7 @@ export const ProductInfoTabs = () => {
                           </div>
                         </div>
 
-                        <Heading
-                          level={4}
-                          className="mb-1 font-semibold text-foreground"
-                        >
+                        <Heading level={4} className="mb-1 font-semibold">
                           {review.title}
                         </Heading>
 
@@ -1007,10 +1001,7 @@ export const ProductInfoTabs = () => {
                         className="rounded-lg border border-primary-100 bg-primary-50 p-4 text-start"
                       >
                         <span className="text-primary-500">{title}</span>
-                        <Heading
-                          level={3}
-                          className="mt-1 text-lg font-bold text-foreground"
-                        >
+                        <Heading level={4} className="mt-1 font-bold">
                           {subtitle}
                         </Heading>
                         <ul className="my-4 space-y-1 text-left text-primary-500">

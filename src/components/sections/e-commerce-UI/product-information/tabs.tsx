@@ -2,7 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArrowRight, Flag } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowRight, Check, Flag } from "lucide-react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 //component imports
 import * as MuiLayout from "~/components/layouts";
@@ -17,14 +20,29 @@ import { Card } from "~/components/ui/card";
 import { Heading } from "~/components/ui/custom/headings";
 import { Ratings } from "~/components/ui/custom/ratings";
 import { Text } from "~/components/ui/custom/text";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-//images
-import IMacBackDark from "~/lib/assets/images/imac-back-dark.svg";
-import IMacBack from "~/lib/assets/images/imac-back.svg";
-import IMacFrontDark from "~/lib/assets/images/imac-front-dark.svg";
-import IMacFront from "~/lib/assets/images/imac-front.svg";
-import IMacSideDark from "~/lib/assets/images/imac-side-dark.svg";
-import IMacSide from "~/lib/assets/images/imac-side.svg";
+import { Textarea } from "~/components/ui/textarea";
+import BMW from "~/lib/assets/images/bmw.svg";
+import Ford from "~/lib/assets/images/ford.svg";
+import Visa from "~/lib/assets/images/visa.svg";
 
 const descriptionData = [
   'The iMac "M1" 8-Core CPU/8-Core GPU/4 USB-C Shaped Ports (2021) model features a 5-nm Apple M1 processor with 8 cores (4 performance cores and 4 efficiency cores), an 8-core GPU, a 16-core Neural Engine, 8 GB of onboard RAM, and a 1 TB onboard SSD.',
@@ -136,7 +154,7 @@ const questions = [
     question: "What is an iMac, and how does it differ from other computers?",
     answer:
       "The iMac is a line of all-in-one desktop computers designed and produced by Apple Inc. It sets itself apart by integrating the display, processing unit, and other components into a single sleek enclosure, minimizing cable clutter and providing a seamless user experience.",
-    author: "Flowbite Shop",
+    author: "modernUIWeb Shop",
     date: "November 20 2023 • 12:45",
     helpfulYes: 9,
     helpfulNo: 0,
@@ -149,7 +167,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -163,7 +181,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -177,7 +195,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -191,7 +209,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -204,7 +222,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -217,7 +235,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -230,7 +248,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -244,7 +262,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -257,7 +275,7 @@ const questions = [
       "Apple often focuses on making its products thinner and lighter. Recent iMac models might feature a slimmer profile compared to their predecessors.",
       "iMacs typically feature high-resolution Retina displays with vibrant colors and excellent contrast. The latest models might offer improvements in display technology for even better image quality.",
     ],
-    author: "Flowbite Experts",
+    author: "modernUIWeb Experts",
     date: "November 20 2023 • 12:45",
     helpfulYes: 16,
     helpfulNo: 3,
@@ -329,11 +347,248 @@ const highlightsData = [
   },
 ];
 
+const formSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  file: z.any().optional(),
+  terms: z.boolean(),
+});
+
+const ReviewDialog = () => {
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      title: "",
+      description: "",
+      terms: false,
+    },
+  });
+
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="block rounded-lg bg-primary-700 px-5 py-2 text-sm font-medium text-background hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">
+          Write a customer review
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-[600px]">
+        <DialogHeader>
+          <DialogTitle>
+            {" "}
+            <Heading level={3} className="mb-1 text-lg font-semibold">
+              Add a review for:
+            </Heading>
+          </DialogTitle>
+          <DialogDescription>
+            {" "}
+            <Link
+              href="#"
+              className="font-medium text-primary-700 hover:underline"
+            >
+              Apple iMac 24&quot; All-In-One Computer, Apple M1, 8GB RAM, 256GB
+              SSD
+            </Link>
+          </DialogDescription>
+        </DialogHeader>
+        <Form {...form}>
+          <form className="p-4 md:p-5" onSubmit={form.handleSubmit(onSubmit)}>
+            <div className="mb-4 grid grid-cols-2 gap-3">
+              <div className="col-span-2">
+                <div className="flex items-center">
+                  <Ratings rating={3} totalStars={5} variant="yellow" />
+                  <span className="ms-2 text-lg font-bold">3.0 out of 5</span>
+                </div>
+              </div>
+              <div className="col-span-2">
+                <Label
+                  htmlFor="title"
+                  className="mb-2 block text-sm font-medium"
+                >
+                  Review title
+                </Label>
+                <FormField
+                  control={form.control}
+                  name="title"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="sr-only">title</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="text"
+                          id="title"
+                          {...field}
+                          className="block w-full rounded-lg border border-primary-300 bg-primary-50 p-2.5 text-sm text-foreground focus:border-primary-600 focus:ring-primary-600"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="col-span-2">
+                <Label
+                  htmlFor="description"
+                  className="mb-2 block text-sm font-medium"
+                >
+                  Review description
+                </Label>
+                <FormField
+                  control={form.control}
+                  name="description"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="sr-only">Email</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          {...field}
+                          id="description"
+                          rows={6}
+                          className="mb-2 block w-full rounded-lg border border-primary-300 bg-primary-50 p-2.5 text-sm text-foreground focus:border-primary-500 focus:ring-primary-500"
+                        />
+                      </FormControl>
+                      <FormMessage>
+                        <Text className="ms-auto text-xs text-primary-500">
+                          Problems with the product or delivery?{" "}
+                          <Link
+                            href="#"
+                            className="text-primary-600 hover:underline"
+                          >
+                            Send a report
+                          </Link>
+                          .
+                        </Text>
+                      </FormMessage>
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="col-span-2">
+                <Label
+                  htmlFor="dropzone-file"
+                  className="mb-2 block text-sm font-medium"
+                >
+                  Add real photos of the product to help other customers{" "}
+                  <span className="text-primary-500">(Optional)</span>
+                </Label>
+                <div className="flex w-full items-center justify-center">
+                  <FormField
+                    control={form.control}
+                    name="file"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormLabel className="sr-only">Email</FormLabel>
+                        <FormControl>
+                          <Label
+                            htmlFor="dropzone-file"
+                            className=" flex h-52 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-primary-300 bg-primary-50 hover:bg-primary-100"
+                          >
+                            <div className="flex flex-col items-center justify-center pb-6 pt-5">
+                              <svg
+                                className="mb-4 size-8 text-primary-500"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 20 16"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                                />
+                              </svg>
+                              <Text className="mb-2 text-sm text-primary-500 ">
+                                <span className="font-semibold">
+                                  Click to upload
+                                </span>{" "}
+                                or drag and drop
+                              </Text>
+                              <Text className="text-xs text-primary-500">
+                                SVG, PNG, JPG or GIF (MAX. 800x400px)
+                              </Text>
+                            </div>
+                            <Input
+                              id="dropzone-file"
+                              type="file"
+                              className="hidden"
+                              {...field}
+                            />
+                          </Label>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <div className="col-span-2">
+                <div className="flex items-center">
+                  <FormField
+                    control={form.control}
+                    name="terms"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="sr-only">Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            id="review-checkbox"
+                            type="checkbox"
+                            value=""
+                            className="size-4 rounded border-primary-300 bg-primary-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Label
+                    htmlFor="review-checkbox"
+                    className="ms-2 text-sm font-medium text-primary-500"
+                  >
+                    By publishing this review you agree with the{" "}
+                    <Link href="#" className="text-primary-600 hover:underline">
+                      terms and conditions
+                    </Link>
+                    .
+                  </Label>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-primary-200 pt-4  md:pt-5">
+              <Button
+                type="submit"
+                className="me-2 inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-background hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+              >
+                Add review
+              </Button>
+              <Button
+                data-modal-toggle="review-modal"
+                className="me-2 rounded-lg border border-primary-200 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4"
+              >
+                Cancel
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
 export const ProductInfoTabs = () => {
   return (
-    <section className="bg-white py-8 antialiased dark:bg-gray-900">
-      <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <div className="border-gray-200 text-center text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400 sm:block sm:border-b">
+    <MuiLayout.Section className="bg-background py-8 antialiased">
+      <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <div className="border-primary-200 text-center text-sm font-medium text-primary-500 sm:block sm:border-b">
           <Tabs defaultValue="Description">
             <TabsList className="-mb-px flex flex-wrap justify-start gap-x-4 bg-background">
               {["Description", "Reviews", "Questions", "Highlights"].map(
@@ -351,31 +606,20 @@ export const ProductInfoTabs = () => {
             <TabsContent value="Description">
               <div className="w-full">
                 <div className="col-span-3">
-                  <div
-                    id="description"
-                    className="grid grid-cols-1 py-4 sm:py-8 lg:grid-cols-5 lg:gap-8"
-                    role="tabpanel"
-                    aria-labelledby="description-tab"
-                  >
-                    <div className="col-span-3 w-full space-y-6">
-                      <div className="space-y-6">
+                  <div className="grid grid-cols-1 py-4 sm:py-8 lg:grid-cols-5 lg:gap-8">
+                    <div className="col-span-3 flex w-full flex-col items-start space-y-6 ">
+                      <div className="space-y-6 text-left">
                         {descriptionData.map((text, index) => (
-                          <Text
-                            key={index}
-                            className="text-gray-500 dark:text-gray-400"
-                          >
+                          <Text key={index} className="text-primary-500">
                             {text}
                           </Text>
                         ))}
                       </div>
-                      <div className="space-y-6">
+                      <div className="space-y-6 text-left">
                         {additionalInfo.map((text, index) => (
-                          <Text
-                            key={index}
-                            className="text-gray-500 dark:text-gray-400"
-                          >
+                          <Text key={index} className="text-primary-500">
                             {index === 0 && (
-                              <span className="font-semibold text-gray-900 dark:text-white">
+                              <span className="font-semibold text-foreground">
                                 {text.split(":")[0]}:
                               </span>
                             )}
@@ -383,29 +627,9 @@ export const ProductInfoTabs = () => {
                           </Text>
                         ))}
                       </div>
-                      <div id="more-info" className="hidden">
-                        <div className="space-y-6">
-                          {additionalInfo.map((text, index) => (
-                            <Text
-                              key={index}
-                              className="text-gray-500 dark:text-gray-400"
-                            >
-                              {index === 0 && (
-                                <span className="font-semibold text-gray-900 dark:text-white">
-                                  {text.split(":")[0]}:
-                                </span>
-                              )}
-                              {index === 0 ? text.split(":")[1] : text}
-                            </Text>
-                          ))}
-                        </div>
-                      </div>
                       <Button
-                        id="show-more"
-                        type="button"
-                        data-collapse-toggle="more-info"
-                        data-dismiss-target="#show-more"
-                        className="inline-flex items-center text-base font-medium text-primary-700 hover:underline dark:text-primary-500"
+                        variant="link"
+                        className="inline-flex items-center pl-0 text-base font-medium text-primary hover:underline"
                       >
                         Show more
                         <ArrowRight className="ms-1.5 size-4" />
@@ -415,24 +639,24 @@ export const ProductInfoTabs = () => {
                       {specsData.map((spec, index) => (
                         <Card
                           key={index}
-                          className="max-h-full rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:p-6"
+                          className="max-h-full rounded-lg border border-primary-100 bg-primary-50 p-4 md:p-6"
                         >
                           <Heading
-                            level={"xsDisplay"}
-                            className="text-xl font-semibold text-gray-900 dark:text-white"
+                            level={3}
+                            className="text-left font-semibold text-foreground"
                           >
                             {spec.title}
                           </Heading>
-                          <div className="mt-2 divide-y divide-gray-200 dark:divide-gray-700 dark:border-gray-800">
+                          <div className="mt-2 divide-y divide-primary-200 ">
                             {spec.details.map((detail, idx) => (
                               <dl
                                 key={idx}
                                 className="flex items-center justify-between gap-4 py-2"
                               >
-                                <dt className="text-sm font-medium text-gray-900 dark:text-white">
+                                <dt className="text-sm font-medium text-foreground">
                                   {detail.label}
                                 </dt>
-                                <dd className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                                <dd className="text-sm font-normal text-primary-500">
                                   {detail.value}
                                 </dd>
                               </dl>
@@ -453,51 +677,51 @@ export const ProductInfoTabs = () => {
                 aria-labelledby="reviews-tab"
               >
                 <div className="mx-auto max-w-screen-xl">
-                  <div className="mt-6 flex flex-wrap gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:gap-6 sm:p-6 lg:gap-8 lg:p-8">
+                  <div className="mt-6 flex flex-wrap gap-4 rounded-lg border border-primary-200 bg-background p-4 shadow-sm sm:gap-6 sm:p-6 lg:gap-8 lg:p-8">
                     <div className="flex flex-1 flex-col justify-start space-y-3">
-                      <Text className="self-start text-3xl font-bold leading-none text-gray-900 dark:text-white">
+                      <Text className="self-start text-3xl font-bold leading-none text-foreground">
                         5/5
                       </Text>
-                      <Text className="self-start text-base font-normal leading-none text-gray-500 dark:text-gray-400">
+                      <Text className="self-start text-base font-normal leading-none text-primary-500">
                         Average rating
                       </Text>
                       <div className="space-y-1 self-start">
                         <div className="flex items-start">
                           <Ratings rating={4} variant="yellow" totalStars={5} />
                         </div>
-                        <Text className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
+                        <Text className="text-sm font-normal leading-none text-primary-500">
                           (3,657 reviews)
                         </Text>
                       </div>
                     </div>
 
-                    <div className="hidden min-h-full w-px shrink-0 bg-gray-200 dark:bg-gray-700 lg:block"></div>
+                    <div className="hidden min-h-full w-px shrink-0 bg-primary-200  lg:block"></div>
 
                     <div className="flex flex-1 flex-col items-start space-y-3">
-                      <Text className="text-3xl font-bold leading-none text-gray-900 dark:text-white">
+                      <Text className="text-3xl font-bold leading-none text-foreground">
                         100M+
                       </Text>
-                      <Text className="text-base font-normal leading-none text-gray-500 dark:text-gray-400">
+                      <Text className="text-base font-normal leading-none text-primary-500">
                         Worldwide Clients
                       </Text>
                       <div className="flex items-center gap-4">
                         <Image
                           className="h-6"
-                          src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/ford.svg"
+                          src={Ford}
                           width={40}
                           height={40}
                           alt="Ford logo"
                         />
                         <Image
                           className="h-6"
-                          src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg"
+                          src={Visa}
                           alt="Visa logo"
                           width={40}
                           height={40}
                         />
                         <Image
                           className="h-8"
-                          src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/bmw.svg"
+                          src={BMW}
                           alt="BMW logo"
                           width={40}
                           height={40}
@@ -505,57 +729,50 @@ export const ProductInfoTabs = () => {
                       </div>
                     </div>
 
-                    <div className="hidden min-h-full w-px shrink-0 bg-gray-200 dark:bg-gray-700 lg:block"></div>
+                    <div className="hidden min-h-full w-px shrink-0 bg-primary-200  lg:block"></div>
 
-                    <div className="h-px w-full shrink-0 bg-gray-200 dark:bg-gray-700 lg:hidden"></div>
+                    <div className="h-px w-full shrink-0 bg-primary-200  lg:hidden"></div>
 
                     <div className="w-full max-w-md">
                       <div className="mb-4 flex flex-col items-start space-y-3">
-                        <Text className="text-xl font-semibold leading-none text-gray-900 dark:text-white">
+                        <Text className="text-xl font-semibold leading-none text-foreground">
                           Do you own or have you used the product?
                         </Text>
-                        <Text className="text-base font-normal leading-none text-gray-500 dark:text-gray-400">
+                        <Text className="text-base font-normal leading-none text-primary-500">
                           Give your opinion by rating the product
                         </Text>
                         <div className="flex items-center">
                           <Ratings rating={0} variant="yellow" totalStars={5} />
                           <Button
-                            type="button"
-                            className="ms-1.5 text-sm font-medium leading-none text-gray-900 hover:underline dark:text-white"
+                            variant="link"
+                            className="ms-1.5 pl-2 text-sm font-medium leading-none text-foreground hover:underline"
                           >
                             Give a note
                           </Button>
                         </div>
                       </div>
 
-                      <Button
-                        type="button"
-                        data-modal-target="review-modal"
-                        data-modal-toggle="review-modal"
-                        className="block rounded-lg bg-primary-700 px-5 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                      >
-                        Write a customer review
-                      </Button>
+                      <ReviewDialog />
                     </div>
                   </div>
 
                   <div className="mt-6 sm:flex sm:items-end sm:justify-between">
-                    <Text className="text-sm font-normal leading-tight text-gray-900 dark:text-white">
+                    <Text className="text-sm font-normal leading-tight text-foreground">
                       Showing <span className="font-semibold">5,768</span>{" "}
                       Customer Reviews
                     </Text>
 
                     <div className="mt-4 shrink-0 space-y-4 sm:mt-0 sm:flex sm:max-w-sm sm:items-center sm:gap-4 sm:space-y-0">
                       <div>
-                        <label
+                        <Label
                           htmlFor="reviews"
-                          className="sr-only mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                          className="sr-only mb-2 block text-sm font-medium text-foreground"
                         >
                           Select review type
-                        </label>
+                        </Label>
                         <select
                           id="reviews"
-                          className="pr-2. block w-full rounded-lg border border-gray-300 bg-gray-50 py-2.5 pl-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg border border-primary-300 bg-primary-50 p-2.5 text-sm text-foreground focus:border-primary-500 focus:ring-primary-500"
                         >
                           <option selected>All Reviews</option>
                           <option value="5 stars">5 stars</option>
@@ -567,15 +784,15 @@ export const ProductInfoTabs = () => {
                       </div>
 
                       <div>
-                        <label
+                        <Label
                           htmlFor="time"
-                          className="sr-only mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                          className="sr-only mb-2 block text-sm font-medium text-foreground"
                         >
                           Select time
-                        </label>
+                        </Label>
                         <select
                           id="time"
-                          className="block w-full rounded-lg border border-gray-300 bg-gray-50 py-2.5 pl-2.5 pr-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg border border-primary-300 bg-primary-50 py-2.5 pl-2.5 pr-10 text-sm text-foreground focus:border-primary-500 focus:ring-primary-500"
                         >
                           <option selected>Recently Added</option>
                           <option value="oldest">Oldest</option>
@@ -584,7 +801,7 @@ export const ProductInfoTabs = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 divide-y divide-gray-200 border-t border-gray-200 dark:divide-gray-700 dark:border-gray-700">
+                  <div className="mt-6 divide-y divide-primary-200 border-t border-primary-200">
                     {reviews.map((review, index) => (
                       <article
                         key={index}
@@ -598,11 +815,11 @@ export const ProductInfoTabs = () => {
                             src={review.avatar}
                             alt={`${review.name} avatar`}
                           />
-                          <div className="font-medium dark:text-white">
+                          <div className="font-medium">
                             <Text>{review.name}</Text>
-                            <Text className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                            <Text className="text-sm font-normal text-primary-500">
                               Total Reviews:
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-foreground">
                                 {review.totalReviews}
                               </span>
                             </Text>
@@ -610,8 +827,8 @@ export const ProductInfoTabs = () => {
                         </div>
 
                         <Heading
-                          level={"xsDisplay"}
-                          className="mb-1 text-xl font-semibold text-gray-900 dark:text-white"
+                          level={4}
+                          className="mb-1 font-semibold text-foreground"
                         >
                           {review.title}
                         </Heading>
@@ -625,12 +842,12 @@ export const ProductInfoTabs = () => {
                               size={18}
                             />
                           </div>
-                          <Text className="ms-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          <Text className="ms-2 text-sm font-normal text-primary-500">
                             {review.date}
                           </Text>
                         </div>
 
-                        <Text className="mb-3 text-start text-base font-normal text-gray-500 dark:text-gray-400">
+                        <Text className="mb-3 text-start text-base font-normal text-primary-500">
                           {review.content}
                         </Text>
 
@@ -638,15 +855,14 @@ export const ProductInfoTabs = () => {
                           <div className="mt-3 flex items-center">
                             <Link
                               href="#"
-                              className="rounded-lg border border-gray-200 bg-white px-2 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                              className="rounded-lg border border-primary-200 bg-background px-2 py-1.5 text-xs font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-100"
                             >
                               Helpful ({review.helpful})
                             </Link>
 
                             <Button
-                              type="button"
-                              data-modal-toggle="report-modal"
-                              className="ms-4 inline-flex items-center gap-1.5 text-sm font-medium text-gray-900 hover:underline dark:text-white"
+                              variant="link"
+                              className="ms-4 inline-flex items-center gap-1.5 pl-2 text-sm font-medium text-foreground hover:underline"
                             >
                               <Flag className="size-5 text-foreground" />
                               Report
@@ -658,26 +874,20 @@ export const ProductInfoTabs = () => {
                   </div>
 
                   <div className="flex flex-col items-center">
-                    <span className="text-sm text-gray-700 dark:text-gray-400">
-                      Showing
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        1
-                      </span>{" "}
+                    <span className="text-sm text-primary-700">
+                      Showing{" "}
+                      <span className="font-semibold text-foreground">1</span>{" "}
                       to{" "}
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        5
-                      </span>{" "}
-                      of
-                      <span className="font-semibold text-gray-900 dark:text-white">
-                        53
-                      </span>
+                      <span className="font-semibold text-foreground">5</span>{" "}
+                      of{" "}
+                      <span className="font-semibold text-foreground">53 </span>
                       Customer Reviews
                     </span>
                     <div className="xs:mt-0 mt-2 inline-flex">
-                      <Button className="flex h-8 items-center justify-center rounded-s bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                      <Button className="flex h-8 items-center justify-center rounded-s bg-primary-800 px-3 text-sm font-medium text-background hover:bg-primary-900">
                         Previous
                       </Button>
-                      <Button className="flex h-8 items-center justify-center rounded-e border-0 border-s border-gray-700 bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                      <Button className="flex h-8 items-center justify-center rounded-e border-0 border-s border-primary-700 bg-primary-800 px-3 text-sm font-medium text-background hover:bg-primary-900">
                         Next
                       </Button>
                     </div>
@@ -698,22 +908,22 @@ export const ProductInfoTabs = () => {
                         // className={activeQuestion === question.id ? "" : "hidden"}
                         aria-labelledby={`accordion-product-heading-${question.id}`}
                       >
-                        <div className="space-y-4 border-b border-gray-200 py-5 dark:border-gray-700">
+                        <div className="space-y-4 border-b border-primary-200 py-5">
                           <div className="flex items-center gap-3">
-                            <p className="text-base font-semibold text-gray-900 dark:text-white">
+                            <Text className="text-base font-semibold text-foreground">
                               {question.author}
-                            </p>
-                            <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                            </Text>
+                            <Text className="text-sm font-normal text-primary-500">
                               {question.date}
-                            </p>
+                            </Text>
                           </div>
                           {Array.isArray(question.answer) ? (
                             question.answer.map((answerPart, index) => (
-                              <p
+                              <Text
                                 key={index}
-                                className="text-start text-base font-normal text-gray-500 dark:text-gray-400"
+                                className="text-start text-base font-normal text-primary-500"
                               >
-                                <span className="font-semibold text-gray-900 dark:text-white">
+                                <span className="font-semibold text-foreground">
                                   {index === 0
                                     ? "Apple Silicon:"
                                     : index === 1
@@ -721,44 +931,44 @@ export const ProductInfoTabs = () => {
                                       : "Vivid Retina Display:"}
                                 </span>{" "}
                                 {answerPart}
-                              </p>
+                              </Text>
                             ))
                           ) : (
-                            <p className="text-start text-base font-normal text-gray-500 dark:text-gray-400">
+                            <Text className="text-start text-base font-normal text-primary-500">
                               {question.answer}
-                            </p>
+                            </Text>
                           )}
                           <div className="flex items-center gap-4">
-                            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                            <Text className="text-sm font-medium text-primary-500">
                               Was it helpful to you?
-                            </p>
+                            </Text>
                             <div className="flex items-center">
-                              <input
+                              <Input
                                 id={`default-radio-yes-${question.id}`}
                                 type="radio"
                                 name={`default-radio-${question.id}`}
-                                className="size-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                                className="size-4 border-primary-300 bg-primary-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
                               />
-                              <label
+                              <Label
                                 htmlFor={`default-radio-yes-${question.id}`}
-                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                className="ms-2 text-sm font-medium text-foreground"
                               >
                                 Yes: {question.helpfulYes}
-                              </label>
+                              </Label>
                             </div>
                             <div className="flex items-center">
-                              <input
+                              <Input
                                 id={`default-radio-no-${question.id}`}
                                 type="radio"
                                 name={`default-radio-${question.id}`}
-                                className="size-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                                className="size-4 border-primary-300 bg-primary-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
                               />
-                              <label
+                              <Label
                                 htmlFor={`default-radio-no-${question.id}`}
-                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                className="ms-2 text-sm font-medium text-foreground"
                               >
                                 No: {question.helpfulNo}
-                              </label>
+                              </Label>
                             </div>
                           </div>
                         </div>
@@ -768,16 +978,16 @@ export const ProductInfoTabs = () => {
                 ))}
               </Accordion>
               <div className="mt-6 sm:mt-8">
-                <p className="text-lg font-normal text-gray-500 dark:text-gray-400">
-                  Didn't find the answer?
-                  <a
+                <Text className="text-lg font-normal text-primary-500">
+                  Didn&apos;t find the answer?
+                  <Link
                     href="#"
                     title=""
-                    className="font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+                    className="font-medium text-primary-700 underline hover:no-underline"
                   >
                     Ask a question
-                  </a>
-                </p>
+                  </Link>
+                </Text>
               </div>
             </TabsContent>
             <TabsContent value="Highlights">
@@ -792,53 +1002,35 @@ export const ProductInfoTabs = () => {
                       { title, features, linkHref, linkText, subtitle },
                       index,
                     ) => (
-                      <div
+                      <Card
                         key={index}
-                        className="rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800"
+                        className="rounded-lg border border-primary-100 bg-primary-50 p-4 text-start"
                       >
-                        <span className="text-gray-500 dark:text-gray-400">
-                          {title}
-                        </span>
-                        <h3 className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
-                          {subtitle}
-                        </h3>
-                        <ul
-                          role="list"
-                          className="my-4 space-y-1 text-left text-gray-500 dark:text-gray-400"
+                        <span className="text-primary-500">{title}</span>
+                        <Heading
+                          level={3}
+                          className="mt-1 text-lg font-bold text-foreground"
                         >
+                          {subtitle}
+                        </Heading>
+                        <ul className="my-4 space-y-1 text-left text-primary-500">
                           {features.map((feature, index) => (
                             <li
                               key={index}
                               className="flex items-center space-x-2"
                             >
-                              <svg
-                                className="size-5 shrink-0 text-green-600 dark:text-green-500"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M5 11.917 9.724 16.5 19 7.5"
-                                />
-                              </svg>
+                              <Check className="size-5 shrink-0 font-semibold text-green-600 " />
                               <span>{feature}</span>
                             </li>
                           ))}
                         </ul>
-                        <a
+                        <Link
                           href={linkHref}
-                          className="font-medium text-primary-700 hover:underline dark:text-primary-500"
+                          className="font-medium text-primary-700 hover:underline"
                         >
                           {linkText}
-                        </a>
-                      </div>
+                        </Link>
+                      </Card>
                     ),
                   )}
                 </div>
@@ -846,7 +1038,7 @@ export const ProductInfoTabs = () => {
             </TabsContent>
           </Tabs>
         </div>
-      </div>
-    </section>
+      </MuiLayout.Container>
+    </MuiLayout.Section>
   );
 };

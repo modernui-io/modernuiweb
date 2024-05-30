@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { ProductInformationSpecificationTable } from "../specification-table";
 
 const meta = {
@@ -11,5 +12,5 @@ export default meta;
 type Story = StoryObj<typeof ProductInformationSpecificationTable>;
 
 export const Default: Story = {
-render: () => <ProductInformationSpecificationTable />,
+  render: () => <ProductInformationSpecificationTable />,
 };

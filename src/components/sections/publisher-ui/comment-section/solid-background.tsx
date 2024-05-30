@@ -89,12 +89,7 @@ const comments = [
 const DropDownMenu = () => (
   <Popover>
     <PopoverTrigger asChild>
-      <Button
-        id="dropdownComment1Button"
-        data-dropdown-toggle="dropdownComment1"
-        className="inline-flex items-center rounded-lg bg-primary-50 p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200"
-        type="button"
-      >
+      <Button className="inline-flex items-center rounded-lg bg-primary-50 p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200">
         <Ellipsis className="size-4" />
         <span className="sr-only">Comment settings</span>
       </Button>
@@ -145,10 +140,7 @@ export const CommentsSolidBackground = () => {
             Discussion (20)
           </Heading>
           <div>
-            <Button
-              type="button"
-              className="rounded-lg border border-primary-200 bg-background px-3 py-2 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-primary-200 "
-            >
+            <Button className="rounded-lg border border-primary-200 bg-background px-3 py-2 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-primary-200 ">
               Subscribe
             </Button>
           </div>
@@ -178,31 +170,19 @@ export const CommentsSolidBackground = () => {
                 />
               </div>
               <div className="flex items-center justify-between border-t border-primary-300 px-3 py-2">
-                <Button
-                  type="submit"
-                  className="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2.5 text-center text-xs font-medium hover:bg-primary-800 focus:ring-4 focus:ring-primary-200"
-                >
+                <Button className="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2.5 text-center text-xs font-medium hover:bg-primary-800 focus:ring-4 focus:ring-primary-200">
                   Post comment
                 </Button>
                 <div className="flex space-x-1 pl-0 sm:pl-2">
-                  <Button
-                    type="button"
-                    className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900"
-                  >
+                  <Button className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900">
                     <Paperclip className="size-4" />
                     <span className="sr-only">Attach file</span>
                   </Button>
-                  <button
-                    type="button"
-                    className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900"
-                  >
+                  <button className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900">
                     <MapPin className="size-4" />
                     <span className="sr-only">Set location</span>
                   </button>
-                  <button
-                    type="button"
-                    className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900"
-                  >
+                  <button className="inline-flex cursor-pointer justify-center rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900">
                     <ImageIcon className="size-4" />
                     <span className="sr-only">Upload image</span>
                   </button>

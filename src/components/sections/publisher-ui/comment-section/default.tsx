@@ -67,12 +67,7 @@ const comments = [
 const DropDownMenu = () => (
   <Popover>
     <PopoverTrigger asChild>
-      <Button
-        id="dropdownComment1Button"
-        data-dropdown-toggle="dropdownComment1"
-        className="inline-flex items-center rounded-lg bg-background p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200"
-        type="button"
-      >
+      <Button className="inline-flex items-center rounded-lg bg-background p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200">
         <Ellipsis className="size-4" />
         <span className="sr-only">Comment settings</span>
       </Button>

@@ -109,12 +109,7 @@ const additionalButtons = [
 const DropDownMenu = React.memo(() => (
   <Popover>
     <PopoverTrigger asChild>
-      <Button
-        id="dropdownComment1Button"
-        data-dropdown-toggle="dropdownComment1"
-        className="inline-flex items-center rounded-lg bg-background p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200"
-        type="button"
-      >
+      <Button className="inline-flex items-center rounded-lg bg-background p-2 text-center text-sm font-medium text-primary-400 shadow-none hover:bg-primary-100 focus:outline-none focus:ring-4 focus:ring-primary-200">
         <Ellipsis className="size-4" />
         <span className="sr-only">Comment settings</span>
       </Button>
@@ -169,10 +164,7 @@ export const CommentsUpvotes = () => {
             Discussion (20)
           </Heading>
           <div>
-            <Button
-              type="button"
-              className="rounded-lg border border-primary-200 bg-background px-3 py-2 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-primary-200"
-            >
+            <Button className="rounded-lg border border-primary-200 bg-background px-3 py-2 text-sm font-medium text-foreground hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-2 focus:ring-primary-200">
               Subscribe
             </Button>
           </div>
@@ -218,7 +210,6 @@ export const CommentsUpvotes = () => {
                       {buttonIcons.map((button, index) => (
                         <Button
                           key={index}
-                          type="button"
                           className="cursor-pointer rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900"
                         >
                           {button.icon}
@@ -230,7 +221,6 @@ export const CommentsUpvotes = () => {
                       {additionalButtons.map((button, index) => (
                         <Button
                           key={index}
-                          type="button"
                           className="cursor-pointer rounded bg-primary-50 p-2 text-primary-500 shadow-none hover:bg-primary-100 hover:text-primary-900"
                         >
                           {button.icon}
@@ -259,19 +249,13 @@ export const CommentsUpvotes = () => {
                 <div className="flex">
                   <div className="mr-4">
                     <div className="flex w-9 flex-col items-center justify-center rounded-lg bg-primary-100 font-medium ">
-                      <Button
-                        type="button"
-                        className="flex w-full justify-center rounded-b-none rounded-t-lg bg-primary-100 px-0 py-1 text-primary-500 shadow-none hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-50"
-                      >
+                      <Button className="flex w-full justify-center rounded-b-none rounded-t-lg bg-primary-100 px-0 py-1 text-primary-500 shadow-none hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-50">
                         <PlusIcon className="size-4 text-primary-500" />
                       </Button>
                       <span className="px-2 py-1 text-xs font-medium text-foreground lg:px-0 lg:text-sm ">
                         {comment.upvotes}
                       </span>
-                      <Button
-                        type="button"
-                        className="flex w-full  justify-center rounded-b-lg rounded-t-none bg-primary-100 px-0 py-1 text-primary-500 shadow-none hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-50"
-                      >
+                      <Button className="flex w-full  justify-center rounded-b-lg rounded-t-none bg-primary-100 px-0 py-1 text-primary-500 shadow-none hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-50">
                         <MinusIcon className="size-4 text-primary-500" />
                       </Button>
                     </div>

@@ -92,7 +92,7 @@ const TableData: TableData[] = [
   },
   {
     country: "Canada",
-    date: "May 31, 202",
+    date: "May 31, 2021",
     amount: "$300",
   },
   {
@@ -358,8 +358,8 @@ const BlogBody = () => {
       </Heading>
       <Text className="mb-4 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
-        certain shapes are shared across letters. A typeface represents shared
-        patterns across a collection of letters.
+        certain shapes are shared across letters. A type represents shared
+        patterns across collection of letters.
       </Text>
       <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
         Baseline

@@ -82,14 +82,6 @@ interface ArticleData {
   description: string;
 }
 
-interface Article {
-  imgSrc: StaticImageData;
-  imgAlt: string;
-  title: string;
-  readTime: string;
-  link: string;
-}
-
 interface ListData {
   list: string[];
   className?: string;
@@ -159,7 +151,7 @@ const TableData: TableData[] = [
   },
   {
     country: "Canada",
-    date: "May 31, 202",
+    date: "May 31, 2021",
     amount: "$300",
   },
   {

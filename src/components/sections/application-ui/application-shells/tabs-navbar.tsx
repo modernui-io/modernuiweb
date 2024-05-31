@@ -74,7 +74,7 @@ export function TabsNavbarApplicationShell() {
   return (
     <>
       <header className="fixed top-0 z-50 w-full bg-background">
-        <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+        <nav className="border-b px-4 py-2.5 dark:bg-gray-800 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
               <Button
@@ -454,10 +454,10 @@ export function TabsNavbarApplicationShell() {
       <div className="hidden items-center justify-center bg-gray-50 py-5 pt-20 dark:bg-gray-900 lg:flex">
         <nav
           id="toggleMobileMenu"
-          className="mx-auto block border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+          className="mx-auto block border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
         >
           <div className="flex items-center">
-            <ul className="mt-0 flex w-full flex-col gap-5 text-sm font-medium lg:flex-row">
+            <ul className="mt-0 flex w-full flex-col gap-7 text-sm font-medium lg:flex-row">
               {[
                 { text: "My account", href: "#" },
                 { text: "Company", href: "#", current: true },
@@ -475,7 +475,7 @@ export function TabsNavbarApplicationShell() {
         </nav>
       </div>
 
-      <main className="flex-1 space-y-4 bg-background p-4 pt-32 lg:pt-4">
+      <main className="flex-1 space-y-4 bg-gray-50 p-4 pt-32 dark:bg-gray-900 lg:pt-4">
         {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}

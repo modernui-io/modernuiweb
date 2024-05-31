@@ -84,7 +84,7 @@ export function SidebarNavbarApplicationShell() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full bg-background">
+      <header className="fixed top-0 z-50 w-full">
         <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
@@ -123,7 +123,7 @@ export function SidebarNavbarApplicationShell() {
                       placeholder="Search"
                       required
                       type="search"
-                      className="pl-9"
+                      className="bg-gray-50 pl-9 dark:bg-gray-800"
                       {...form.register("search")}
                     />
                   </div>
@@ -672,7 +672,7 @@ export function SidebarNavbarApplicationShell() {
           </DropdownMenu>
         </div>
       </aside>
-      <main className="h-auto bg-background p-4 pt-20 md:ml-64">
+      <main className="h-auto bg-gray-50 p-4 pt-20 dark:bg-gray-800 md:ml-64">
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <div

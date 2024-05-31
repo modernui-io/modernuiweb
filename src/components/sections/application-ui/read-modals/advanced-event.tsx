@@ -15,7 +15,7 @@ export function AdvancedReadEventModal() {
       <DialogTrigger asChild>
         <Button>Read event</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5">
+      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5 lg:min-w-[50rem]">
         <div className="mb-4 flex items-center justify-between rounded-t border-b border-gray-200 pb-4 dark:border-gray-700 sm:mb-5">
           <h3 className="font-semibold">The 4th Digital Transformation</h3>
         </div>
@@ -34,7 +34,7 @@ export function AdvancedReadEventModal() {
             <dt className="mb-2 leading-none text-gray-500 dark:text-gray-400">
               Participants
             </dt>
-            <div className="mb-2 flex space-x-[-20px] [&_img]:ring-white dark:[&_img]:ring-0">
+            <div className="mb-3 flex space-x-[-20px] [&_img]:ring-white dark:[&_img]:ring-0">
               <Avatar className="size-8">
                 <AvatarImage
                   alt="Helene Engels"
@@ -84,11 +84,15 @@ export function AdvancedReadEventModal() {
               <HiPencilAlt className="-ml-1 mr-1 size-5" />
               Edit
             </Button>
-            <Button size="lg" className="[&>span]:text-sm">
+            <Button size="lg" className="[&>span]:text-sm" variant={"outline"}>
               Preview
             </Button>
           </div>
-          <Button size="lg" className="inline-flex bg-red-500 [&>span]:text-sm">
+          <Button
+            variant={"destructive"}
+            size="lg"
+            className="inline-flex [&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

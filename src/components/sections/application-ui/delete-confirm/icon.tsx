@@ -15,7 +15,7 @@ export function DeleteConfirmationWithIcon() {
       <DialogTrigger asChild>
         <Button>Show delete confirmation</Button>
       </DialogTrigger>
-      <DialogContent className="justify-center rounded-lg bg-background p-4 shadow sm:p-5">
+      <DialogContent className="justify-center rounded-lg bg-background p-4 text-center shadow sm:p-5">
         <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-lg bg-gray-100 p-2 dark:bg-gray-700">
           <HiExclamation className="size-8 text-gray-500 dark:text-gray-400" />
         </div>

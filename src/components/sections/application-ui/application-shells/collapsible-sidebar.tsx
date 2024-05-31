@@ -22,17 +22,16 @@ import {
   HiHome,
   HiInbox,
   HiInboxIn,
-  HiInformationCircle,
+  HiLightBulb,
   HiLightningBolt,
+  HiLocationMarker,
   HiLockClosed,
   HiLogout,
-  HiMail,
   HiMenuAlt2,
   HiOutlineChatAlt,
-  HiPlusCircle,
+  HiPresentationChartBar,
   HiQuestionMarkCircle,
   HiSearch,
-  HiSelector,
   HiShoppingBag,
   HiUser,
   HiUserAdd,
@@ -44,12 +43,12 @@ import {
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
-import { Checkbox } from "~/components/ui/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
+import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -87,7 +86,7 @@ export function CollapsibleSidebarApplicationShell() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full bg-background antialiased">
+      <header className="fixed top-0 z-50 w-full border-b bg-background antialiased">
         <nav>
           <div className="border-gray-200 px-4 py-2.5 lg:px-6">
             <div className="flex items-center justify-between">
@@ -116,7 +115,7 @@ export function CollapsibleSidebarApplicationShell() {
                       <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                       <Input
                         id="topbar-search"
-                        placeholder="Jump to Favorites, Apps, Pipelines..."
+                        placeholder="Search"
                         type="search"
                         className="pl-9"
                         {...form.register("search")}
@@ -125,14 +124,12 @@ export function CollapsibleSidebarApplicationShell() {
                   </div>
                 </form>
               </div>
-              <div className="flex items-center justify-between lg:order-2">
+              <div className="flex items-center justify-between">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">View notifications</span>
-                        <HiBell className="size-5" />
-                      </>
+                      <span className="sr-only">View notifications</span>
+                      <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -295,7 +292,6 @@ export function CollapsibleSidebarApplicationShell() {
                     </Link>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -378,8 +374,6 @@ export function CollapsibleSidebarApplicationShell() {
                   </DropdownMenuContent>
                 </DropdownMenu>
 
-                <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
-
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"ghost"}>
@@ -447,167 +441,6 @@ export function CollapsibleSidebarApplicationShell() {
               </div>
             </div>
           </div>
-          <nav className="bg-gray-50 dark:bg-gray-800">
-            <div className="flex flex-wrap items-center justify-between p-4 sm:pb-3 lg:px-6">
-              <div className="mb-4 flex items-center sm:mb-0">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <>
-                        <span className="sr-only">Open user menu</span>
-                        <div className="mr-2 flex items-center">
-                          <Image
-                            width={100}
-                            height={100}
-                            src="https://github.com/shadcn.png"
-                            className="mr-2 size-7 rounded-full"
-                            alt=""
-                          />
-                          <div className="text-left">
-                            <div className="text-sm font-semibold leading-none text-gray-900 dark:text-white">
-                              Personal
-                            </div>
-                          </div>
-                        </div>
-                        <HiSelector className="size-3 text-gray-500 dark:text-gray-400" />
-                      </>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <Link
-                      href="#"
-                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
-                    >
-                      <div className="text-left">
-                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                          Company
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Created August, 2014
-                        </div>
-                      </div>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
-                    >
-                      <div className="text-left">
-                        <div className="mb-0.5 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                          Personal
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">
-                          Created September, 2018
-                        </div>
-                      </div>
-                    </Link>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                <HiChevronRight className="mx-4 size-3 text-gray-500 dark:text-gray-400" />
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>modernui.com</Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
-                      {[
-                        {
-                          id: "helper-radio-4",
-                          name: "helper-radio",
-                          title: "themesberg.com",
-                          description: "Free templates and themes",
-                        },
-                        {
-                          id: "helper-radio-5",
-                          name: "helper-radio",
-                          title: "iconscale.com",
-                          description: "Open-source SVG icons",
-                        },
-                        {
-                          id: "helper-radio-6",
-                          name: "helper-radio",
-                          title: "ui.glass",
-                          description: "Glassmorphism UI framework",
-                        },
-                      ].map((item) => (
-                        <li key={item.id}>
-                          <div className="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <div className="flex h-5 items-center">
-                              <Checkbox id={item.id} name={item.name} />
-                            </div>
-                            <div className="ml-2 text-sm">
-                              <Label
-                                htmlFor={item.id}
-                                className="font-medium text-gray-900 dark:text-gray-300"
-                              >
-                                <div>{item.title}</div>
-                                <p
-                                  id={`helper-radio-text-${item.id}`}
-                                  className="text-xs font-normal text-gray-500 dark:text-gray-300"
-                                >
-                                  {item.description}
-                                </p>
-                              </Label>
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-              <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:items-center">
-                <Button className="whitespace-nowrap [&>span]:text-xs">
-                  Open app
-                </Button>
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
-                      <>
-                        <span>More&nbsp;</span>
-                        <HiSelector className="ml-1.5 size-2.5" />
-                      </>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {[
-                      {
-                        icon: (
-                          <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Create new app",
-                      },
-                      {
-                        icon: (
-                          <HiMail className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Inbox",
-                      },
-                      {
-                        icon: (
-                          <HiInformationCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "App info",
-                      },
-                      {
-                        icon: (
-                          <HiInboxIn className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
-                        ),
-                        text: "Edit app",
-                      },
-                    ].map((item, index) => (
-                      <DropdownMenuItem key={index}>
-                        {item.icon}
-                        {item.text}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-            </div>
-          </nav>
           {isNavVisible && (
             <div>
               <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
@@ -640,19 +473,10 @@ export function CollapsibleSidebarApplicationShell() {
 
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 flex h-screen bg-background pt-28 transition-transform lg:translate-x-0"
+        className="fixed left-0 top-0 z-40 flex h-screen bg-background pt-12 transition-transform lg:translate-x-0"
         aria-label="Sidenav"
       >
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
-          <Link href="#">
-            <Image
-              width={100}
-              height={100}
-              src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-              className="mb-6 h-7 pl-2"
-              alt="ModernUI Logo"
-            />
-          </Link>
           <ul className="space-y-2">
             <li>
               <Link
@@ -698,7 +522,7 @@ export function CollapsibleSidebarApplicationShell() {
         </div>
         {isSidebarOpen && (
           <div
-            className={`h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700
+            className={`h-full w-52 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           >
             <ul className="space-y-2">
@@ -707,8 +531,7 @@ export function CollapsibleSidebarApplicationShell() {
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-normal"
                 >
-                  <HiChartPie className="size-6 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  <span className="ml-3">Overview</span>
+                  <span className="ml-3">Home</span>
                 </Link>
               </li>
               <li>
@@ -718,10 +541,8 @@ export function CollapsibleSidebarApplicationShell() {
                       variant={"ghost"}
                       className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
-                      <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-
                       <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Pages
+                        Customization
                       </span>
                       <HiChevronDown className="size-6" />
                     </Button>
@@ -743,53 +564,69 @@ export function CollapsibleSidebarApplicationShell() {
                 </Collapsible>
               </li>
               <li>
+                <Text className="p-5 pb-2 text-gray-500 dark:text-gray-700">
+                  Reports
+                </Text>
                 <Collapsible>
                   <CollapsibleTrigger asChild>
                     <Button
                       variant={"ghost"}
                       className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
-                      <HiShoppingBag className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-
                       <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Sales
+                        Realtime
                       </span>
                       <HiChevronDown className="size-6" />
                     </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
-                    <ul id="dropdown-sales" className="space-y-2 py-2">
-                      {[
-                        { label: "Products" },
-                        { label: "Billing" },
-                        { label: "Invoice" },
-                      ].map((item, index) => (
-                        <li key={index}>
-                          <Link
-                            href="#"
-                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
+                    <ul id="dropdown-pages" className="space-y-2 py-2">
+                      {["Overview", "Locations", "Content", "Events"].map(
+                        (link, index) => (
+                          <li key={index}>
+                            <Link
+                              href="#"
+                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              {link}
+                            </Link>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </CollapsibleContent>
                 </Collapsible>
               </li>
               <li>
-                <Link
-                  href="#"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal"
-                >
-                  <HiInboxIn className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    Messages
-                  </span>
-                  <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-800 dark:bg-primary-200 dark:text-primary-800">
-                    6
-                  </span>
-                </Link>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant={"ghost"}
+                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                        Acquisition
+                      </span>
+                      <HiChevronDown className="size-6" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul id="dropdown-pages" className="space-y-2 py-2">
+                      {["Overview", "Locations", "Content", "Events"].map(
+                        (link, index) => (
+                          <li key={index}>
+                            <Link
+                              href="#"
+                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              {link}
+                            </Link>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
               </li>
               <li>
                 <Collapsible>
@@ -798,30 +635,57 @@ export function CollapsibleSidebarApplicationShell() {
                       variant={"ghost"}
                       className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
-                      <HiLockClosed className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
                       <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Authentication
+                        Audience
                       </span>
-
                       <HiChevronDown className="size-6" />
                     </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
-                    <ul id="dropdown-authentication" className="space-y-2 py-2">
-                      {[
-                        { label: "Sign In" },
-                        { label: "Sign Up" },
-                        { label: "Forgot Password" },
-                      ].map((item, index) => (
-                        <li key={index}>
-                          <Link
-                            href="#"
-                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
+                    <ul id="dropdown-pages" className="space-y-2 py-2">
+                      {["Overview", "Locations", "Content", "Events"].map(
+                        (link, index) => (
+                          <li key={index}>
+                            <Link
+                              href="#"
+                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              {link}
+                            </Link>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
+              </li>
+              <li>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <Button
+                      variant={"ghost"}
+                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                        Behaviour
+                      </span>
+                      <HiChevronDown className="size-6" />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul id="dropdown-pages" className="space-y-2 py-2">
+                      {["Overview", "Locations", "Content", "Events"].map(
+                        (link, index) => (
+                          <li key={index}>
+                            <Link
+                              href="#"
+                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              {link}
+                            </Link>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </CollapsibleContent>
                 </Collapsible>
@@ -830,21 +694,12 @@ export function CollapsibleSidebarApplicationShell() {
             <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
               {[
                 {
-                  icon: (
-                    <HiDocumentText className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  ),
                   label: "Docs",
                 },
                 {
-                  icon: (
-                    <HiCollection className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  ),
                   label: "Components",
                 },
                 {
-                  icon: (
-                    <HiQuestionMarkCircle className="size-6 shrink-0 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
-                  ),
                   label: "Help",
                 },
               ].map((item, index) => (
@@ -853,7 +708,6 @@ export function CollapsibleSidebarApplicationShell() {
                     href="#"
                     className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    {item.icon}
                     <span className="ml-3">{item.label}</span>
                   </Link>
                 </li>
@@ -875,18 +729,34 @@ export function CollapsibleSidebarApplicationShell() {
 
       <aside
         id="sidebar-contacts"
-        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-28 transition-transform"
+        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-12 transition-transform"
         aria-label="Sidebar"
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4">
-          <ul className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
+          <ul>
             {[
               { icon: <HiCalendar className="size-6" />, label: "Calendar" },
+              { icon: <HiLightBulb className="size-6" />, label: "Notes" },
               { icon: <HiClipboardList className="size-6" />, label: "Tasks" },
-              { icon: <HiShoppingBag className="size-6" />, label: "Products" },
-              { icon: <HiInboxIn className="size-6" />, label: "Inbox" },
+              { icon: <HiUsers className="size-6" />, label: "Users" },
+              { icon: <HiVideoCamera className="size-6" />, label: "Media" },
+              {
+                icon: <HiPresentationChartBar className="size-6" />,
+                label: "Statistics",
+              },
+              {
+                icon: <HiLocationMarker className="size-6" />,
+                label: "Locations",
+              },
+              {
+                icon: <HiDotsHorizontal className="size-6" />,
+                label: "Add new item",
+              },
             ].map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className={`${index === 4 && "mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700"}`}
+              >
                 <Link
                   href="#"
                   className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
@@ -897,18 +767,11 @@ export function CollapsibleSidebarApplicationShell() {
               </li>
             ))}
           </ul>
-          <Link
-            href="#"
-            className="flex items-center rounded-lg p-2 text-gray-500 transition duration-75 group-hover:text-white hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >
-            <HiDotsHorizontal className="size-5" />
-            <span className="sr-only">Add new item</span>
-          </Link>
         </div>
       </aside>
 
       <main
-        className={`h-auto bg-background p-4 pr-20 pt-48 ${isSidebarOpen ? "pl-72" : "pl-20"}`}
+        className={`h-auto bg-background p-4 pr-20 pt-20 ${isSidebarOpen ? "pl-72" : "pl-20"}`}
       >
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(4)].map((_, index) => (

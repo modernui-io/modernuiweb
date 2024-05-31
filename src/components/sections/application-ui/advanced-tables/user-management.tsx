@@ -2,7 +2,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { HiArrowDown, HiDotsHorizontal, HiEye } from "react-icons/hi";
+import {
+  HiArrowDown,
+  HiCog,
+  HiDotsHorizontal,
+  HiEye,
+  HiPlus,
+} from "react-icons/hi";
 
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
@@ -63,49 +69,34 @@ export function AdvancedUserManagementTable() {
                 </h5>
               </div>
               <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
-                <Button className="[&_span]:text-xs">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="mr-2 size-4"
-                    aria-hidden
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 01-.517.608 7.45 7.45 0 00-.478.198.798.798 0 01-.796-.064l-.453-.324a1.875 1.875 0 00-2.416.2l-.243.243a1.875 1.875 0 00-.2 2.416l.324.453a.798.798 0 01.064.796 7.448 7.448 0 00-.198.478.798.798 0 01-.608.517l-.55.092a1.875 1.875 0 00-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 01-.064.796l-.324.453a1.875 1.875 0 00.2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 01.796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 01.517-.608 7.52 7.52 0 00.478-.198.798.798 0 01.796.064l.453.324a1.875 1.875 0 002.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 01-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 001.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 01-.608-.517 7.507 7.507 0 00-.198-.478.798.798 0 01.064-.796l.324-.453a1.875 1.875 0 00-.2-2.416l-.243-.243a1.875 1.875 0 00-2.416-.2l-.453.324a.798.798 0 01-.796.064 7.462 7.462 0 00-.478-.198.798.798 0 01-.517-.608l-.091-.55a1.875 1.875 0 00-1.85-1.566h-.344zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
-                    />
-                  </svg>
+                <Button variant={"outline"}>
+                  <HiCog className="mr-2 size-4" />
                   Table settings
                 </Button>
               </div>
             </div>
             <div className="flex flex-col items-stretch justify-between space-y-3 py-4 md:flex-row md:items-center md:space-y-0">
               <Button>
-                <svg
-                  className="mr-2 size-3.5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden
-                >
-                  <path
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                  />
-                </svg>
+                <HiPlus className="mr-2 size-3.5" />
                 Add new user
               </Button>
               <div className="flex-col md:flex-row">
-                <Button className="w-full rounded-r-none md:w-fit">
+                <Button
+                  variant={"outline"}
+                  className="w-full rounded-r-none md:w-fit"
+                >
                   Suspend all
                 </Button>
-                <Button className="w-full rounded-none md:w-fit">
+                <Button
+                  variant={"outline"}
+                  className="w-full rounded-none md:w-fit"
+                >
                   Archive all
                 </Button>
-                <Button className="w-full rounded-l-none md:w-fit">
+                <Button
+                  variant={"outline"}
+                  className="w-full rounded-l-none md:w-fit"
+                >
                   Delete all
                 </Button>
               </div>
@@ -297,7 +288,7 @@ export function AdvancedUserManagementTable() {
                     className="whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
+                      <Switch id="promote" name="promote" checked={true} />
                       Promote
                     </div>
                   </TableCell>
@@ -1141,7 +1132,7 @@ export function AdvancedUserManagementTable() {
                     className="whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
+                      <Switch id="promote" name="promote" checked={true} />
                       Promote
                     </div>
                   </TableCell>
@@ -1495,7 +1486,7 @@ export function AdvancedUserManagementTable() {
                     className="whitespace-nowrap px-4 py-2 font-medium"
                   >
                     <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
+                      <Switch id="promote" name="promote" checked={true} />
                       Promote
                     </div>
                   </TableCell>
@@ -1895,31 +1886,22 @@ export function AdvancedUserManagementTable() {
                 <span className="font-semibold">100</span>
               </div>
             </div>
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious title="" onClick={() => onPageChange} />
-                </PaginationItem>
-                {Array.from({ length: 3 }, (_, index) => index + 1).map(
-                  (page) => (
-                    <PaginationItem key={page}>
-                      <PaginationLink
-                        isActive={currentPage === page}
-                        onClick={() => setCurrentPage(page)}
-                      >
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem>
-                  ),
-                )}
-                <PaginationItem>
-                  <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext onClick={() => onPageChange} />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
+            <div>
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <Button variant={"outline"}>
+                      <PaginationPrevious onClick={() => onPageChange} />
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button variant={"outline"}>
+                      <PaginationNext onClick={() => onPageChange} />
+                    </Button>
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
+            </div>
           </nav>
         </div>
       </div>

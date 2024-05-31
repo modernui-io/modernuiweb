@@ -281,7 +281,7 @@ export function DropdownFilterProperties() {
                 Apply
               </Button>
               <Button
-                variant={"outline"}
+                variant={"ghost"}
                 className="flex items-center rounded-lg px-5 py-2.5 text-sm font-medium"
               >
                 <Cross1Icon className="mr-1 size-3.5" />

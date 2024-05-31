@@ -17,7 +17,7 @@ export function ConfirmDeleteWithAlert() {
       </DialogTrigger>
       <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5">
         <h3 className="mb-2 text-lg font-semibold">Confirm user removal</h3>
-        <Text className="mb-4 text-gray-500 dark:text-gray-400">
+        <Text className="mb-4 text-center text-gray-500 dark:text-gray-400">
           Are you sure you want to delete this user from the ModernUI platform?
         </Text>
         <div className="mb-4 rounded-lg bg-orange-100 p-5 text-left text-orange-700 dark:bg-gray-700 dark:text-orange-300">

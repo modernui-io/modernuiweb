@@ -296,7 +296,7 @@ export const ShoppingCartDrawer = () => {
               <div className="divide-primary-200 ">
                 {totals.map((item, index) => (
                   <dl
-                    key={index}
+                    key={item.label}
                     className={`flex items-center justify-between gap-4 py-3 ${item.isBold ? "text-md font-bold" : "text-base"} ${
                       item.isGreen
                         ? "text-green-500 dark:text-green-400"

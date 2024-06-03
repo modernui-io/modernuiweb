@@ -1049,7 +1049,7 @@ const FeatureArticle = () => {
         </header>
         <div className="relative z-20 mx-auto flex max-w-screen-xl justify-between rounded bg-background px-4">
           <article className="w-full max-w-none xl:w-[828px]">
-            <div className="mb-2 flex flex-col justify-between border-y border-primary-300 py-6 lg:flex-row lg:items-center">
+            <div className="mb-2 flex flex-col justify-between border-y border-primary-300 py-4 lg:flex-row lg:items-center">
               <span className="mb-4 text-base font-normal text-muted-foreground lg:mb-0">
                 By{" "}
                 <Link
@@ -1072,7 +1072,7 @@ const FeatureArticle = () => {
                   link.isButton ? (
                     <Button
                       key={index}
-                      className="mr-2 inline-flex items-center rounded-lg border border-primary-300 bg-muted px-6 py-2 text-xs font-medium text-foreground no-underline hover:bg-primary-400 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-400"
+                      className="mr-2 inline-flex items-center rounded-lg border border-primary-300 bg-muted px-6 text-xs font-medium text-foreground no-underline hover:bg-primary-400 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-400"
                     >
                       {link.icon}
                       {link.label}
@@ -1081,7 +1081,7 @@ const FeatureArticle = () => {
                     <Link
                       key={index}
                       href={link.href ?? ""}
-                      className="mr-2 inline-flex items-center rounded-lg border border-primary-300 bg-muted px-6 py-2 text-xs font-medium text-foreground no-underline hover:bg-primary-400 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-400"
+                      className="mr-2 inline-flex items-center rounded-lg border border-primary-300 bg-muted px-6 py-2  text-xs font-medium text-foreground no-underline hover:bg-primary-400 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-400"
                     >
                       {link.icon}
                       {link.label}

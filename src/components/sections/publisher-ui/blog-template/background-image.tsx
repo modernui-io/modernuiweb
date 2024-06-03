@@ -851,7 +851,7 @@ const BlogFooter = () => {
             </div>
           ))}
         </div>
-        <hr className="my-6 border-border sm:mx-auto lg:my-8" />
+        <hr className="my-6 border-primary-300 sm:mx-auto lg:my-8" />
         <div className="text-center">
           <Link
             href="#"

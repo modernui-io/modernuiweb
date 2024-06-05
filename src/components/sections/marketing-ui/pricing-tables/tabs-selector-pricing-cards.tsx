@@ -100,7 +100,7 @@ export function TabsSelectorPricingCards() {
             {deals.map((deal) => (
               <TabsContent
                 value={deal.name}
-                key={deal.name}
+                key={`tabs-content-${deal.name}`}
                 className={"w-full self-center"}
               >
                 <Text className="mb-4 text-2xl font-medium">

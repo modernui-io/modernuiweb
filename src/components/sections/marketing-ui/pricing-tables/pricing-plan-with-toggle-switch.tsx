@@ -82,7 +82,7 @@ export function PricingPlanWithToggleSwitch() {
         </div>
         <div className="mb-4 space-y-8 md:gap-12 lg:mb-8 lg:grid lg:grid-cols-3 lg:space-y-0 xl:gap-16">
           {packages.map((data, index) => (
-            <div key={index} className="flex max-w-lg flex-col">
+            <div key={data.id} className="flex max-w-lg flex-col">
               <h3 className="font-semibold uppercase text-muted-foreground">
                 {data.name}
               </h3>
@@ -98,7 +98,10 @@ export function PricingPlanWithToggleSwitch() {
 
               <ul className="my-8 space-y-4 text-left">
                 {data.features.map((feature, index) => (
-                  <li key={index} className="flex items-center space-x-3">
+                  <li
+                    key={`${feature}-${index}`}
+                    className="flex items-center space-x-3"
+                  >
                     <FaCheckCircle className="size-4 shrink-0 text-green-500"></FaCheckCircle>
                     <Text>{feature}</Text>
                   </li>

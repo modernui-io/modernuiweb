@@ -38,7 +38,7 @@ const analysisLinks = [
   },
 ];
 
-const FeatureLists = [
+const featureListsForProPlan = [
   [
     "A/B Testing",
     "24/7 Email & Chat Support",
@@ -131,7 +131,7 @@ export function FeatureListDescriptionPricingCard() {
           </Button>
 
           <div className="justify-between space-y-4 sm:flex sm:space-y-0">
-            {FeatureLists.map((featureList, index) => (
+            {featureListsForProPlan.map((featureList, index) => (
               <ul key={index} className="space-y-4">
                 {featureList.map((feature, index) => (
                   <li key={index} className="flex space-x-2.5">

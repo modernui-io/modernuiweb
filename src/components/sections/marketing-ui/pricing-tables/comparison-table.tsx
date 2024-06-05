@@ -213,9 +213,9 @@ export function ComparisonTable() {
           </Text>
         </div>
         <div className="mb-8 grid gap-8 xl:grid-cols-3">
-          {deals.map((deal, index) => (
+          {deals.map((deal) => (
             <Card
-              key={index}
+              key={deal.name}
               className="mx-auto flex max-w-lg flex-col rounded-lg border p-6 text-center shadow dark:bg-muted"
             >
               <CardHeader className="p-0">

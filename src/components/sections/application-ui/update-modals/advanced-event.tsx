@@ -91,13 +91,10 @@ export function AdvancedUpdateEventModal() {
               <div>
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button
-                      variant={"outline"}
-                      className={cn("justify-start text-left font-normal")}
-                    >
-                      <CalendarIcon className="mr-2 size-4" />
-                      <span>Pick a date</span>
-                    </Button>
+                    <div className="relative flex items-center">
+                      <CalendarIcon className="absolute left-3 size-4" />
+                      <Input className="pl-8" placeholder="26/11/22" />
+                    </div>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
                     <Calendar mode="single" initialFocus />
@@ -410,11 +407,12 @@ export function AdvancedUpdateEventModal() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button size="lg" type="submit" className="text-sm">
+            <Button size={"lg"} type="submit" className="text-sm">
               Update event
             </Button>
             <Button
               variant={"outline"}
+              size={"lg"}
               className="border-red-600 px-5 py-2.5 hover:bg-red-600 hover:text-white"
             >
               <HiTrash className="-ml-1 mr-1 size-5" />

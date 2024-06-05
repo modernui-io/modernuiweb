@@ -52,7 +52,7 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                           <HiInformationCircle className="size-4 text-gray-400" />
                         </div>
                       </TooltipTrigger>
-                      <TooltipContent>
+                      <TooltipContent className="bg-background">
                         <Text>Showing 1-100 of 436 results</Text>
                       </TooltipContent>
                     </Tooltip>
@@ -66,7 +66,7 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                     <HiDocumentSearch className="mr-1 size-5" />
                     View SERP
                   </Link>
-                  <Button>
+                  <Button variant={"outline"}>
                     <HiUpload className="mr-2 size-4" />
                     Export
                   </Button>
@@ -97,16 +97,25 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                     </div>
 
                     <div className="hidden w-full space-x-2 space-y-2 px-2 md:space-x-0 md:space-y-0 lg:flex lg:w-auto">
-                      <Button className="border-r md:rounded-r-none">
+                      <Button
+                        variant={"outline"}
+                        className="border-r md:rounded-r-none"
+                      >
                         Positions
                       </Button>
-                      <Button className="border-x md:rounded-none md:border-l-0">
+                      <Button
+                        variant={"outline"}
+                        className="border-x md:rounded-none md:border-l-0"
+                      >
                         Estimated Traffic
                       </Button>
-                      <Button className="border-x md:rounded-none md:border-l-0">
+                      <Button
+                        variant={"outline"}
+                        className="border-x md:rounded-none md:border-l-0"
+                      >
                         Visibility
                       </Button>
-                      <Button className="md:rounded-l-none">
+                      <Button variant={"outline"} className="md:rounded-l-none">
                         All for modernui.com
                       </Button>
                     </div>
@@ -123,7 +132,7 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                   <div className="flex w-full items-center space-x-3 sm:w-auto">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button className="flex gap-2">
+                        <Button variant={"outline"} className="flex gap-2">
                           Actions <FaChevronDown className="size-3" />
                         </Button>
                       </DropdownMenuTrigger>

@@ -43,7 +43,7 @@ export function FooterWithPagination() {
             On every page&nbsp;
           </Text>
           <Select>
-            <SelectTrigger className="w-20">
+            <SelectTrigger className="w-20 border-none">
               <SelectValue placeholder="100" />
             </SelectTrigger>
             <SelectContent>

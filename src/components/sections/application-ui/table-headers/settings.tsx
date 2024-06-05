@@ -29,14 +29,14 @@ export function TableHeaderWithSettings() {
                         <HiInformationCircle className="size-4 text-gray-400" />
                       </div>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="bg-background">
                       <Text>Showing 1-100 of 436 results</Text>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </div>
               <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
-                <Button className="[&>span]:text-xs">
+                <Button variant={"outline"} className="[&>span]:text-xs">
                   <HiCog className="mr-2 size-4" />
                   Table settings
                 </Button>
@@ -48,16 +48,25 @@ export function TableHeaderWithSettings() {
                 Add more keywords
               </Button>
               <div className="w-full flex-col space-x-2 md:w-auto md:flex-row md:space-x-0">
-                <Button className="border-r md:rounded-r-none">
+                <Button
+                  variant={"outline"}
+                  className="border-r md:rounded-r-none"
+                >
                   Positions
                 </Button>
-                <Button className="border-x md:rounded-none md:border-l-0">
+                <Button
+                  variant={"outline"}
+                  className="border-x md:rounded-none md:border-l-0"
+                >
                   Estimated Traffic
                 </Button>
-                <Button className="border-x md:rounded-none md:border-l-0">
+                <Button
+                  variant={"outline"}
+                  className="border-x md:rounded-none md:border-l-0"
+                >
                   Visibility
                 </Button>
-                <Button className="md:rounded-l-none">
+                <Button variant={"outline"} className="md:rounded-l-none">
                   All for modernui.com
                 </Button>
               </div>

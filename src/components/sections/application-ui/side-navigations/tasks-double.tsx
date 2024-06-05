@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import {
   HiCalendar,
+  HiChevronRight,
   HiClipboardList,
   HiDotsHorizontal,
   HiInboxIn,
@@ -24,14 +26,20 @@ import {
 import { Label } from "~/components/ui/label";
 
 export function TasksDoubleSideNavigation() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
       <aside
         id="sidebar-contacts"
-        className="fixed right-0 top-0 z-40 h-full w-16 bg-background transition-transform sm:w-64"
+        className={`fixed right-0 top-0 z-40 flex h-full w-16 bg-background transition-transform lg:w-72 ${isSidebarOpen ? "w-72" : "w-16"}`}
         aria-label="Sidebar"
       >
-        <div className="block h-full w-16 overflow-y-auto px-3 py-4 sm:hidden">
+        <div className="block h-full w-20 overflow-y-auto px-3 py-4">
           <ul className="mb-4 space-y-2 border-b border-gray-200 pb-4 dark:border-gray-700">
             {[
               { icon: <HiCalendar className="size-6" />, label: "Calendar" },
@@ -58,7 +66,9 @@ export function TasksDoubleSideNavigation() {
             <span className="sr-only">Add new item</span>
           </Link>
         </div>
-        <div className="hidden h-full w-64 overflow-y-auto border-r border-gray-200 px-3 py-4 dark:border-gray-700 sm:block">
+        <div
+          className={`h-full w-64 overflow-y-auto border-r border-gray-200 px-3 py-4 dark:border-gray-700 lg:block ${isSidebarOpen ? "block" : "hidden"}`}
+        >
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
@@ -260,6 +270,15 @@ export function TasksDoubleSideNavigation() {
             </div>
           </div>
         </div>
+        <Button
+          variant={"ghost"}
+          className={`absolute bottom-2 inline-flex cursor-pointer rounded-full p-2 text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:hidden ${isSidebarOpen ? "right-60" : "right-20"}`}
+        >
+          <HiChevronRight
+            className={`size-6 ${!isSidebarOpen && "rotate-180"}`}
+            onClick={toggleSidebar}
+          />
+        </Button>
       </aside>
     </>
   );

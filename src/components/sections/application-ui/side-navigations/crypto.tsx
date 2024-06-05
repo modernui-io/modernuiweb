@@ -56,7 +56,7 @@ export function CryptoSideNavigation() {
               <DropdownMenuContent>
                 <div
                   id="dropdownMarketCap"
-                  className="z-10 w-48 rounded shadow dark:bg-gray-700 "
+                  className="z-10 w-48 rounded shadow"
                 >
                   <Text className="p-3 pb-1 text-sm text-gray-500 dark:text-gray-400">
                     Sort by:
@@ -444,48 +444,67 @@ export function CryptoSideNavigation() {
           <Button variant={"outline"}>View more</Button>
           <div className="mb-4 mt-5 flex items-center justify-between border-t border-gray-200 pt-5 text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">
             <h3>Trending</h3>
-            <button
-              id="dropdownTrendingButton"
-              data-dropdown-toggle="dropdownTrending"
-              type="button"
-              className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-            >
-              <HiDotsHorizontal className="size-5" />
-              <span className="sr-only">Sort crypto currency</span>
-            </button>
-            <div
-              id="dropdownTrending"
-              className="z-10 hidden w-48 rounded shadow dark:bg-gray-700 "
-            >
-              <Text className="p-3 pb-1 text-sm text-gray-500 dark:text-gray-400">
-                Sort by:
-              </Text>
-              <ul
-                className="space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownTrendingButton"
-              >
-                <li>
-                  <div className="flex items-center">
-                    <Checkbox id="checkbox-trending-1" value="" />
-                    <Label className="ml-2 text-sm font-medium">
-                      Market cap
-                    </Label>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center">
-                    <Checkbox checked id="checkbox-trending-2" value="" />
-                    <Label className="ml-2 text-sm font-medium">Price</Label>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center">
-                    <Checkbox id="checkbox-trending-3" value="" />
-                    <Label className="ml-2 text-sm font-medium">Volume</Label>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  id="dropdownMarketCapButton"
+                  data-dropdown-toggle="dropdownMarketCap"
+                  type="button"
+                  className="inline-flex rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                >
+                  <HiDotsHorizontal className="size-5" />
+                  <span className="sr-only">Sort crypto currency</span>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <div
+                  id="dropdownMarketCap"
+                  className="z-10 w-48 rounded shadow"
+                >
+                  <Text className="p-3 pb-1 text-sm text-gray-500 dark:text-gray-400">
+                    Sort by:
+                  </Text>
+                  <ul
+                    className="space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownMarketCapButton"
+                  >
+                    {[
+                      {
+                        id: "checkbox-market-1",
+                        label: "Market cap",
+                        checked: false,
+                      },
+                      {
+                        id: "checkbox-market-2",
+                        label: "Price",
+                        checked: true,
+                      },
+                      {
+                        id: "checkbox-market-3",
+                        label: "Volume",
+                        checked: false,
+                      },
+                    ].map((item, index) => (
+                      <li key={index}>
+                        <div className="flex items-center">
+                          <Checkbox
+                            id={item.id}
+                            checked={item.checked}
+                            value=""
+                          />
+                          <Label
+                            htmlFor={item.id}
+                            className="ml-2 text-sm font-medium"
+                          >
+                            {item.label}
+                          </Label>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <ul className="space-y-4 pb-4 dark:border-gray-700">
             <li>

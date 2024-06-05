@@ -41,7 +41,11 @@ export function DefaultReadSection() {
             <HiPencilAlt className="-ml-1 mr-1 size-5" />
             Edit
           </Button>
-          <Button size="lg" className="bg-red-500 [&>span]:text-sm">
+          <Button
+            size="lg"
+            variant={"destructive"}
+            className="[&>span]:text-sm"
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

@@ -103,6 +103,29 @@ const items = [
   },
 ];
 
+const details = [
+  {
+    label: "Original price",
+    value: "$10,691.00",
+    valueClass: "text-foreground",
+  },
+  {
+    label: "Savings",
+    value: "-$299.00",
+    valueClass: "text-green-500",
+  },
+  {
+    label: "Store Pickup",
+    value: "$99",
+    valueClass: "text-foreground",
+  },
+  {
+    label: "Tax",
+    value: "$799",
+    valueClass: "text-foreground",
+  },
+];
+
 const formSchema = z.object({
   voucher: z.string().optional(),
 });
@@ -264,35 +287,19 @@ export const ShoppingCartModal = () => {
           </Text>
           <div className="mt-6 space-y-4">
             <div className="space-y-2">
-              <dl className="flex items-center justify-between gap-4">
-                <dt className="text-base font-normal text-primary-500">
-                  Original price
-                </dt>
-                <dd className="text-base font-medium text-foreground">
-                  $10,691.00
-                </dd>
-              </dl>
-
-              <dl className="flex items-center justify-between gap-4">
-                <dt className="text-base font-normal text-primary-500">
-                  Savings
-                </dt>
-                <dd className="text-base font-medium text-green-500">
-                  -$299.00
-                </dd>
-              </dl>
-
-              <dl className="flex items-center justify-between gap-4">
-                <dt className="text-base font-normal text-primary-500">
-                  Store Pickup
-                </dt>
-                <dd className="text-base font-medium text-foreground">$99</dd>
-              </dl>
-
-              <dl className="flex items-center justify-between gap-4">
-                <dt className="text-base font-normal text-primary-500">Tax</dt>
-                <dd className="text-base font-medium text-foreground">$799</dd>
-              </dl>
+              {details.map((detail, index) => (
+                <dl
+                  key={index}
+                  className="flex items-center justify-between gap-4"
+                >
+                  <dt className="text-base font-normal text-primary-500">
+                    {detail.label}
+                  </dt>
+                  <dd className={`text-base font-medium ${detail.valueClass}`}>
+                    {detail.value}
+                  </dd>
+                </dl>
+              ))}
             </div>
 
             <dl className="flex items-center justify-between gap-4 border-t border-primary-200 pt-2 text-lg font-bold text-foreground">

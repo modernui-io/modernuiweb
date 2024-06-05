@@ -1,7 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaFilter } from "react-icons/fa";
-import { HiCog, HiInformationCircle, HiPlus, HiSearch } from "react-icons/hi";
+import {
+  HiChevronDown,
+  HiCog,
+  HiInformationCircle,
+  HiPlus,
+  HiSearch,
+} from "react-icons/hi";
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
@@ -61,14 +67,14 @@ export function TableHeaderWithSearchInput() {
                         <HiInformationCircle className="size-4 text-gray-400" />
                       </div>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="bg-background">
                       <Text>Showing 1-100 of 436 results</Text>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </div>
               <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
-                <Button color="gray" className="text-xs">
+                <Button className="text-xs" variant={"outline"}>
                   <HiCog className="mr-2 size-4" />
                   Table settings
                 </Button>
@@ -102,9 +108,10 @@ export function TableHeaderWithSearchInput() {
                 </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
+                    <Button variant={"outline"}>
                       <FaFilter className="mr-3 size-3" />
-                      Filter
+                      Filter options
+                      <HiChevronDown className="ml-3 size-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -141,7 +148,10 @@ export function TableHeaderWithSearchInput() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>Actions</Button>
+                    <Button variant={"outline"}>
+                      Actions
+                      <HiChevronDown className="ml-3 size-4" />
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem>By Category</DropdownMenuItem>

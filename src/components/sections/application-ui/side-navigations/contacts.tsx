@@ -21,6 +21,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
+import { Text } from "~/components/ui/custom/text";
 
 export function ContactsSideNavigation() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -198,6 +199,9 @@ export function ContactsSideNavigation() {
             </li>
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
+            <li className="pb-3">
+              <Text className="text-sm">ACTIVE CONTACTS</Text>
+            </li>
             {[
               {
                 href: "#",

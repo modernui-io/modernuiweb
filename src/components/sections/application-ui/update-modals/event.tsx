@@ -255,12 +255,13 @@ export function UpdateEventModal() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button size="lg" type="submit" className="text-sm">
+            <Button size={"lg"} type="submit" className="text-sm">
               Update event
             </Button>
             <Button
               variant={"outline"}
-              className="border-red-600 px-5 py-2.5 hover:bg-red-600 hover:text-white"
+              size={"lg"}
+              className="border-red-600 hover:bg-red-600 hover:text-white"
             >
               <HiTrash className="-ml-1 mr-1 size-5" />
               Delete

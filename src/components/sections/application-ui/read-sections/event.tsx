@@ -46,10 +46,19 @@ export function ReadEventSection() {
             <HiPencilAlt className="-ml-1 mr-1 size-5" />
             Edit
           </Button>
-          <Button color="gray" size="lg" className="[&>span]:text-sm">
+          <Button
+            color="gray"
+            size="lg"
+            className="[&>span]:text-sm"
+            variant={"outline"}
+          >
             Preview
           </Button>
-          <Button size="lg" className="bg-red-500 [&>span]:text-sm">
+          <Button
+            size="lg"
+            className="[&>span]:text-sm"
+            variant={"destructive"}
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

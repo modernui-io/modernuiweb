@@ -42,7 +42,7 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                       <HiInformationCircle className="size-4 text-gray-500" />
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-background">
                     <Text>Showing 1-10 of 6,560 results</Text>
                   </TooltipContent>
                 </Tooltip>
@@ -53,7 +53,7 @@ export function TableHeaderWithTooltipAndSelectFilters() {
                 <HiPlus className="mr-2 size-3.5" />
                 Add new product
               </Button>
-              <Button color="gray" className="flex-1 md:flex-none">
+              <Button variant={"outline"} className="flex-1 md:flex-none">
                 <HiTemplate className="mr-2 size-3" />
                 Manage Columns
               </Button>
@@ -63,7 +63,7 @@ export function TableHeaderWithTooltipAndSelectFilters() {
             <div className="mt-3 md:mt-0">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button>
+                  <Button variant={"outline"}>
                     <FaChevronDown className="mr-3 size-3" /> Actions
                   </Button>
                 </DropdownMenuTrigger>

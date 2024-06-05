@@ -92,7 +92,7 @@ export function FooterWithLanguageSelectorAndOptions() {
                 <FaSlidersH className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Settings</Text>
             </TooltipContent>
           </Tooltip>
@@ -104,7 +104,7 @@ export function FooterWithLanguageSelectorAndOptions() {
                 <FaCog className="size-4" />
               </span>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-background">
               <Text>Options</Text>
             </TooltipContent>
           </Tooltip>

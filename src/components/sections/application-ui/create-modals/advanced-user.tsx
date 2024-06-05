@@ -97,7 +97,7 @@ export function AdvancedCreateUserModal() {
       <DialogTrigger asChild>
         <Button>Create user</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg p-4 shadow sm:p-5 md:min-w-[55rem] lg:min-w-[60rem]">
+      <DialogContent className="rounded-lg p-4 shadow sm:p-5 md:min-w-[40rem]">
         <ScrollArea className="h-[40rem] overflow-hidden">
           <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 sm:mb-5">
             <h3 className="text-lg font-semibold">Add new user</h3>
@@ -303,8 +303,8 @@ export function AdvancedCreateUserModal() {
                   >
                     Upload avatar
                   </Label>
-                  <div className="w-full items-center sm:flex">
-                    <Avatar>
+                  <div className="w-full items-center gap-5 sm:flex">
+                    <Avatar className="size-20">
                       <AvatarImage
                         alt="Helene Engels"
                         src="https://github.com/shadcn.png"
@@ -313,7 +313,7 @@ export function AdvancedCreateUserModal() {
                     </Avatar>
 
                     <div className="w-full">
-                      <input
+                      <Input
                         aria-describedby="file_input_help"
                         id="file_input"
                         type="file"

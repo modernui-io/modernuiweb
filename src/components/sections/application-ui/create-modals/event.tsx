@@ -209,13 +209,14 @@ export function CreateEventModal() {
                 </Label>
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button
-                      variant={"outline"}
-                      className={cn("justify-start text-left font-normal")}
-                    >
-                      <CalendarIcon className="mr-2 size-4" />
-                      <span>Pick a date</span>
-                    </Button>
+                    <div className="relative flex items-center">
+                      <HiCalendar className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
+                      <Input
+                        placeholder="Pick a date"
+                        className="justify-start pl-8 text-left font-normal dark:border-gray-500"
+                        {...form.register("date")}
+                      />
+                    </div>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
                     <Calendar

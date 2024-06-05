@@ -34,7 +34,7 @@ export function TableHeaderWithBreadcrumb() {
         <div className="relative overflow-hidden px-4 shadow-md sm:rounded-lg">
           <div className="flex flex-col space-y-3 py-3 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
             <div>
-              <Breadcrumb>
+              <Breadcrumb className="rounded-lg border bg-gray-50 p-2 dark:bg-gray-800">
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
@@ -49,7 +49,7 @@ export function TableHeaderWithBreadcrumb() {
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
-              <h5>
+              <h5 className="pt-1">
                 <span>View list of products</span>
               </h5>
             </div>
@@ -200,7 +200,7 @@ export function TableHeaderWithBreadcrumb() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button>
-                    <FaChevronDown className="mr-3 size-3" /> Open
+                    <FaChevronDown className="mr-3 size-3" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>

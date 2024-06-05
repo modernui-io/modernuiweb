@@ -108,7 +108,7 @@ export function GridLayoutClean() {
                 {person.designation}
               </Text>
               <div className="mt-4 flex justify-center space-x-4">
-                {socialMediaLinks.map((link) => (
+                {socialMediaLinks.map((link, index) => (
                   <Link
                     key={index}
                     href={link.href}

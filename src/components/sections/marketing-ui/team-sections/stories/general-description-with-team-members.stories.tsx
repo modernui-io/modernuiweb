@@ -5,6 +5,13 @@ import { GeneralDescriptionWithTeamMembers } from "../general-description-with-t
 const meta = {
   title: "sections/Marketing UI/Team/General Description With Team Members",
   component: GeneralDescriptionWithTeamMembers,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: "3em" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof GeneralDescriptionWithTeamMembers>;
 
 export default meta;

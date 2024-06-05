@@ -88,9 +88,9 @@ export function CardWithGridLayoutCTA() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:mt-16 xl:grid-cols-4">
-          {persons.map((person, index) => (
+          {persons.map((person) => (
             <Card
-              key={index}
+              key={person.name}
               className="group relative overflow-hidden rounded-lg"
             >
               <Image

@@ -161,9 +161,9 @@ export function FourColGridSocialCTA() {
                   {person.description}
                 </Text>
                 <div className="flex items-center gap-3">
-                  {socialMediaLinks.map((link) => (
+                  {socialMediaLinks.map((link, index) => (
                     <Link
-                      key={index}
+                      key={`${index}-${link.href}`}
                       href={link.href}
                       className="text-muted-foreground hover:text-secondary-foreground/90"
                     >

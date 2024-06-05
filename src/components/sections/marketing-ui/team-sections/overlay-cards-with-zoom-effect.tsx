@@ -65,7 +65,7 @@ export function OverlayCardsWithZoomEffect() {
           <div>
             <Heading
               level={1}
-              className="tracking-tightZ mb-4 text-wrap font-bold"
+              className="mb-4 text-wrap font-bold tracking-tight"
             >
               Our people make us great
             </Heading>

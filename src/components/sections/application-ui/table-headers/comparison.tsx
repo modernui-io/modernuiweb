@@ -40,7 +40,7 @@ export function TableHeaderWithComparison() {
                       <HiInformationCircle className="size-4 text-gray-400" />
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-background">
                     <Text>
                       Selected Xbox Series S, PlayStation 5, and Xbox Series X
                     </Text>
@@ -53,7 +53,7 @@ export function TableHeaderWithComparison() {
                 <HiPlus className="mr-2 size-3.5" />
                 Add new product
               </Button>
-              <Button>
+              <Button variant={"outline"}>
                 <HiRefresh className="mr-2 size-4" />
                 Reset all
               </Button>
@@ -69,7 +69,9 @@ export function TableHeaderWithComparison() {
                 "Ratings",
               ].map((label, index) => (
                 <li key={index} className="mb-4 mr-2 lg:mr-4">
-                  <Button>{label}</Button>
+                  <Button variant={index === 2 ? "default" : "outline"}>
+                    {label}
+                  </Button>
                 </li>
               ))}
             </ul>
@@ -96,7 +98,7 @@ export function TableHeaderWithComparison() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="flex gap-2">
+                  <Button variant={"outline"} className="flex gap-2">
                     Actions <FaChevronDown className="size-3" />
                   </Button>
                 </DropdownMenuTrigger>

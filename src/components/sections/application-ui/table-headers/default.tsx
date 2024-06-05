@@ -69,8 +69,8 @@ export function DefaultTableHeader() {
               <div className="flex items-center justify-center gap-3">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
-                      <FaChevronDown className="mr-3 size-3" /> Open
+                    <Button variant={"outline"}>
+                      <FaChevronDown className="mr-3 size-3" /> Actions
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -82,9 +82,10 @@ export function DefaultTableHeader() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
+                    <Button variant={"outline"}>
                       <FaFilter className="mr-3 size-3" />
                       Filter
+                      <FaChevronDown className="ml-3 size-3" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>

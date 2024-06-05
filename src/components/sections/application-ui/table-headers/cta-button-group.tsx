@@ -13,14 +13,25 @@ export function TableHeaderWithCTAAndButtonGroup() {
               Add product
             </Button>
             <div className="w-full flex-col space-x-2 space-y-2 md:w-auto md:flex-row md:space-x-0 md:space-y-0">
-              <Button className="border-r md:rounded-r-none">Positions</Button>
-              <Button className="border-x md:rounded-none md:border-l-0">
+              <Button
+                variant={"outline"}
+                className="border-r md:rounded-r-none"
+              >
+                Positions
+              </Button>
+              <Button
+                variant={"outline"}
+                className="border-x md:rounded-none md:border-l-0"
+              >
                 Estimated Traffic
               </Button>
-              <Button className="border-x md:rounded-none md:border-l-0">
+              <Button
+                variant={"outline"}
+                className="border-x md:rounded-none md:border-l-0"
+              >
                 Visibility
               </Button>
-              <Button className="md:rounded-l-none">
+              <Button variant={"outline"} className="md:rounded-l-none">
                 All for modernui.com
               </Button>
             </div>

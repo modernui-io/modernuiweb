@@ -90,7 +90,7 @@ export function ReadProductSectionWithCarousel() {
               </dd>
             </dl>
           </div>
-          <div>
+          <div className="pl-10 lg:pl-3">
             <dl>
               <dt className="mb-2 font-semibold leading-none">Product State</dt>
               <dd className="mb-4 text-gray-500 dark:text-gray-400 sm:mb-5">
@@ -122,15 +122,19 @@ export function ReadProductSectionWithCarousel() {
             </dl>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 pl-10">
           <Button size="lg" className="[&>span]:text-sm">
             <HiPencilAlt className="-ml-1 mr-1 size-5" />
             Edit
           </Button>
-          <Button size="lg" className="[&>span]:text-sm">
+          <Button size="lg" className="[&>span]:text-sm" variant={"outline"}>
             Preview
           </Button>
-          <Button size="lg" className="bg-red-500 [&>span]:text-sm">
+          <Button
+            size="lg"
+            className="[&>span]:text-sm"
+            variant={"destructive"}
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

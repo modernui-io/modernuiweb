@@ -19,7 +19,7 @@ export function DefaultUpdateModal() {
       <DialogTrigger>
         <Button className="mx-auto">Update product</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5">
+      <DialogContent className="rounded-lg bg-background p-4 shadow sm:p-5 lg:min-w-[40rem]">
         <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 sm:mb-5">
           <h3 className="text-lg font-semibold">Update Product</h3>
         </div>
@@ -100,10 +100,14 @@ export function DefaultUpdateModal() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button size="lg" type="submit" className="text-sm">
+            <Button size={"lg"} type="submit" className="text-sm">
               Update product
             </Button>
-            <Button variant={"outline"} className="border-red-600 px-5 py-2.5">
+            <Button
+              size={"lg"}
+              variant={"outline"}
+              className="border-red-600 px-5 py-2.5"
+            >
               <HiTrash className="-ml-1 mr-1 size-5" />
               Delete
             </Button>

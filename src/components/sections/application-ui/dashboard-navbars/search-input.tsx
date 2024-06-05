@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import {
   HiBell,
+  HiChevronDown,
   HiClipboardList,
   HiCog,
   HiCurrencyDollar,
@@ -42,7 +43,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
 
   return (
     <header className="bg-background">
-      <nav className="border-gray-200 px-0 py-2.5 antialiased dark:bg-gray-900">
+      <nav className="border-gray-200 px-0 py-2.5 antialiased">
         <div className="flex w-full flex-wrap items-center justify-between">
           <div className="flex w-full items-center justify-start px-4 lg:px-6">
             <Link href="https://modernui.com" className="mr-6 flex xl:mr-8">
@@ -60,20 +61,16 @@ export function DoubleDashboardNavbarWithSearchInput() {
             <div className="w-full items-center justify-between lg:order-1 lg:ml-6 lg:flex">
               <nav className="hidden lg:block">
                 <ul className="flex gap-x-7">
-                  <Link
-                    href="#"
-                    aria-current="page"
-                    className="text-blue-600 dark:text-blue-500"
-                  >
-                    Home
-                  </Link>
                   <Link href="#">Company</Link>
                   <Link href="#">Marketplace</Link>
                   <Link href="#">Features</Link>
                   <Link href="#">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Text>Dropdown</Text>
+                        <div className="flex items-center gap-1">
+                          <Text>Dropdown</Text>
+                          <HiChevronDown className="size-4" />
+                        </div>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
                         <DropdownMenuItem>Dashboard</DropdownMenuItem>
@@ -87,7 +84,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
               <div className="flex items-center justify-end lg:order-2 lg:justify-between">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button className="px-1" variant={"ghost"}>
                       <>
                         <span className="sr-only">View notifications</span>
                         <HiBell className="size-5" />
@@ -257,7 +254,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-1">
                       <>
                         <span className="sr-only">View apps</span>
                         <HiViewGrid className="size-5" />
@@ -340,7 +337,10 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>modernui.com</Button>
+                    <Button variant={"ghost"}>
+                      modernui.com
+                      <HiChevronDown className="size-4" />
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <ul className="space-y-1 p-3 text-sm text-gray-700 dark:text-gray-200">
@@ -413,7 +413,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 <span className="ml-2 mr-4 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline"></span>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-1">
                       <span className="sr-only">Open user menu</span>
                       <Image
                         width={100}
@@ -558,7 +558,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
               </div>
             </div>
           </div>
-          <div className="mt-4 w-full dark:bg-gray-900">
+          <div className="mt-4 w-full">
             <form className="w-full px-4 lg:max-w-xl lg:px-6">
               <div className="flex">
                 <Label
@@ -569,7 +569,9 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 </Label>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>http + https</Button>
+                    <Button className="rounded-r-none" variant={"outline"}>
+                      http + https
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuContent></DropdownMenuContent>
@@ -584,15 +586,14 @@ export function DoubleDashboardNavbarWithSearchInput() {
                     placeholder="Domain or URL"
                     required
                     type="search"
-                    className="w-full rounded-r-none"
+                    className="w-full rounded-none"
                   />
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button className="rounded-none">
-                        <>
-                          <span className="hidden lg:inline">Subdomains</span>
-                          <HiOutlineAdjustments className="size-4 lg:hidden" />
-                        </>
+                      <Button className="rounded-none" variant={"outline"}>
+                        <span className="hidden lg:inline">Subdomains</span>
+                        <HiChevronDown className="hidden size-4 lg:inline" />
+                        <HiOutlineAdjustments className="size-4 lg:hidden" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
@@ -601,7 +602,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       <DropdownMenuItem>Full domain</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
-                  <Button className="rounded-l-none" type="submit">
+                  <Button className="rounded-l-none px-2" type="submit">
                     <HiSearch className="size-5" />
                     <span className="sr-only">Search</span>
                   </Button>
@@ -612,7 +613,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
               <Link href="#" className="px-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-1">
                       <>
                         Website&nbsp;
                         <span className="ml-2 text-base text-gray-500 dark:text-gray-400">
@@ -691,9 +692,6 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 </DropdownMenu>
               </Link>
               <Link href="#" className="px-4 text-sm font-medium">
-                Home
-              </Link>
-              <Link href="#" className="px-4 text-sm font-medium">
                 Company
               </Link>
               <Link href="#" className="px-4 text-sm font-medium">
@@ -705,7 +703,10 @@ export function DoubleDashboardNavbarWithSearchInput() {
               <Link href="#" className="px-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>Dropdown</Button>
+                    <Button variant={"ghost"}>
+                      Dropdown
+                      <HiChevronDown className="size-4" />
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem>Dashboard</DropdownMenuItem>

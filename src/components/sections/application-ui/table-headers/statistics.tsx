@@ -23,11 +23,11 @@ export function TableHeaderWithStatistics() {
                 <HiPlus className="-ml-1 mr-2 size-3.5" />
                 Add to keyword list
               </Button>
-              <Button color="gray">
+              <Button variant={"outline"}>
                 <HiRefresh className="mr-2 size-4" />
                 Update metrics 1/250
               </Button>
-              <Button color="gray">
+              <Button variant={"outline"}>
                 <HiUpload className="mr-2 size-4" />
                 Export
               </Button>

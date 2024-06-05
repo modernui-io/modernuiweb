@@ -528,11 +528,11 @@ export function UpdateModalAccordion() {
               </AccordionItem>
             </Accordion>
             <div className="flex items-center space-x-4 px-4 py-6">
-              <Button size="lg" type="submit" className="text-sm">
+              <Button size={"lg"} type="submit" className="text-sm">
                 Update product
               </Button>
               <Button
-                color="failure"
+                size={"lg"}
                 variant={"outline"}
                 className="border-red-600 px-5 py-2.5 hover:bg-red-600 hover:text-white"
               >

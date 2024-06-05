@@ -27,7 +27,7 @@ export function AdvancedReadUserSection() {
         <div className="mb-4 grid gap-4 px-4 sm:mb-5 sm:grid-cols-3 sm:gap-6 md:gap-12">
           <div className="sm:col-span-2">
             <div className="flex items-center space-x-4">
-              <Avatar className="size-14">
+              <Avatar className="size-16">
                 <AvatarImage
                   alt="Helene Engels"
                   src="https://github.com/shadcn.png"
@@ -243,10 +243,14 @@ export function AdvancedReadUserSection() {
             <HiPencilAlt className="-ml-1 mr-1 size-5" />
             Edit
           </Button>
-          <Button size="lg" className="[&>span]:text-sm">
+          <Button size="lg" className="[&>span]:text-sm" variant={"outline"}>
             Preview
           </Button>
-          <Button size="lg" className="bg-red-500 [&>span]:text-sm">
+          <Button
+            size="lg"
+            className="[&>span]:text-sm"
+            variant={"destructive"}
+          >
             <HiTrash className="-ml-1 mr-1.5 size-5" />
             Delete
           </Button>

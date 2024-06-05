@@ -80,12 +80,12 @@ export const CarouselSlider = () => {
                 <Image
                   src={image[0]}
                   className="block size-full rounded-lg"
-                  alt="..."
+                  alt={`image-${index}-0}`}
                 />
                 <Image
                   src={image[1]}
                   className="hidden size-full rounded-lg lg:block"
-                  alt="..."
+                  alt={`image-${index}-1}`}
                 />
               </CarouselItem>
             ))}

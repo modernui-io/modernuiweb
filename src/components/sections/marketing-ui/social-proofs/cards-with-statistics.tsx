@@ -44,7 +44,7 @@ export const CardsWithStatistics = () => {
         <div className="mb-4 space-y-4 md:mb-8 md:grid md:grid-cols-3 md:gap-4 md:space-y-0 xl:gap-16">
           {statisticsData.map((statistic, index) => (
             <Card
-              key={index}
+              key={statistic.heading}
               className="flex items-center justify-center rounded bg-muted p-6 text-center xl:p-12  "
             >
               <CardTitle>

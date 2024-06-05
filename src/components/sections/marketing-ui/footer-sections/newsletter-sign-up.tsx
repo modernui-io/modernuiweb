@@ -23,7 +23,7 @@ import Logo from "~/lib/assets/images/logo.svg";
 const languages = ["English", "German", "Spanish", "French"];
 
 const formSchema = z.object({
-  email: z.string(),
+  email: z.string().email(),
 });
 
 const locations = [
@@ -65,8 +65,8 @@ export function NewsLetterSignUp() {
     <footer className="bg-background">
       <div className="mx-auto max-w-screen-xl p-4 py-6 md:p-8 lg:p-10">
         <div className="gap-8 space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3">
-          {locations.map((location, index) => (
-            <address key={index} className="not-italic">
+          {locations.map((location) => (
+            <address key={location.name} className="not-italic">
               <Text className="mb-6 text-sm font-semibold uppercase">
                 {location.name}
               </Text>

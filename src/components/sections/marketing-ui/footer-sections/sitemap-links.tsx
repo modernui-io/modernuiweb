@@ -87,7 +87,7 @@ export function SitemapLinks() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl p-4 py-6 md:p-8 lg:p-10">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           {sections.map((section, index) => (
-            <div key={index}>
+            <div key={`${section.title}-${index}`}>
               <Text className="mb-6 text-sm font-semibold uppercase">
                 {section.title}
               </Text>
@@ -125,7 +125,7 @@ export function SitemapLinks() {
           <ul className="mt-5 flex justify-center space-x-5">
             {socialMediaLinks.map((link, index) => (
               <Link
-                key={index}
+                key={`${link.href}-${index}`}
                 href={link.href}
                 className="text-muted-foreground hover:text-tremor-content-strong dark:hover:text-dark-tremor-content-strong"
               >

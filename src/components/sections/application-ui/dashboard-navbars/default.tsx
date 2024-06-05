@@ -39,7 +39,7 @@ import { Label } from "~/components/ui/label";
 export function DefaultDashboardNavbar() {
   return (
     <header className="bg-background">
-      <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+      <nav className="px-4 py-2.5 lg:px-6">
         <div className="flex w-full flex-wrap items-center justify-between">
           <div className="flex items-center justify-start">
             <button
@@ -97,7 +97,7 @@ export function DefaultDashboardNavbar() {
               <Label htmlFor="topbar-search" className="sr-only">
                 Search
               </Label>
-              <div className="relative mt-1 lg:w-96">
+              <div className="relative mt-1 lg:w-80">
                 <div className="relative flex items-center">
                   <HiSearch className="absolute left-3 size-5 text-gray-500 dark:text-gray-400" />
                   <Input

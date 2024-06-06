@@ -67,16 +67,16 @@ const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
   description: z.string(),
-  price: z.string(),
-  category: z.enum(["EL", "AL", "PC", "GA", "PH"]),
-  weight: z.string(),
-  length: z.string(),
-  breadth: z.string(),
-  width: z.string(),
+  price: z.number().nonnegative(),
+  category: z.enum(["EL", "AL", "PC", "GA", "PH"]).default("AL"),
+  weight: z.number().nonnegative(),
+  length: z.number().nonnegative(),
+  breadth: z.number().nonnegative(),
+  width: z.number().nonnegative(),
   instore: z.boolean(),
   online: z.boolean(),
   both: z.boolean(),
-  file: z.string(),
+  file: z.instanceof(File).nullable(),
 });
 
 export function CRUDLayoutWithExpandableRows() {
@@ -86,16 +86,16 @@ export function CRUDLayoutWithExpandableRows() {
       name: "",
       brand: "",
       description: "",
-      price: "",
+      price: 0,
       category: "AL",
-      weight: "",
-      length: "",
-      breadth: "",
-      width: "",
+      weight: 0,
+      length: 0,
+      breadth: 0,
+      width: 0,
       instore: false,
       online: false,
       both: false,
-      file: "",
+      file: null,
     },
   });
 
@@ -318,7 +318,6 @@ export function CRUDLayoutWithExpandableRows() {
                           </div>
                           <div className="mr-4 flex items-center">
                             <Checkbox
-                              defaultChecked
                               id="inline-checked-checkbox"
                               {...form.register("both")}
                             />

@@ -102,11 +102,11 @@ import {
 } from "~/components/ui/tooltip";
 
 const formSchema = z.object({
-  file: z.string(),
+  file: z.instanceof(File).nullable(),
   firstName: z.string(),
   lastName: z.string(),
   email: z.string().email(),
-  permissions: z.enum(["yes", "no"]),
+  permissions: z.enum(["OP", "NOP"]),
   biography: z.string(),
   languages: z.string(),
   password: z.string(),
@@ -126,11 +126,11 @@ export function CRUDLayoutForUserManagement() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      file: "",
+      file: null,
       firstName: "",
       lastName: "",
       email: "",
-      permissions: "no",
+      permissions: "OP",
       biography: "",
       languages: "",
       password: "",
@@ -476,7 +476,7 @@ export function CRUDLayoutForUserManagement() {
                               <Switch
                                 checked={userStatus}
                                 onCheckedChange={() =>
-                                  setUserStatus(!userStatus)
+                                  setUserStatus((prevStatus) => !prevStatus)
                                 }
                                 {...form.register("status")}
                               />

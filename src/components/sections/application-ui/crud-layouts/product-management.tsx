@@ -166,7 +166,10 @@ export function CRUDLayoutForProductManagement() {
                     <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 sm:mb-5">
                       <h3 className="text-lg font-semibold">Add Product</h3>
                     </div>
-                    <Form {...form}>
+                    <Form
+                      {...form}
+                      key={form.formState.isSubmitting ? "submitting" : "idle"}
+                    >
                       <form onSubmit={form.handleSubmit(onSubmit)}>
                         <div className="mb-4 grid gap-4 sm:grid-cols-2">
                           <div>

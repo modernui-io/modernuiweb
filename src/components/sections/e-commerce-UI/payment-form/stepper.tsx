@@ -271,7 +271,7 @@ export const PaymentFormStepper = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <Button className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary-800 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-900 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-200">
+                <Button className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-background hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">
                   <Image className="size-4" src={GoogleSymbol} alt="" />
                   Google Pay
                 </Button>

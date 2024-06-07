@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,7 +21,6 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
 import {
   Popover,
   PopoverContent,
@@ -30,18 +28,6 @@ import {
 } from "~/components/ui/popover";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { Textarea } from "~/components/ui/textarea";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "~/components/ui/tooltip";
-import MasterCardDark from "~/lib/assets/images/mastercard-dark.svg";
-import MasterCard from "~/lib/assets/images/mastercard.svg";
-import PaypalDark from "~/lib/assets/images/paypal-dark.svg";
-import Paypal from "~/lib/assets/images/paypal.svg";
-import VisaDark from "~/lib/assets/images/visa-dark.svg";
-import Visa from "~/lib/assets/images/visa.svg";
 import { cn } from "~/lib/utils";
 
 const AmountIcon = () => (
@@ -76,15 +62,7 @@ const USFlag = () => (
     viewBox="0 0 20 15"
   >
     <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-    <mask
-      id="a"
-      // style="mask-type:luminance"
-      width="20"
-      height="15"
-      x="0"
-      y="0"
-      maskUnits="userSpaceOnUse"
-    >
+    <mask id="a" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
       <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
     </mask>
     <g mask="url(#a)">
@@ -195,15 +173,7 @@ const CADFlag = () => (
       strokeWidth=".5"
       rx="1.75"
     />
-    <mask
-      id="a"
-      // style="mask-type:luminance"
-      width="20"
-      height="15"
-      x="0"
-      y="0"
-      maskUnits="userSpaceOnUse"
-    >
+    <mask id="a" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
       <rect
         width="19.1"
         height="13.5"
@@ -234,15 +204,7 @@ const GBPFlag = () => (
     viewBox="0 0 20 15"
   >
     <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-    <mask
-      id="a"
-      // style="mask-type:luminance"
-      width="20"
-      height="15"
-      x="0"
-      y="0"
-      maskUnits="userSpaceOnUse"
-    >
+    <mask id="a" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
       <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
     </mask>
     <g mask="url(#a)">

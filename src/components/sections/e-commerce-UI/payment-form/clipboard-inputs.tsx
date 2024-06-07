@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import { CalendarIcon, Check, ClipboardList, Info } from "lucide-react";
+import { Check, ClipboardList } from "lucide-react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
-import { Calendar } from "~/components/ui/calendar";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 import {
@@ -19,27 +15,14 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "~/components/ui/popover";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "~/components/ui/tooltip";
-import MasterCardDark from "~/lib/assets/images/mastercard-dark.svg";
-import MasterCard from "~/lib/assets/images/mastercard.svg";
-import PaypalDark from "~/lib/assets/images/paypal-dark.svg";
-import Paypal from "~/lib/assets/images/paypal.svg";
-import VisaDark from "~/lib/assets/images/visa-dark.svg";
-import Visa from "~/lib/assets/images/visa.svg";
-import { cn } from "~/lib/utils";
 
 const formSchema = z.object({
   amount: z.string(),
@@ -50,8 +33,22 @@ const formSchema = z.object({
   bankAddress: z.string(),
 });
 
+type PaymentDetailId =
+  | "currency"
+  | "beneficiary"
+  | "accountNumber"
+  | "bic"
+  | "bankAddress"
+  | "amount";
+
+interface PaymentDetail {
+  id: PaymentDetailId;
+  label: string;
+  value: string;
+}
+
 export const PaymentFormClipboard = () => {
-  const paymentDetails = [
+  const paymentDetails: PaymentDetail[] = [
     { id: "currency", label: "Currency", value: "USD" },
     { id: "beneficiary", label: "Beneficiary", value: "mordernUiWeb LLC" },
     {
@@ -87,10 +84,19 @@ export const PaymentFormClipboard = () => {
     console.log(values);
   }
 
-  const [copied, setCopied] = useState({});
+  const fieldNames = [
+    "currency",
+    "beneficiary",
+    "accountNumber",
+    "bic",
+    "bankAddress",
+    "amount",
+  ] as const;
+
+  const [copied, setCopied] = useState({ amount: "" });
 
   const handleCopy = (id: string, value: string) => {
-    navigator.clipboard.writeText(value);
+    void navigator.clipboard.writeText(value);
     setCopied({ ...copied, [id]: true });
     setTimeout(() => setCopied({ ...copied, [id]: false }), 2000);
   };
@@ -98,9 +104,12 @@ export const PaymentFormClipboard = () => {
   return (
     <section className="bg-background py-8 antialiased  md:py-16">
       <div className="mx-auto max-w-2xl px-4 2xl:px-0">
-        <h2 className="mb-4 text-xl font-semibold sm:text-2xl md:mb-8">
+        <Heading
+          level={3}
+          className="mb-4 font-semibold tracking-normal md:mb-8"
+        >
           Payment details
-        </h2>
+        </Heading>
         <Form {...form}>
           <form className="mx-auto space-y-6">
             <div className="space-y-4">
@@ -132,7 +141,7 @@ export const PaymentFormClipboard = () => {
                             }}
                             className="absolute end-2 top-1/2 -translate-y-1/2 bg-transparent px-1 shadow-none hover:bg-primary-300"
                           >
-                            {(copied as any).amount ? (
+                            {copied.amount ? (
                               <Check className="size-4 text-primary-700" />
                             ) : (
                               <ClipboardList className="size-4 text-primary-500" />
@@ -140,21 +149,16 @@ export const PaymentFormClipboard = () => {
                           </Button>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>
-                            {(copied as any).amount
-                              ? "Copied!"
-                              : "Copy to clipboard"}
-                          </p>
+                          <Text>
+                            {copied.amount ? "Copied!" : "Copy to clipboard"}
+                          </Text>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
                   </div>
                 </div>
                 <div className="flex w-full items-center space-x-4">
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-center rounded-lg border border-primary-200 bg-white px-5 py-2.5 text-sm font-medium text-primary-900 hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-100"
-                  >
+                  <Button className="flex w-full items-center justify-center rounded-lg border border-primary-200 bg-background px-5 py-2.5 text-sm font-medium text-primary-900 hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-100">
                     <svg
                       className="-ms-2 me-2 size-5"
                       aria-hidden="true"
@@ -173,11 +177,8 @@ export const PaymentFormClipboard = () => {
                       />
                     </svg>
                     Download CSV
-                  </button>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-center rounded-lg border border-primary-200 bg-white px-5 py-2.5 text-sm font-medium text-primary-900 hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-100"
-                  >
+                  </Button>
+                  <Button className="flex w-full items-center justify-center rounded-lg border border-primary-200 bg-background px-5 py-2.5 text-sm font-medium text-primary-900 hover:bg-primary-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-100">
                     <svg
                       className="-ms-2 me-2 size-5"
                       aria-hidden="true"
@@ -196,15 +197,15 @@ export const PaymentFormClipboard = () => {
                       />
                     </svg>
                     Download PDF
-                  </button>
+                  </Button>
                 </div>
               </div>
 
-              {paymentDetails.map(({ id, label }) => (
+              {paymentDetails.map(({ id, label }, index) => (
                 <div key={id} className="relative">
                   <FormField
                     control={form.control}
-                    name={id as any}
+                    name={id}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel htmlFor="card-number-Input">
@@ -255,13 +256,10 @@ export const PaymentFormClipboard = () => {
                 </div>
               ))}
             </div>
-            <button
-              type="button"
-              className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300"
-            >
+            <Button className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-background hover:bg-primary-500 focus:outline-none focus:ring-4  focus:ring-primary-300">
               Confirm payment
-            </button>
-            <p className="mt-6 text-center text-base font-normal text-primary-500  sm:mt-8 lg:text-left">
+            </Button>
+            <Text className="mt-6 text-center text-base font-normal text-primary-500  sm:mt-8 lg:text-left">
               Payment processed by{" "}
               <Link
                 href="#"
@@ -279,7 +277,7 @@ export const PaymentFormClipboard = () => {
                 mordernUiWeb LLC
               </Link>{" "}
               - United States Of America
-            </p>
+            </Text>
           </form>
         </Form>
       </div>

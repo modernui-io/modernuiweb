@@ -44,8 +44,6 @@ import MasterCardDark from "~/lib/assets/images/mastercard-dark.svg";
 import MasterCard from "~/lib/assets/images/mastercard.svg";
 import PaypalDark from "~/lib/assets/images/paypal-dark.svg";
 import Paypal from "~/lib/assets/images/paypal.svg";
-import VisaDark from "~/lib/assets/images/visa-dark.svg";
-import Visa from "~/lib/assets/images/visa.svg";
 import { cn } from "~/lib/utils";
 
 const formSchema = z.object({

@@ -81,7 +81,7 @@ export function TableHeaderWithTabs() {
                     {
                       icon: <FaClipboard className="mr-2 size-3" />,
                       text: "Works",
-                      active: FaTruckField,
+                      active: true,
                     },
                     {
                       icon: <FaCreditCard className="mr-2 size-3" />,

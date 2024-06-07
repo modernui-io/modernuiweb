@@ -124,6 +124,7 @@ export function CollapsibleSidebarApplicationShell() {
                   className="px-2 lg:hidden"
                   variant={"ghost"}
                   onClick={toggleSidebar}
+                  aria-label="Toggle sidebar"
                 >
                   <span className="sr-only">Open menu</span>
                   <HiSearch className="size-6" />
@@ -519,8 +520,8 @@ export function CollapsibleSidebarApplicationShell() {
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <ul id="dropdown-pages" className="space-y-2 py-2">
-                    {["Settings", "Kanban", "Calendar"].map((link, index) => (
-                      <li key={index}>
+                    {["Settings", "Kanban", "Calendar"].map((link) => (
+                      <li key={link}>
                         <Link
                           href="#"
                           className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"

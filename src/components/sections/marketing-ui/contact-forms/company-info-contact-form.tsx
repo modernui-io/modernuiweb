@@ -164,6 +164,7 @@ export function CompanyInfoContactForm() {
             <form
               className="mx-auto grid max-w-screen-md grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2"
               onSubmit={form.handleSubmit(onSubmit)}
+              noValidate
             >
               <FormField
                 control={form.control}

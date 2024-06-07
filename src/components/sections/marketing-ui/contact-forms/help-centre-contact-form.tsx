@@ -275,6 +275,7 @@ export function HelpCentreContactForm() {
               <form
                 className="space-y-8"
                 onSubmit={form.handleSubmit(onSubmit)}
+                noValidate
               >
                 <FormField
                   control={form.control}

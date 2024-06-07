@@ -54,7 +54,11 @@ export function DefaultContactForm() {
           </Text>
         </div>
         <Form {...form}>
-          <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+          <form
+            className="space-y-8"
+            onSubmit={form.handleSubmit(onSubmit)}
+            noValidate
+          >
             <FormField
               control={form.control}
               name="email"

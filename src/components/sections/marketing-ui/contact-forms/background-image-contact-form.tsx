@@ -107,6 +107,7 @@ export function BackgroundImageContactForm() {
           <form
             className="mx-auto mb-16 grid max-w-screen-md grid-cols-1 gap-8 rounded-lg border bg-background p-6 shadow-sm dark:bg-muted md:grid-cols-2 lg:mb-28"
             onSubmit={form.handleSubmit(onSubmit)}
+            noValidate
           >
             <FormField
               control={form.control}

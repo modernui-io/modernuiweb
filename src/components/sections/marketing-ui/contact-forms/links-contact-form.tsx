@@ -127,6 +127,7 @@ export function LinkContactForm() {
           <form
             className="mx-auto grid max-w-screen-md grid-cols-1 gap-8 sm:grid-cols-2"
             onSubmit={form.handleSubmit(onSubmit)}
+            noValidate
           >
             <FormField
               control={form.control}

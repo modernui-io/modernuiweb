@@ -123,17 +123,16 @@ export function DefaultDashboardNavbar() {
               id="toggleSidebarMobileSearch"
               type="button"
               variant={"ghost"}
+              className="px-2 lg:hidden"
             >
               <span className="sr-only">Search</span>
               <HiSearch className="size-4" />
             </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant={"ghost"}>
-                  <>
-                    <span className="sr-only">View notifications</span>
-                    <HiBell className="size-5" />
-                  </>
+                <Button variant={"ghost"} className="px-2">
+                  <span className="sr-only">View notifications</span>
+                  <HiBell className="size-5" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -297,11 +296,9 @@ export function DefaultDashboardNavbar() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant={"ghost"}>
-                  <>
-                    <span className="sr-only">View apps</span>
-                    <HiViewGrid className="size-5" />
-                  </>
+                <Button variant={"ghost"} className="px-2">
+                  <span className="sr-only">View apps</span>
+                  <HiViewGrid className="size-5" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -381,17 +378,15 @@ export function DefaultDashboardNavbar() {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant={"ghost"}>
-                  <>
-                    <span className="sr-only">Open user menu</span>
-                    <Image
-                      width={100}
-                      height={100}
-                      className="size-8 rounded-full"
-                      src="https://github.com/shadcn.png"
-                      alt=""
-                    />
-                  </>
+                <Button variant={"ghost"} className="pl-2 pr-0">
+                  <span className="sr-only">Open user menu</span>
+                  <Image
+                    width={100}
+                    height={100}
+                    className="size-7 rounded-full"
+                    src="https://github.com/shadcn.png"
+                    alt=""
+                  />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>

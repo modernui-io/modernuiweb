@@ -15,27 +15,22 @@ import {
   HiCollection,
   HiCurrencyDollar,
   HiDocumentText,
-  HiDotsHorizontal,
   HiEye,
   HiHeart,
   HiInbox,
   HiInboxIn,
-  HiInformationCircle,
   HiLightBulb,
   HiLightningBolt,
   HiLocationMarker,
   HiLockClosed,
   HiLogout,
-  HiMail,
   HiMenuAlt2,
   HiOutlineAdjustments,
   HiOutlineChatAlt,
   HiPlus,
-  HiPlusCircle,
   HiPresentationChartBar,
   HiQuestionMarkCircle,
   HiSearch,
-  HiSelector,
   HiShoppingBag,
   HiUserAdd,
   HiUserCircle,
@@ -46,7 +41,6 @@ import {
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
-import { Checkbox } from "~/components/ui/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
@@ -96,6 +90,14 @@ export function DoubleSidebarApplicationShell() {
           <div className="border-gray-200 px-4 py-2.5 lg:px-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-start">
+                <Button
+                  className="pl-1 lg:hidden"
+                  variant={"ghost"}
+                  onClick={() => setIsNavVisible(!isNavVisible)}
+                >
+                  <span className="sr-only">Open menu</span>
+                  <HiMenuAlt2 className="size-6" />
+                </Button>
                 <Link href="https://modernui.com" className="mr-6 flex">
                   <Image
                     width={100}
@@ -132,7 +134,7 @@ export function DoubleSidebarApplicationShell() {
               <div className="flex items-center justify-between lg:order-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-2">
                       <span className="sr-only">View notifications</span>
                       <HiBell className="size-5" />
                     </Button>
@@ -300,7 +302,7 @@ export function DoubleSidebarApplicationShell() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-2">
                       <span className="sr-only">View apps</span>
                       <HiViewGrid className="size-5" />
                     </Button>
@@ -381,12 +383,12 @@ export function DoubleSidebarApplicationShell() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="pl-2 pr-0">
                       <span className="sr-only">Open user menu</span>
                       <Image
                         width={100}
                         height={100}
-                        className="size-8 rounded-full"
+                        className="size-7 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
                       />
@@ -435,51 +437,15 @@ export function DoubleSidebarApplicationShell() {
                     </ul>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button
-                  className="lg:hidden"
-                  variant={"ghost"}
-                  onClick={() => setIsNavVisible(!isNavVisible)}
-                >
-                  <span className="sr-only">Open menu</span>
-                  <HiMenuAlt2 className="size-6" />
-                </Button>
               </div>
             </div>
           </div>
-
-          {isNavVisible && (
-            <div>
-              <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-                {[
-                  { label: "Home", href: "#" },
-                  { label: "Company", href: "#" },
-                  { label: "Team", href: "#" },
-                  { label: "Features", href: "#" },
-                  { label: "Marketplace", href: "#" },
-                  { label: "Resources", href: "#" },
-                  { label: "Forum", href: "#" },
-                  { label: "Support", href: "#" },
-                ].map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                    >
-                      <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                        {item.label}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </div>
-            </div>
-          )}
         </nav>
       </header>
 
       <aside
         id="sidebar-contacts"
-        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-12 transition-transform"
+        className="fixed right-0 top-0 z-40 hidden h-full w-16 border-l bg-background pt-12 transition-transform md:block"
         aria-label="Sidebar"
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4">
@@ -522,7 +488,9 @@ export function DoubleSidebarApplicationShell() {
 
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 h-screen w-64 border-r bg-background pt-12 transition-transform md:translate-x-0"
+        className={`fixed left-0 top-0 z-40 h-screen w-64 border-r bg-background pt-12 lg:block
+        ${isNavVisible ? "block" : "hidden"}
+        `}
         aria-label="Sidenav"
       >
         <div className="h-full overflow-y-auto border-gray-200 bg-white px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
@@ -687,7 +655,7 @@ export function DoubleSidebarApplicationShell() {
             ))}
           </ul>
         </div>
-        <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 md:flex">
+        <div className="absolute bottom-0 left-0 z-20 hidden w-full justify-center space-x-4 border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 lg:flex">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -749,12 +717,13 @@ export function DoubleSidebarApplicationShell() {
           </DropdownMenu>
         </div>
       </aside>
-      <main className="mr-16 h-auto bg-background p-4 pt-20 md:ml-64">
+
+      <main className="mr-0 h-auto bg-background p-4 pt-20 md:mr-16 lg:ml-64">
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <div
               key={index}
-              className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-64"
+              className="h-32 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-64"
             ></div>
           ))}
         </div>
@@ -763,7 +732,7 @@ export function DoubleSidebarApplicationShell() {
           {[...Array(4)].map((_, index) => (
             <div
               key={index}
-              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"
+              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-72"
             ></div>
           ))}
         </div>
@@ -772,7 +741,7 @@ export function DoubleSidebarApplicationShell() {
           {[...Array(4)].map((_, index) => (
             <div
               key={index}
-              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 md:h-72"
+              className="h-48 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 lg:h-72"
             ></div>
           ))}
         </div>

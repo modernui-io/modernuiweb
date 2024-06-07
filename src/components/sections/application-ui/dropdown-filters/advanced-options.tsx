@@ -4,7 +4,6 @@ import { FaChevronDown } from "react-icons/fa";
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
-import { Checkbox } from "~/components/ui/checkbox";
 import { Text } from "~/components/ui/custom/text";
 import {
   DropdownMenu,

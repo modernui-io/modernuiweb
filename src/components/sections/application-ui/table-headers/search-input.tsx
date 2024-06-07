@@ -114,28 +114,18 @@ export function TableHeaderWithSearchInput() {
                       <HiChevronDown className="ml-3 size-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-60 p-3">
                     <span className="mb-3 text-sm font-medium">Category</span>
                     <ul className="space-y-2 pt-2">
                       {[
-                        { id: "apple", name: "apple", label: "Apple (56)" },
-                        { id: "fitbit", name: "fitbit", label: "Fitbit (56)" },
-                        { id: "dell", name: "dell", label: "Dell (56)" },
-                        {
-                          id: "asus",
-                          name: "asus",
-                          label: "Asus (97)",
-                          defaultChecked: true,
-                        },
+                        { name: "apple", label: "Apple (56)" },
+                        { name: "fitbit", label: "Microsoft (16)" },
+                        { name: "razor", label: "Razor (49)" },
                       ].map((checkbox, index) => (
                         <li key={index} className="flex items-center">
-                          <Checkbox
-                            id={checkbox.id}
-                            name={checkbox.name}
-                            defaultChecked={checkbox.defaultChecked}
-                          />
+                          <Checkbox id={checkbox.name} name={checkbox.name} />
                           <Label
-                            htmlFor={checkbox.id}
+                            htmlFor={checkbox.name}
                             className="ml-2 text-sm font-medium"
                           >
                             {checkbox.label}

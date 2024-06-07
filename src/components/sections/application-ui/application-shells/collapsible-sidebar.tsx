@@ -9,14 +9,11 @@ import {
   HiCalendar,
   HiChartPie,
   HiChevronDown,
-  HiChevronLeft,
   HiChevronRight,
   HiClipboardList,
   HiCog,
   HiCollection,
   HiCurrencyDollar,
-  HiDocumentText,
-  HiDotsHorizontal,
   HiEye,
   HiHeart,
   HiHome,
@@ -27,10 +24,9 @@ import {
   HiLocationMarker,
   HiLockClosed,
   HiLogout,
-  HiMenuAlt2,
   HiOutlineChatAlt,
+  HiPlus,
   HiPresentationChartBar,
-  HiQuestionMarkCircle,
   HiSearch,
   HiShoppingBag,
   HiUser,
@@ -64,8 +60,7 @@ const formSchema = z.object({
 });
 
 export function CollapsibleSidebarApplicationShell() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -125,9 +120,17 @@ export function CollapsibleSidebarApplicationShell() {
                 </form>
               </div>
               <div className="flex items-center justify-between">
+                <Button
+                  className="px-2 lg:hidden"
+                  variant={"ghost"}
+                  onClick={toggleSidebar}
+                >
+                  <span className="sr-only">Open menu</span>
+                  <HiSearch className="size-6" />
+                </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-2">
                       <span className="sr-only">View notifications</span>
                       <HiBell className="size-5" />
                     </Button>
@@ -295,7 +298,7 @@ export function CollapsibleSidebarApplicationShell() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-2">
                       <span className="sr-only">View apps</span>
                       <HiViewGrid className="size-5" />
                     </Button>
@@ -376,12 +379,12 @@ export function CollapsibleSidebarApplicationShell() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="pl-2 pr-0">
                       <span className="sr-only">Open user menu</span>
                       <Image
                         width={100}
                         height={100}
-                        className="size-8 rounded-full"
+                        className="size-7 rounded-full"
                         src="https://github.com/shadcn.png"
                         alt=""
                       />
@@ -430,50 +433,17 @@ export function CollapsibleSidebarApplicationShell() {
                     </ul>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button
-                  className="lg:hidden"
-                  variant={"ghost"}
-                  onClick={() => setIsNavVisible(!isNavVisible)}
-                >
-                  <span className="sr-only">Open menu</span>
-                  <HiMenuAlt2 className="size-6" />
-                </Button>
               </div>
             </div>
           </div>
-          {isNavVisible && (
-            <div>
-              <div className="flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:flex-row [&_li]:w-full lg:[&_li]:w-auto">
-                {[
-                  { label: "Home", href: "#" },
-                  { label: "Company", href: "#" },
-                  { label: "Team", href: "#" },
-                  { label: "Features", href: "#" },
-                  { label: "Marketplace", href: "#" },
-                  { label: "Resources", href: "#" },
-                  { label: "Forum", href: "#" },
-                  { label: "Support", href: "#" },
-                ].map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
-                    >
-                      <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
-                        {item.label}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </div>
-            </div>
-          )}
         </nav>
       </header>
 
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 flex h-screen bg-background pt-12 transition-transform lg:translate-x-0"
+        className={`fixed left-0 top-0 z-40 h-screen bg-background pt-12 transition-transform lg:flex
+        ${isSidebarOpen ? "flex" : "hidden"}
+        `}
         aria-label="Sidenav"
       >
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
@@ -520,36 +490,69 @@ export function CollapsibleSidebarApplicationShell() {
             </li>
           </ul>
         </div>
-        {isSidebarOpen && (
-          <div
-            className={`h-full w-52 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700
-            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
-          >
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal"
-                >
-                  <span className="ml-3">Home</span>
-                </Link>
-              </li>
-              <li>
-                <Collapsible>
-                  <CollapsibleTrigger asChild>
-                    <Button
-                      variant={"ghost"}
-                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Customization
-                      </span>
-                      <HiChevronDown className="size-6" />
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ul id="dropdown-pages" className="space-y-2 py-2">
-                      {["Settings", "Kanban", "Calendar"].map((link, index) => (
+        <div
+          className={`h-full w-52 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700 lg:block
+          ${isSidebarOpen ? "block" : "hidden"}
+          `}
+        >
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href="#"
+                className="group flex items-center rounded-lg p-2 text-base font-normal"
+              >
+                <span className="ml-3">Home</span>
+              </Link>
+            </li>
+            <li>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                      Customization
+                    </span>
+                    <HiChevronDown className="size-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul id="dropdown-pages" className="space-y-2 py-2">
+                    {["Settings", "Kanban", "Calendar"].map((link, index) => (
+                      <li key={index}>
+                        <Link
+                          href="#"
+                          className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {link}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+            <li>
+              <Text className="p-5 pb-2 text-gray-500 dark:text-gray-700">
+                Reports
+              </Text>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                      Realtime
+                    </span>
+                    <HiChevronDown className="size-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul id="dropdown-pages" className="space-y-2 py-2">
+                    {["Overview", "Locations", "Content", "Events"].map(
+                      (link, index) => (
                         <li key={index}>
                           <Link
                             href="#"
@@ -558,182 +561,138 @@ export function CollapsibleSidebarApplicationShell() {
                             {link}
                           </Link>
                         </li>
-                      ))}
-                    </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
-              <li>
-                <Text className="p-5 pb-2 text-gray-500 dark:text-gray-700">
-                  Reports
-                </Text>
-                <Collapsible>
-                  <CollapsibleTrigger asChild>
-                    <Button
-                      variant={"ghost"}
-                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Realtime
-                      </span>
-                      <HiChevronDown className="size-6" />
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ul id="dropdown-pages" className="space-y-2 py-2">
-                      {["Overview", "Locations", "Content", "Events"].map(
-                        (link, index) => (
-                          <li key={index}>
-                            <Link
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                              {link}
-                            </Link>
-                          </li>
-                        ),
-                      )}
-                    </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
-              <li>
-                <Collapsible>
-                  <CollapsibleTrigger asChild>
-                    <Button
-                      variant={"ghost"}
-                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Acquisition
-                      </span>
-                      <HiChevronDown className="size-6" />
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ul id="dropdown-pages" className="space-y-2 py-2">
-                      {["Overview", "Locations", "Content", "Events"].map(
-                        (link, index) => (
-                          <li key={index}>
-                            <Link
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                              {link}
-                            </Link>
-                          </li>
-                        ),
-                      )}
-                    </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
-              <li>
-                <Collapsible>
-                  <CollapsibleTrigger asChild>
-                    <Button
-                      variant={"ghost"}
-                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Audience
-                      </span>
-                      <HiChevronDown className="size-6" />
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ul id="dropdown-pages" className="space-y-2 py-2">
-                      {["Overview", "Locations", "Content", "Events"].map(
-                        (link, index) => (
-                          <li key={index}>
-                            <Link
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                              {link}
-                            </Link>
-                          </li>
-                        ),
-                      )}
-                    </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
-              <li>
-                <Collapsible>
-                  <CollapsibleTrigger asChild>
-                    <Button
-                      variant={"ghost"}
-                      className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <span className="ml-3 flex-1 whitespace-nowrap text-left">
-                        Behaviour
-                      </span>
-                      <HiChevronDown className="size-6" />
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ul id="dropdown-pages" className="space-y-2 py-2">
-                      {["Overview", "Locations", "Content", "Events"].map(
-                        (link, index) => (
-                          <li key={index}>
-                            <Link
-                              href="#"
-                              className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                              {link}
-                            </Link>
-                          </li>
-                        ),
-                      )}
-                    </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
-            </ul>
-            <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
-              {[
-                {
-                  label: "Docs",
-                },
-                {
-                  label: "Components",
-                },
-                {
-                  label: "Help",
-                },
-              ].map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href="#"
-                    className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      ),
+                    )}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+            <li>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    <span className="ml-3">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <Button
-          variant={"ghost"}
-          className="absolute bottom-2 left-20 inline-flex cursor-pointer rounded-full p-2 text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >
-          <HiChevronLeft
-            className={`size-6 ${!isSidebarOpen && "rotate-180"}`}
-            onClick={toggleSidebar}
-          />
-        </Button>
+                    <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                      Acquisition
+                    </span>
+                    <HiChevronDown className="size-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul id="dropdown-pages" className="space-y-2 py-2">
+                    {["Overview", "Locations", "Content", "Events"].map(
+                      (link, index) => (
+                        <li key={index}>
+                          <Link
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {link}
+                          </Link>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+            <li>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                      Audience
+                    </span>
+                    <HiChevronDown className="size-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul id="dropdown-pages" className="space-y-2 py-2">
+                    {["Overview", "Locations", "Content", "Events"].map(
+                      (link, index) => (
+                        <li key={index}>
+                          <Link
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {link}
+                          </Link>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+            <li>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="group flex w-full items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="ml-3 flex-1 whitespace-nowrap text-left">
+                      Behaviour
+                    </span>
+                    <HiChevronDown className="size-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <ul id="dropdown-pages" className="space-y-2 py-2">
+                    {["Overview", "Locations", "Content", "Events"].map(
+                      (link, index) => (
+                        <li key={index}>
+                          <Link
+                            href="#"
+                            className="group flex w-full items-center rounded-lg p-2 pl-11 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          >
+                            {link}
+                          </Link>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+          </ul>
+          <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
+            {[
+              {
+                label: "Docs",
+              },
+              {
+                label: "Components",
+              },
+              {
+                label: "Help",
+              },
+            ].map((item, index) => (
+              <li key={index}>
+                <Link
+                  href="#"
+                  className="group flex items-center rounded-lg p-2 text-base font-normal transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  <span className="ml-3">{item.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </aside>
 
       <aside
         id="sidebar-contacts"
-        className="fixed right-0 top-0 z-40 h-full w-16 border-l bg-background pt-12 transition-transform"
+        className="fixed right-0 top-0 z-40 hidden h-full w-16 border-l bg-background pt-12 transition-transform lg:block"
         aria-label="Sidebar"
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4">
-          <ul>
+          <ul className="flex flex-col gap-3">
             {[
               { icon: <HiCalendar className="size-6" />, label: "Calendar" },
               { icon: <HiLightBulb className="size-6" />, label: "Notes" },
@@ -749,7 +708,7 @@ export function CollapsibleSidebarApplicationShell() {
                 label: "Locations",
               },
               {
-                icon: <HiDotsHorizontal className="size-6" />,
+                icon: <HiPlus className="size-6" />,
                 label: "Add new item",
               },
             ].map((item, index) => (
@@ -770,9 +729,7 @@ export function CollapsibleSidebarApplicationShell() {
         </div>
       </aside>
 
-      <main
-        className={`h-auto bg-background p-4 pr-20 pt-20 ${isSidebarOpen ? "pl-72" : "pl-20"}`}
-      >
+      <main className={"h-auto bg-background p-4 pt-20 lg:pl-72 lg:pr-20"}>
         <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(4)].map((_, index) => (
             <div

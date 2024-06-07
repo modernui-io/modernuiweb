@@ -43,7 +43,7 @@ export function DoubleSideNavigation() {
               width={100}
               height={100}
               src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4"
-              className="mb-6 h-7 pl-2"
+              className="mb-6 h-7 px-1"
               alt="ModernUI Logo"
             />
           </Link>

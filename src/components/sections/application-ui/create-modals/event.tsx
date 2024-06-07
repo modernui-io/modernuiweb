@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CalendarIcon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
 import {
   HiArrowsExpand,

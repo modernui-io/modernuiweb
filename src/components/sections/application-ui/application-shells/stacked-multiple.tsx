@@ -7,29 +7,21 @@ import { useForm } from "react-hook-form";
 import {
   HiBell,
   HiChevronRight,
-  HiClipboardList,
-  HiCog,
   HiCollection,
-  HiCurrencyDollar,
   HiEye,
   HiHeart,
   HiInbox,
   HiInboxIn,
   HiInformationCircle,
   HiLightningBolt,
-  HiLogout,
   HiMail,
   HiMenu,
   HiOutlineChatAlt,
   HiPlusCircle,
   HiSearch,
   HiSelector,
-  HiShoppingBag,
   HiUserAdd,
-  HiUserCircle,
-  HiUsers,
   HiVideoCamera,
-  HiViewGrid,
 } from "react-icons/hi";
 import { z } from "zod";
 
@@ -108,7 +100,7 @@ export function StackedMultipleApplicationShell() {
               <div className="flex items-center justify-between lg:order-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-1">
                       <span className="sr-only">View notifications</span>
                       <HiBell className="size-5" />
                     </Button>
@@ -503,24 +495,25 @@ export function StackedMultipleApplicationShell() {
               className={`${isNavVisible ? "flex" : "hidden"} flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 md:flex-row lg:flex`}
             >
               {[
-                { label: "Home", href: "#" },
-                { label: "Company", href: "#" },
-                { label: "Team", href: "#" },
-                { label: "Features", href: "#" },
-                { label: "Marketplace", href: "#" },
-                { label: "Resources", href: "#" },
-                { label: "Forum", href: "#" },
-                { label: "Support", href: "#" },
+                { label: "Overview", active: false },
+                { label: "Resources", active: true },
+                { label: "Deploy", active: false },
+                { label: "Metrics", active: false },
+                { label: "Activity", active: false },
+                { label: "Access", active: false },
+                { label: "Settings", active: false },
               ].map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
+                  <Link
+                    href="#"
                     className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
                   >
-                    <span className="block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500">
+                    <span
+                      className={`block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500 ${item.active ? "border-gray-700 text-gray-700 dark:border-primary-500 dark:text-primary-500" : ""}`}
+                    >
                       {item.label}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { HiCloudUpload, HiTrash, HiUpload } from "react-icons/hi";
+import { HiCloudUpload, HiTrash } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";

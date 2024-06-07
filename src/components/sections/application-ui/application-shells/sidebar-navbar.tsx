@@ -84,7 +84,7 @@ export function SidebarNavbarApplicationShell() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full">
+      <header className="fixed top-0 z-50 w-full border-b bg-background">
         <nav className="px-4 py-2.5 dark:bg-gray-800 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
@@ -133,7 +133,7 @@ export function SidebarNavbarApplicationShell() {
             <div className="flex items-center gap-x-2 lg:order-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="px-2">
                     <span className="sr-only">View notifications</span>
                     <HiBell className="size-5" />
                   </Button>
@@ -301,7 +301,7 @@ export function SidebarNavbarApplicationShell() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="px-2">
                     <span className="sr-only">View apps</span>
                     <HiViewGrid className="size-5" />
                   </Button>
@@ -382,12 +382,12 @@ export function SidebarNavbarApplicationShell() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="pl-2 pr-0">
                     <span className="sr-only">Open user menu</span>
                     <Image
                       width={100}
                       height={100}
-                      className="size-8 rounded-full"
+                      className="size-7 rounded-full"
                       src="https://github.com/shadcn.png"
                       alt=""
                     />

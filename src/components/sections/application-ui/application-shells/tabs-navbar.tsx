@@ -74,7 +74,7 @@ export function TabsNavbarApplicationShell() {
   return (
     <>
       <header className="fixed top-0 z-50 w-full bg-background">
-        <nav className="border-b px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+        <nav className="border-b px-4 py-2.5 lg:px-6">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
               <Button
@@ -122,7 +122,7 @@ export function TabsNavbarApplicationShell() {
             <div className="flex items-center gap-x-2 lg:order-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="px-2">
                     <span className="sr-only">View notifications</span>
                     <HiBell className="size-5" />
                   </Button>
@@ -290,7 +290,7 @@ export function TabsNavbarApplicationShell() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="px-2">
                     <span className="sr-only">View apps</span>
                     <HiViewGrid className="size-5" />
                   </Button>
@@ -371,12 +371,12 @@ export function TabsNavbarApplicationShell() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
+                  <Button variant={"ghost"} className="pl-2 pr-0">
                     <span className="sr-only">Open user menu</span>
                     <Image
                       width={100}
                       height={100}
-                      className="size-8 rounded-full"
+                      className="size-7 rounded-full"
                       src="https://github.com/shadcn.png"
                       alt=""
                     />
@@ -429,7 +429,7 @@ export function TabsNavbarApplicationShell() {
           </div>
         </nav>
 
-        <nav className="bg-gray-50 p-3 shadow-sm dark:bg-gray-800 lg:hidden">
+        <nav className="bg-background p-3 shadow-sm lg:hidden">
           <Select name="navigation">
             <SelectTrigger>
               <SelectValue placeholder="My account" />
@@ -457,17 +457,20 @@ export function TabsNavbarApplicationShell() {
           className="mx-auto block border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
         >
           <div className="flex items-center">
-            <ul className="mt-0 flex w-full flex-col gap-7 text-sm font-medium lg:flex-row">
+            <ul className="mt-0 flex w-full flex-col px-2 text-sm font-medium lg:flex-row">
               {[
-                { text: "My account", href: "#" },
-                { text: "Company", href: "#", current: true },
-                { text: "Downloads", href: "#" },
-                { text: "Earnings", href: "#" },
-                { text: "Billing", href: "#" },
-                { text: "Help & Support", href: "#" },
+                { text: "My account", active: false },
+                { text: "Company", active: true },
+                { text: "Downloads", active: false },
+                { text: "Earnings", active: false },
+                { text: "Billing", active: false },
+                { text: "Help & Support", active: false },
               ].map((item, index) => (
-                <li key={index}>
-                  <a href={item.href}>{item.text}</a>
+                <li
+                  key={index}
+                  className={`border-b px-5 pb-5 hover:border-primary-500 ${item.active ? "border-primary-500" : ""}`}
+                >
+                  <Link href="#">{item.text}</Link>
                 </li>
               ))}
             </ul>

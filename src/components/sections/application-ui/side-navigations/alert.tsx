@@ -5,13 +5,11 @@ import Link from "next/link";
 import {
   HiChartPie,
   HiChevronDown,
-  HiCog,
   HiCollection,
   HiDocumentText,
   HiInboxIn,
   HiLockClosed,
   HiMenuAlt2,
-  HiOutlineAdjustments,
   HiQuestionMarkCircle,
   HiShoppingBag,
   HiX,
@@ -23,19 +21,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
-import { Text } from "~/components/ui/custom/text";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "~/components/ui/tooltip";
 
 export function AlertSideNavigation() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

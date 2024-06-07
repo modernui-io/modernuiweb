@@ -36,7 +36,7 @@ export function TasksDoubleSideNavigation() {
     <>
       <aside
         id="sidebar-contacts"
-        className={`fixed right-0 top-0 z-40 flex h-full w-16 bg-background transition-transform lg:w-72 ${isSidebarOpen ? "w-72" : "w-16"}`}
+        className={`fixed right-0 top-0 z-40 flex h-full w-16 bg-background transition-transform lg:w-[22rem] ${isSidebarOpen ? "w-72" : "w-16"}`}
         aria-label="Sidebar"
       >
         <div className="block h-full w-20 overflow-y-auto px-3 py-4">
@@ -67,7 +67,7 @@ export function TasksDoubleSideNavigation() {
           </Link>
         </div>
         <div
-          className={`h-full w-64 overflow-y-auto border-r border-gray-200 px-3 py-4 dark:border-gray-700 lg:block ${isSidebarOpen ? "block" : "hidden"}`}
+          className={`h-full w-64 overflow-y-auto border-gray-200 px-3 py-4 dark:border-gray-700 lg:block ${isSidebarOpen ? "block" : "hidden"}`}
         >
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

@@ -44,6 +44,13 @@ export function DefaultRegisterForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    if (values.password !== values.confirmPassword) {
+      form.setError("confirmPassword", {
+        type: "manual",
+        message: "Passwords do not match",
+      });
+      return;
+    }
     console.log(values);
   }
 
@@ -60,6 +67,7 @@ export function DefaultRegisterForm() {
               <form
                 className="space-y-4 md:space-y-6"
                 onSubmit={form.handleSubmit(onSubmit)}
+                noValidate
               >
                 <FormField
                   control={form.control}

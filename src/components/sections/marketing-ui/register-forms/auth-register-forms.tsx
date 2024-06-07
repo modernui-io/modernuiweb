@@ -159,7 +159,7 @@ export function AuthRegisterForm() {
                 className="inline-flex w-full items-center justify-center rounded-lg border bg-background px-5 py-2.5 text-sm font-medium hover:bg-primary-100 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-200 dark:hover:bg-primary-200 dark:hover:text-white dark:focus:ring-primary-700"
               >
                 <FaApple className="mr-2 size-5 text-secondary-foreground" />
-                Sign up with Google
+                Sign up with Apple
               </Link>
             </div>
             <Separator />
@@ -167,6 +167,7 @@ export function AuthRegisterForm() {
               <form
                 className="space-y-4 lg:space-y-6"
                 onSubmit={form.handleSubmit(onSubmit)}
+                noValidate
               >
                 <FormField
                   control={form.control}
@@ -226,6 +227,7 @@ export function AuthRegisterForm() {
                       <FormLabel>Password</FormLabel>
                       <FormControl>
                         <Input
+                          type="password"
                           className="h-auto bg-primary-200 p-2.5"
                           placeholder="••••••••"
                           {...field}

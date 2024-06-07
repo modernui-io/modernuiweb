@@ -97,6 +97,7 @@ export function IllustrationRegisterForm() {
             <form
               className="mt-4 space-y-6 sm:mt-6"
               onSubmit={form.handleSubmit(onSubmit)}
+              noValidate
             >
               <div className="grid gap-6 sm:grid-cols-2">
                 <FormField
@@ -197,7 +198,7 @@ export function IllustrationRegisterForm() {
                 className="inline-flex w-full items-center justify-center rounded-lg border bg-background px-5 py-2.5 text-sm font-medium hover:bg-primary-100 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-200 dark:hover:bg-primary-200 dark:hover:text-white dark:focus:ring-primary-700"
               >
                 <FaApple className="mr-2 size-5 text-secondary-foreground" />
-                Sign up with Google
+                Sign up with Apple
               </Link>
               <FormField
                 control={form.control}
@@ -207,7 +208,7 @@ export function IllustrationRegisterForm() {
                     <FormControl>
                       <div className="mt-4 flex space-x-2">
                         <Checkbox
-                          id="terms"
+                          id="acceptedTerms"
                           checked={field.value}
                           onCheckedChange={field.onChange}
                           className="mt-1"
@@ -247,7 +248,7 @@ export function IllustrationRegisterForm() {
                     <FormControl>
                       <div className="mt-4 flex space-x-2">
                         <Checkbox
-                          id="terms"
+                          id="emailNotification"
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />

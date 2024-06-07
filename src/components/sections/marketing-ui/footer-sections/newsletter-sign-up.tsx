@@ -23,7 +23,7 @@ import Logo from "~/lib/assets/images/logo.svg";
 const languages = ["English", "German", "Spanish", "French"];
 
 const formSchema = z.object({
-  email: z.string().email(),
+  email: z.string().email("This is not a valid email."),
 });
 
 const locations = [

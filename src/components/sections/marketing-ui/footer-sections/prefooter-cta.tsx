@@ -71,21 +71,6 @@ const sections: SectionProps[] = [
   },
 ];
 
-const Section: React.FC<SectionProps> = ({ title, links }) => (
-  <div>
-    <Text className="mb-6 text-sm font-semibold uppercase">{title}</Text>
-    <ul className="text-muted-foreground dark:text-white/60">
-      {links.map((link, index) => (
-        <li key={index} className="mb-4">
-          <Link href={link.href} className="hover:underline">
-            {link.text}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
 export function PreFooterCTA() {
   return (
     <footer className="bg-background">

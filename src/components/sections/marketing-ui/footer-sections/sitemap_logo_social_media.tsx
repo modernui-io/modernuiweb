@@ -22,7 +22,7 @@ const socialMediaLinks = [
 
 interface LinkItem {
   href: string;
-  text: string;
+  label: string;
 }
 
 interface SectionProps {
@@ -34,22 +34,22 @@ const sections: SectionProps[] = [
   {
     title: "Resources",
     links: [
-      { href: "/#", text: "Company" },
-      { href: "/#", text: "Tailwind CSS" },
+      { href: "/#", label: "Company" },
+      { href: "/#", label: "Tailwind CSS" },
     ],
   },
   {
     title: "Follow Us",
     links: [
-      { href: "/#", text: "Github" },
-      { href: "/#", text: "Discord" },
+      { href: "/#", label: "Github" },
+      { href: "/#", label: "Discord" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { href: "/#", text: "Privacy Policy" },
-      { href: "/#", text: "Terms & Conditions" },
+      { href: "/#", label: "Privacy Policy" },
+      { href: "/#", label: "Terms & Conditions" },
     ],
   },
 ];
@@ -78,7 +78,7 @@ export function SitemapLogoSocialMedia() {
                   {section.links.map((link, index) => (
                     <li key={index} className="mb-4">
                       <Link href={link.href} className="hover:underline">
-                        {link.text}
+                        {link.label}
                       </Link>
                     </li>
                   ))}

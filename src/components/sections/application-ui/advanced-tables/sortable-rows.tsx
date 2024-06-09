@@ -7,7 +7,6 @@ import {
   HiSearch,
   HiUpload,
 } from "react-icons/hi";
-import { twMerge } from "tailwind-merge";
 
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";

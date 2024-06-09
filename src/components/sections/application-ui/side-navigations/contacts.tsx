@@ -198,7 +198,7 @@ export function ContactsSideNavigation() {
               </Collapsible>
             </li>
           </ul>
-          <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
+          <ul className="mt-5 space-y-4 border-t border-gray-200 pt-5 dark:border-gray-700">
             <li className="pb-3">
               <Text className="text-sm">ACTIVE CONTACTS</Text>
             </li>

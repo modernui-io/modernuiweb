@@ -1,9 +1,12 @@
+import Link from "next/link";
+
 import {
   FaBriefcase,
   FaClipboard,
   FaCreditCard,
   FaUserCircle,
 } from "react-icons/fa";
+import { FaTruckField } from "react-icons/fa6";
 import { HiLocationMarker, HiPlus } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
@@ -15,7 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { Tabs } from "~/components/ui/tabs";
 
 export function TableHeaderWithTabs() {
   return (
@@ -67,24 +70,39 @@ export function TableHeaderWithTabs() {
                 </Select>
               </div>
 
-              <Tabs
-                defaultValue={"works"}
-                className="-mb-2.5 hidden py-4 md:flex"
-              >
-                <TabsList className="flex gap-5">
-                  <TabsTrigger value="overview">
-                    <FaUserCircle className="mr-2 size-3" /> Overview
-                  </TabsTrigger>
-                  <TabsTrigger value="works">
-                    <FaClipboard className="mr-2 size-3" /> Works
-                  </TabsTrigger>
-                  <TabsTrigger value="payments">
-                    <FaCreditCard className="mr-2 size-3" /> Payments
-                  </TabsTrigger>
-                  <TabsTrigger value="clients">
-                    <FaBriefcase className="mr-2 size-3" /> Clients
-                  </TabsTrigger>
-                </TabsList>
+              <Tabs defaultValue={"works"} className="hidden py-4 md:flex">
+                <ul className="flex bg-background">
+                  {[
+                    {
+                      icon: <FaUserCircle className="mr-2 size-3" />,
+                      text: "Overview",
+                      active: false,
+                    },
+                    {
+                      icon: <FaClipboard className="mr-2 size-3" />,
+                      text: "Works",
+                      active: true,
+                    },
+                    {
+                      icon: <FaCreditCard className="mr-2 size-3" />,
+                      text: "Payments",
+                      active: false,
+                    },
+                    {
+                      icon: <FaBriefcase className="mr-2 size-3" />,
+                      text: "Clients",
+                      active: false,
+                    },
+                  ].map((item, index) => (
+                    <Link
+                      key={index}
+                      className={`-mb-4 flex items-center border-b-2 px-3 pb-5 hover:border-primary-600 hover:text-primary-600 ${item.active ? "border-primary-600 text-primary-600" : ""}`}
+                      href="#"
+                    >
+                      {item.icon} {item.text}
+                    </Link>
+                  ))}
+                </ul>
               </Tabs>
               <Button>
                 <HiPlus className="mr-2 size-3.5" />

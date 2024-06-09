@@ -50,7 +50,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
   return (
     <header className="bg-background antialiased">
       <nav className="border-gray-200 py-2.5 lg:px-6">
-        <div className="w-full px-4 py-3.5 lg:px-6">
+        <div className="w-full py-3.5">
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="flex items-center justify-start">
               <Link href="https://modernui.com" className="mr-4 flex">
@@ -69,11 +69,9 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
             <div className="flex items-center lg:order-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View notifications</span>
-                      <HiBell className="size-5" />
-                    </>
+                  <Button size="sm" variant={"ghost"} className="px-1">
+                    <span className="sr-only">View notifications</span>
+                    <HiBell className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -240,11 +238,9 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View apps</span>
-                      <HiViewGrid className="size-5" />
-                    </>
+                  <Button size="sm" variant={"ghost"} className="px-1">
+                    <span className="sr-only">View apps</span>
+                    <HiViewGrid className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -325,7 +321,7 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button size={"sm"} variant={"ghost"}>
+                    <Button size={"sm"} variant={"ghost"} className="px-1">
                       <span className="sr-only">View FAQ</span>
                       <HiQuestionMarkCircle className="size-5" />
                     </Button>
@@ -340,8 +336,13 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    N. Virginia <HiChevronDown className="ml-3 size-5" />
+                  <Button
+                    size="sm"
+                    variant={"ghost"}
+                    className="px-1 text-gray-500"
+                  >
+                    N. Virginia
+                    <HiChevronDown className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -428,17 +429,13 @@ export function DoubleDashboardNavbarWithProjectDropdown() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="sm" variant={"ghost"}>
-                    <>
-                      <span className="sr-only">Open user menu</span>
-                      <Image
-                        width={100}
-                        height={100}
-                        className="size-8 rounded-full"
-                        src="https://github.com/shadcn.png"
-                        alt=""
-                      />
-                    </>
+                  <Button
+                    size="sm"
+                    variant={"ghost"}
+                    className="px-1 text-gray-500"
+                  >
+                    Bonnie Green @ 1234-567-890
+                    <HiChevronDown className="size-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>

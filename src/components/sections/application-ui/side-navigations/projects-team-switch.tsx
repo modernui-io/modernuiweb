@@ -90,7 +90,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                 <HiSelector className="size-5 text-gray-500 dark:text-gray-400" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="w-64">
               <Link
                 href="#"
                 className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -325,7 +325,7 @@ export function ProjectsTeamSwitchSideNavigation() {
                 className="my-4 flex w-full items-center justify-between rounded-lg p-2 focus:outline-none focus:ring-4"
               >
                 <span className="sr-only">Open user menu</span>
-                <div className="flex items-center">
+                <div className="relative flex items-center">
                   <Image
                     width={100}
                     height={100}
@@ -341,8 +341,8 @@ export function ProjectsTeamSwitchSideNavigation() {
                       bonnie@modernui.com
                     </div>
                   </div>
+                  <HiSelector className="absolute -right-5 size-5 text-gray-500 dark:text-gray-400" />
                 </div>
-                <HiSelector className="size-5 text-gray-500 dark:text-gray-400" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

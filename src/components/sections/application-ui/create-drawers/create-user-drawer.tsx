@@ -48,12 +48,12 @@ export function CreateUserDrawer() {
       <DrawerContent className="w-fit">
         <ScrollArea>
           <div className="left-0 top-0 z-40 h-screen bg-white p-4 transition-transform dark:bg-muted-foreground/20">
-            <div className="flex items-center justify-between">
+            <div className="mt-14 flex items-center justify-between">
               <DrawerTitle className="mb-6 inline-flex items-center text-sm font-semibold uppercase text-muted-foreground">
                 New User
               </DrawerTitle>
               <DrawerClose asChild>
-                <Button className="absolute right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white">
+                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white">
                   <X className="size-5" />
                   <span className="sr-only">Close menu</span>
                 </Button>
@@ -114,8 +114,8 @@ export function CreateUserDrawer() {
               </form>
             </Form>
           </div>
-          <div className="bottom-0 left-0 flex w-full justify-center space-x-4 p-4">
-            <Button className="w-full justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+          <div className="bottom-0 left-0 flex w-full justify-start space-x-4 p-4 dark:bg-muted-foreground/20">
+            <Button className="w-max justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
               Add User
             </Button>
             <DrawerClose asChild>

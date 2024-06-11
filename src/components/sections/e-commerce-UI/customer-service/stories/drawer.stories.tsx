@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import DrawerService from "../drawer";
 
 const meta = {
-  title: "sections/Ecommerce-UI/Customer Service/Customer service with drawer",
+  title: "sections/E-commerce UI/Customer Service/Customer service with drawer",
   component: DrawerService,
 } satisfies Meta<typeof DrawerService>;
 

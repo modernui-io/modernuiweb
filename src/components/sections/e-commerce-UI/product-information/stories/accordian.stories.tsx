@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ProductInformationAccordion } from "../accordian";
 
 const meta = {
-  title: "sections/Ecommerce-UI/Product Information/accordian",
+  title: "sections/E-commerce UI/Product Information/accordian",
   component: ProductInformationAccordion,
 } satisfies Meta<typeof ProductInformationAccordion>;
 

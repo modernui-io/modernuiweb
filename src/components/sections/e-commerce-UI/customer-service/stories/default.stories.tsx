@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import DefaultService from "../default";
 
 const meta = {
-  title: "sections/Ecommerce-UI/Customer Service/Default customer service",
+  title: "sections/E-commerce UI/Customer Service/Default customer service",
   component: DefaultService,
 } satisfies Meta<typeof DefaultService>;
 

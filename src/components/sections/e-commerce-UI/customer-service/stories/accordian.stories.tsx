@@ -4,7 +4,7 @@ import AccordianFaqService from "../accordian-faq";
 
 const meta = {
   title:
-    "sections/Ecommerce-UI/Customer Service/Customer service accordion with FAQ",
+    "sections/E-commerce UI/Customer Service/Customer service accordion with FAQ",
   component: AccordianFaqService,
 } satisfies Meta<typeof AccordianFaqService>;
 

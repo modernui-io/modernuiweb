@@ -441,7 +441,9 @@ export function CryptoSideNavigation() {
               </Link>
             </li>
           </ul>
-          <Button variant={"outline"}>View more</Button>
+          <Button variant={"outline"} className="text-xs">
+            View more
+          </Button>
           <div className="mb-4 mt-5 flex items-center justify-between border-t border-gray-200 pt-5 text-sm font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">
             <h3>Trending</h3>
             <DropdownMenu>
@@ -781,7 +783,9 @@ export function CryptoSideNavigation() {
               </Link>
             </li>
           </ul>
-          <Button variant={"outline"}>View more</Button>
+          <Button variant={"outline"} className="text-xs">
+            View more
+          </Button>
         </div>
       </aside>
     </>

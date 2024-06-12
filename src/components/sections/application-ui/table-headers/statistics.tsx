@@ -20,15 +20,15 @@ export function TableHeaderWithStatistics() {
             </div>
             <div className="flex shrink-0 flex-col space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
               <Button>
-                <HiPlus className="-ml-1 mr-2 size-3.5" />
+                <HiPlus className="mr-1 size-3.5" />
                 Add to keyword list
               </Button>
               <Button variant={"outline"}>
-                <HiRefresh className="mr-2 size-4" />
+                <HiRefresh className="mr-1 size-4" />
                 Update metrics 1/250
               </Button>
               <Button variant={"outline"}>
-                <HiUpload className="mr-2 size-4" />
+                <HiUpload className="mr-1 size-4" />
                 Export
               </Button>
             </div>

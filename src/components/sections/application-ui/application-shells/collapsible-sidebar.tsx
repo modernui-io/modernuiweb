@@ -136,7 +136,7 @@ export function CollapsibleSidebarApplicationShell() {
                       <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-96">
                     <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                       Notifications
                     </div>
@@ -391,7 +391,7 @@ export function CollapsibleSidebarApplicationShell() {
                       />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-60">
                     <div className="px-4 py-3">
                       <span className="block text-sm font-semibold">
                         Neil Sims

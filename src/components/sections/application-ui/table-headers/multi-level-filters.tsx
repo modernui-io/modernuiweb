@@ -84,11 +84,11 @@ export function MultiLevelTableHeadersWithFilters() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <FaFilter className="mr-3 size-3" />
+                      <FaFilter className="mr-1 size-3 text-gray-400" />
                       Filter
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-48 p-3">
                     <span className="mb-3 text-sm font-medium">Category</span>
                     <ul className="space-y-2 pt-2">
                       {[
@@ -118,11 +118,11 @@ export function MultiLevelTableHeadersWithFilters() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <FaCog className="mr-2 size-4" />
+                      <FaCog className="mr-1 size-4 text-gray-400" />
                       Configurations
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-44">
                     <DropdownMenuItem>By Category</DropdownMenuItem>
                     <DropdownMenuItem>By Brand</DropdownMenuItem>
                     <DropdownMenuSeparator />

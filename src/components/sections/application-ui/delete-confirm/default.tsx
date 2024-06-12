@@ -16,13 +16,13 @@ export function DefaultDeleteConfirmationModal() {
         <Button>Show delete confirmation</Button>
       </DialogTrigger>
       <DialogContent className="justify-center rounded-lg bg-background p-4 shadow sm:p-5">
-        <HiTrash className="mx-auto mb-3.5 size-11 text-gray-400 dark:text-gray-500" />
-        <Text className="mb-4 text-gray-500 dark:text-gray-300">
+        <HiTrash className="mx-auto size-11 text-gray-400 dark:text-gray-500" />
+        <Text className="text-gray-500 dark:text-gray-300">
           Are you sure you want to delete this item?
         </Text>
         <div className="flex items-center justify-center space-x-4">
           <DialogClose asChild>
-            <Button>No, cancel</Button>
+            <Button variant={"outline"}>No, cancel</Button>
           </DialogClose>
           <Button variant={"destructive"} type="submit">
             Yes, I&apos;m sure

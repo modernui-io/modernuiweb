@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
   HiChevronDown,
+  HiChevronLeft,
+  HiChevronRight,
   HiDotsHorizontal,
   HiEye,
   HiFilter,
@@ -36,11 +38,7 @@ import { Label } from "~/components/ui/label";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "~/components/ui/pagination";
 import {
   Select,
@@ -76,12 +74,9 @@ const formSchema = z.object({
 });
 
 export function DefaultCRUDLayout() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [isShowReadModal, setShowReadModal] = useState(false);
   const [isShowUpdateModal, setShowUpdateModal] = useState(false);
   const [isShowDeleteModal, setShowDeleteModal] = useState(false);
-
-  const onPageChange = (page: number) => setCurrentPage(page);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -226,7 +221,7 @@ export function DefaultCRUDLayout() {
                       <HiChevronDown className="mr-1 size-5" /> Actions
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-40">
                     <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Delete All</DropdownMenuItem>
@@ -307,7 +302,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$2999</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -315,7 +310,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -348,7 +343,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$1499</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -356,7 +351,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -389,7 +384,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$2999</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -397,7 +392,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -430,7 +425,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$1199</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -438,7 +433,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -471,7 +466,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$299</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -479,7 +474,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -512,7 +507,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$799</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -520,7 +515,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -553,7 +548,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$699</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -561,7 +556,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -594,7 +589,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$399</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -602,7 +597,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -635,7 +630,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$599</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -643,7 +638,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -676,7 +671,7 @@ export function DefaultCRUDLayout() {
                     What is a product description?
                   </TableCell>
                   <TableCell className="p-5">$499</TableCell>
-                  <TableCell className="flex items-center justify-end p-5">
+                  <TableCell className="flex items-center justify-end pr-0">
                     <DropdownMenu>
                       <DropdownMenuTrigger>
                         <Button variant={"ghost"}>
@@ -684,7 +679,7 @@ export function DefaultCRUDLayout() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem
                           onClick={() => setShowUpdateModal(true)}
                         >
@@ -722,27 +717,50 @@ export function DefaultCRUDLayout() {
             </span>
             <div>
               <Pagination>
-                <PaginationContent>
+                <PaginationContent className="inline-flex items-stretch gap-0 -space-x-px">
                   <PaginationItem>
-                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-lg rounded-r-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronLeft />
+                    </Button>
                   </PaginationItem>
                   {Array.from({ length: 3 }, (_, index) => index + 1).map(
                     (page) => (
                       <PaginationItem key={page}>
-                        <PaginationLink
-                          isActive={currentPage === page}
-                          onClick={() => setCurrentPage(page)}
+                        <Button
+                          className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                          variant={"outline"}
                         >
                           {page}
-                        </PaginationLink>
+                        </Button>
                       </PaginationItem>
                     ),
                   )}
                   <PaginationItem>
-                    <PaginationEllipsis />
+                    <Button
+                      variant={"outline"}
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground shadow-sm hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                    >
+                      ...
+                    </Button>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationNext onClick={() => onPageChange} />
+                    <Button
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      100
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-none rounded-r-lg border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronRight />
+                    </Button>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>

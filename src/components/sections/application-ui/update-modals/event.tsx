@@ -182,13 +182,10 @@ export function UpdateEventModal() {
               </Label>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button
-                    variant={"outline"}
-                    className={cn("justify-start text-left font-normal")}
-                  >
-                    <CalendarIcon className="mr-2 size-4" />
-                    <span>Pick a date</span>
-                  </Button>
+                  <div className="relative flex items-center">
+                    <HiCalendar className="absolute left-3" />
+                    <Input className="pl-8" placeholder="26/11/2022" />
+                  </div>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0">
                   <Calendar mode="single" initialFocus />
@@ -205,29 +202,29 @@ export function UpdateEventModal() {
               All day
             </div>
             <div className="flex items-center gap-x-3">
-              <div className="mb-4 flex space-x-[-20px] sm:mb-0 [&_img]:ring-white">
-                <Avatar>
+              <div className="mb-4 flex space-x-[-15px] sm:mb-0 [&_img]:ring-white">
+                <Avatar className="size-8 border border-white">
                   <AvatarImage
                     alt="Helene Engels"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>HE</AvatarFallback>
                 </Avatar>
-                <Avatar>
+                <Avatar className="size-8 border border-white">
                   <AvatarImage
                     alt="Robert Brown"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>RB</AvatarFallback>
                 </Avatar>
-                <Avatar>
+                <Avatar className="size-8 border border-white">
                   <AvatarImage
                     alt="Bonnie Green"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>BG</AvatarFallback>
                 </Avatar>
-                <Avatar>
+                <Avatar className="size-8 border border-white">
                   <AvatarFallback>+9</AvatarFallback>
                 </Avatar>
               </div>
@@ -261,7 +258,7 @@ export function UpdateEventModal() {
             <Button
               variant={"outline"}
               size={"lg"}
-              className="border-red-600 hover:bg-red-600 hover:text-white"
+              className="border-red-600 px-5 py-2.5 text-red-500 hover:bg-red-600 hover:text-white"
             >
               <HiTrash className="-ml-1 mr-1 size-5" />
               Delete

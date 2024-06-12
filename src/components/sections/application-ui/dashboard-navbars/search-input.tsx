@@ -71,7 +71,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                           <HiChevronDown className="size-4" />
                         </div>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-40">
                         <DropdownMenuItem>Dashboard</DropdownMenuItem>
                         <DropdownMenuItem>Earnings</DropdownMenuItem>
                         <DropdownMenuItem>Support</DropdownMenuItem>
@@ -90,7 +90,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       </>
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-96">
                     <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                       Notifications
                     </div>
@@ -423,7 +423,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                       />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-56">
                     <div className="px-4 py-3">
                       <span className="block text-sm font-semibold">
                         Neil Sims
@@ -569,10 +569,10 @@ export function DoubleDashboardNavbarWithSearchInput() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button className="rounded-r-none" variant={"outline"}>
-                      http + https
+                      http + https <HiChevronDown className="ml-1 size-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-44">
                     <DropdownMenuContent></DropdownMenuContent>
                     <DropdownMenuItem>https only</DropdownMenuItem>
                     <DropdownMenuItem>http</DropdownMenuItem>
@@ -595,7 +595,7 @@ export function DoubleDashboardNavbarWithSearchInput() {
                         <HiOutlineAdjustments className="size-4 lg:hidden" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="w-44">
                       <DropdownMenuItem>Subfolders</DropdownMenuItem>
                       <DropdownMenuItem>Subdomains</DropdownMenuItem>
                       <DropdownMenuItem>Full domain</DropdownMenuItem>

@@ -85,14 +85,12 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
             <div className="flex items-center justify-between lg:order-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View notifications</span>
-                      <HiBell className="size-5" />
-                    </>
+                  <Button variant={"ghost"} className="px-1">
+                    <span className="sr-only">View notifications</span>
+                    <HiBell className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-96">
                   <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     Notifications
                   </div>
@@ -256,11 +254,9 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">View apps</span>
-                      <HiViewGrid className="size-5" />
-                    </>
+                  <Button variant={"ghost"} className="px-1">
+                    <span className="sr-only">View apps</span>
+                    <HiViewGrid className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -341,20 +337,18 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"}>
-                    <>
-                      <span className="sr-only">Open user menu</span>
-                      <Image
-                        width={100}
-                        height={100}
-                        className="size-8 rounded-full"
-                        src="https://github.com/shadcn.png"
-                        alt=""
-                      />
-                    </>
+                  <Button variant={"ghost"} className="px-1">
+                    <span className="sr-only">Open user menu</span>
+                    <Image
+                      width={100}
+                      height={100}
+                      className="size-8 rounded-full"
+                      src="https://github.com/shadcn.png"
+                      alt=""
+                    />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-60">
                   <div className="px-4 py-3">
                     <span className="block text-sm font-semibold">
                       Neil Sims
@@ -369,20 +363,11 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <HiHeart className="mr-2 size-4 text-gray-400" />
-                    My links
+                    My likes
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <HiCollection className="mr-2 size-4 text-gray-400" />
                     Collections
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <div className="flex w-full items-center justify-between">
-                      <span className="flex items-center">
-                        <HiLightningBolt className="mr-2 size-4 text-primary-600 dark:text-primary-500" />
-                        Pro version
-                      </span>
-                      <HiChevronRight className="size-4 text-gray-400" />
-                    </div>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <ul className="py-1 text-gray-500 dark:text-gray-400">
@@ -581,7 +566,7 @@ export function TripleDashbardNavbarWithProjectSwitchAndSubnav() {
                     <HiSelector className="ml-1.5 size-3" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-44">
                   <DropdownMenuItem>
                     <HiPlusCircle className="mr-2 size-4 text-gray-500 dark:text-gray-300" />
                     Create new app

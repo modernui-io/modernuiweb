@@ -50,11 +50,11 @@ export function TableHeaderWithComparison() {
             </div>
             <div className="flex w-auto shrink-0 flex-row items-center justify-end space-x-3">
               <Button>
-                <HiPlus className="mr-2 size-3.5" />
+                <HiPlus className="mr-1 size-3.5" />
                 Add new product
               </Button>
               <Button variant={"outline"}>
-                <HiRefresh className="mr-2 size-4" />
+                <HiRefresh className="mr-1 size-4 text-gray-400" />
                 Reset all
               </Button>
             </div>
@@ -69,7 +69,10 @@ export function TableHeaderWithComparison() {
                 "Ratings",
               ].map((label, index) => (
                 <li key={index} className="mb-4 mr-2 lg:mr-4">
-                  <Button variant={index === 2 ? "default" : "outline"}>
+                  <Button
+                    variant={index === 2 ? "default" : "outline"}
+                    className="rounded-full"
+                  >
                     {label}
                   </Button>
                 </li>
@@ -102,7 +105,7 @@ export function TableHeaderWithComparison() {
                     Actions <FaChevronDown className="size-3" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-44">
                   <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Delete All</DropdownMenuItem>

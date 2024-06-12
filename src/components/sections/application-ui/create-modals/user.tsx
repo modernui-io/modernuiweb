@@ -106,8 +106,8 @@ export function CreateUserModal() {
                 />
               </div>
             </div>
-            <Button type="submit" size="lg" className="[&>span]:text-sm">
-              <HiPlus className="mr-2 size-4" />
+            <Button type="submit" className="[&>span]:text-sm">
+              <HiPlus className="mr-1 size-4" />
               Add new user
             </Button>
           </form>

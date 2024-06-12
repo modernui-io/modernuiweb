@@ -72,7 +72,7 @@ export function ECommerceApplicationShell() {
 
   return (
     <>
-      <div className="bg-gray-50 antialiased dark:bg-gray-800">
+      <div className="bg-background antialiased">
         <header>
           <nav className="inset-x-0 top-0 z-50 border-b border-gray-200 px-4 py-2.5 dark:border-gray-700">
             <div className="flex items-center justify-between">
@@ -92,12 +92,12 @@ export function ECommerceApplicationShell() {
 
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
-                  className="hidden md:block"
+                  className="hidden lg:block"
                 >
                   <div className="flex">
                     <Label
                       htmlFor="search-dropdown"
-                      className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="sr-only mb-2 text-sm font-medium"
                     >
                       Your Email
                     </Label>
@@ -176,7 +176,7 @@ export function ECommerceApplicationShell() {
                   <DropdownMenuTrigger asChild>
                     <Button
                       variant={"ghost"}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 px-1"
                     >
                       <USFlagIcon />
                       English (US) <HiChevronDown className="size-4" />
@@ -211,7 +211,7 @@ export function ECommerceApplicationShell() {
                 </DropdownMenu>
                 <Button
                   variant={"ghost"}
-                  className="mr-1 rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600 md:hidden"
+                  className="mr-1 rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600 lg:hidden"
                 >
                   <span className="sr-only">Search</span>
                   <HiSearch className="size-6" />
@@ -219,12 +219,12 @@ export function ECommerceApplicationShell() {
                 <span className="mx-2 hidden h-5 w-px bg-gray-200 dark:bg-gray-600 lg:inline" />
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} className="px-1">
                       <span className="sr-only">View notifications</span>
                       <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-96">
                     <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                       Notifications
                     </div>
@@ -494,7 +494,7 @@ export function ECommerceApplicationShell() {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="px-3 pt-3 md:hidden"
               >
-                <Label className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <Label className="sr-only mb-2 text-sm font-medium">
                   Search
                 </Label>
                 <div className="relative">
@@ -535,7 +535,7 @@ export function ECommerceApplicationShell() {
                       alt="Bonnie avatar"
                     />
                     <div className="text-left">
-                      <div className="mb-0.5 font-semibold leading-none text-gray-900 dark:text-white">
+                      <div className="mb-0.5 font-semibold leading-none">
                         Bonnie Green
                       </div>
                       <div className="text-sm text-gray-500 dark:text-gray-400">

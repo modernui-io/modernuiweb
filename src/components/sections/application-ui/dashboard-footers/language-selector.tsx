@@ -1,13 +1,13 @@
-import { FaCog, FaSlidersH } from "react-icons/fa";
+import { HiAdjustments, HiChevronDown, HiCog } from "react-icons/hi";
 
+import { Button } from "~/components/ui/button";
 import { Text } from "~/components/ui/custom/text";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
 import {
   Tooltip,
   TooltipContent,
@@ -46,50 +46,39 @@ export function FooterWithLanguageSelectorAndOptions() {
         </ul>
       </div>
       <div className="flex items-center justify-center space-x-3">
-        <Select>
-          <SelectTrigger className="w-40">
-            <SelectValue
-              placeholder={
-                <div className="flex items-center gap-2">
-                  <USFlagIcon />
-                  English (US)
-                </div>
-              }
-            />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="EN">
-              <div className="flex items-center gap-2">
-                <USFlagIcon />
-                English (US)
-              </div>
-            </SelectItem>
-            <SelectItem value="DE">
-              <div className="flex items-center gap-2">
-                <GermanyFlagIcon />
-                Deutsch
-              </div>
-            </SelectItem>
-            <SelectItem value="IT">
-              <div className="flex items-center gap-2">
-                <ItalyFlagIcon />
-                Italiano
-              </div>
-            </SelectItem>
-            <SelectItem value="CH">
-              <div className="flex items-center gap-2">
-                <ChinaFlagIcon />
-                中文 (繁體)
-              </div>
-            </SelectItem>
-          </SelectContent>
-        </Select>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant={"ghost"} className="px-2">
+              <USFlagIcon />
+              English (US)
+              <HiChevronDown className="size-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-44">
+            <DropdownMenuItem>
+              <USFlagIcon />
+              English (US)
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <GermanyFlagIcon />
+              Deutsch
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <ItalyFlagIcon />
+              Italiano
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <ChinaFlagIcon />
+              中文 (繁體)
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <span className="cursor-pointer rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                <FaSlidersH className="size-4" />
+                <HiAdjustments className="size-5" />
               </span>
             </TooltipTrigger>
             <TooltipContent className="bg-background">
@@ -101,7 +90,7 @@ export function FooterWithLanguageSelectorAndOptions() {
           <Tooltip>
             <TooltipTrigger asChild>
               <span className="cursor-pointer rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                <FaCog className="size-4" />
+                <HiCog className="size-5" />
               </span>
             </TooltipTrigger>
             <TooltipContent className="bg-background">
@@ -118,7 +107,7 @@ function USFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-us"
       viewBox="0 0 512 512"
@@ -151,7 +140,7 @@ function ChinaFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       id="flag-icon-css-cn"
@@ -199,7 +188,7 @@ function ItalyFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-it"
       viewBox="0 0 512 512"
@@ -217,7 +206,7 @@ function GermanyFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-de"
       viewBox="0 0 512 512"

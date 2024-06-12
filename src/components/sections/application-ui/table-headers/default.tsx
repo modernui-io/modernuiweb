@@ -73,7 +73,7 @@ export function DefaultTableHeader() {
                       <FaChevronDown className="mr-3 size-3" /> Actions
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-48">
                     <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Delete All</DropdownMenuItem>
@@ -83,12 +83,12 @@ export function DefaultTableHeader() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <FaFilter className="mr-3 size-3" />
+                      <FaFilter className="mr-1 size-3 text-gray-400" />
                       Filter
-                      <FaChevronDown className="ml-3 size-3" />
+                      <FaChevronDown className="ml-1 size-3" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-48 p-3">
                     <span className="mb-3 text-sm font-medium">Category</span>
                     <ul className="space-y-2 pt-2">
                       {[

@@ -36,13 +36,20 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
 
 const formSchema = z.object({
   search: z.string(),
 });
 
 export function StackedMultipleApplicationShell() {
-  const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,6 +63,16 @@ export function StackedMultipleApplicationShell() {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
+
+  const navItems = [
+    { label: "Overview", active: false },
+    { label: "Resources", active: true },
+    { label: "Deploy", active: false },
+    { label: "Metrics", active: false },
+    { label: "Activity", active: false },
+    { label: "Access", active: false },
+    { label: "Settings", active: false },
+  ];
 
   return (
     <>
@@ -105,7 +122,7 @@ export function StackedMultipleApplicationShell() {
                       <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-96">
                     <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                       Notifications
                     </div>
@@ -279,7 +296,7 @@ export function StackedMultipleApplicationShell() {
                       />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-60">
                     <div className="px-4 py-3">
                       <span className="block text-sm font-semibold">
                         Neil Sims
@@ -324,7 +341,7 @@ export function StackedMultipleApplicationShell() {
                 </DropdownMenu>
                 <Button
                   id="toggleMobileMenuButton"
-                  className="lg:hidden"
+                  className="md:hidden"
                   variant={"ghost"}
                   data-collapse-toggle="toggleMobileMenu"
                   onClick={() => setIsNavVisible(!isNavVisible)}
@@ -453,7 +470,7 @@ export function StackedMultipleApplicationShell() {
                       <HiSelector className="ml-1.5 size-2.5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-44">
                     {[
                       {
                         icon: (
@@ -490,26 +507,43 @@ export function StackedMultipleApplicationShell() {
               </div>
             </div>
           </nav>
+          <div className="flex flex-col gap-2 bg-background p-4 md:hidden">
+            <div className="relative flex items-center">
+              <HiSearch className="absolute left-3 size-4" />
+              <Input
+                className="w-full pl-7"
+                placeholder="Jump to Favorites, Apps, Pipelines..."
+              />
+            </div>
+            <div>
+              <Select name="navigation">
+                <SelectTrigger>
+                  <SelectValue placeholder="Overview" />
+                </SelectTrigger>
+                <SelectContent>
+                  {navItems.map((item, index) => (
+                    <SelectItem key={index} value={item.label}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
           <div>
             <ul
-              className={`${isNavVisible ? "flex" : "hidden"} flex w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 md:flex-row lg:flex`}
+              className={`${isNavVisible ? "flex" : "hidden"} w-full flex-col items-center border-b border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 md:flex md:flex-row lg:flex`}
             >
-              {[
-                { label: "Overview", active: false },
-                { label: "Resources", active: true },
-                { label: "Deploy", active: false },
-                { label: "Metrics", active: false },
-                { label: "Activity", active: false },
-                { label: "Access", active: false },
-                { label: "Settings", active: false },
-              ].map((item, index) => (
-                <li key={index}>
+              {navItems.map((item, index) => (
+                <li key={index} className="w-full md:w-max">
                   <Link
                     href="#"
-                    className="block border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
+                    className="block w-full border-b p-0 dark:border-gray-700 md:inline md:border-b-0"
                   >
                     <span
-                      className={`block border-b-2 border-transparent px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500 ${item.active ? "border-gray-700 text-gray-700 dark:border-primary-500 dark:text-primary-500" : ""}`}
+                      className={`block w-full border-b-2 px-4 py-3 text-sm font-medium text-gray-500 hover:border-primary-600 hover:text-primary-600 dark:text-gray-400 dark:hover:border-primary-500 dark:hover:text-primary-500 
+                        ${item.active ? "border-primary-600 text-gray-700 dark:border-primary-500 dark:text-primary-500" : "border-transparent"}
+                      `}
                     >
                       {item.label}
                     </span>
@@ -520,7 +554,7 @@ export function StackedMultipleApplicationShell() {
           </div>
         </nav>
       </header>
-      <main className="grid flex-1 grid-cols-1 gap-5 p-4 pt-48 dark:bg-gray-900 md:grid-cols-2">
+      <main className="grid flex-1 grid-cols-1 gap-5 p-4 pt-60 dark:bg-gray-900 md:grid-cols-2 md:pt-48">
         {Array.from({ length: 10 }, (_, index) => (
           <div
             key={index}

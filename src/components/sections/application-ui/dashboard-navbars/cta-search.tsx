@@ -129,7 +129,9 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
                   </Link>
                 </li>
               </ul>
-              <Button className="hidden lg:inline">Feedback</Button>
+              <Button className="hidden lg:inline" variant={"outline"}>
+                Feedback
+              </Button>
               <Button
                 className="lg:hidden"
                 variant={"ghost"}
@@ -158,7 +160,7 @@ export function TripleDashboardNavbarWithCTAButtonAndSearchInput() {
               <Link
                 key={index}
                 href={link.href}
-                className="block border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
+                className="block w-full border-b p-0 dark:border-gray-700 lg:inline lg:border-b-0"
               >
                 <span
                   className={`block border-b-2 px-4 py-3 text-sm font-medium ${

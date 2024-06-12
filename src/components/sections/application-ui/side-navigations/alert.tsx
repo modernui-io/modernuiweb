@@ -34,7 +34,7 @@ export function AlertSideNavigation() {
       <Button
         variant={"ghost"}
         onClick={toggleSidebar}
-        className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
+        className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
@@ -50,7 +50,7 @@ export function AlertSideNavigation() {
         <Button
           variant={"ghost"}
           onClick={toggleSidebar}
-          className={`absolute right-5 top-5 px-0 lg:hidden ${!isSidebarOpen && "hidden"}`}
+          className="absolute right-5 top-5 px-0 md:hidden"
         >
           <HiX className="size-4" />
         </Button>

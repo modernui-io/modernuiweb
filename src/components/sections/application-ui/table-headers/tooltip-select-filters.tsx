@@ -50,11 +50,11 @@ export function TableHeaderWithTooltipAndSelectFilters() {
             </div>
             <div className="flex w-full flex-col items-center justify-end space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0">
               <Button className="flex-1 md:flex-none">
-                <HiPlus className="mr-2 size-3.5" />
+                <HiPlus className="mr-1 size-3.5" />
                 Add new product
               </Button>
               <Button variant={"outline"} className="flex-1 md:flex-none">
-                <HiTemplate className="mr-2 size-3" />
+                <HiTemplate className="mr-1 size-3" />
                 Manage Columns
               </Button>
             </div>
@@ -64,10 +64,10 @@ export function TableHeaderWithTooltipAndSelectFilters() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"outline"}>
-                    <FaChevronDown className="mr-3 size-3" /> Actions
+                    <FaChevronDown className="mr-1 size-3" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-44">
                   <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Delete All</DropdownMenuItem>

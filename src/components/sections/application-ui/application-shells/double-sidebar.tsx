@@ -139,7 +139,7 @@ export function DoubleSidebarApplicationShell() {
                       <HiBell className="size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-96">
                     <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                       Notifications
                     </div>
@@ -394,7 +394,7 @@ export function DoubleSidebarApplicationShell() {
                       />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-60">
                     <div className="px-4 py-3">
                       <span className="block text-sm font-semibold">
                         Neil Sims
@@ -449,7 +449,7 @@ export function DoubleSidebarApplicationShell() {
         aria-label="Sidebar"
       >
         <div className="block h-full w-16 overflow-y-auto px-3 py-4">
-          <ul>
+          <ul className="flex flex-col gap-2">
             {[
               { icon: <HiCalendar className="size-6" />, label: "Calendar" },
               { icon: <HiLightBulb className="size-6" />, label: "Notes" },

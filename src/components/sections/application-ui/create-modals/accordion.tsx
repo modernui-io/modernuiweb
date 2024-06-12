@@ -113,7 +113,7 @@ export function CreateModalWithAccordion() {
       <DialogTrigger asChild>
         <Button>Create user</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg bg-white p-5 shadow md:min-w-[40rem]">
+      <DialogContent className="rounded-lg bg-background p-0 shadow md:min-w-[40rem]">
         <ScrollArea className="h-[40rem] overflow-hidden">
           <div className="flex items-center justify-between rounded-t p-5">
             <h3 className="text-lg font-semibold">Add new user</h3>
@@ -122,8 +122,10 @@ export function CreateModalWithAccordion() {
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <Accordion type="single" collapsible defaultValue="general">
                 <AccordionItem value="general">
-                  <AccordionTrigger>General Information</AccordionTrigger>
-                  <AccordionContent>
+                  <AccordionTrigger className="bg-gray-50 px-5 dark:bg-gray-800">
+                    General Information
+                  </AccordionTrigger>
+                  <AccordionContent className="bg-background px-5">
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="sm:col-span-2">
                         <Label className="mb-2 block" htmlFor="file_input">
@@ -451,8 +453,10 @@ export function CreateModalWithAccordion() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="additional">
-                  <AccordionTrigger>Additional Information</AccordionTrigger>
-                  <AccordionContent className="dark:bg-gray-800">
+                  <AccordionTrigger className="bg-gray-50 px-5 dark:bg-gray-800">
+                    Additional Information
+                  </AccordionTrigger>
+                  <AccordionContent className="bg-background px-5">
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="col-span-2">
                         <Label htmlFor="skills" className="mb-2 block">

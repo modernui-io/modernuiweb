@@ -9,6 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import {
   ArrowRight,
   ChevronDown,
+  Clock,
   Globe,
   Image as ImageIcon,
   Mail,
@@ -277,19 +278,22 @@ const LinkedinColorIcon = () => (
 const addresses = [
   {
     city: "New York",
-    address: "Huntersville, 957 Hill Hills Suite 491, United States",
+    address: "Huntersville,",
+    address2: "957 Hill Hills Suite 491, United States",
     office: "+12(3) 456 7890 1234",
     support: "company@name.com",
   },
   {
     city: "Rome",
-    address: "Piazza di Spagna, 00187 Roma RM, Italy",
+    address: "Piazza di Spagna,",
+    address2: "00187 Roma RM, Italy",
     office: "+12(3) 456 7890 1234",
     support: "company@name.it",
   },
   {
     city: "London",
-    address: "Fulham Rd, London SW6 1HS, United Kingdom",
+    address: "Fulham Rd,",
+    address2: "London SW6 1HS, United Kingdom",
     office: "+12(3) 456 7890 1234",
     support: "company@name.co.uk",
   },
@@ -333,7 +337,7 @@ const TrendingArticlesCarousel = () => {
   return (
     <div className="bg-muted py-8 antialiased lg:py-16">
       <div className="mx-auto w-full max-w-screen-xl px-4">
-        <Heading level={2} className="mb-8 text-left font-bold">
+        <Heading level={3} className="mb-8 text-left font-bold tracking-normal">
           Trending on ModernWeb UI
         </Heading>
         <Carousel
@@ -436,7 +440,13 @@ const DropDownMenu = (props: ListData) => {
           data-dropdown-toggle="dropdownComment1"
           className={`inline-flex items-center rounded-lg bg-background p-2 text-center text-sm font-medium text-muted-foreground hover:bg-primary-200 ${className}`}
         >
-          {list[0].icon ? <Share2 className="size-4" /> : "Latest"}
+          {list[0].icon ? (
+            <Share2 className="size-4" />
+          ) : (
+            <>
+              Latest <ChevronDown className="ml-2 size-3" />
+            </>
+          )}
           <span className="sr-only">Comment settings</span>
         </Button>
       </PopoverTrigger>
@@ -501,6 +511,8 @@ const BlogFooter = () => {
               </Text>
               <Text className="mb-3 text-muted-foreground">
                 {address.address}
+                <br />
+                {address.address2}
               </Text>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center">
@@ -547,7 +559,7 @@ const BlogFooter = () => {
                       <FormControl>
                         <Input
                           id="email"
-                          className="block w-full rounded-lg border border-primary-500 bg-muted p-3 text-sm text-foreground shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                          className="block w-full rounded-lg rounded-r-none border border-primary-500 bg-muted p-3 text-sm text-foreground shadow-sm focus:border-primary-500 focus:ring-primary-500"
                           placeholder="name@modernUiWeb.com"
                           {...field}
                         />
@@ -557,7 +569,7 @@ const BlogFooter = () => {
                   )}
                 />
               </div>
-              <Button className="mt-2 cursor-pointer rounded-r-lg border border-primary-600 bg-primary-600 px-5 py-3 text-center text-sm text-background hover:bg-primary-700 focus:ring-4 focus:ring-primary-300">
+              <Button className="mt-2 cursor-pointer rounded-l-none rounded-r-lg border border-primary-600 bg-primary-600 px-5 py-3 text-center text-sm text-background hover:bg-primary-700 focus:ring-4 focus:ring-primary-300">
                 Subscribe
               </Button>
             </form>
@@ -632,13 +644,14 @@ const LiveBlogging = () => {
               Reporting
             </div>
             <Heading
-              level={2}
-              className="mb-4 max-w-2xl font-extrabold leading-tight"
+              level={1}
+              className="mb-4 max-w-2xl text-wrap font-extrabold leading-tight tracking-normal"
             >
               ModernUI Web Blocks Tutorial - Learn how to get started with
               custom sections using the ModernUI Web Blocks
             </Heading>
             <div className="flex items-center">
+              <Clock className="mr-2 size-3" />
               <time
                 className="font-normal text-muted-foreground"
                 dateTime="2022-03-08"
@@ -670,23 +683,142 @@ const LiveBlogging = () => {
                 <DropDownMenu list={ColorIconList} />
               </div>
               <Heading
-                level={2}
-                className="mb-4 max-w-4xl font-extrabold leading-none"
+                level={1}
+                className="mb-4 max-w-4xl font-extrabold leading-none tracking-normal"
               >
                 Getting started with ModernUI Web
               </Heading>
-              <Text level="xl" className="mb-4">
+              <Text level="xl" className="mb-6 leading-8">
                 ModernUI Web is an open-source library of UI components built
                 with the utility-first classes from Tailwind CSS. It also
                 includes interactive elements such as dropdowns, modals,
                 datepickers.
               </Text>
-              <Text className="mb-4 md:text-lg">
+              <Text className="mb-6 md:text-lg md:leading-8">
                 Before going digital, you might benefit from scribbling down
                 some ideas in a sketchbook. This way, you can think things
                 through before committing to an actual design project.
               </Text>
-              <Text className="mb-4 md:text-lg">
+              <Text className="mb-6 md:text-lg md:leading-8">
+                But then I found a{" "}
+                <Link className="text-primary" href="#">
+                  component library based on Tailwind CSS called ModernUI Web
+                </Link>
+                . It comes with the most commonly used UI components, such as
+                buttons, navigation bars, cards, form elements, and more which
+                are conveniently built with the utility classes from Tailwind
+                CSS.
+              </Text>
+            </div>
+            <div className="mb-4 border-b border-primary-300 pb-3 lg:mb-8">
+              <div className="flex items-center justify-between">
+                <span className="text-base font-medium text-red-600">
+                  45 min ago
+                </span>
+                <DropDownMenu list={ColorIconList} />
+              </div>
+              <Heading
+                level={1}
+                className="mb-4 max-w-4xl font-extrabold leading-none tracking-normal"
+              >
+                Best practices for setting up your prototype
+              </Heading>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                <strong>Low fidelity or high fidelity?</strong> Fidelity refers
+                to how close a prototype will be to the real deal. If you&#39;re
+                simply preparing a quick visual aid for a presentation, a
+                low-fidelity prototype — like a wireframe with placeholder
+                images and some basic text — would be more than enough. But if
+                you&#39;re going for more intricate usability testing, hi-fi
+                prototypes are the better choice.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                <strong>Consider your user</strong>. To create an intuitive user
+                flow, try to think as your user would when interacting with your
+                product. While you can fine-tune this during beta testing,
+                considering your user&apos;s needs and habits early on will save
+                you time by setting you on the right path.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                <strong>Start from the inside out.</strong>. A nice way to both
+                organize your tasks and create more user-friendly prototypes is
+                by building your prototypes &apos;inside out&apos;. Start by
+                focusing on what will be important to your user, like a Buy now
+                button or an image gallery, and list each element by order of
+                priority. This way, you&apos;ll be able to create a prototype
+                that puts your users needs at the heart of your design.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                {" "}
+                And there you have it! Everything you need to design and share
+                prototypes — right in Flowbite Figma.
+              </Text>
+            </div>
+            <div className="mb-4 border-b border-primary-300 pb-3 lg:mb-8">
+              <div className="flex items-center justify-between">
+                <span className="text-base font-medium text-red-600">
+                  2 hr 5 min ago
+                </span>
+                <DropDownMenu list={ColorIconList} />
+              </div>
+              <Heading
+                level={1}
+                className="mb-4 max-w-4xl font-extrabold leading-none tracking-normal"
+              >
+                When does design come in handy?
+              </Heading>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                First of all you need to understand how ModernUI Web works. This
+                library is not another framework. Rather, it is a set of
+                components based on Tailwind CSS that you can just copy-paste
+                from the documentation.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                It also includes a JavaScript file that enables interactive
+                components, such as modals, dropdowns, and datepickers which you
+                can optionally include into your project via CDN or NPM.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                You can check out the quickstart guide to explore the elements
+                by including the CDN files into your project. But if you want to
+                build a project with ModernUI Web I recommend you to follow the
+                build tools steps so that you can purge and minify the generated
+                CSS.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                You&apos;ll also receive a lot of useful application UI,
+                marketing UI, and e-commerce pages that can help you get started
+                with your projects even faster. You can check out this
+                comparison table to better understand the differences between
+                the open-source and pro version of ModernUI Web.
+              </Text>
+            </div>
+
+            <div className="mb-6 border-b border-primary-300 pb-3 leading-8 lg:mb-8">
+              <div className="flex items-center justify-between">
+                <span className="text-base font-medium text-red-600">
+                  45 min ago
+                </span>
+                <DropDownMenu list={ColorIconList} />
+              </div>
+              <Heading
+                level={1}
+                className="mb-4 max-w-4xl font-extrabold leading-none tracking-normal"
+              >
+                Getting started with ModernUI Web
+              </Heading>
+              <Text className="mb-6 leading-8 sm:text-lg lg:text-[22px]">
+                ModernUI Web is an open-source library of UI components built
+                with the utility-first classes from Tailwind CSS. It also
+                includes interactive elements such as dropdowns, modals,
+                datepickers.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
+                Before going digital, you might benefit from scribbling down
+                some ideas in a sketchbook. This way, you can think things
+                through before committing to an actual design project.
+              </Text>
+              <Text className="mb-6 md:text-lg md:leading-8">
                 But then I found a{" "}
                 <Link className="text-primary" href="#">
                   component library based on Tailwind CSS called ModernUI Web
@@ -698,7 +830,7 @@ const LiveBlogging = () => {
               </Text>
               <figure className="mb-5">
                 <Image
-                  className="mx-auto w-9/12 object-cover"
+                  className="mx-auto w-3/4 object-cover"
                   src={Typography1}
                   alt=""
                 />
@@ -706,12 +838,12 @@ const LiveBlogging = () => {
                   Digital art by Anonymous
                 </figcaption>
               </figure>
-              <Text className="mb-4 md:text-lg">
+              <Text className="mb-6 md:text-lg md:leading-8">
                 Before going digital, you might benefit from scribbling down
                 some ideas in a sketchbook. This way, you can think things
                 through before committing to an actual design project.
               </Text>
-              <Text className="mb-4 md:text-lg">
+              <Text className="mb-6 md:text-lg md:leading-8">
                 But then I found a{" "}
                 <Link className="text-primary" href="#">
                   component library based on Tailwind CSS called ModernUI Web
@@ -722,115 +854,6 @@ const LiveBlogging = () => {
                 CSS.
               </Text>
             </div>
-            <div className="mb-4 border-b border-primary-300 pb-3 lg:mb-8">
-              <div className="flex items-center justify-between">
-                <span className="text-base font-medium text-red-600">
-                  2 hr 5 min ago
-                </span>
-                <DropDownMenu list={ColorIconList} />
-              </div>
-              <Heading
-                level={2}
-                className="mb-4 max-w-4xl font-extrabold leading-none"
-              >
-                When does design come in handy?
-              </Heading>
-              <Text className="mb-4 md:text-lg">
-                First of all you need to understand how ModernUI Web works. This
-                library is not another framework. Rather, it is a set of
-                components based on Tailwind CSS that you can just copy-paste
-                from the documentation.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                It also includes a JavaScript file that enables interactive
-                components, such as modals, dropdowns, and datepickers which you
-                can optionally include into your project via CDN or NPM.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                You can check out the quickstart guide to explore the elements
-                by including the CDN files into your project. But if you want to
-                build a project with ModernUI Web I recommend you to follow the
-                build tools steps so that you can purge and minify the generated
-                CSS.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                You&apos;ll also receive a lot of useful application UI,
-                marketing UI, and e-commerce pages that can help you get started
-                with your projects even faster. You can check out this
-                comparison table to better understand the differences between
-                the open-source and pro version of ModernUI Web.
-              </Text>
-            </div>
-            <div className="mb-4 border-b border-primary-300 pb-3 lg:mb-8">
-              <div className="flex items-center justify-between">
-                <span className="text-base font-medium text-red-600">
-                  45 min ago
-                </span>
-                <DropDownMenu list={ColorIconList} />
-              </div>
-              <Heading
-                level={2}
-                className="mb-4 max-w-4xl font-extrabold leading-none"
-              >
-                Best practices for setting up your prototype
-              </Heading>
-              <Text className="mb-4 md:text-lg">
-                <strong>Low fidelity or high fidelity?</strong> Fidelity refers
-                to how close a prototype will be to the real deal. If you&#39;re
-                simply preparing a quick visual aid for a presentation, a
-                low-fidelity prototype — like a wireframe with placeholder
-                images and some basic text — would be more than enough. But if
-                you&#39;re going for more intricate usability testing, hi-fi
-                prototypes are the better choice.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                <strong>Anticipate technical issues</strong>. Consider the
-                technical limitations of your prototype early. If you&#39;re
-                using the prototype to pitch a product that will require
-                real-world hardware, ensure the prototype will be easy to port
-                to said hardware.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                <strong>Remember accessibility</strong>. It&#39;s crucial to
-                take into account accessibility concerns when creating a
-                prototype. If it&#39;s a feature that will make navigation
-                easier for users with disabilities, build it into your
-                prototype. If you&#39;re creating a website for general
-                consumption, ensure anyone can use it.
-              </Text>
-            </div>
-            <div className="mb-4 border-b border-primary-300 pb-3 lg:mb-8">
-              <div className="flex items-center justify-between">
-                <span className="text-base font-medium text-red-600">
-                  45 min ago
-                </span>
-                <DropDownMenu list={ColorIconList} />
-              </div>
-              <Heading
-                level={2}
-                className="mb-4 max-w-4xl font-extrabold leading-none"
-              >
-                Getting started with ModernUI Web
-              </Heading>
-              <Text className="mb-4 md:text-lg">
-                ModernUI Web is an open-source library of UI components built
-                with the utility-first classes from Tailwind CSS. It also
-                includes interactive elements such as dropdowns, modals,
-                datepickers.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                Before going digital, you might benefit from scribbling down
-                some ideas in a sketchbook. This way, you can think things
-                through before committing to an actual design project.
-              </Text>
-              <Text className="mb-4 md:text-lg">
-                But then I found a component library based on Tailwind CSS
-                called ModernUI Web . It comes with the most commonly used UI
-                components, such as buttons, navigation bars, cards, form
-                elements, and more which are conveniently built with the utility
-                classes from Tailwind CSS.
-              </Text>
-            </div>
           </article>
           <aside className="hidden xl:block" aria-labelledby="sidebar-label">
             <div className="sticky top-6 xl:w-[336px]">
@@ -838,9 +861,9 @@ const LiveBlogging = () => {
                 Sidebar
               </Heading>
               <div className="mb-8">
-                <Heading level={6} className="mb-2 uppercase">
+                <Text className="mb-2 text-wrap text-[14px] font-bold uppercase leading-5 tracking-normal">
                   ModernUI Web News morning headlines
-                </Heading>
+                </Text>
                 <Text className="mb-4 text-sm text-muted-foreground">
                   Get all the stories you need-to-know from the most powerful
                   name in news delivered first thing every morning to your inbox
@@ -881,9 +904,9 @@ const LiveBlogging = () => {
                 </Form>
               </div>
               <div className="mb-12">
-                <Heading level={6} className="mb-4 font-bold uppercase">
+                <Text className="mb-2 text-wrap text-[14px] font-bold uppercase leading-5 tracking-normal">
                   Latest news
-                </Heading>
+                </Text>
                 {ArticlesData.map((article, index) => (
                   <ArticleCardVertical key={index} {...article} />
                 ))}
@@ -914,12 +937,12 @@ const LiveBlogging = () => {
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="mx-auto flex max-w-screen-sm flex-col items-center text-center">
             <Heading
-              level={2}
+              level={1}
               className="mb-4 font-extrabold leading-tight tracking-tight"
             >
               Live news. Innovative interviews.
             </Heading>
-            <Text className="mb-6 text-muted-foreground md:text-lg">
+            <Text className="mb-6 leading-8 text-muted-foreground md:text-lg">
               As a subscriber, you can stay informed with the live news, stream
               exclusive films and unique interactive interviews.
             </Text>

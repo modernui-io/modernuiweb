@@ -3,6 +3,7 @@ import Link from "next/link";
 
 // Components Import
 import { Heading } from "~/components/ui/custom/headings";
+import { Text } from "~/components/ui/custom/text";
 //Image Imports
 import Blog1 from "~/lib/assets/images/blog-1.png";
 import Blog2 from "~/lib/assets/images/blog-2.png";
@@ -65,7 +66,7 @@ const GridLayoutCard = () => {
       className="bg-background py-8 antialiased lg:py-16"
     >
       <div className="mx-auto max-w-screen-xl px-4">
-        <Heading level={3} className="mb-8 font-bold">
+        <Heading level={3} className="mb-8 font-bold tracking-normal">
           Read Next
         </Heading>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,9 +79,9 @@ const GridLayoutCard = () => {
                   alt={article.alt}
                 />
               </Link>
-              <Heading level={4} className="mb-2 font-bold leading-tight">
+              <Text className="mb-2 text-xl font-bold leading-tight">
                 <Link href={article.link}>{article.title}</Link>
-              </Heading>
+              </Text>
               <Link
                 href={article.link}
                 className="inline-flex items-center font-medium text-primary underline underline-offset-4 hover:no-underline"

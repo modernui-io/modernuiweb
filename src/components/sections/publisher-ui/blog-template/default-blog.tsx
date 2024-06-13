@@ -43,6 +43,7 @@ import Blog2 from "~/lib/assets/images/blog-2.png";
 import Blog3 from "~/lib/assets/images/blog-3.png";
 import Blog4 from "~/lib/assets/images/blog-4.png";
 import ProfilePic from "~/lib/assets/images/profile-picture-2.jpg";
+import Quote from "~/lib/assets/images/quote.png";
 import Typography1 from "~/lib/assets/images/typography-image-1.png";
 import Typography2 from "~/lib/assets/images/typography-image-2.png";
 
@@ -372,7 +373,7 @@ const CommentSection = () => {
     console.log(values);
   }
   return (
-    <div className="bg-background py-8 antialiased">
+    <div className="bg-background py-8 pt-0 antialiased">
       <div className="mx-auto max-w-2xl px-4">
         <div className="mb-6 flex items-center justify-between">
           <Heading level={4} className="font-bold text-foreground lg:text-2xl">
@@ -384,7 +385,7 @@ const CommentSection = () => {
             className="mb-6"
             onSubmit={comment.handleSubmit(onCommentSubmit)}
           >
-            <div className="mb-4 rounded-lg border border-gray-200 bg-primary-50 px-4 py-2">
+            <div className="mb-6 rounded-lg border border-gray-200 bg-primary-50 px-4 py-2">
               <FormField
                 control={comment.control}
                 name="comment"
@@ -470,7 +471,7 @@ const ArticleCard = (article: Article) => {
           {title}
         </Link>
       </Heading>
-      <Text className="mb-4 text-muted-foreground">{description}</Text>
+      <Text className="mb-6 text-muted-foreground">{description}</Text>
       <Link
         href={link}
         passHref
@@ -485,167 +486,174 @@ const ArticleCard = (article: Article) => {
 const BlogBody = () => {
   return (
     <div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={2}>
-        Getting started with Flowbite
+      <Heading
+        level={1}
+        className="mb-6 font-bold leading-[48px] tracking-tight"
+      >
+        Getting started with ModernUI Web
       </Heading>
-      <Text className="mb-4 md:text-lg">
-        First of all you need to understand how Flowbite works. This library is
-        not another framework. Rather, it is a set of components based on
+      <Text className="mb-6 md:text-lg">
+        First of all you need to understand how ModernUI Web works. This library
+        is not another framework. Rather, it is a set of components based on
         Tailwind CSS that you can just copy-paste from the documentation.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         It also includes a JavaScript file that enables interactive components,
         such as modals, dropdowns, and datepickers which you can optionally
         include into your project via CDN or NPM.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         You can check out the quickstart guide to explore the elements by
         including the CDN files into your project. But if you want to build a
-        project with Flowbite I recommend you to follow the build tools steps so
-        that you can purge and minify the generated CSS.
+        project with ModernUI Web I recommend you to follow the build tools
+        steps so that you can purge and minify the generated CSS.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         You&#39;ll also receive a lot of useful application UI, marketing UI,
         and e-commerce pages that can help you get started with your projects
         even faster. You can check out this comparison table to better
         understand the differences between the open-source and pro version of
-        Flowbite.
+        ModernUI Web.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={2}>
+      <Heading
+        level={1}
+        className="mb-6 font-bold leading-[48px] tracking-tight"
+      >
         When does design come in handy?
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         While it might seem like extra work at a first glance, here are some key
         moments in which prototyping will come in handy:
       </Text>
-      <ol>
-        <li className="mb-4 md:text-lg">
+      <ol type="1" className="ml-[28px] list-decimal">
+        <li className="mb-6 md:text-lg">
           <strong>Usability testing</strong>. Does your user know how to exit
           out of screens? Can they follow your intended user journey and buy
           something from the site you&#39;ve designed? By running a usability
           test, you&#39;ll be able to see how users will interact with your
           design once it&#39;s live;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Involving stakeholders</strong>. Need to check if your GDPR
           consent boxes are displaying properly? Pass your prototype to your
           data protection team and they can test it for real;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Impressing a client</strong>. Prototypes can help explain or
           even sell your idea by providing your client with a hands-on
           experience;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Communicating your vision</strong>. By using an interactive
           medium to preview and test design elements, designers and developers
           can understand each other — and the project — better.
         </li>
       </ol>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Laying the groundwork for best design
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         Before going digital, you might benefit from scribbling down some ideas
         in a sketchbook. This way, you can think things through before
         committing to an actual design project.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         Let&#39;s start by including the CSS file inside the <code>head</code>{" "}
         tag of your HTML.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Understanding typography
       </Heading>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Type properties
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
         certain shapes are shared across letters. A typeface represents shared
         patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Baseline
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
         certain shapes are shared across letters. A typeface represents shared
         patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Measurement from the baseline
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
         certain shapes are shared across letters. A typeface represents shared
         patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Type classification
       </Heading>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Serif
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter. Typefaces with serifs are called serif
         typefaces. Serif fonts are classified as one of the following:
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Old-Style serifs
       </Heading>
-      <ul className="mb-4 list-disc md:text-lg">
-        <li>Low contrast between thick and thin strokes</li>
-        <li>Diagonal stress in the strokes</li>
-        <li>Slanted serifs on lower-case ascenders</li>
+      <ul className="mb-6 ml-[28px] list-disc md:text-lg">
+        <li className="mb-3">Low contrast between thick and thin strokes</li>
+        <li className="mb-3">Diagonal stress in the strokes</li>
+        <li className="mb-3">Slanted serifs on lower-case ascenders</li>
       </ul>
-      <Image className="mb-4 w-full object-cover" src={Typography2} alt="" />
-      <ol className="mb-4 list-decimal md:text-lg">
-        <li>Low contrast between thick and thin strokes</li>
-        <li>Diagonal stress in the strokes</li>
-        <li>Slanted serifs on lower-case ascenders</li>
+      <Image className="mb-6 w-full object-cover" src={Typography2} alt="" />
+      <ol className="mb-6 ml-[28px] list-decimal md:text-lg">
+        <li className="mb-3">Low contrast between thick and thin strokes</li>
+        <li className="mb-3">Diagonal stress in the strokes</li>
+        <li className="mb-3">Slanted serifs on lower-case ascenders</li>
       </ol>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Laying the best for successful prototyping
       </Heading>
-      <Text level="baseTall" className="mb-4 md:text-lg">
+      <Text level="baseTall" className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning:
       </Text>
-      <blockquote>
-        <Text className="mb-4 font-bold italic md:text-lg">
-          &quot;Flowbite is just awesome. It contains tons of predesigned
-          components and pages starting from login screen to complex dashboard.
-          Perfect choice for your next SaaS application.&quot;
-        </Text>
-      </blockquote>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Image src={Quote} width={32} height={32} alt="quote" />
+
+      <Text className="mb-6 mt-[10px] font-bold italic md:text-lg">
+        ModernUI Web is just awesome. It contains tons of predesigned components
+        and pages starting from login screen to complex dashboard. Perfect
+        choice for your next SaaS application.
+      </Text>
+
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Code example
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter. Typefaces with serifs are called serif
         typefaces. Serif fonts are classified as one of the following:
       </Text>
-      <div className="overflow-x-auto rounded-lg bg-muted p-4">
+      <div className="mb-6 overflow-x-auto rounded-lg bg-muted p-4">
         <pre className="whitespace-pre text-base text-muted-foreground">
           <code>{ExampleCode}</code>
         </pre>
       </div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Table example
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter.
       </Text>
-      <div className="container mb-4 overflow-x-auto">
-        <Table className="mx-auto w-full table-fixed">
+      <div className="mb-6 overflow-x-auto">
+        <Table className="mx-auto mb-6 table w-full md:min-w-full">
           <TableHeader>
             <TableRow className="bg-muted font-bold">
-              <TableHead className="min-w-40">Country</TableHead>
-              <TableHead className="min-w-40">Date & Time</TableHead>
-              <TableHead className="min-w-40">Amount</TableHead>
+              <TableHead>Country</TableHead>
+              <TableHead>Date & Time</TableHead>
+              <TableHead>Amount</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -659,10 +667,10 @@ const BlogBody = () => {
           </TableBody>
         </Table>
       </div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-6 font-bold leading-9 tracking-normal" level={3}>
         Best practices for setting up your prototype
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         <strong>Low fidelity or high fidelity?</strong> Fidelity refers to how
         close a prototype will be to the real deal. If you&#39;re simply
         preparing a quick visual aid for a presentation, a low-fidelity
@@ -670,18 +678,26 @@ const BlogBody = () => {
         — would be more than enough. But if you&#39;re going for more intricate
         usability testing, hi-fi prototypes are the better choice.
       </Text>
-      <Text className="mb-4 md:text-lg">
-        <strong>Anticipate technical issues</strong>. Consider the technical
-        limitations of your prototype early. If you&#39;re using the prototype
-        to pitch a product that will require real-world hardware, ensure the
-        prototype will be easy to port to said hardware.
+      <Text className="mb-6 md:text-lg">
+        <strong>Consider your user</strong>. To create an intuitive user flow,
+        try to think as your user would when interacting with your product.
+        While you can fine-tune this during beta testing, considering your
+        user&apos;s needs and habits early on will save you time by setting you
+        on the right path.
       </Text>
-      <Text className="mb-4 md:text-lg">
-        <strong>Remember accessibility</strong>. It&#39;s crucial to take into
-        account accessibility concerns when creating a prototype. If it&#39;s a
-        feature that will make navigation easier for users with disabilities,
-        build it into your prototype. If you&#39;re creating a website for
-        general consumption, ensure anyone can use it.
+      <Text className="mb-6 md:text-lg">
+        <strong>Start from the inside out.</strong>. A nice way to both organize
+        your tasks and create more user-friendly prototypes is by building your
+        prototypes &apos;inside out&apos;. Start by focusing on what will be
+        important to your user, like a Buy now button or an image gallery, and
+        list each element by order of priority. This way, you&apos;ll be able to
+        create a prototype that puts your users needs at the heart of your
+        design.
+      </Text>
+      <Text className="mb-6 md:text-lg">
+        {" "}
+        And there you have it! Everything you need to design and share
+        prototypes — right in ModernUi Web Figma.
       </Text>
     </div>
   );
@@ -694,10 +710,12 @@ const BlogFooter = () => {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           {LinkData.map(({ name, data }, index) => (
             <div key={index}>
-              <Text className="mb-6 text-sm font-medium uppercase">{name}</Text>
+              <Text className="mb-6 text-sm font-semibold uppercase">
+                {name}
+              </Text>
               <ul className="text-muted-foreground">
                 {data.map(({ label, href }, index) => (
-                  <li key={index} className="mb-4">
+                  <li key={index} className="mb-6">
                     <Link href={href} className="hover:underline">
                       {label}
                     </Link>
@@ -763,7 +781,7 @@ const DefaultBlog = () => {
       <main className="bg-background pt-8 antialiased">
         <div className="mx-auto flex max-w-screen-xl justify-between px-4">
           <article className="mx-auto w-full max-w-2xl py-8 lg:py-16">
-            <header className="mb-4 lg:mb-6">
+            <header className="mb-6 lg:mb-6">
               <address className="mb-6 flex items-center not-italic">
                 <div className="mr-3 inline-flex items-center text-sm text-secondary-foreground">
                   <Avatar className="mr-4 size-16">
@@ -792,24 +810,24 @@ const DefaultBlog = () => {
                   </div>
                 </div>
               </address>
-              <Heading
-                level={1}
-                className="mb-4 font-extrabold leading-tight lg:mb-6 lg:text-4xl"
-              >
-                Best practices for successful prototypes
-              </Heading>
             </header>
-            <Text level="mdTitle" className="mb-4">
+            <Heading
+              level={1}
+              className="mb-6 text-wrap font-extrabold leading-tight tracking-normal"
+            >
+              Best practices for successful prototypes
+            </Heading>
+            <Text className="mb-6 leading-8 sm:text-lg lg:text-[22px]">
               ModernUI Web is an open-source library of UI components built with
               the utility-first classes from Tailwind CSS. It also includes
               interactive elements such as dropdowns, modals, datepickers.
             </Text>
-            <Text className="mb-4 md:text-lg">
+            <Text className="mb-6 md:text-lg">
               Before going digital, you might benefit from scribbling down some
               ideas in a sketchbook. This way, you can think things through
               before committing to an actual design project.
             </Text>
-            <Text className="mb-4 md:text-lg">
+            <Text className="mb-6 md:text-lg">
               But then I found a{" "}
               <Link className="text-primary" href="#">
                 component library based on Tailwind CSS called ModernUI Web
@@ -832,7 +850,7 @@ const DefaultBlog = () => {
 
       <aside
         aria-label="Related articles"
-        className="bg-muted py-6 antialiased lg:py-16"
+        className="bg-muted py-6 antialiased lg:py-24"
       >
         <div className="mx-auto max-w-screen-xl px-4">
           <Heading level={3} className="mb-8 font-bold">
@@ -845,41 +863,40 @@ const DefaultBlog = () => {
           </div>
         </div>
       </aside>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+      <div className="mx-auto max-w-screen-md py-8 sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-md text-center">
-          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
+          <Heading level={1} className="mb-4 font-extrabold tracking-tight">
             Sign up for our newsletter
           </Heading>
-          <Text className="mb-6 text-muted-foreground md:text-lg">
+          <Text className="mx-12 mb-12 text-muted-foreground md:text-lg">
             Stay up to date with the roadmap progress, announcements and
             exclusive discounts feel free to sign up with your email.
           </Text>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="mb-3 mt-6 flex h-fit items-center justify-center gap-2"
+              className="mx-16 mb-3 mt-6 flex h-fit flex-1 items-center justify-center gap-2"
             >
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex min-w-full flex-1">
                     <FormLabel className="sr-only">Email</FormLabel>
-                    <FormControl>
+                    <FormControl className="w-full">
                       <div className="relative">
                         <Input
-                          className="bg-input pl-8 md:w-64"
-                          placeholder="Your email address"
+                          className="w-full rounded-r-none bg-input pl-8"
+                          placeholder="Enter your email"
                           {...field}
                         />
                         <Mail className="absolute left-2 top-1/4 size-5 text-muted-foreground" />
                       </div>
                     </FormControl>
-                    <FormMessage />
+                    <Button className="rounded-l-none">Submit</Button>
                   </FormItem>
                 )}
               />
-              <Button>Submit</Button>
             </form>
             <div className="text-sm font-medium text-muted-foreground">
               We care about the protection of your data. &nbsp;

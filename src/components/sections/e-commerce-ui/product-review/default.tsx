@@ -265,7 +265,7 @@ const ReviewDialog = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button className="block rounded-lg bg-primary-700 px-5 py-2 text-sm font-medium text-background hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">
-          Write a customer review
+          Write a review
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[600px]">
@@ -500,7 +500,7 @@ const DefaultReview = () => {
     <MuiLayout.Container className="bg-background">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <div className="flex items-center gap-2">
-          <Heading level={3} className="font-semibold">
+          <Heading level={3} className="font-semibold tracking-normal">
             Reviews
           </Heading>
           <div className="mt-2 flex items-center gap-2 sm:mt-0">

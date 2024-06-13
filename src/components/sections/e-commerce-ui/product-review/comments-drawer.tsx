@@ -775,7 +775,7 @@ const Review = (props: ReviewDataProps) => {
         </div>
       </div>
       {isReply && (
-        <div className="flex">
+        <div className="flex lg:w-[528px]">
           <div className="mr-3 hidden shrink-0 sm:block">
             <Image
               height={36}
@@ -861,7 +861,7 @@ const CustomerReviewsList = () => {
 const CustomerReviews = () => {
   return (
     <div className="w-full shrink-0 space-y-6 lg:max-w-sm">
-      <Heading level={3} className="font-semibold">
+      <Heading level={3} className="font-semibold tracking-normal">
         Customer Reviews
       </Heading>
       <div className="space-y-8">

@@ -146,7 +146,7 @@ export const SubmitForm = () => {
   return (
     <MuiLayout.Section className="bg-background py-8 antialiased">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <Heading level={4} className="mb-2 font-bold leading-tight">
+        <Heading level={3} className="font-semibold tracking-normal">
           Reviews
         </Heading>
         <div>
@@ -712,7 +712,7 @@ export const SubmitForm = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="border-t border-primary-200 pt-4  md:pt-5">
+                  <div className="pt-4  md:pt-5">
                     <Button
                       type="submit"
                       className="me-2 inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-background hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"

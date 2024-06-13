@@ -71,11 +71,11 @@ const ArticleCard = (article: Article) => {
           alt={imgAlt}
         />
       </Link>
-      <Heading level={5} className="mb-2 font-bold leading-tight">
+      <Text className="mb-2 text-xl font-bold leading-tight">
         <Link href={link} passHref>
           {title}
         </Link>
-      </Heading>
+      </Text>
       <Text className="mb-4 text-muted-foreground">{description}</Text>
       <Link
         href={link}

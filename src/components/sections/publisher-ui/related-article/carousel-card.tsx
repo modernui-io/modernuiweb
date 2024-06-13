@@ -98,7 +98,7 @@ const TrendingArticlesCarousel = () => {
   return (
     <MuiLayout.Section className="bg-background py-8 antialiased lg:py-16">
       <MuiLayout.Container className="mx-auto w-full max-w-screen-xl px-4">
-        <Heading level={2} className="mb-8 font-bold">
+        <Heading level={3} className="mb-8 font-bold">
           Trending on ModernWeb UI
         </Heading>
         <Carousel
@@ -117,8 +117,8 @@ const TrendingArticlesCarousel = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[47%] top-3/4 rounded-lg " />
-          <CarouselNext className=" right-[47%] top-3/4 rounded-lg " />
+          <CarouselPrevious className="left-[47%] top-3/4 size-5 rounded-lg" />
+          <CarouselNext className=" right-[47%] top-3/4 size-5 rounded-lg" />
         </Carousel>
       </MuiLayout.Container>
     </MuiLayout.Section>

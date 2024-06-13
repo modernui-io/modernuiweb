@@ -60,11 +60,11 @@ const ArticleCard = (article: Article) => {
         />
       </Link>
       <div className="flex flex-col justify-center">
-        <Heading level={4} className="mb-2 font-bold leading-tight">
+        <Text className="mb-2 text-xl font-bold leading-tight">
           <Link href={link} passHref>
             {title}
           </Link>
-        </Heading>
+        </Text>
         <Text className="mb-2 text-muted-foreground">{description}</Text>
         <Link
           href={link}
@@ -84,7 +84,7 @@ const RoundedList = () => (
     className="bg-background py-8 antialiased lg:py-24"
   >
     <div className="mx-auto max-w-screen-xl px-4">
-      <Heading level={3} className="mb-8 font-bold">
+      <Heading level={3} className="mb-8 font-bold tracking-normal">
         Read next
       </Heading>
       {Articles.map((article, index) => (

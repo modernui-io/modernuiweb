@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Bookmark,
   CalendarRange,
-  ChevronRight,
   CircleHelp,
   ClipboardList,
   ClipboardMinus,
@@ -40,7 +39,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 // Components Import
-import * as MuiLayout from "~/components/layouts";
 import { Button } from "~/components/ui/button";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
@@ -78,6 +76,7 @@ import Blog1 from "~/lib/assets/images/blog-1.png";
 import Blog2 from "~/lib/assets/images/blog-2.png";
 import Blog3 from "~/lib/assets/images/blog-3.png";
 import Blog4 from "~/lib/assets/images/blog-4.png";
+import Quote from "~/lib/assets/images/quote.png";
 import Typography1 from "~/lib/assets/images/typography-image-1.png";
 import Typography2 from "~/lib/assets/images/typography-image-2.png";
 
@@ -107,20 +106,23 @@ interface Article {
 }
 
 //This icon is not available in Lucid/RadixUI
-const TwitterIcon = () => (
-  <svg
-    className="size-4"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 20 20"
-  >
-    <path
-      fill="currentColor"
-      d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
-    />
-  </svg>
-);
+const TwitterIcon = (props: { classStyle: string }) => {
+  const { classStyle } = props;
+  return (
+    <svg
+      className={`size-4 ${classStyle ? classStyle : ""}`}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill="currentColor"
+        d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
+      />
+    </svg>
+  );
+};
 
 // This icon is not available in Lucid/RadixUI
 const BallIcon = () => (
@@ -140,26 +142,29 @@ const BallIcon = () => (
 );
 
 // This icon is not available in Lucid/RadixUI
-const FacebookIcon = () => (
-  <svg
-    className="size-4"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    viewBox="0 0 8 19"
-  >
-    <path
-      fillRule="evenodd"
-      d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+const FacebookIcon = (props: { classStyle: string }) => {
+  const { classStyle } = props;
+  return (
+    <svg
+      className={`size-4 ${classStyle}`}
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 8 19"
+    >
+      <path
+        fillRule="evenodd"
+        d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
 
 // This icon is not available in Lucid/RadixUI
 const GithubIcon = () => (
   <svg
-    className="size-4"
+    className="size-3"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -174,8 +179,8 @@ const GithubIcon = () => (
 );
 
 const IconList = [
-  { icon: <FacebookIcon /> },
-  { icon: <TwitterIcon /> },
+  { icon: <FacebookIcon classStyle={""} /> },
+  { icon: <TwitterIcon classStyle={""} /> },
   { icon: <GithubIcon /> },
   { icon: <BallIcon /> },
 ];
@@ -231,16 +236,16 @@ const socialMediaLinks = [
   {
     href: "#",
     label: "Share",
-    icon: <FacebookIcon />,
+    icon: <FacebookIcon classStyle="mr-2 size-3" />,
   },
   {
     href: "#",
     label: "Tweet",
-    icon: <TwitterIcon />,
+    icon: <TwitterIcon classStyle="mr-2 size-3" />,
   },
   {
     label: "Copy link",
-    icon: <LinkIcon className="mr-2 size-3" />,
+    icon: <LinkIcon className="mr-2 size-4" />,
     isButton: true,
   },
 ];
@@ -762,8 +767,8 @@ const CommentsUpvotes = () => {
   }
 
   return (
-    <MuiLayout.Section className="bg-background py-8 antialiased lg:py-16">
-      <MuiLayout.Container className="mx-auto max-w-2xl px-4">
+    <div className="bg-background py-8 antialiased lg:py-16">
+      <div className="w-full">
         <div className="mb-6 flex items-center justify-between">
           <Heading level={4} className="font-bold text-foreground lg:text-2xl">
             Discussion (20)
@@ -901,8 +906,8 @@ const CommentsUpvotes = () => {
             </div>
           );
         })}
-      </MuiLayout.Container>
-    </MuiLayout.Section>
+      </div>
+    </div>
   );
 };
 
@@ -957,172 +962,179 @@ const RelatedArticles = () => (
 const BlogBody = () => {
   return (
     <div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={2}>
+      <Heading
+        level={1}
+        className="mb-6 font-bold leading-[48px] tracking-tight"
+      >
         Getting started with ModernUI Web
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         First of all you need to understand how ModernUI Web works. This library
         is not another framework. Rather, it is a set of components based on
         Tailwind CSS that you can just copy-paste from the documentation.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         It also includes a JavaScript file that enables interactive components,
         such as modals, dropdowns, and datepickers which you can optionally
         include into your project via CDN or NPM.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         You can check out the quickstart guide to explore the elements by
         including the CDN files into your project. But if you want to build a
         project with ModernUI Web I recommend you to follow the build tools
         steps so that you can purge and minify the generated CSS.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         You&#39;ll also receive a lot of useful application UI, marketing UI,
         and e-commerce pages that can help you get started with your projects
         even faster. You can check out this comparison table to better
         understand the differences between the open-source and pro version of
         ModernUI Web.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={2}>
+      <Heading
+        level={1}
+        className="mb-6 font-bold leading-[48px] tracking-tight"
+      >
         When does design come in handy?
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         While it might seem like extra work at a first glance, here are some key
         moments in which prototyping will come in handy:
       </Text>
-      <ol>
-        <li className="mb-4 md:text-lg">
+      <ol type="1" className="ml-[28px] list-decimal">
+        <li className="mb-6 md:text-lg">
           <strong>Usability testing</strong>. Does your user know how to exit
           out of screens? Can they follow your intended user journey and buy
           something from the site you&#39;ve designed? By running a usability
           test, you&#39;ll be able to see how users will interact with your
           design once it&#39;s live;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Involving stakeholders</strong>. Need to check if your GDPR
           consent boxes are displaying properly? Pass your prototype to your
           data protection team and they can test it for real;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Impressing a client</strong>. Prototypes can help explain or
           even sell your idea by providing your client with a hands-on
           experience;
         </li>
-        <li className="mb-4 md:text-lg">
+        <li className="mb-6 md:text-lg">
           <strong>Communicating your vision</strong>. By using an interactive
           medium to preview and test design elements, designers and developers
           can understand each other — and the project — better.
         </li>
       </ol>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Laying the groundwork for best design
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         Before going digital, you might benefit from scribbling down some ideas
         in a sketchbook. This way, you can think things through before
         committing to an actual design project.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         Let&#39;s start by including the CSS file inside the <code>head</code>{" "}
         tag of your HTML.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Understanding typography
       </Heading>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Type properties
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
-        certain shapes are shared across letters. A type represents shared
-        patterns across collection of letters.
+        certain shapes are shared across letters. A typeface represents shared
+        patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Baseline
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
         certain shapes are shared across letters. A typeface represents shared
         patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Measurement from the baseline
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A typeface is a collection of letters. While each letter is unique,
         certain shapes are shared across letters. A typeface represents shared
         patterns across a collection of letters.
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Type classification
       </Heading>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Serif
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter. Typefaces with serifs are called serif
         typefaces. Serif fonts are classified as one of the following:
       </Text>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Old-Style serifs
       </Heading>
-      <ul className="mb-4 list-disc md:text-lg">
-        <li>Low contrast between thick and thin strokes</li>
-        <li>Diagonal stress in the strokes</li>
-        <li>Slanted serifs on lower-case ascenders</li>
+      <ul className="mb-6 ml-[28px] list-disc md:text-lg">
+        <li className="mb-3">Low contrast between thick and thin strokes</li>
+        <li className="mb-3">Diagonal stress in the strokes</li>
+        <li className="mb-3">Slanted serifs on lower-case ascenders</li>
       </ul>
-      <Image className="mb-4 w-full object-cover" src={Typography2} alt="" />
-      <ol className="mb-4 list-decimal md:text-lg">
-        <li>Low contrast between thick and thin strokes</li>
-        <li>Diagonal stress in the strokes</li>
-        <li>Slanted serifs on lower-case ascenders</li>
+      <Image className="mb-6 w-full object-cover" src={Typography2} alt="" />
+      <ol className="mb-6 ml-[28px] list-decimal md:text-lg">
+        <li className="mb-3">Low contrast between thick and thin strokes</li>
+        <li className="mb-3">Diagonal stress in the strokes</li>
+        <li className="mb-3">Slanted serifs on lower-case ascenders</li>
       </ol>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-4 font-bold leading-9 tracking-normal" level={3}>
         Laying the best for successful prototyping
       </Heading>
-      <Text level="baseTall" className="mb-4 md:text-lg">
+      <Text level="baseTall" className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning:
       </Text>
-      <blockquote>
-        <Text className="mb-4 font-bold italic md:text-lg">
-          &quot;ModernUI Web is just awesome. It contains tons of predesigned
-          components and pages starting from login screen to complex dashboard.
-          Perfect choice for your next SaaS application.&quot;
-        </Text>
-      </blockquote>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Image src={Quote} width={32} height={32} alt="quote" />
+
+      <Text className="mb-6 mt-[10px] font-bold italic md:text-lg">
+        ModernUI Web is just awesome. It contains tons of predesigned components
+        and pages starting from login screen to complex dashboard. Perfect
+        choice for your next SaaS application.
+      </Text>
+
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Code example
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter. Typefaces with serifs are called serif
         typefaces. Serif fonts are classified as one of the following:
       </Text>
-      <div className="overflow-x-auto rounded-lg bg-muted p-4">
+      <div className="mb-6 overflow-x-auto rounded-lg bg-muted p-4">
         <pre className="whitespace-pre text-base text-muted-foreground">
           <code>{ExampleCode}</code>
         </pre>
       </div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={4}>
+      <Heading className="mb-[9px] font-semibold tracking-tight" level={4}>
         Table example
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         A serif is a small shape or projection that appears at the beginning or
         end of a stroke on a letter.
       </Text>
-      <div className="container mb-4 overflow-x-auto">
-        <Table className="mx-auto w-full table-fixed">
+      <div className="mb-6 overflow-x-auto">
+        <Table className="mx-auto mb-6 table w-full md:min-w-full">
           <TableHeader>
-            <TableRow className="bg-muted font-bold">
-              <TableHead className="min-w-40">Country</TableHead>
-              <TableHead className="min-w-40">Date & Time</TableHead>
-              <TableHead className="min-w-40">Amount</TableHead>
+            <TableRow className="bg-muted py-3 font-bold">
+              <TableHead>Country</TableHead>
+              <TableHead>Date & Time</TableHead>
+              <TableHead>Amount</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {TableData.map(({ country, amount, date }) => (
-              <TableRow key={country}>
+              <TableRow key={country} className="py-3">
                 <TableCell className="font-medium">{country}</TableCell>
                 <TableCell>{date}</TableCell>
                 <TableCell>{amount}</TableCell>
@@ -1131,10 +1143,10 @@ const BlogBody = () => {
           </TableBody>
         </Table>
       </div>
-      <Heading className="mb-4 font-extrabold tracking-tight" level={3}>
+      <Heading className="mb-6 font-bold leading-9 tracking-normal" level={3}>
         Best practices for setting up your prototype
       </Heading>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         <strong>Low fidelity or high fidelity?</strong> Fidelity refers to how
         close a prototype will be to the real deal. If you&#39;re simply
         preparing a quick visual aid for a presentation, a low-fidelity
@@ -1142,21 +1154,26 @@ const BlogBody = () => {
         — would be more than enough. But if you&#39;re going for more intricate
         usability testing, hi-fi prototypes are the better choice.
       </Text>
-      <Text className="mb-4 md:text-lg">
+      <Text className="mb-6 md:text-lg">
         <strong>Consider your user</strong>. To create an intuitive user flow,
         try to think as your user would when interacting with your product.
         While you can fine-tune this during beta testing, considering your
         user&apos;s needs and habits early on will save you time by setting you
         on the right path.
       </Text>
-      <Text className="mb-4 md:text-lg">
-        <strong>Start from the inside out</strong>. A nice way to both organize
+      <Text className="mb-6 md:text-lg">
+        <strong>Start from the inside out.</strong>. A nice way to both organize
         your tasks and create more user-friendly prototypes is by building your
         prototypes &apos;inside out&apos;. Start by focusing on what will be
         important to your user, like a Buy now button or an image gallery, and
         list each element by order of priority. This way, you&apos;ll be able to
-        create a prototype that puts your users&apos; needs at the heart of your
+        create a prototype that puts your users needs at the heart of your
         design.
+      </Text>
+      <Text className="mb-6 md:text-lg">
+        {" "}
+        And there you have it! Everything you need to design and share
+        prototypes — right in Flowbite Figma.
       </Text>
     </div>
   );
@@ -1164,8 +1181,8 @@ const BlogBody = () => {
 
 const BlogFooter = () => {
   return (
-    <footer className="bg-muted antialiased">
-      <div className="md:{p-8 pb-0} lg:{p-10 pb-0} mx-auto max-w-screen-2xl p-4 py-6">
+    <footer className="w-full bg-muted antialiased">
+      <div className="md:{p-8 pb-0} lg:{p-10 pb-0} mx-auto w-full p-10">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
           {LinkData.map(({ name, data }, index) => (
             <div key={index}>
@@ -1241,10 +1258,10 @@ const CommunityBlog = () => {
   };
 
   return (
-    <div>
-      <header>
+    <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between">
+      <header className="w-full">
         <nav className="border-primary-200 bg-muted py-2.5 antialiased">
-          <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between px-4">
+          <div className="mx-auto flex w-full  max-w-screen-2xl flex-wrap items-center justify-between px-4">
             <Link
               href="#"
               className="flex items-center text-2xl font-semibold text-secondary-foreground"
@@ -1299,7 +1316,7 @@ const CommunityBlog = () => {
         </nav>
       </header>
       <main className="bg-background py-8 antialiased lg:py-16">
-        <div className="mx-auto flex max-w-screen-2xl justify-between px-5">
+        <div className="mx-auto flex w-full justify-between px-5">
           <div className="mb-6 mr-12 hidden lg:w-52 xl:block">
             <div className="sticky top-6">
               <aside aria-labelledby="reactions-label" className="mb-2 w-full">
@@ -1308,15 +1325,15 @@ const CommunityBlog = () => {
                 </Heading>
                 <div className="mb-2 flex w-[210px] flex-wrap items-center justify-between">
                   {reactions.map((reaction, index) => (
-                    <Button
+                    <div
                       key={index}
-                      className="mb-4 flex flex-col rounded-lg bg-background px-3 py-7 hover:bg-primary-100"
+                      className="mb-4 flex flex-col rounded-lg bg-background px-3 hover:bg-primary-100"
                     >
                       <div>{reaction.icon}</div>
                       <span className="block text-sm font-medium text-muted-foreground">
                         {reaction.count}
                       </span>
-                    </Button>
+                    </div>
                   ))}
                 </div>
               </aside>
@@ -1441,7 +1458,7 @@ const CommunityBlog = () => {
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Bookmark className="size-4" />
+                          <Bookmark className="size-5" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Save this article</p>
@@ -1452,12 +1469,17 @@ const CommunityBlog = () => {
                 </div>
               </div>
             </header>
-            <Text className="mb-4 md:text-lg">
+            <Text className="mb-6 leading-8 sm:text-lg lg:text-[22px]">
+              ModernUI Web is an open-source library of UI components built with
+              the utility-first classes from Tailwind CSS. It also includes
+              interactive elements such as dropdowns, modals, datepickers.
+            </Text>
+            <Text className="mb-6 md:text-lg">
               Before going digital, you might benefit from scribbling down some
               ideas in a sketchbook. This way, you can think things through
               before committing to an actual design project.
             </Text>
-            <Text className="mb-4 md:text-lg">
+            <Text className="mb-6 md:text-lg">
               But then I found a{" "}
               <Link className="text-primary" href="#">
                 component library based on Tailwind CSS called ModernUI Web
@@ -1467,11 +1489,7 @@ const CommunityBlog = () => {
               conveniently built with the utility classes from Tailwind CSS.
             </Text>
             <figure className="mb-5">
-              <Image
-                className="mx-auto w-3/4 object-cover"
-                src={Typography1}
-                alt=""
-              />
+              <Image className="w-full object-cover" src={Typography1} alt="" />
               <figcaption className="text-center text-sm text-muted-foreground">
                 Digital art by Anonymous
               </figcaption>
@@ -1481,7 +1499,7 @@ const CommunityBlog = () => {
           </article>
 
           <aside
-            className=" ml-12 hidden lg:block"
+            className="ml-12 hidden w-[288px] lg:block"
             aria-labelledby="sidebar-label"
           >
             <div className="sticky top-6">
@@ -1489,7 +1507,7 @@ const CommunityBlog = () => {
                 Sidebar
               </Heading>
 
-              <div className="mb-6 rounded-lg border border-primary-200 bg-background p-5 font-medium text-muted-foreground shadow">
+              <div className="mb-6 rounded-lg border border-primary-200 bg-background p-6 font-medium text-muted-foreground shadow">
                 <div className="mb-4 flex items-center">
                   <div className="mr-3 shrink-0">
                     <Image
@@ -1511,13 +1529,19 @@ const CommunityBlog = () => {
                   Hey! I&apos;m Jese Leos. I&apos;m a career-changer. Bootcamp
                   grad & Dev.
                 </Text>
-                <Text level={"md"} className="mb-2 font-bold uppercase">
+                <Text
+                  level={"md"}
+                  className="mb-2 font-bold uppercase leading-5"
+                >
                   Location
                 </Text>
                 <Text className="mb-4 text-sm font-normal text-muted-foreground">
                   California, United States
                 </Text>
-                <Text level={"md"} className="mb-2 font-bold uppercase">
+                <Text
+                  level={"md"}
+                  className="mb-2 font-bold uppercase leading-5"
+                >
                   Joined
                 </Text>
                 <Text className="mb-4 text-sm font-normal text-muted-foreground">
@@ -1527,13 +1551,13 @@ const CommunityBlog = () => {
                   Follow
                 </Button>
               </div>
-              <div className="mb-4 rounded-lg border border-primary-200 p-5 pt-0 font-medium text-muted-foreground">
+              <div className="mb-4 rounded-lg border border-primary-200 p-6 pt-0 font-medium text-muted-foreground">
                 <Form {...form}>
                   <form
                     className="w-full"
                     onSubmit={form.handleSubmit(onSubmit)}
                   >
-                    <div className="rounded-t-lg bg-primary-50 px-4 py-2">
+                    <div className="my-6 rounded-t-lg bg-primary-50">
                       <FormField
                         control={form.control}
                         name="comment"
@@ -1545,7 +1569,7 @@ const CommunityBlog = () => {
                             <FormControl>
                               <div className="relative">
                                 <Input
-                                  className="pl-8 md:w-64"
+                                  className="pl-8 md:w-[238px]"
                                   placeholder="Search..."
                                   {...field}
                                 />
@@ -1616,11 +1640,11 @@ const CommunityBlog = () => {
         </div>
       </main>
       <RelatedArticles />
-      <div className="bg-background">
-        <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:py-16 lg:px-6">
-          <div className="mx-auto flex max-w-screen-sm flex-col items-center text-center">
+      <div className="w-full bg-background">
+        <div className="w-full px-4 py-8 sm:py-24 lg:px-6">
+          <div className=" mx-auto flex max-w-screen-md flex-col items-center text-center">
             <Heading
-              level={2}
+              level={1}
               className="mb-4 font-extrabold leading-tight tracking-tight"
             >
               Join a growing community of millions of developers and designers!

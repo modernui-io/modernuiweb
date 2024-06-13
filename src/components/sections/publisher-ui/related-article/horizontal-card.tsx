@@ -65,18 +65,16 @@ const ArticleCard = (article: Article) => {
       <Link href={link} passHref className="mb-2 xl:mb-0">
         <Image
           src={imgSrc}
-          width={400}
-          height={250}
-          className="mr-5 max-w-sm"
+          className="mr-5 max-w-sm object-cover"
           alt={imgAlt}
         />
       </Link>
       <div className="flex flex-col justify-center">
-        <Heading level={4} className="mb-2 font-bold leading-tight">
+        <Text className="mb-2 text-xl font-bold leading-tight">
           <Link href={link} passHref>
             {title}
           </Link>
-        </Heading>
+        </Text>
         <Text className="mb-4 max-w-sm text-muted-foreground">
           {description}
         </Text>
@@ -98,7 +96,7 @@ const HorizontalCard = () => (
     className="bg-background py-8 antialiased lg:py-24"
   >
     <div className="mx-auto max-w-screen-xl px-4">
-      <Heading level={3} className="mb-6 font-bold lg:mb-8">
+      <Heading level={3} className="mb-6 font-bold tracking-normal lg:mb-8">
         Related articles
       </Heading>
       <div className="grid gap-6 md:grid-cols-2 lg:gap-12">

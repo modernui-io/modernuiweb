@@ -81,7 +81,7 @@ export function CreateEventModal() {
         <Button>Create event</Button>
       </DialogTrigger>
       <DialogContent className="rounded-lg p-4 shadow sm:p-5">
-        <div className="mb-2 flex items-center justify-between pb-4">
+        <div className="flex items-center justify-between pb-4">
           <h3 className="text-lg font-semibold">Add new event</h3>
         </div>
         <Form {...form}>
@@ -211,7 +211,7 @@ export function CreateEventModal() {
                     <div className="relative flex items-center">
                       <HiCalendar className="absolute left-2 size-5 text-gray-500 dark:text-gray-400" />
                       <Input
-                        placeholder="Pick a date"
+                        placeholder="Select date"
                         className="justify-start pl-8 text-left font-normal dark:border-gray-500"
                         {...form.register("date")}
                       />
@@ -236,33 +236,37 @@ export function CreateEventModal() {
                 <Text>All day</Text>
               </div>
               <div className="flex items-center gap-x-3">
-                <div className="mb-4 flex space-x-[-20px] sm:mb-0 [&_img]:ring-white">
-                  <Avatar>
+                <div className="mb-4 flex space-x-[-15px] sm:mb-0 [&_img]:ring-white">
+                  <Avatar className="size-8 border border-white">
                     <AvatarImage
                       alt="Helene Engels"
                       src="https://github.com/shadcn.png"
                     />
                     <AvatarFallback>HE</AvatarFallback>
                   </Avatar>
-                  <Avatar>
+                  <Avatar className="size-8 border border-white">
                     <AvatarImage
                       alt="Robert Brown"
                       src="https://github.com/shadcn.png"
                     />
                     <AvatarFallback>RB</AvatarFallback>
                   </Avatar>
-                  <Avatar>
+                  <Avatar className="size-8 border border-white">
                     <AvatarImage
                       alt="Bonnie Green"
                       src="https://github.com/shadcn.png"
                     />
                     <AvatarFallback>BG</AvatarFallback>
                   </Avatar>
-                  <Avatar>
+                  <Avatar className="size-8 border border-white">
                     <AvatarFallback>+9</AvatarFallback>
                   </Avatar>
                 </div>
-                <Button variant={"outline"} className="inline-flex text-xs">
+                <Button
+                  variant={"outline"}
+                  className="inline-flex text-xs"
+                  size={"sm"}
+                >
                   <HiPlus className="-ml-1 mr-1 size-4" />
                   Add guests
                 </Button>

@@ -47,7 +47,7 @@ export function DefaultCreateModal() {
       <DialogTrigger asChild>
         <Button>Create product</Button>
       </DialogTrigger>
-      <DialogContent className="rounded-lg p-4 shadow sm:p-5">
+      <DialogContent className="rounded-lg p-4 shadow sm:p-5 md:min-w-[40rem]">
         <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 sm:mb-5">
           <h3 className="text-lg font-semibold">Add Product</h3>
         </div>

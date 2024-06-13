@@ -26,16 +26,16 @@ export function ConfirmDeleteWithAlert() {
             <span className="sr-only">Danger</span>
             <span className="font-semibold leading-none">Warning</span>
           </div>
-          <Text>
+          <Text className="text-orange-700 dark:bg-gray-700 dark:text-orange-300">
             By deleting this user 6 associated posts will also be permanently
             deleted.
           </Text>
         </div>
         <div className="flex items-center justify-center space-x-4">
           <DialogClose asChild>
-            <Button size="sm">No, cancel</Button>
+            <Button variant={"outline"}>No, cancel</Button>
           </DialogClose>
-          <Button type="submit" size="sm" variant={"destructive"}>
+          <Button type="submit" variant={"destructive"}>
             <HiTrash className="-ml-1 mr-1.5 size-4" />
             Yes, confirm delete
           </Button>

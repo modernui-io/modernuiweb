@@ -412,7 +412,7 @@ export function AdvancedUpdateEventModal() {
             <Button
               variant={"outline"}
               size={"lg"}
-              className="border-red-600 px-5 py-2.5 hover:bg-red-600 hover:text-white"
+              className="border-red-600 px-5 py-2.5 text-red-500 hover:bg-red-600 hover:text-white"
             >
               <HiTrash className="-ml-1 mr-1 size-5" />
               Delete

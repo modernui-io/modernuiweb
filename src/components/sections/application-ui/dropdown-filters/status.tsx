@@ -16,7 +16,7 @@ export function DropdownFilterStatus() {
           Filter by status <FaChevronDown className="ml-3 size-3" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-72">
         <ul className="space-y-2 p-2 text-sm">
           <li className="flex items-center justify-between">
             <div className="flex items-center">

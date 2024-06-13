@@ -74,18 +74,24 @@ export function AdvancedComparisonTable() {
           </div>
           <div className="mx-4 border-t"></div>
           <div className="flex flex-col items-center justify-between space-y-3 p-4 md:flex-row md:space-x-4 md:space-y-0">
-            <ul className="hidden flex-wrap gap-3 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:flex">
+            <ul className="hidden flex-wrap gap-2 text-center text-sm font-medium text-gray-500 dark:text-gray-400 md:flex">
               <li className="mr-4">
-                <Button variant={"outline"}>General Information</Button>
+                <Button variant={"outline"} className="rounded-full">
+                  General Information
+                </Button>
               </li>
               <li className="mr-4">
-                <Button>Technical Information</Button>
+                <Button className="rounded-full">Technical Information</Button>
               </li>
               <li className="mr-4">
-                <Button variant={"outline"}>Delivery Information</Button>
+                <Button variant={"outline"} className="rounded-full">
+                  Delivery Information
+                </Button>
               </li>
               <li className="mr-4">
-                <Button variant={"outline"}>Ratings</Button>
+                <Button variant={"outline"} className="rounded-full">
+                  Ratings
+                </Button>
               </li>
             </ul>
           </div>

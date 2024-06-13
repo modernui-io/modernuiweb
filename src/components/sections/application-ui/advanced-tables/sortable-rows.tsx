@@ -82,7 +82,7 @@ export function AdvancedTableWithSortableRows() {
                         Filter
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="w-52">
                       <div className="p-3">
                         <h6 className="mb-3 text-sm font-medium">
                           Choose brand
@@ -145,7 +145,7 @@ export function AdvancedTableWithSortableRows() {
                         Configurations
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className="w-44">
                       <DropdownMenuItem>By Category</DropdownMenuItem>
                       <DropdownMenuItem>By Brand</DropdownMenuItem>
                       <DropdownMenuSeparator />
@@ -398,7 +398,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -406,7 +406,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -479,7 +479,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -487,7 +487,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -558,7 +558,7 @@ export function AdvancedTableWithSortableRows() {
                   >
                     <Badge className="w-fit">Inactive</Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -566,7 +566,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -639,7 +639,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -647,7 +647,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -720,7 +720,7 @@ export function AdvancedTableWithSortableRows() {
                       Pending
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -728,7 +728,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -801,7 +801,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -809,7 +809,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -882,7 +882,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -890,7 +890,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -961,7 +961,7 @@ export function AdvancedTableWithSortableRows() {
                   >
                     <Badge className="w-fit">Inactive</Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -969,7 +969,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1042,7 +1042,7 @@ export function AdvancedTableWithSortableRows() {
                       Pending
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -1050,7 +1050,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1123,7 +1123,7 @@ export function AdvancedTableWithSortableRows() {
                       Active
                     </Badge>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-3">
+                  <TableCell width={"100%"} className="flex justify-end py-3">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant={"ghost"}>
@@ -1131,7 +1131,7 @@ export function AdvancedTableWithSortableRows() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />

@@ -106,7 +106,7 @@ export function DefaultUpdateModal() {
             <Button
               size={"lg"}
               variant={"outline"}
-              className="border-red-600 px-5 py-2.5"
+              className="border-red-600 px-5 py-2.5 text-red-500 hover:bg-red-600 hover:text-white"
             >
               <HiTrash className="-ml-1 mr-1 size-5" />
               Delete

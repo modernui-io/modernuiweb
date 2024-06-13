@@ -37,7 +37,7 @@ export function DeleteConfirmationWithItemsList() {
         </ul>
         <div className="flex items-center space-x-4">
           <DialogClose asChild>
-            <Button>No, cancel</Button>
+            <Button variant={"outline"}>No, cancel</Button>
           </DialogClose>
           <Button
             type="submit"

@@ -111,7 +111,7 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                     <HiBell className="size-5" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-96">
                   <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     Notifications
                   </div>
@@ -463,7 +463,7 @@ export function CenteredDoubleDashboardNavbarWithCTAButtonsAndSearchInput() {
                 />
               </div>
 
-              <Button type="submit" className="ml-3 [&>span]:py-3">
+              <Button type="submit" className="ml-3 px-2">
                 <HiSearch className="size-5" />
                 <span className="sr-only">Search</span>
               </Button>

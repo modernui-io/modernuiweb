@@ -37,14 +37,14 @@ export function TableHeaderWithSettings() {
               </div>
               <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
                 <Button variant={"outline"} className="[&>span]:text-xs">
-                  <HiCog className="mr-2 size-4" />
+                  <HiCog className="mr-1 size-4" />
                   Table settings
                 </Button>
               </div>
             </div>
             <div className="flex flex-col items-stretch justify-between space-y-3 py-4 md:flex-row md:items-center md:space-y-0">
               <Button>
-                <HiPlus className="mr-2 size-3.5" />
+                <HiPlus className="mr-1 size-3.5" />
                 Add more keywords
               </Button>
               <div className="w-full flex-col space-x-2 md:w-auto md:flex-row md:space-x-0">

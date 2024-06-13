@@ -5,15 +5,16 @@ import Link from "next/link";
 import {
   HiChartPie,
   HiChevronDown,
-  HiChevronLeft,
   HiCollection,
   HiDocumentText,
   HiHome,
   HiInboxIn,
   HiLockClosed,
+  HiMenuAlt2,
   HiQuestionMarkCircle,
   HiShoppingBag,
   HiUser,
+  HiX,
 } from "react-icons/hi";
 
 import { Button } from "~/components/ui/button";
@@ -32,9 +33,19 @@ export function DoubleSideNavigation() {
 
   return (
     <>
+      <Button
+        variant={"ghost"}
+        onClick={toggleSidebar}
+        className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+      >
+        <span className="sr-only">Open sidebar</span>
+        <HiMenuAlt2 className="size-6" />
+      </Button>
       <aside
         id="default-sidebar"
-        className="fixed left-0 top-0 z-40 flex h-screen bg-background transition-transform lg:translate-x-0"
+        className={`fixed left-0 top-0 z-40 h-screen bg-background transition-transform lg:flex
+          ${isSidebarOpen ? "flex" : "hidden"}
+          `}
         aria-label="Sidenav"
       >
         <div className="z-30 h-full w-16 overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
@@ -66,10 +77,14 @@ export function DoubleSideNavigation() {
             ))}
           </ul>
         </div>
-        <div
-          className={`h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700 lg:block
-        ${isSidebarOpen ? "block" : "hidden"}`}
-        >
+        <div className="h-full overflow-y-auto border-r border-gray-200 px-3 py-5 dark:border-gray-700">
+          <Button
+            variant={"ghost"}
+            onClick={toggleSidebar}
+            className="absolute right-5 top-5 px-0 md:hidden"
+          >
+            <HiX className="size-4" />
+          </Button>
           <ul className="space-y-2">
             <li>
               <Link
@@ -226,16 +241,6 @@ export function DoubleSideNavigation() {
             </li>
           </ul>
         </div>
-
-        <Button
-          variant={"ghost"}
-          className="absolute bottom-2 left-20 inline-flex cursor-pointer rounded-full p-2 text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:hidden"
-        >
-          <HiChevronLeft
-            className={`size-6 ${!isSidebarOpen && "rotate-180"}`}
-            onClick={toggleSidebar}
-          />
-        </Button>
       </aside>
     </>
   );

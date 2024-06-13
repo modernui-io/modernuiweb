@@ -39,7 +39,7 @@ export function ConfirmDeleteWithCheckbox() {
               className="ml-2 text-sm text-gray-500 dark:text-gray-400"
             >
               Also delete&nbsp;
-              <span className="font-medium">all posts, photos and videos</span>
+              <strong>all posts, photos and videos</strong>
               &nbsp;on ModernUI that 15 questions may have published on your
               behalf.
             </Label>
@@ -47,9 +47,9 @@ export function ConfirmDeleteWithCheckbox() {
         </div>
         <div className="flex items-center space-x-4">
           <DialogClose asChild>
-            <Button>Cancel</Button>
+            <Button variant={"outline"}>Cancel</Button>
           </DialogClose>
-          <Button type="submit" size="sm" variant={"destructive"}>
+          <Button type="submit" variant={"destructive"}>
             <HiTrash className="-ml-1 mr-1.5 size-4" />
             Yes, delete
           </Button>

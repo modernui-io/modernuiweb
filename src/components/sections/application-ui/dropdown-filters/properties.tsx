@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Cross1Icon, PlusIcon, TrashIcon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
 import { FaChevronDown } from "react-icons/fa";
+import { HiTrash } from "react-icons/hi";
 import { z } from "zod";
 
 import { Button } from "~/components/ui/button";
@@ -172,10 +173,10 @@ export function DropdownFilterProperties() {
                   )}
                 />
               </div>
-              <button type="button">
-                <TrashIcon className="size-5" />
+              <Button type="button" variant={"ghost"} className="px-0">
+                <HiTrash className="size-5" />
                 <span className="sr-only">Delete</span>
-              </button>
+              </Button>
             </div>
             <div className="flex items-center space-x-3 rounded-lg">
               <div className="grid w-full grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
@@ -264,10 +265,10 @@ export function DropdownFilterProperties() {
                   )}
                 />
               </div>
-              <button type="button">
-                <TrashIcon className="size-5" />
+              <Button type="button" variant={"ghost"} className="px-0">
+                <HiTrash className="size-5" />
                 <span className="sr-only">Delete</span>
-              </button>
+              </Button>
             </div>
             <Link
               href="#"

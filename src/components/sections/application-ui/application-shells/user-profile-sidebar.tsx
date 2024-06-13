@@ -4,23 +4,34 @@ import Link from "next/link";
 
 import {
   HiAcademicCap,
+  HiArrowRight,
   HiBell,
+  HiBookOpen,
   HiChartPie,
   HiChevronDown,
   HiClipboardList,
   HiCog,
   HiCollection,
+  HiCurrencyDollar,
   HiDocumentText,
+  HiEye,
+  HiHeart,
   HiIdentification,
+  HiInbox,
   HiInboxIn,
   HiLockClosed,
   HiLogout,
   HiMenuAlt2,
   HiOutlineAdjustments,
+  HiOutlineChatAlt,
   HiOutlineQuestionMarkCircle,
   HiPhone,
   HiQuestionMarkCircle,
   HiShoppingBag,
+  HiUserAdd,
+  HiUserCircle,
+  HiUsers,
+  HiVideoCamera,
   HiViewGrid,
   HiX,
 } from "react-icons/hi";
@@ -346,28 +357,308 @@ export function UserProfileSidebarApplicationShell() {
               <HiLogout className="mr-1 size-5" />
               Logout
             </Link>
-            <ul className="mb-4 flex justify-center space-x-1">
-              {[
-                { icon: <HiViewGrid className="size-6" />, label: "View Grid" },
-                { icon: <HiBell className="size-6" />, label: "Bell" },
-                {
-                  icon: <HiOutlineQuestionMarkCircle className="size-6" />,
-                  label: "Help",
-                },
-              ].map((item, index) => (
-                <li key={index}>
+            <div className="border-b pb-3">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant={"ghost"} className="px-2">
+                    <span className="sr-only">View apps</span>
+                    <HiViewGrid className="size-6" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                    Apps
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 border-t p-4 dark:border-gray-600">
+                    {[
+                      {
+                        icon: (
+                          <HiShoppingBag className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Sales",
+                      },
+                      {
+                        icon: (
+                          <HiUsers className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Users",
+                      },
+                      {
+                        icon: (
+                          <HiInbox className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Inbox",
+                      },
+                      {
+                        icon: (
+                          <HiUserCircle className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Profile",
+                      },
+                      {
+                        icon: (
+                          <HiCog className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Settings",
+                      },
+                      {
+                        icon: (
+                          <HiInboxIn className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Products",
+                      },
+                      {
+                        icon: (
+                          <HiCurrencyDollar className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Pricing",
+                      },
+                      {
+                        icon: (
+                          <HiClipboardList className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Billing",
+                      },
+                      {
+                        icon: (
+                          <HiLogout className="mx-auto mb-2 size-6 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400" />
+                        ),
+                        label: "Logout",
+                      },
+                    ].map((item, index) => (
+                      <Link
+                        key={index}
+                        href="#"
+                        className="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {item.icon}
+                        <div className="text-sm font-medium">{item.label}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant={"ghost"} className="px-2">
+                    <span className="sr-only">View notifications</span>
+                    <HiBell className="size-6" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-96">
+                  <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                    Notifications
+                  </div>
+                  <div className="border-t dark:border-gray-600">
+                    <Link
+                      href="#"
+                      className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          width={100}
+                          height={100}
+                          className="size-11 rounded-full"
+                          src="https://github.com/shadcn.png"
+                          alt=""
+                        />
+                        <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-primary-700 dark:border-gray-700">
+                          <HiInbox className="size-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="w-full pl-3">
+                        <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          New message from&nbsp;
+                          <span className="font-semibold">Bonnie Green</span>:
+                          &quot;Hey, what&apos;s up? All set for the
+                          presentation?&quot;
+                        </div>
+                        <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
+                          a few moments ago
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          width={100}
+                          height={100}
+                          className="size-11 rounded-full"
+                          src="https://github.com/shadcn.png"
+                          alt=""
+                        />
+                        <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-gray-900 dark:border-gray-700">
+                          <HiUserAdd className="size-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="w-full pl-3">
+                        <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">Jese Leos</span>
+                          &nbsp;and&nbsp;
+                          <span className="font-medium">5 others</span>
+                          &nbsp;started following you.
+                        </div>
+                        <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
+                          10 minutes ago
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          width={100}
+                          height={100}
+                          className="size-11 rounded-full"
+                          src="https://github.com/shadcn.png"
+                          alt=""
+                        />
+                        <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-red-600 dark:border-gray-700">
+                          <HiHeart className="size-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="w-full pl-3">
+                        <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">Joseph McFall</span>
+                          &nbsp;and&nbsp;
+                          <span className="font-medium">141 others</span>
+                          &nbsp;love your story. See it and view more stories.
+                        </div>
+                        <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
+                          44 minutes ago
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex border-b px-4 py-3 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          width={100}
+                          height={100}
+                          className="size-11 rounded-full"
+                          src="https://github.com/shadcn.png"
+                          alt=""
+                        />
+                        <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-green-400 dark:border-gray-700">
+                          <HiOutlineChatAlt className="size-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="w-full pl-3">
+                        <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">
+                            Leslie Livingston
+                          </span>
+                          &nbsp;mentioned you in a comment:&nbsp;
+                          <span className="font-medium text-primary-700 dark:text-primary-500">
+                            @bonnie.green
+                          </span>
+                          &nbsp;what do you say?
+                        </div>
+                        <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
+                          1 hour ago
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      <div className="shrink-0">
+                        <Image
+                          width={100}
+                          height={100}
+                          className="size-11 rounded-full"
+                          src="https://github.com/shadcn.png"
+                          alt=""
+                        />
+                        <div className="absolute -mt-5 ml-6 flex size-5 items-center justify-center rounded-full border border-white bg-purple-500 dark:border-gray-700">
+                          <HiVideoCamera className="size-3 text-white" />
+                        </div>
+                      </div>
+                      <div className="w-full pl-3">
+                        <div className="mb-1.5 text-sm font-normal text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">Robert Brown</span>
+                          &nbsp;posted a new video: Glassmorphism - learn how to
+                          implement the new design trend.
+                        </div>
+                        <div className="text-xs font-medium text-primary-700 dark:text-primary-400">
+                          3 hours ago
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
                   <Link
                     href="#"
-                    className="inline-flex rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                    className="block border-t border-gray-200 bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
                   >
-                    {item.icon}
+                    <div className="inline-flex items-center ">
+                      <HiEye className="mr-2 size-5" />
+                      View all
+                    </div>
                   </Link>
-                </li>
-              ))}
-            </ul>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant={"ghost"} className="px-2">
+                    <span className="sr-only">Support</span>
+                    <HiOutlineQuestionMarkCircle className="size-6" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <div className="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                    Support
+                  </div>
+                  <div className="flex flex-col border-t dark:border-gray-600">
+                    {[
+                      {
+                        text: "Learn how to create new projects",
+                      },
+                      {
+                        text: "Invite your coworkers",
+                      },
+                      {
+                        text: "Become a pro user",
+                      },
+                    ].map((item, index) => (
+                      <Link
+                        key={index}
+                        href="#"
+                        className="group block border-b p-4 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        <Text className="text-sm text-gray-400">
+                          {item.text}
+                        </Text>
+                        <span className="flex items-center gap-1 text-xs">
+                          Read more <HiArrowRight className="size-3" />
+                        </span>
+                      </Link>
+                    ))}
+                    <Link
+                      href="#"
+                      className="block bg-gray-50 py-2 text-center text-base font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:underline"
+                    >
+                      <div className="inline-flex items-center ">
+                        <HiBookOpen className="mr-2 size-4" />
+                        View full docs
+                      </div>
+                    </Link>
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
 
-          <ul className="space-y-2">
+          <ul className="space-y-2 pt-3">
             <li>
               <Link
                 href="#"

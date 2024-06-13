@@ -75,7 +75,7 @@ export function AdvancedTableWithExpandableRows() {
                 <HiPlus className="mr-2 size-3.5" />
                 Add new product
               </Button>
-              <Button variant={"ghost"} className="w-full whitespace-nowrap">
+              <Button variant={"outline"} className="w-full whitespace-nowrap">
                 <HiTemplate className="mr-2 size-3" />
                 Manage Columns
               </Button>
@@ -89,7 +89,7 @@ export function AdvancedTableWithExpandableRows() {
                     <HiChevronDown className="mr-1 size-4" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-40">
                   <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Delete All</DropdownMenuItem>
@@ -189,7 +189,7 @@ export function AdvancedTableWithExpandableRows() {
           </div>
           <div className="overflow-x-auto">
             <Table className="text-sm">
-              <TableHeader className="text-xs uppercase">
+              <TableHeader className="bg-gray-50 text-xs uppercase dark:bg-gray-800">
                 <TableRow>
                   <TableHead className="p-4">
                     <div className="flex items-center">

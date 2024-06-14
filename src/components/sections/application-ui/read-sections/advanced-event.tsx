@@ -50,29 +50,29 @@ export function AdvancedReadEventSection() {
               Participants
             </dt>
             <dd className="mb-4 flex -space-x-4 sm:mb-5">
-              <div className="mb-4 flex space-x-[-20px] sm:mb-0 [&_img]:ring-white">
-                <Avatar className="size-8">
+              <div className="mb-4 flex space-x-[-15px] sm:mb-0 [&_img]:ring-white">
+                <Avatar className="size-8 border-2 border-white">
                   <AvatarImage
                     alt="Helene Engels"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>HE</AvatarFallback>
                 </Avatar>
-                <Avatar className="size-8">
+                <Avatar className="size-8 border-2 border-white">
                   <AvatarImage
                     alt="Robert Brown"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>RB</AvatarFallback>
                 </Avatar>
-                <Avatar className="size-8">
+                <Avatar className="size-8 border-2 border-white">
                   <AvatarImage
                     alt="Bonnie Green"
                     src="https://github.com/shadcn.png"
                   />
                   <AvatarFallback>BG</AvatarFallback>
                 </Avatar>
-                <Avatar className="size-8">
+                <Avatar className="size-8 border-2 border-white">
                   <AvatarFallback>+9</AvatarFallback>
                 </Avatar>
               </div>

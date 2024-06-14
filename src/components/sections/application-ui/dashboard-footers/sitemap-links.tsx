@@ -1,10 +1,12 @@
+import { HiChevronDown } from "react-icons/hi";
+
+import { Button } from "~/components/ui/button";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
 
 export function FooterWithSitemapLinksAndLanguageSelector() {
   return (
@@ -30,44 +32,33 @@ export function FooterWithSitemapLinksAndLanguageSelector() {
             </li>
           ))}
         </ul>
-        <Select>
-          <SelectTrigger className="mx-auto flex w-40 items-center rounded-full p-1.5 text-sm font-medium text-gray-900 hover:text-primary-600 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:text-primary-500 dark:focus:ring-gray-700 xl:mr-0">
-            <SelectValue
-              placeholder={
-                <div className="flex items-center gap-2">
-                  <USFlagIcon />
-                  English (US)
-                </div>
-              }
-            />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="EN">
-              <div className="flex items-center gap-2">
-                <USFlagIcon />
-                English (US)
-              </div>
-            </SelectItem>
-            <SelectItem value="DE">
-              <div className="flex items-center gap-2">
-                <GermanyFlagIcon />
-                Deutsch
-              </div>
-            </SelectItem>
-            <SelectItem value="IT">
-              <div className="flex items-center gap-2">
-                <ItalyFlagIcon />
-                Italiano
-              </div>
-            </SelectItem>
-            <SelectItem value="CH">
-              <div className="flex items-center gap-2">
-                <ChinaFlagIcon />
-                中文 (繁體)
-              </div>
-            </SelectItem>
-          </SelectContent>
-        </Select>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant={"ghost"} className="px-2">
+              <USFlagIcon />
+              English (US)
+              <HiChevronDown className="size-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-44">
+            <DropdownMenuItem>
+              <USFlagIcon />
+              English (US)
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <GermanyFlagIcon />
+              Deutsch
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <ItalyFlagIcon />
+              Italiano
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <ChinaFlagIcon />
+              中文 (繁體)
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
       <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400 xl:mt-6 xl:text-center 2xl:mt-8">
         Copyright &copy; 2022&nbsp;
@@ -89,7 +80,7 @@ function USFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-us"
       viewBox="0 0 512 512"
@@ -122,7 +113,7 @@ function ChinaFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       id="flag-icon-css-cn"
@@ -170,7 +161,7 @@ function ItalyFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-it"
       viewBox="0 0 512 512"
@@ -188,7 +179,7 @@ function GermanyFlagIcon() {
   return (
     <svg
       aria-hidden
-      className="size-3.5 rounded-full"
+      className="mr-2 size-3.5"
       xmlns="http://www.w3.org/2000/svg"
       id="flag-icon-css-de"
       viewBox="0 0 512 512"

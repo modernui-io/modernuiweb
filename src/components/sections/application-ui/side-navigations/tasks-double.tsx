@@ -4,10 +4,10 @@ import Link from "next/link";
 
 import {
   HiCalendar,
-  HiChevronRight,
   HiClipboardList,
   HiDotsHorizontal,
   HiInboxIn,
+  HiMenuAlt2,
   HiPlus,
   HiSelector,
   HiShoppingBag,
@@ -34,9 +34,17 @@ export function TasksDoubleSideNavigation() {
 
   return (
     <>
+      <Button
+        variant={"ghost"}
+        onClick={toggleSidebar}
+        className="fixed right-5 mr-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
+      >
+        <span className="sr-only">Open sidebar</span>
+        <HiMenuAlt2 className="size-6" />
+      </Button>
       <aside
         id="sidebar-contacts"
-        className={`fixed right-0 top-0 z-40 flex h-full w-16 bg-background transition-transform lg:w-[22rem] ${isSidebarOpen ? "w-72" : "w-16"}`}
+        className={`fixed right-0 top-0 z-40 h-full w-80 bg-background transition-transform lg:flex ${isSidebarOpen ? "flex" : "hidden"}`}
         aria-label="Sidebar"
       >
         <div className="block h-full w-20 overflow-y-auto px-3 py-4">
@@ -270,15 +278,6 @@ export function TasksDoubleSideNavigation() {
             </div>
           </div>
         </div>
-        <Button
-          variant={"ghost"}
-          className={`absolute bottom-2 inline-flex cursor-pointer rounded-full p-2 text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white lg:hidden ${isSidebarOpen ? "right-60" : "right-20"}`}
-        >
-          <HiChevronRight
-            className={`size-6 ${!isSidebarOpen && "rotate-180"}`}
-            onClick={toggleSidebar}
-          />
-        </Button>
       </aside>
     </>
   );

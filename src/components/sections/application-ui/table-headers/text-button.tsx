@@ -16,7 +16,7 @@ export function TableHeaderWithTextAndButton() {
               </Text>
             </div>
             <Button>
-              <HiUserAdd className="-ml-1 mr-2 size-3.5" />
+              <HiUserAdd className="mr-1 size-3.5" />
               Add new user
             </Button>
           </div>

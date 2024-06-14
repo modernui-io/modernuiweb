@@ -35,7 +35,7 @@ export function ContactsSideNavigation() {
       <Button
         variant={"ghost"}
         onClick={toggleSidebar}
-        className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
+        className="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 lg:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <HiMenuAlt2 className="size-6" />
@@ -199,7 +199,7 @@ export function ContactsSideNavigation() {
             </li>
           </ul>
           <ul className="mt-5 space-y-4 border-t border-gray-200 pt-5 dark:border-gray-700">
-            <li className="pb-3">
+            <li>
               <Text className="text-sm">ACTIVE CONTACTS</Text>
             </li>
             {[

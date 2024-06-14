@@ -226,7 +226,7 @@ export function AdvancedCreateUserModal() {
                   >
                     Biography
                   </Label>
-                  <div className="w-full rounded-lg border border-gray-200 bg-gray-50 dark:bg-gray-700">
+                  <div className="w-full rounded-lg border border-gray-200">
                     <div className="flex items-center justify-between border-b px-3 py-2">
                       <div className="flex flex-wrap items-center divide-gray-200 dark:divide-gray-600 sm:divide-x">
                         <div className="flex items-center space-x-1 sm:pr-4">
@@ -317,7 +317,6 @@ export function AdvancedCreateUserModal() {
                         aria-describedby="file_input_help"
                         id="file_input"
                         type="file"
-                        className="w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-400 dark:placeholder:text-gray-400"
                         {...form.register("file")}
                       />
                       <Text

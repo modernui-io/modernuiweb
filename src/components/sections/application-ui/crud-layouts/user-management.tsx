@@ -10,9 +10,7 @@ import {
   FaDribbble,
   FaFacebook,
   FaGithub,
-  FaGoogle,
   FaInstagram,
-  FaTwitter,
 } from "react-icons/fa";
 import {
   HiArrowDown,
@@ -36,7 +34,6 @@ import {
   HiPlus,
   HiTrash,
   HiViewList,
-  HiX,
 } from "react-icons/hi";
 import { z } from "zod";
 
@@ -632,7 +629,7 @@ export function CRUDLayoutForUserManagement() {
                     <FaChevronDown className="mr-1 size-3" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-36">
                   <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Delete All</DropdownMenuItem>
@@ -659,28 +656,28 @@ export function CRUDLayoutForUserManagement() {
                     User Role
                   </TableHead>
                   <TableHead scope="col" className="px-4 py-3">
-                    Status
+                    Email
                   </TableHead>
                   <TableHead
                     scope="col"
                     className="whitespace-nowrap px-4 py-3"
                   >
-                    Social profile
-                  </TableHead>
-                  <TableHead scope="col" className="px-4 py-3">
-                    Promote
+                    Account Type
                   </TableHead>
                   <TableHead scope="col" className="px-4 py-3">
                     Rating
                   </TableHead>
+                  <TableHead scope="col" className="px-4 py-3">
+                    Country
+                  </TableHead>
                   <TableHead
                     scope="col"
                     className="whitespace-nowrap px-4 py-3"
                   >
-                    Last Login
+                    Status
                   </TableHead>
                   <TableHead scope="col" className="px-4 py-3">
-                    <span className="sr-only">Actions</span>
+                    Actions
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -722,46 +719,10 @@ export function CRUDLayoutForUserManagement() {
                       Administrator
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Active
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" checked={true} />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -771,9 +732,19 @@ export function CRUDLayoutForUserManagement() {
                       4.7
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    20 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    United States
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Active
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -845,46 +816,10 @@ export function CRUDLayoutForUserManagement() {
                       Viewer
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Active
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -894,9 +829,19 @@ export function CRUDLayoutForUserManagement() {
                       3.9
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    23 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    United States
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Active
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -968,40 +913,10 @@ export function CRUDLayoutForUserManagement() {
                       Moderator
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-red-500" />
-                      Inactive
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1011,9 +926,19 @@ export function CRUDLayoutForUserManagement() {
                       4.8
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    19 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    France
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-red-500" />
+                      Inactive
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1085,6 +1010,21 @@ export function CRUDLayoutForUserManagement() {
                       Moderator
                     </Badge>
                   </TableCell>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
+                  </TableCell>
+                  <TableCell>PRO</TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <HiArrowUp className="mr-1 size-4 text-green-500" />5
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-sm text-gray-400">
+                    England
+                  </TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1094,48 +1034,7 @@ export function CRUDLayoutForUserManagement() {
                       Active
                     </div>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <HiArrowUp className="mr-1 size-4 text-green-500" />5
-                    </div>
-                  </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    27 Nov 2022
-                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1207,46 +1106,10 @@ export function CRUDLayoutForUserManagement() {
                       Viewer
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Active
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1256,9 +1119,19 @@ export function CRUDLayoutForUserManagement() {
                       4.2
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    20 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    Canada
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Active
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1330,43 +1203,10 @@ export function CRUDLayoutForUserManagement() {
                       Viewer
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-red-500" />
-                      Inactive
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" checked={true} />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1376,9 +1216,19 @@ export function CRUDLayoutForUserManagement() {
                       4.5
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    20 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    Canada
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-red-500" />
+                      Inactive
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1450,46 +1300,10 @@ export function CRUDLayoutForUserManagement() {
                       Viewer
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Inactive
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1499,9 +1313,19 @@ export function CRUDLayoutForUserManagement() {
                       4.1
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    18 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    United States
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Inactive
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1573,46 +1397,10 @@ export function CRUDLayoutForUserManagement() {
                       Moderator
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Active
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" checked={true} />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1622,9 +1410,19 @@ export function CRUDLayoutForUserManagement() {
                       3.8
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    27 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    United States
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Active
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1696,37 +1494,10 @@ export function CRUDLayoutForUserManagement() {
                       Viewer
                     </Badge>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
-                      Active
-                    </div>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
+                  <TableCell>PRO</TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1736,9 +1507,19 @@ export function CRUDLayoutForUserManagement() {
                       4.8
                     </div>
                   </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    20 Nov 2022
+                  <TableCell className="text-sm text-gray-400">
+                    United States
                   </TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <div className="mr-2 size-3 rounded-full border bg-green-500"></div>
+                      Active
+                    </div>
+                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1810,6 +1591,21 @@ export function CRUDLayoutForUserManagement() {
                       Moderator
                     </Badge>
                   </TableCell>
+                  <TableCell className="text-sm text-gray-400">
+                    email@example.com
+                  </TableCell>
+                  <TableCell>PRO</TableCell>
+                  <TableCell
+                    width={"100%"}
+                    className="whitespace-nowrap px-4 py-2 font-medium"
+                  >
+                    <div className="flex items-center">
+                      <HiArrowUp className="mr-1 size-4 text-green-500" />5
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-sm text-gray-400">
+                    United States
+                  </TableCell>
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"
@@ -1819,48 +1615,7 @@ export function CRUDLayoutForUserManagement() {
                       Inactive
                     </div>
                   </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2"
-                  >
-                    <div className="flex items-center space-x-1.5">
-                      <Link className="transition" href="#">
-                        <FaFacebook className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGithub className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaDribbble className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaTwitter className="size-3" />
-                      </Link>
-                      <Link className="transition" href="#">
-                        <FaGoogle className="size-3" />
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Switch id="promote" name="promote" />
-                      Promote
-                    </div>
-                  </TableCell>
-                  <TableCell
-                    width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
-                  >
-                    <div className="flex items-center">
-                      <HiArrowUp className="mr-1 size-4 text-green-500" />5
-                    </div>
-                  </TableCell>
-                  <TableCell width={"100%"} className="px-4 py-2">
-                    20 Nov 2022
-                  </TableCell>
+
                   <TableCell
                     width={"100%"}
                     className="whitespace-nowrap px-4 py-2 font-medium"

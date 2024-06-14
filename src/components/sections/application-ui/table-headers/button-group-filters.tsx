@@ -136,7 +136,7 @@ export function TableHeaderWithButtonGroupFiltersAndExport() {
                           Actions <FaChevronDown className="size-3" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44">
                         <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>Delete All</DropdownMenuItem>

@@ -199,11 +199,11 @@ export function TableHeaderWithBreadcrumb() {
             <div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button>
-                    <FaChevronDown className="mr-3 size-3" /> Actions
+                  <Button variant={"outline"}>
+                    <FaChevronDown className="mr-1 size-3" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent side={"top"} className="w-36">
                   <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Delete All</DropdownMenuItem>

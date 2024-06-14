@@ -1,8 +1,14 @@
-import { useState } from "react";
 import Image from "next/image";
 
 import { StarFilledIcon } from "@radix-ui/react-icons";
-import { HiPlus, HiRefresh, HiShoppingCart, HiUpload } from "react-icons/hi";
+import {
+  HiChevronLeft,
+  HiChevronRight,
+  HiPlus,
+  HiRefresh,
+  HiShoppingCart,
+  HiUpload,
+} from "react-icons/hi";
 
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
@@ -12,11 +18,7 @@ import { Label } from "~/components/ui/label";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "~/components/ui/pagination";
 import {
   Table,
@@ -28,10 +30,6 @@ import {
 } from "~/components/ui/table";
 
 export function AdvancedTableWithProducts() {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const onPageChange = (page: number) => setCurrentPage(page);
-
   return (
     <section className="bg-background py-3 sm:py-5">
       <div className="mx-auto max-w-screen-2xl px-4 lg:px-12">
@@ -1003,27 +1001,50 @@ export function AdvancedTableWithProducts() {
             </span>
             <div>
               <Pagination>
-                <PaginationContent>
+                <PaginationContent className="inline-flex items-stretch gap-0 -space-x-px">
                   <PaginationItem>
-                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-lg rounded-r-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronLeft />
+                    </Button>
                   </PaginationItem>
                   {Array.from({ length: 3 }, (_, index) => index + 1).map(
                     (page) => (
                       <PaginationItem key={page}>
-                        <PaginationLink
-                          isActive={currentPage === page}
-                          onClick={() => setCurrentPage(page)}
+                        <Button
+                          className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                          variant={"outline"}
                         >
                           {page}
-                        </PaginationLink>
+                        </Button>
                       </PaginationItem>
                     ),
                   )}
                   <PaginationItem>
-                    <PaginationEllipsis />
+                    <Button
+                      variant={"outline"}
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground shadow-sm hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                    >
+                      ...
+                    </Button>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationNext onClick={() => onPageChange} />
+                    <Button
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      100
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-none rounded-r-lg border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronRight />
+                    </Button>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>

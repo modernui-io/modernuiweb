@@ -34,29 +34,29 @@ export function AdvancedReadEventModal() {
             <dt className="mb-2 leading-none text-gray-500 dark:text-gray-400">
               Participants
             </dt>
-            <div className="mb-3 flex space-x-[-20px] [&_img]:ring-white dark:[&_img]:ring-0">
-              <Avatar className="size-8">
+            <div className="mb-3 flex space-x-[-15px] [&_img]:ring-white dark:[&_img]:ring-0">
+              <Avatar className="size-8 border-2 border-white">
                 <AvatarImage
                   alt="Helene Engels"
                   src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>HE</AvatarFallback>
               </Avatar>
-              <Avatar className="size-8">
+              <Avatar className="size-8 border-2 border-white">
                 <AvatarImage
                   alt="Robert Brown"
                   src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>RB</AvatarFallback>
               </Avatar>
-              <Avatar className="size-8">
+              <Avatar className="size-8 border-2 border-white">
                 <AvatarImage
                   alt="Bonnie Green"
                   src="https://github.com/shadcn.png"
                 />
                 <AvatarFallback>BG</AvatarFallback>
               </Avatar>
-              <Avatar className="size-8">
+              <Avatar className="size-8 border-2 border-white">
                 <AvatarFallback>+9</AvatarFallback>
               </Avatar>
             </div>

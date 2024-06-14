@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -46,10 +45,6 @@ import {
 } from "~/components/ui/table";
 
 export function AdvancedUserManagementTable() {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const onPageChange = (page: number) => setCurrentPage(page);
-
   return (
     <section className="bg-background py-3 sm:py-5">
       <div className="mx-auto max-w-screen-2xl px-4 lg:px-12">
@@ -318,7 +313,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -327,7 +322,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -482,7 +477,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -491,7 +486,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -644,7 +639,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -653,7 +648,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -834,7 +829,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -843,7 +838,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -998,7 +993,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1007,7 +1002,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1162,7 +1157,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1171,7 +1166,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1326,7 +1321,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1335,7 +1330,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1502,7 +1497,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1511,7 +1506,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1638,7 +1633,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1647,7 +1642,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1828,7 +1823,7 @@ export function AdvancedUserManagementTable() {
                   </TableCell>
                   <TableCell
                     width={"100%"}
-                    className="whitespace-nowrap px-4 py-2 font-medium"
+                    className="flex justify-end whitespace-nowrap py-2 font-medium"
                   >
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -1837,7 +1832,7 @@ export function AdvancedUserManagementTable() {
                           <HiDotsHorizontal className="size-5" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-44" align="end">
                         <DropdownMenuItem>Show</DropdownMenuItem>
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
@@ -1889,12 +1884,12 @@ export function AdvancedUserManagementTable() {
                 <PaginationContent>
                   <PaginationItem>
                     <Button variant={"outline"}>
-                      <PaginationPrevious onClick={() => onPageChange} />
+                      <PaginationPrevious />
                     </Button>
                   </PaginationItem>
                   <PaginationItem>
                     <Button variant={"outline"}>
-                      <PaginationNext onClick={() => onPageChange} />
+                      <PaginationNext />
                     </Button>
                   </PaginationItem>
                 </PaginationContent>

@@ -3,7 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SubmitForm } from "../submit-form";
 
 const meta = {
-  title: "sections/E-Commerce/Product Reviews/Product reviews with submit form",
+  title:
+    "sections/E-Commerce UI/Product Reviews/Product reviews with submit form",
   component: SubmitForm,
 } satisfies Meta<typeof SubmitForm>;
 

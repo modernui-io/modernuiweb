@@ -89,7 +89,7 @@ export function StackedSecondaryApplicationShell() {
                           <HiDotsHorizontal className="size-5" />
                         </button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent className="w-52">
                         <div id="navigationDropdown">
                           <ul
                             className="py-1 text-gray-700 dark:text-gray-300"

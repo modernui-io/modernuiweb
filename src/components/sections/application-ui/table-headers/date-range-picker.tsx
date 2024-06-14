@@ -30,7 +30,7 @@ export function TableHeaderWithDateRangePickerFilter() {
               <div className="flex items-center space-x-2 md:space-x-4">
                 <Button variant={"outline"}>View JSON</Button>
                 <Button variant={"outline"}>
-                  <HiUpload className="mr-2 size-4" />
+                  <HiUpload className="mr-1 size-4" />
                   Export
                 </Button>
               </div>

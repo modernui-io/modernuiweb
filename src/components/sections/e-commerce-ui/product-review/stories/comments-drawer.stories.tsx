@@ -4,7 +4,7 @@ import CommentsDrawerReview from "../comments-drawer";
 
 const meta = {
   title:
-    "sections/E-Commerce/Product Reviews/Product review with comments and drawer",
+    "sections/E-Commerce UI/Product Reviews/Product review with comments and drawer",
   component: CommentsDrawerReview,
 } satisfies Meta<typeof CommentsDrawerReview>;
 

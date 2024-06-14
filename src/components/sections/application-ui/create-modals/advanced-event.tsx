@@ -1,6 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Label } from "@radix-ui/react-label";
 import { useForm } from "react-hook-form";
+import { FaGoogle } from "react-icons/fa";
 import {
   HiArrowsExpand,
   HiCalendar,
@@ -187,43 +188,37 @@ export function AdvancedCreateEventModal() {
                   <span className="ml-2 font-semibold">04:30 - 05:30</span>
                 </time>
                 <div className="items-center sm:flex sm:space-x-4">
-                  <div className="mb-4 flex space-x-[-20px] sm:mb-0 [&_img]:ring-white dark:[&_img]:ring-0">
-                    <Avatar>
+                  <div className="mb-4 flex space-x-[-15px] sm:mb-0 [&_img]:ring-white dark:[&_img]:ring-0">
+                    <Avatar className="size-8 border border-white">
                       <AvatarImage
                         alt="Helene Engels"
                         src="https://github.com/shadcn.png"
                       />
                       <AvatarFallback>HE</AvatarFallback>
                     </Avatar>
-                    <Avatar>
+                    <Avatar className="size-8 border border-white">
                       <AvatarImage
                         alt="Robert Brown"
                         src="https://github.com/shadcn.png"
                       />
                       <AvatarFallback>RB</AvatarFallback>
                     </Avatar>
-                    <Avatar>
+                    <Avatar className="size-8 border border-white">
                       <AvatarImage
                         alt="Bonnie Green"
                         src="https://github.com/shadcn.png"
                       />
                       <AvatarFallback>BG</AvatarFallback>
                     </Avatar>
-                    <Avatar>
+                    <Avatar className="size-8 border border-white">
                       <AvatarFallback>+9</AvatarFallback>
                     </Avatar>
                   </div>
-                  <Button
-                    variant={"outline"}
-                    className="mr-3 inline-flex text-xs dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
-                  >
-                    <HiPlus className="-ml-1 mr-1 size-4" />
+                  <Button variant={"outline"} className="text-xs" size={"sm"}>
+                    <HiPlus className="-ml-1 mr-1 size-3" />
                     Add member
                   </Button>
-                  <Button
-                    variant={"outline"}
-                    className="mr-3 inline-flex text-xs dark:text-gray-400 dark:enabled:hover:bg-gray-700 sm:mr-0"
-                  >
+                  <Button variant={"outline"} className="text-xs" size={"sm"}>
                     <HiClock className="-ml-1 mr-1 size-4" />
                     Find a time
                   </Button>
@@ -276,9 +271,10 @@ export function AdvancedCreateEventModal() {
                 </div>
                 <div>
                   <div className="mb-2 flex items-center">
-                    <button className="rounded-lg bg-[#4285F4] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#4285F4]/90 focus:outline-none focus:ring-4 focus:ring-[#4285F4]/50">
+                    <Button>
+                      <FaGoogle className="mr-1 size-4" />
                       Add Google Meet video conference
-                    </button>
+                    </Button>
                   </div>
                 </div>
                 <div>
@@ -374,7 +370,7 @@ export function AdvancedCreateEventModal() {
                         Reminder type
                       </Label>
                       <Select {...form.register("reminderType")}>
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="Notification" />
                         </SelectTrigger>
                         <SelectContent>
@@ -403,7 +399,6 @@ export function AdvancedCreateEventModal() {
                             <FormControl>
                               <Input
                                 {...field}
-                                className="dark:border-gray-500"
                                 id="reminder-counter-days"
                                 placeholder="1"
                                 required
@@ -422,7 +417,7 @@ export function AdvancedCreateEventModal() {
                         Length
                       </Label>
                       <Select {...form.register("reminderLengthType")}>
-                        <SelectTrigger className="dark:bg-gray-600 dark:text-white">
+                        <SelectTrigger>
                           <SelectValue placeholder="Days" />
                         </SelectTrigger>
                         <SelectContent>

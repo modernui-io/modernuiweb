@@ -142,6 +142,18 @@ export default {
           pink: "var(--highlight-pink)",
           gray: "var(--highlight-gray)",
         },
+        shiki: {
+          class: "var(--sh-class)",
+          identifier: "var(--sh-identifier)",
+          sign: "var(--sh-sign)",
+          string: "var(--sh-string)",
+          keyword: "var(--sh-keyword)",
+          comment: "var(--sh-comment)",
+          jsxliterals: "var(--sh-jsxliterals)",
+          property: "var(--sh-property)",
+          entity: "var(--sh-entity)",
+        },
+
         // dark mode
         "dark-tremor": {
           brand: {

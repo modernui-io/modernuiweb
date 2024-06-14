@@ -105,7 +105,7 @@ export function TableHeaderWithTabs() {
                 </ul>
               </Tabs>
               <Button>
-                <HiPlus className="mr-2 size-3.5" />
+                <HiPlus className="mr-1 size-3.5" />
                 Add new item
               </Button>
             </div>

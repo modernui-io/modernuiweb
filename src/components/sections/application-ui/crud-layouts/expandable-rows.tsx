@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -7,13 +8,13 @@ import {
   HiCalendar,
   HiChevronDown,
   HiCloudUpload,
+  HiEye,
   HiInformationCircle,
   HiLocationMarker,
   HiPencilAlt,
   HiPlus,
   HiSelector,
   HiStar,
-  HiTemplate,
   HiTrash,
   HiX,
 } from "react-icons/hi";
@@ -33,12 +34,12 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { Form } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import {
   Select,
@@ -386,10 +387,90 @@ export function CRUDLayoutWithExpandableRows() {
                 </DialogContent>
               </Dialog>
 
-              <Button variant={"ghost"} className="w-full whitespace-nowrap">
-                <HiTemplate className="mr-2 size-3" />
-                Manage Columns
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant={"outline"}
+                    className="w-full whitespace-nowrap"
+                  >
+                    Table Settings
+                    <HiChevronDown className="size-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="p-2" align="center">
+                  <Text className="text-sm font-medium">Columns</Text>
+                  <ul className="mb-4 mt-2 space-y-2 text-sm">
+                    {[
+                      { id: "product", label: "Product" },
+                      { id: "category", label: "Category" },
+                      { id: "brand", label: "Brand" },
+                      { id: "price", label: "Price" },
+                      { id: "stock", label: "Stock" },
+                      { id: "status", label: "Status" },
+                    ].map((item) => (
+                      <li
+                        key={item.id}
+                        className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium"
+                      >
+                        <Checkbox id={item.id} name={item.id} />
+                        <Label htmlFor={item.id}>{item.label}</Label>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm">Additional settings</p>
+                  <ul className="mb-4 mt-2 space-y-2 text-sm">
+                    <li className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium">
+                      <Checkbox
+                        defaultChecked
+                        id="show_tags"
+                        name="show_tags"
+                      />
+                      <Label htmlFor="show_tags">Show additional info</Label>
+                    </li>
+                    <li className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium">
+                      <Checkbox
+                        defaultChecked
+                        id="show_serp"
+                        name="show_serp"
+                      />
+                      <Label htmlFor="show_serp">Show images</Label>
+                    </li>
+                  </ul>
+                  <p className="text-sm">Positions chart</p>
+                  <ul className="mb-4 mt-2 space-y-2 text-sm">
+                    <li className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium">
+                      <Checkbox id="smart_zoom" name="smart_zoom" />
+                      <Label htmlFor="smart_zoom">Export CSV</Label>
+                    </li>
+                  </ul>
+                  <p className="text-sm">Row height</p>
+                  <RadioGroup defaultValue="row_height">
+                    <ul className="mb-4 mt-2 space-y-2 text-sm">
+                      <li className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium">
+                        <RadioGroupItem
+                          defaultChecked
+                          id="row_height_show_tags"
+                          value="tags"
+                        />
+                        <Label htmlFor="row_height_show_tags">Normal</Label>
+                      </li>
+                      <li className="flex w-full items-center gap-x-2 rounded-md px-1.5 py-1 text-sm font-medium">
+                        <RadioGroupItem
+                          id="row_height_show_serp"
+                          value="serp"
+                        />
+                        <Label htmlFor="row_height_show_serp">Compact</Label>
+                      </li>
+                    </ul>
+                  </RadioGroup>
+                  <Link
+                    href="#"
+                    className="ml-1.5 mt-4 flex items-center text-sm font-medium text-primary-600 hover:underline"
+                  >
+                    Apply to all
+                  </Link>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
           <div className="flex flex-col-reverse items-start justify-between border-b p-4 md:flex-row md:items-center md:space-x-4">
@@ -400,10 +481,18 @@ export function CRUDLayoutWithExpandableRows() {
                     <HiChevronDown className="mr-1 size-4" /> Actions
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Mass Edit</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Delete All</DropdownMenuItem>
+                <DropdownMenuContent className="w-36">
+                  <DropdownMenuItem>
+                    <HiPencilAlt className="mr-2 size-4" /> Edit
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <HiEye className="mr-2 size-4" />
+                    Preview
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-red-500">
+                    <HiTrash className="mr-2 size-4" />
+                    Delete
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -2747,7 +2836,7 @@ function DeleteProductModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>
+        <Button variant={"destructive"}>
           <HiTrash className="mr-1 size-4" /> Delete
         </Button>
       </DialogTrigger>

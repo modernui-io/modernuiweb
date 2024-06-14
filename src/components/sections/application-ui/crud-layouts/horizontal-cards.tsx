@@ -9,6 +9,7 @@ import {
   HiCloudUpload,
   HiDotsHorizontal,
   HiEye,
+  HiFilter,
   HiLocationMarker,
   HiMenu,
   HiPencilAlt,
@@ -114,7 +115,6 @@ const products = [
 ];
 
 export function CRUDLayoutWithHorizontalCards() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [isShowCreateModal, setShowCreateModal] = useState(false);
   const [isShowReadModal, setShowReadModal] = useState(false);
   const [isShowUpdateModal, setShowUpdateModal] = useState(false);
@@ -144,8 +144,6 @@ export function CRUDLayoutWithHorizontalCards() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log("Form submitted", values);
   };
-
-  const onPageChange = (page: number) => setCurrentPage(page);
 
   return (
     <section className="bg-background py-3 antialiased sm:py-5">
@@ -182,8 +180,9 @@ export function CRUDLayoutWithHorizontalCards() {
                 </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button>
-                      Filter <FaChevronDown className="ml-3 size-3" />
+                    <Button variant={"outline"}>
+                      <HiFilter className="mr-1 size-4 text-gray-400" />
+                      Filter <FaChevronDown className="ml-1 size-3" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80">
@@ -493,10 +492,10 @@ export function CRUDLayoutWithHorizontalCards() {
                 </DropdownMenu>
               </div>
               <div className="flex items-center gap-1">
-                <Button variant={"ghost"} className="px-1">
+                <Button variant={"ghost"} className="px-2">
                   <HiMenu className="size-5 text-gray-500 dark:text-gray-400" />
                 </Button>
-                <Button variant={"ghost"} className="px-1">
+                <Button variant={"ghost"} className="px-2">
                   <HiViewGrid className="size-5 text-gray-500 dark:text-gray-400" />
                 </Button>
               </div>
@@ -564,7 +563,10 @@ export function CRUDLayoutWithHorizontalCards() {
                       Preview
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setShowDeleteModal(true)}>
+                    <DropdownMenuItem
+                      className="text-red-500"
+                      onClick={() => setShowDeleteModal(true)}
+                    >
                       <HiTrash className="mr-2 size-4" /> Delete
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -632,7 +634,10 @@ export function CRUDLayoutWithHorizontalCards() {
                       Preview
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setShowDeleteModal(true)}>
+                    <DropdownMenuItem
+                      className="text-red-500"
+                      onClick={() => setShowDeleteModal(true)}
+                    >
                       <HiTrash className="mr-2 size-4" /> Delete
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -700,7 +705,10 @@ export function CRUDLayoutWithHorizontalCards() {
                       Preview
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setShowDeleteModal(true)}>
+                    <DropdownMenuItem
+                      className="text-red-500"
+                      onClick={() => setShowDeleteModal(true)}
+                    >
                       <HiTrash className="mr-2 size-4" /> Delete
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -766,7 +774,10 @@ export function CRUDLayoutWithHorizontalCards() {
                       Preview
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setShowDeleteModal(true)}>
+                    <DropdownMenuItem
+                      className="text-red-500"
+                      onClick={() => setShowDeleteModal(true)}
+                    >
                       <HiTrash className="mr-2 size-4" /> Delete
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -832,21 +843,32 @@ export function CRUDLayoutWithHorizontalCards() {
                       Preview
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => setShowDeleteModal(true)}>
+                    <DropdownMenuItem
+                      className="text-red-500"
+                      onClick={() => setShowDeleteModal(true)}
+                    >
                       <HiTrash className="mr-2 size-4" /> Delete
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
             </div>
-            <div className="flex items-center justify-center py-6">
+            <div className="flex flex-col items-center justify-center gap-2 py-6">
+              <Text className="text-xs">
+                Showing <strong>1</strong> to <strong>5</strong> of{" "}
+                <strong>100</strong> entries
+              </Text>
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
-                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                    <Button variant={"outline"}>
+                      <PaginationPrevious title="" />
+                    </Button>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationNext onClick={() => onPageChange} />
+                    <Button variant={"outline"}>
+                      <PaginationNext />
+                    </Button>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>
@@ -889,13 +911,7 @@ export function CRUDLayoutWithHorizontalCards() {
                         <SelectValue placeholder="Electronics" />
                       </SelectTrigger>
                       <SelectContent>
-                        {[
-                          { value: "EL", label: "Electronics" },
-                          { value: "AL", label: "TV/Monitors" },
-                          { value: "PC", label: "PC" },
-                          { value: "GA", label: "Gaming/Console" },
-                          { value: "PH", label: "Phones" },
-                        ].map((item, index) => (
+                        {products.map((item, index) => (
                           <SelectItem key={index} value={item.value}>
                             {item.label}
                           </SelectItem>
@@ -1258,13 +1274,7 @@ export function CRUDLayoutWithHorizontalCards() {
                         <SelectValue placeholder="Electronics" />
                       </SelectTrigger>
                       <SelectContent>
-                        {[
-                          { value: "EL", label: "Electronics" },
-                          { value: "AL", label: "TV/Monitors" },
-                          { value: "PC", label: "PC" },
-                          { value: "GA", label: "Gaming/Console" },
-                          { value: "PH", label: "Phones" },
-                        ].map((item, index) => (
+                        {products.map((item, index) => (
                           <SelectItem key={index} value={item.value}>
                             {item.label}
                           </SelectItem>

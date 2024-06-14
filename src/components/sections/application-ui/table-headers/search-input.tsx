@@ -75,7 +75,7 @@ export function TableHeaderWithSearchInput() {
               </div>
               <div className="flex shrink-0 flex-col items-start space-y-3 md:flex-row md:items-center md:space-x-3 md:space-y-0 lg:justify-end">
                 <Button className="text-xs" variant={"outline"}>
-                  <HiCog className="mr-2 size-4" />
+                  <HiCog className="mr-1 size-4" />
                   Table settings
                 </Button>
               </div>
@@ -109,9 +109,9 @@ export function TableHeaderWithSearchInput() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <FaFilter className="mr-3 size-3" />
+                      <FaFilter className="mr-1 size-3 text-gray-400" />
                       Filter options
-                      <HiChevronDown className="ml-3 size-4" />
+                      <HiChevronDown className="ml-1 size-5" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-60 p-3">
@@ -140,14 +140,13 @@ export function TableHeaderWithSearchInput() {
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
                       Actions
-                      <HiChevronDown className="ml-3 size-4" />
+                      <HiChevronDown className="ml-1 size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>By Category</DropdownMenuItem>
-                    <DropdownMenuItem>By Brand</DropdownMenuItem>
+                  <DropdownMenuContent className="w-44">
+                    <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Reset</DropdownMenuItem>
+                    <DropdownMenuItem>Delete all</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

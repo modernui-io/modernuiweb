@@ -12,10 +12,15 @@ import { useForm } from "react-hook-form";
 import {
   HiCalendar,
   HiChevronDown,
+  HiChevronLeft,
+  HiChevronRight,
   HiCloudUpload,
+  HiCog,
   HiFilter,
+  HiInformationCircle,
   HiLocationMarker,
   HiPencilAlt,
+  HiPlus,
   HiSearch,
   HiShoppingCart,
   HiStar,
@@ -79,6 +84,12 @@ import {
   TableRow,
 } from "~/components/ui/table";
 import { Textarea } from "~/components/ui/textarea";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "~/components/ui/tooltip";
 
 const formSchema = z.object({
   name: z.string(),
@@ -97,7 +108,6 @@ const formSchema = z.object({
 });
 
 export function CRUDLayoutForProductManagement() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [isNorthAmerica, setNorthAmerica] = useState(true);
   const [isSouthAmerica, setSouthAmerica] = useState(false);
   const [isAsia, setAsia] = useState(false);
@@ -133,16 +143,36 @@ export function CRUDLayoutForProductManagement() {
     console.log(values);
   }
 
-  const onPageChange = (page: number) => setCurrentPage(page);
-
   return (
     <section className="bg-background p-3 sm:p-5">
       <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
         <div className="relative overflow-hidden shadow-md sm:rounded-lg">
+          <div className="mx-4 flex items-center justify-between border-b py-2">
+            <div className="flex items-center gap-2 text-gray-400">
+              <Text>All Products: 123456 1-100 (436) </Text>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div>
+                      <HiInformationCircle className="size-4 text-gray-400" />
+                      <span className="sr-only">More info</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent className="bg-background">
+                    <Text>Showing 1-10 of 6,560 results</Text>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+
+            <Button variant={"outline"}>
+              <HiCog className="mr-1 size-4" /> Table settings
+            </Button>
+          </div>
           <div className="flex flex-col items-center justify-between space-y-3 p-4 md:flex-row md:space-x-4 md:space-y-0">
             <div className="w-full md:w-1/2">
               <Label htmlFor="simple-search" className="sr-only">
-                Search
+                Search for products
               </Label>
               <div className="relative flex w-full items-center">
                 <HiSearch className="absolute left-3" />
@@ -159,7 +189,10 @@ export function CRUDLayoutForProductManagement() {
             <div className="flex w-full shrink-0 flex-col items-stretch justify-end space-y-2 md:w-auto md:flex-row md:items-center md:space-x-3 md:space-y-0">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button>Create product</Button>
+                  <Button>
+                    <HiPlus className="mr-1 size-4" />
+                    Add product
+                  </Button>
                 </DialogTrigger>
                 <DialogContent className="min-w-[40rem] rounded-lg p-4 shadow sm:p-5 md:min-w-[50rem]">
                   <ScrollArea className="h-[40rem] overflow-hidden">
@@ -419,7 +452,7 @@ export function CRUDLayoutForProductManagement() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant={"outline"}>
-                      <HiFilter className="mr-2 size-4" />
+                      <HiFilter className="mr-1 size-4 text-gray-400" />
                       <span>Filter options</span>
                       <HiChevronDown className="ml-1 size-5" />
                     </Button>
@@ -460,7 +493,11 @@ export function CRUDLayoutForProductManagement() {
                           />
                         </div>
                       </div>
-                      <Accordion type="single" collapsible>
+                      <Accordion
+                        type="single"
+                        collapsible
+                        defaultValue="category"
+                      >
                         <AccordionItem value="category">
                           <AccordionTrigger>Category</AccordionTrigger>
                           <AccordionContent className="dark:bg-transparent">
@@ -628,7 +665,7 @@ export function CRUDLayoutForProductManagement() {
                       <HiChevronDown className="ml-1 size-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="w-40">
                     <DropdownMenuItem>Mass Edit</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Delete All</DropdownMenuItem>
@@ -640,7 +677,7 @@ export function CRUDLayoutForProductManagement() {
           <div className="overflow-x-auto">
             <Table className="[&_*]:whitespace-nowrap">
               <TableHeader>
-                <TableRow>
+                <TableRow className="bg-gray-50 dark:bg-gray-800">
                   <TableHead className="p-4 group-first/head:first:rounded-tl-none">
                     <div className="flex items-center">
                       <Checkbox id="checkbox-all" name="checkbox-all" />
@@ -1812,27 +1849,50 @@ export function CRUDLayoutForProductManagement() {
             </span>
             <div>
               <Pagination>
-                <PaginationContent>
+                <PaginationContent className="inline-flex items-stretch gap-0 -space-x-px">
                   <PaginationItem>
-                    <PaginationPrevious title="" onClick={() => onPageChange} />
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-lg rounded-r-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronLeft />
+                    </Button>
                   </PaginationItem>
                   {Array.from({ length: 3 }, (_, index) => index + 1).map(
                     (page) => (
                       <PaginationItem key={page}>
-                        <PaginationLink
-                          isActive={currentPage === page}
-                          onClick={() => setCurrentPage(page)}
+                        <Button
+                          className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                          variant={"outline"}
                         >
                           {page}
-                        </PaginationLink>
+                        </Button>
                       </PaginationItem>
                     ),
                   )}
                   <PaginationItem>
-                    <PaginationEllipsis />
+                    <Button
+                      variant={"outline"}
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground shadow-sm hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                    >
+                      ...
+                    </Button>
                   </PaginationItem>
                   <PaginationItem>
-                    <PaginationNext onClick={() => onPageChange} />
+                    <Button
+                      className="flex size-auto items-center justify-center rounded-none border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      100
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button
+                      className="flex h-full w-10 items-center justify-center rounded-l-none rounded-r-lg border border-muted-foreground/10 bg-background px-3 py-1.5 text-sm leading-tight text-muted-foreground hover:bg-primary-100 hover:text-primary dark:border-muted-foreground/20 dark:bg-muted-foreground/5 dark:hover:bg-muted-foreground/20 dark:hover:text-white"
+                      variant={"outline"}
+                    >
+                      <HiChevronRight />
+                    </Button>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>

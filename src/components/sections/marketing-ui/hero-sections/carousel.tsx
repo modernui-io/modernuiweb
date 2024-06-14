@@ -14,9 +14,15 @@ import {
 } from "~/components/ui/carousel";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
+import GreenPeace from "~/lib/assets/images/greenpeace.svg";
+import OXFAM from "~/lib/assets/images/oxfam.svg";
 import Placeholder from "~/lib/assets/images/placeholder.jpg";
+import UN from "~/lib/assets/images/united-nations.svg";
+import WWF from "~/lib/assets/images/wwf.svg";
 
 export function HeroSectionWithCarouselSlider() {
+  const partnersList = [GreenPeace, UN, WWF, OXFAM];
+
   return (
     <MuiLayout.Section className="bg-background antialiased">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">
@@ -24,12 +30,12 @@ export function HeroSectionWithCarouselSlider() {
           <div className="lg:max-w-xl xl:shrink-0">
             <div>
               <Heading
-                level={2}
-                className="font-extrabold leading-none tracking-tight"
+                level={"mdDisplay"}
+                className="font-bold leading-none tracking-tight"
               >
                 Making earth cooler for people, nature, climate
               </Heading>
-              <Text className="mt-5 text-base font-normal text-secondary-foreground sm:text-xl md:max-w-3xl">
+              <Text className="mt-5 text-base font-normal text-gray-600 sm:text-xl md:max-w-3xl">
                 Protecting the planet and its natural resources for future
                 generations, by reducing pollution, promoting sustainability,
                 and conserving energy and resources.
@@ -47,11 +53,11 @@ export function HeroSectionWithCarouselSlider() {
                 Partners and backers:
               </Text>
               <div className="mt-3 flex max-w-md items-center">
-                {Array.from({ length: 4 }).map((_, index) => (
+                {partnersList.map((img, index) => (
                   <Image
                     key={index}
                     className="mr-4 h-8 w-auto md:h-12"
-                    src={Placeholder}
+                    src={img}
                     alt=""
                   />
                 ))}

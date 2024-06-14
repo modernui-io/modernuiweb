@@ -22,9 +22,9 @@ export const headingVariants = cva(
           "text-2xl: scroll-m-20 leading-tight text-accent-foreground md:text-3xl lg:text-4xl",
         xsDisplay:
           "text-xl: scroll-m-20 leading-tight text-accent-foreground md:text-2xl lg:text-3xl",
-        1: "scroll-m-20 text-3xl leading-snug tracking-wider text-secondary-foreground md:text-4xl",
-        2: "scroll-m-20 text-2xl leading-snug tracking-wider text-secondary-foreground md:text-3xl",
-        3: "scroll-m-20 text-xl leading-snug tracking-wider text-secondary-foreground md:text-2xl",
+        1: "scroll-m-20 text-3xl leading-snug tracking-tight text-secondary-foreground md:text-4xl",
+        2: "scroll-m-20 text-2xl leading-snug tracking-tight text-secondary-foreground md:text-3xl",
+        3: "scroll-m-20 text-xl leading-snug tracking-tight text-secondary-foreground md:text-2xl",
         4: "text-lg leading-7 tracking-wider text-secondary-foreground md:text-xl",
         5: "text-base leading-6 tracking-wide text-secondary-foreground md:text-lg",
         6: "text-sm leading-5 tracking-wide text-secondary-foreground md:text-base",

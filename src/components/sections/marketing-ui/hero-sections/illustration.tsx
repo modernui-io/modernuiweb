@@ -54,7 +54,7 @@ export function IllustrationWithEmailSignupHero() {
           >
             Building digital products &amp; brands.
           </Heading>
-          <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-8 lg:text-xl">
+          <Text className="mb-6 max-w-2xl text-primary-600 md:text-lg lg:mb-8 lg:text-lg">
             Here at modernUIWeb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.

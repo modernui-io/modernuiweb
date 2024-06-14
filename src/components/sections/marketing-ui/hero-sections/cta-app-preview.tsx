@@ -117,11 +117,11 @@ export function AppScreenshotWithCTAsHero() {
       <div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-16">
         <Heading
           level={"lgDisplay"}
-          className="mb-4 font-extrabold leading-none tracking-tight"
+          className="mb-4 font-bold leading-none tracking-tight"
         >
           We invest in the world’s potential
         </Heading>
-        <Text className="mb-8 text-secondary-foreground sm:px-16 md:text-lg lg:text-xl xl:px-48">
+        <Text className="mb-8 text-primary-600 sm:px-16 md:text-lg lg:text-xl xl:px-48">
           Here at modernUIWeb we focus on markets where technology, innovation,
           and capital can unlock long-term value and drive economic growth.
         </Text>

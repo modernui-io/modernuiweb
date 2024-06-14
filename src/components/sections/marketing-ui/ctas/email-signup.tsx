@@ -64,12 +64,12 @@ export function EmailSignUpCTASection() {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="space-y-0">
                     <FormLabel className="sr-only">Email</FormLabel>
                     <FormControl>
                       <div className="relative">
                         <Input
-                          className="bg-input pl-8 md:w-64"
+                          className="bg-input pl-8 md:w-72"
                           placeholder="Your email address"
                           {...field}
                         />
@@ -80,7 +80,7 @@ export function EmailSignUpCTASection() {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <Button type="submit">Subscribe</Button>
             </form>
             <div className="text-sm font-medium text-muted-foreground">
               Instant signup. No credit card required.&nbsp;

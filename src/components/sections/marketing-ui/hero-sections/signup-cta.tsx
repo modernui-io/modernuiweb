@@ -76,7 +76,7 @@ export function SignUpFormWithCTAHero() {
           >
             Discover new product and best possibilities
           </Heading>
-          <Text className="mb-6 max-w-2xl text-secondary-foreground md:text-lg lg:mb-8 lg:text-xl">
+          <Text className="mb-6 max-w-2xl text-primary-700 md:text-lg lg:mb-8 lg:text-lg">
             Here at modernUIWeb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.
@@ -106,7 +106,7 @@ export function SignUpFormWithCTAHero() {
               action="#"
               onSubmit={form.handleSubmit(onSubmit)}
             >
-              <Heading level={"xsDisplay"} className="font-medium">
+              <Heading level={4} className="font-medium tracking-tight">
                 Join over 3,000 creators
               </Heading>
               <div className="flex items-center space-x-4">

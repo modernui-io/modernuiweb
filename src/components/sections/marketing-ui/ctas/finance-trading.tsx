@@ -62,7 +62,7 @@ export function FinancialTradingCTASection() {
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto flex max-w-screen-xl flex-col items-center px-4 py-8 text-center sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm">
-          <Heading level={2} className="mb-4  font-extrabold tracking-tight">
+          <Heading level={1} className="mb-4  font-extrabold tracking-tight">
             Buy crypto at true cost
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg lg:mb-16">
@@ -71,7 +71,7 @@ export function FinancialTradingCTASection() {
           </Text>
         </div>
         <div className="relative mb-8 w-full overflow-x-auto">
-          <Table className="m-auto">
+          <Table className="m-auto table md:min-w-full">
             <TableBody className="divide-y">
               {TableData.map(
                 ({ coinName, coin, value, totalValue, change, isProfit }) => (
@@ -103,7 +103,7 @@ export function FinancialTradingCTASection() {
             </TableBody>
           </Table>
         </div>
-        <p className="mb-5 text-center text-muted-foreground sm:text-xl">
+        <p className="mb-5 text-center text-muted-foreground sm:text-lg">
           Sign up now to build your own portfolio for free!
         </p>
         <Button color="info" className="w-fit">

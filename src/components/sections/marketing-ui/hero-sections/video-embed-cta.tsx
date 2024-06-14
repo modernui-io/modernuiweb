@@ -20,7 +20,7 @@ export function VideoEmbedWithCTAHero() {
         >
           Your Dream Vacation
         </Heading>
-        <Text className="mb-8 text-secondary-foreground sm:px-16 md:text-lg lg:text-xl xl:px-48">
+        <Text className="mb-8 text-secondary-foreground sm:px-16 md:text-lg lg:text-lg xl:px-48">
           Here at modernUIWeb we compare a wide range of destinations, flights
           and hotels to conjure up cheap holidays for you to enjoy, time and
           time again.
@@ -48,7 +48,10 @@ export function VideoEmbedWithCTAHero() {
             href="#"
             className="flex flex-col items-start pl-5 text-muted-foreground sm:pl-5"
           >
-            <StarFilledIcon className="size-5 text-green-600" />
+            <div className="flex w-full ">
+              <StarFilledIcon className="size-5 text-green-600" />
+              <Text className="mr-2 text-foreground">Trustpilot</Text>
+            </div>
             <span className="text-sm text-secondary-foreground">
               Rated Best Over&nbsp;
               <span className="font-medium text-muted-foreground">15.7k</span>

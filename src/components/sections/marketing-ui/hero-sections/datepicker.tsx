@@ -60,7 +60,7 @@ export function SearchBarDatepickerHeroSection() {
         <div className="mb-6 max-w-screen-md lg:mb-0">
           <Heading
             level={"lgDisplay"}
-            className="mb-4 font-extrabold leading-tight tracking-tight text-slate-50 md:text-5xl lg:text-6xl"
+            className="mb-4 text-nowrap font-extrabold leading-tight tracking-tight text-slate-50"
           >
             Every home is a destination
           </Heading>
@@ -71,7 +71,7 @@ export function SearchBarDatepickerHeroSection() {
           </Text>
           <Link
             href="#"
-            className="inline-flex items-center rounded-lg bg-primary px-5 py-3 text-center font-medium text-white hover:bg-brand-600 focus:outline-none focus:ring-4 focus:ring-primary-900"
+            className="inline-flex items-center rounded-lg bg-gray-800 px-5 py-3 text-center font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-900"
           >
             Sign In / Register
           </Link>

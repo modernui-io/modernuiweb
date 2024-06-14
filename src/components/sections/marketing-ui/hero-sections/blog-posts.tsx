@@ -81,9 +81,9 @@ export function BlogPostsWithFeaturedImageHero() {
               </Badge>
               <Heading
                 level={3}
-                className="font-bold leading-tight tracking-tight"
+                className="text-wrap font-bold leading-tight tracking-tight"
               >
-                <Link href="#" className="hover:underline" title="">
+                <Link href="#" className="0 w-full hover:underline" title="">
                   Releasing code in large corporations is slow - and there is a
                   good reason for it
                 </Link>

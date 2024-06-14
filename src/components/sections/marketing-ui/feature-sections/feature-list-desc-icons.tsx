@@ -93,7 +93,7 @@ export function FeatureListDescriptionIcons() {
               <div className="mb-4 flex size-10 items-center justify-center rounded-full bg-tremor-brand-muted lg:size-12">
                 {icon}
               </div>
-              <Heading level={3} className="mb-2 font-bold">
+              <Heading level={4} className="mb-2 font-bold tracking-tight">
                 {title}
               </Heading>
               <Text className="text-muted-foreground">{description}</Text>

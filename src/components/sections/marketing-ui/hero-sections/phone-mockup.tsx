@@ -121,10 +121,10 @@ export function PhoneMockupWithAppDownloadHero() {
               </Avatar>
             ))}
           </AvatarGroup>
-          <div className="h-8 w-px bg-background"></div>
+          <div className="h-8 w-px bg-primary-200"></div>
           <div>
-            <Ratings rating={5} variant="yellow" totalStars={5}>
-              <p className="ml-2 text-sm font-medium text-secondary-foreground">
+            <Ratings rating={5} variant="yellow" totalStars={5} size={16}>
+              <p className="ml-2 text-xs font-medium text-secondary-foreground">
                 5.0
               </p>
             </Ratings>

@@ -243,7 +243,7 @@ export function EmailSignUpWithVideoHero() {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="space-y-0">
                         <FormLabel className="sr-only">Email</FormLabel>
                         <FormControl>
                           <div className="relative">

@@ -100,10 +100,10 @@ export function FeatureListCards() {
     <MuiLayout.Section>
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="mx-auto mb-8 max-w-screen-md text-center lg:mb-16">
-          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
+          <Heading level={1} className="mb-4 font-extrabold tracking-tight">
             Secure platform, secure data
           </Heading>
-          <Text className="text-muted-foreground sm:text-xl">
+          <Text className="text-muted-foreground sm:text-lg">
             Here at Modernuiweb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.
@@ -111,17 +111,19 @@ export function FeatureListCards() {
         </div>
         <div className="space-y-8 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
           {FeatureText.map(({ icon, title, description }, index) => (
-            <Card key={index} className="bg-muted">
-              <CardHeader>
-                <div className="flex size-10 items-center justify-center rounded bg-tremor-brand-muted lg:size-12">
+            <Card key={index} className="rounded bg-muted p-5">
+              <CardHeader className="p-0 pb-2">
+                <div className="mb-1 flex size-10 items-center justify-center rounded bg-tremor-brand-muted lg:size-12">
                   {icon}
                 </div>
-                <Heading level={3} className="font-bold">
+                <Heading level={5} className="font-bold tracking-tight">
                   {title}
                 </Heading>
               </CardHeader>
-              <CardContent>
-                <Text className="text-muted-foreground">{description}</Text>
+              <CardContent className="p-0">
+                <Text className="text-wrap text-lg text-muted-foreground">
+                  {description}
+                </Text>
               </CardContent>
             </Card>
           ))}

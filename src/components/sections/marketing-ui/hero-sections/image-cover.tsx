@@ -32,11 +32,11 @@ export function CoverImageWithCTAsHero() {
         <div className="col-span-8">
           <Heading
             level={"lgDisplay"}
-            className="mb-4 font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl"
+            className="mb-4 text-wrap font-extrabold leading-none tracking-tight md:text-5xl lg:text-5xl"
           >
             Discover new product and best possibilities
           </Heading>
-          <Text className="mb-6 text-primary-700 md:text-lg lg:mb-8 lg:text-xl">
+          <Text className="mb-6 text-primary-700 md:text-lg lg:mb-8 lg:text-lg">
             Here at modernUIWeb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.
@@ -45,8 +45,8 @@ export function CoverImageWithCTAsHero() {
             <div className="mb-8 text-secondary-foreground sm:mb-0">
               <Calendar className="mb-3 size-7" />
               <Heading
-                level={"xsDisplay"}
-                className="mb-3 font-semibold text-primary-700"
+                level={4}
+                className="mb-3 font-semibold tracking-tight text-primary-700"
               >
                 28 November 2021
               </Heading>
@@ -63,8 +63,8 @@ export function CoverImageWithCTAsHero() {
             <div className="text-secondary-foreground">
               <AnnouncementIcon />
               <Heading
-                level={"xsDisplay"}
-                className="mb-3 font-semibold text-primary-700"
+                level={4}
+                className="mb-3 font-semibold tracking-tight text-primary-700"
               >
                 25+ top notch speakers
               </Heading>

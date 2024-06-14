@@ -95,8 +95,8 @@ export function FeatureSectionsRoundedIcons() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <Heading
-            level={2}
-            className=" font-extrabold leading-tight tracking-tight sm:text-4xl"
+            level={1}
+            className=" font-extrabold leading-tight tracking-tight"
           >
             Designed for business teams like yours
           </Heading>
@@ -118,11 +118,11 @@ export function FeatureSectionsRoundedIcons() {
                 <div>
                   <Heading
                     level={3}
-                    className="text-xl font-bold text-secondary-foreground sm:text-2xl"
+                    className="font-bold text-secondary-foreground"
                   >
                     {title}
                   </Heading>
-                  <Text className="mt-2 text-base font-normal text-muted-foreground sm:text-lg">
+                  <Text className="mt-2 text-wrap text-base font-normal text-muted-foreground sm:text-lg">
                     {description}
                   </Text>
                 </div>

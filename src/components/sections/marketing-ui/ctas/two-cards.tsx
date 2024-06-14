@@ -57,12 +57,12 @@ export function TwoCardsAndImagesCTASection() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6 lg:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <Heading
-            level={2}
-            className=" font-extrabold leading-tight tracking-tight sm:text-4xl"
+            level={1}
+            className="font-extrabold leading-tight tracking-tight sm:text-4xl"
           >
             Fundraising events
           </Heading>
-          <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+          <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-lg">
             ModernUI Web helps you connect with friends, family and communities
             of people who share your interests.
           </Text>
@@ -71,30 +71,35 @@ export function TwoCardsAndImagesCTASection() {
           {CardDetail.map(
             ({ achievedAmount, target, description, donar, title, image }) => (
               <Card key={title}>
-                <CardHeader>
+                <CardHeader className="space-y-2">
                   <Image
                     alt=""
                     src={image}
                     className="w-full rounded-lg object-cover shadow-lg"
                   />
-                  <div className="flex items-center justify-between gap-6">
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold text-secondary-foreground">
-                        ${achievedAmount}
-                      </span>
-                      <span className="text-sm font-normal text-muted-foreground">
-                        of {target} goal
+                  <div className="flex flex-col">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg font-bold text-secondary-foreground">
+                          ${achievedAmount}
+                        </span>
+                        <span className="text-sm font-normal text-muted-foreground">
+                          of {target} goal
+                        </span>
+                      </div>
+                      <span className="text-right text-xs font-normal text-muted-foreground">
+                        {donar} donors
                       </span>
                     </div>
-                    <span className="text-right text-xs font-normal text-muted-foreground">
-                      {donar} donors
-                    </span>
+                    <Progress value={85} className="mt-1" />
                   </div>
-                  <Progress value={85} className="mt-1" />
                 </CardHeader>
                 <CardContent>
                   <CardTitle>
-                    <Heading level={4} className=" font-bold leading-tight">
+                    <Heading
+                      level={5}
+                      className=" text-wrap font-bold leading-tight"
+                    >
                       {title}
                     </Heading>
                   </CardTitle>

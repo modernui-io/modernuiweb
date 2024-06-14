@@ -10,7 +10,7 @@ export function HeadingWithCTAButtonSection() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="mx-auto flex max-w-screen-sm flex-col items-center text-center">
           <Heading
-            level={2}
+            level={1}
             className="mb-4 font-extrabold leading-tight tracking-tight"
           >
             Start your free trial today

@@ -65,7 +65,7 @@ export function CTASectionWithTabsAndMobileApp() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:py-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <Tabs defaultValue="ios">
-            <TabsList className="bg-background">
+            <TabsList className="mb-4 bg-background">
               <TabsTrigger
                 value="ios"
                 className="relative mx-6 flex items-center justify-center"
@@ -96,11 +96,11 @@ export function CTASectionWithTabsAndMobileApp() {
               <div>
                 <Heading
                   level={2}
-                  className=" font-extrabold leading-tight sm:text-4xl"
+                  className=" text-wrap font-extrabold leading-tight sm:text-4xl"
                 >
                   ModernUI Web in iOS: Take control of your finances with us
                 </Heading>
-                <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+                <Text className="mt-4 text-wrap text-base font-normal text-muted-foreground sm:text-lg">
                   Our app helps users easily track their expenses and create a
                   budget. With a user-friendly interface, the app allows users
                   to quickly input their income and expenses, and then
@@ -121,8 +121,8 @@ export function CTASectionWithTabsAndMobileApp() {
                   ))}
                 </ul>
                 <Heading
-                  level={3}
-                  className="mt-6 font-normal text-muted-foreground"
+                  level={5}
+                  className="mt-6 text-wrap font-normal text-muted-foreground"
                 >
                   Flow Budget takes the hassle out of budgeting and empowers
                   users to take control of their finances
@@ -150,7 +150,7 @@ export function CTASectionWithTabsAndMobileApp() {
                 >
                   ModernUI Web in Android: Take control of your finances with us
                 </Heading>
-                <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+                <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-lg">
                   Our app helps users easily track their expenses and create a
                   budget. With a user-friendly interface, the app allows users
                   to quickly input their income and expenses, and then
@@ -170,7 +170,10 @@ export function CTASectionWithTabsAndMobileApp() {
                     </li>
                   ))}
                 </ul>
-                <Heading className="mt-6 font-normal text-muted-foreground">
+                <Heading
+                  level={5}
+                  className="mt-6 font-normal text-muted-foreground"
+                >
                   ModernUI Web takes the hassle out of budgeting and empowers
                   users to take control of their finances.
                 </Heading>
@@ -230,14 +233,14 @@ export function CTASectionWithTabsAndMobileApp() {
               >
                 We invest in the world&#39;s potential
               </Heading>
-              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-lg">
                 <span className="font-semibold text-secondary-foreground">
                   ModernUI Web Budget
                 </span>
                 &nbsp;is a mobile app that helps users easily track their
                 expenses and create a budget.
               </Text>
-              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-xl">
+              <Text className="mt-4 text-base font-normal text-muted-foreground sm:text-lg">
                 With a user-friendly interface, the app allows users to quickly
                 input their income and expenses, and then automatically
                 categorizes them for easy tracking.

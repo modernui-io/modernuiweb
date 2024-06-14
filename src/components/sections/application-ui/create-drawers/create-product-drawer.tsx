@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -52,7 +54,7 @@ import {
 const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
-  category: z.enum([" ", "TV", "PC", "GA", "PH"]).optional(),
+  category: z.string().optional(),
   description: z.string(),
   productOptions: z.boolean().optional(),
   itemWeight: z.number(),
@@ -84,7 +86,7 @@ export function CreateProductDrawer() {
     <Drawer direction="left">
       <DrawerTrigger asChild>
         <div className="m-5 text-center">
-          <Button className="mb-2 mr-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+          <Button className="mb-2 mr-2 rounded-lg px-5 py-2.5 text-sm font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
             Create product
           </Button>
         </div>
@@ -97,7 +99,7 @@ export function CreateProductDrawer() {
                 New Product
               </DrawerTitle>
               <DrawerClose asChild>
-                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white">
+                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-primary-foreground">
                   <X className="size-5" />
                   <span className="sr-only">Close menu</span>
                 </Button>
@@ -115,7 +117,7 @@ export function CreateProductDrawer() {
                         <Input
                           type="text"
                           id="name"
-                          className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           placeholder="Type product name"
                           required
                           {...form.register("name")}
@@ -129,76 +131,87 @@ export function CreateProductDrawer() {
                       >
                         Description
                       </Label>
-                      <div className="mb-4 w-full rounded-lg border border-muted-foreground/10 bg-muted-foreground/10 dark:bg-muted">
+                      <div className="mb-4 w-full rounded-lg border border-muted-foreground/10 bg-secondary/30 dark:bg-muted-foreground/10">
                         <div className="flex items-center justify-between border-b px-3 py-2 ">
                           <div className="flex flex-wrap items-center divide-muted-foreground/10 dark:divide-muted sm:divide-x">
                             <div className="flex items-center space-x-1 sm:pr-4">
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiPaperClip className="size-5" />
-                                <span className="sr-only">Attach file</span>
-                              </Button>
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiLocationMarker className="size-5" />
-                                <span className="sr-only">Embed map</span>
-                              </Button>
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiPhotograph className="size-5" />
-                                <span className="sr-only">Upload image</span>
-                              </Button>
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiCode className="size-5" />
-
-                                <span className="sr-only">Format code</span>
-                              </Button>
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiEmojiHappy className="size-5" />
-                                <span className="sr-only">Add emoji</span>
-                              </Button>
+                              {[
+                                {
+                                  icon: <HiPaperClip className="size-5" />,
+                                  label: "Attach File",
+                                },
+                                {
+                                  icon: <HiLocationMarker className="size-5" />,
+                                  label: "Embed File",
+                                },
+                                {
+                                  icon: <HiPhotograph className="size-5" />,
+                                  label: "Upload Image",
+                                },
+                                {
+                                  icon: <HiCode className="size-5" />,
+                                  label: "Format Code",
+                                },
+                                {
+                                  icon: <HiEmojiHappy className="size-5" />,
+                                  label: "Add Emoji",
+                                },
+                              ].map((item, index) => (
+                                <Link key={index} href="#">
+                                  <Button
+                                    variant={"ghost"}
+                                    className="cursor-pointer rounded p-2
+                                    text-muted-foreground
+                                    hover:bg-muted-foreground/10
+                                    dark:hover:text-primary-foreground"
+                                  >
+                                    {item.icon}
+                                    <span className="sr-only">
+                                      {item.label}
+                                    </span>
+                                  </Button>
+                                </Link>
+                              ))}
                             </div>
                             <div className="hidden flex-wrap items-center space-x-1 sm:flex sm:pl-4">
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiCalendar className="size-5" />
-
-                                <span className="sr-only">Timeline</span>
-                              </Button>
-                              <Button
-                                variant={"ghost"}
-                                className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white"
-                              >
-                                <HiDownload className="size-5" />
-                                <span className="sr-only">Download</span>
-                              </Button>
+                              {[
+                                {
+                                  icon: <HiCalendar className="size-5" />,
+                                  label: "Timeline",
+                                },
+                                {
+                                  icon: <HiDownload className="size-5" />,
+                                  label: "Download",
+                                },
+                              ].map((item, index) => (
+                                <Link key={index} href="#">
+                                  <Button
+                                    variant={"ghost"}
+                                    className="cursor-pointer rounded p-2
+                                    text-muted-foreground
+                                    hover:bg-muted-foreground/10
+                                    dark:hover:text-primary-foreground"
+                                  >
+                                    {item.icon}
+                                    <span className="sr-only">
+                                      {item.label}
+                                    </span>
+                                  </Button>
+                                </Link>
+                              ))}
                             </div>
                           </div>
                           <Button
                             variant={"ghost"}
                             data-tooltip-target="tooltip-fullscreen"
-                            className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-white sm:ml-auto"
+                            className="cursor-pointer rounded p-2 text-muted-foreground hover:bg-muted-foreground/10 dark:hover:text-primary-foreground sm:ml-auto"
                           >
                             <TooltipProvider>
                               <Tooltip>
                                 <TooltipTrigger>
                                   <HiArrowsExpand className="size-5" />
                                 </TooltipTrigger>
-                                <TooltipContent className="w-auto rounded-lg px-3 py-2 text-sm font-normal text-white shadow-sm dark:bg-muted">
+                                <TooltipContent className="w-auto rounded-lg px-3 py-2 text-sm font-normal text-primary-foreground shadow-sm dark:bg-muted">
                                   Show Full Screen
                                 </TooltipContent>
                               </Tooltip>
@@ -208,8 +221,9 @@ export function CreateProductDrawer() {
                           </Button>
                         </div>
                         <Textarea
+                          rows={8}
                           id="description"
-                          className="block h-40 w-full rounded-lg rounded-t-none border bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg rounded-t-none border bg-background p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           placeholder="Write a description here"
                           required
                           {...form.register("description")}
@@ -221,7 +235,7 @@ export function CreateProductDrawer() {
                         Product Images
                       </Label>
                       <div className="flex w-full items-center justify-center">
-                        <Label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/70 bg-secondary/30 hover:bg-muted-foreground/30 dark:border-muted-foreground/30 dark:bg-muted dark:hover:border-muted-foreground dark:hover:bg-muted-foreground/80">
+                        <Label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/30 bg-secondary/30 hover:bg-muted-foreground/30 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:hover:border-muted-foreground dark:hover:bg-muted-foreground/80">
                           <div className="flex flex-col items-center justify-center pb-6 pt-5">
                             <HiOutlineCloudUpload className="mb-3 size-10 text-muted-foreground" />
 
@@ -242,7 +256,7 @@ export function CreateProductDrawer() {
                             </Text>
                             <Button
                               type="button"
-                              className="rounded-lg bg-primary-700 px-3 py-2 text-center text-xs font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                              className="rounded-lg bg-primary-700 px-3 py-2 text-center text-xs font-medium text-primary-foreground hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                             >
                               Extra small
                             </Button>
@@ -258,7 +272,7 @@ export function CreateProductDrawer() {
                     </div>
                     <div className="mb-4 flex items-center">
                       <Checkbox
-                        className="size-4 rounded border-white/70 bg-muted-foreground/30 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
+                        className="size-4 rounded border-muted-foreground/30 bg-muted-foreground/30 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
                         {...form.register("productOptions")}
                       />
                       <Label className="ml-2 text-sm text-muted-foreground">
@@ -274,7 +288,7 @@ export function CreateProductDrawer() {
                           </div>
                           <Input
                             type="text"
-                            className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 pl-10 text-sm focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                            className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 pl-10 text-sm focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                             placeholder="Select date start"
                             {...form.register("date")}
                           />
@@ -297,7 +311,7 @@ export function CreateProductDrawer() {
                       <Input
                         type="text"
                         id="brand"
-                        className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder="Product brand"
                         required
                         {...form.register("brand")}
@@ -308,15 +322,21 @@ export function CreateProductDrawer() {
                         Category
                       </Label>
                       <Select {...form.register("category")}>
-                        <SelectTrigger className="w-full rounded-lg border bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500">
+                        <SelectTrigger className="w-full rounded-lg border bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:focus:border-primary-500 dark:focus:ring-primary-500">
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value=" ">Select Category</SelectItem>
-                          <SelectItem value="TV">TV/Monitors</SelectItem>
-                          <SelectItem value="PC">PC</SelectItem>
-                          <SelectItem value="GA">Gaming/Console</SelectItem>
-                          <SelectItem value="PH">Phones</SelectItem>
+                          {[
+                            { value: " ", label: "Select Category" },
+                            { value: "TV", label: "TV/Monitors" },
+                            { value: "PC", label: "PC" },
+                            { value: "GA", label: "Gaming/Console" },
+                            { value: "PH", label: "Phones" },
+                          ].map((item, index) => (
+                            <SelectItem key={index} value={item.value}>
+                              {item.label}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -327,7 +347,7 @@ export function CreateProductDrawer() {
                       <Input
                         type="number"
                         id="item-weight"
-                        className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder="12"
                         required
                         {...form.register("itemWeight")}
@@ -340,7 +360,7 @@ export function CreateProductDrawer() {
                       <Input
                         type="number"
                         id="length"
-                        className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder="105"
                         required
                         {...form.register("length")}
@@ -353,7 +373,7 @@ export function CreateProductDrawer() {
                       <Input
                         type="number"
                         id="breadth"
-                        className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder="15"
                         required
                         {...form.register("breadth")}
@@ -367,7 +387,7 @@ export function CreateProductDrawer() {
                       <Input
                         type="number"
                         id="width"
-                        className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                        className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/10 dark:placeholder:text-muted-foreground/80 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder="23"
                         required
                         {...form.register("width")}
@@ -378,11 +398,11 @@ export function CreateProductDrawer() {
               </form>
             </Form>
             <div className="left-0 flex w-full justify-start space-x-4 p-4">
-              <Button className="w-max justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+              <Button className="w-max justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
                 Add Product
               </Button>
               <DrawerClose asChild>
-                <Button className="inline-flex w-max items-center justify-center rounded-lg border border-muted-foreground/10 bg-white px-5 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted-foreground/30 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:border-muted-foreground/40 dark:bg-muted dark:text-white/70 dark:hover:bg-muted-foreground/30 dark:hover:text-white dark:focus:ring-muted-foreground/30">
+                <Button className="inline-flex w-max items-center justify-center rounded-lg border border-muted-foreground/10 bg-white px-5 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted-foreground/30 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:border-muted-foreground/40 dark:bg-muted-foreground/30 dark:text-white dark:hover:bg-muted dark:focus:ring-muted-foreground/30">
                   <X className="-ml-1 size-5 sm:mr-1" />
                   Discard
                 </Button>

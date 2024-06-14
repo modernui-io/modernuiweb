@@ -68,7 +68,7 @@ export function CreateEventDrawer() {
     <Drawer direction="left">
       <DrawerTrigger asChild>
         <div className="m-5 text-center">
-          <Button className="mb-2 mr-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+          <Button className="mb-2 mr-2 rounded-lg px-5 py-2.5 text-sm font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
             Create event
           </Button>
         </div>
@@ -81,7 +81,7 @@ export function CreateEventDrawer() {
                 New Event
               </DrawerTitle>
               <DrawerClose asChild>
-                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white">
+                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-primary-foreground">
                   <X className="size-5" />
                   <span className="sr-only">Close menu</span>
                 </Button>
@@ -97,7 +97,7 @@ export function CreateEventDrawer() {
                     <Input
                       type="text"
                       id="name"
-                      className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
                       placeholder="Add title here"
                     />
                   </div>
@@ -107,7 +107,8 @@ export function CreateEventDrawer() {
                       Description
                     </Label>
                     <Textarea
-                      className="block h-20 w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      rows={4}
+                      className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm placeholder:text-muted-foreground focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
                       placeholder="Enter event description here"
                       {...form.register("description")}
                     ></Textarea>
@@ -126,7 +127,7 @@ export function CreateEventDrawer() {
                             </div>
                             <Input
                               type="text"
-                              className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                              className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
                               placeholder="Select date start"
                               {...form.register("startDate")}
                             />
@@ -156,7 +157,7 @@ export function CreateEventDrawer() {
                             </div>
                             <Input
                               type="text"
-                              className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                              className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
                               placeholder="Select date end"
                               {...form.register("endDate")}
                             />
@@ -184,7 +185,7 @@ export function CreateEventDrawer() {
                         </div>
                         <Input
                           type="text"
-                          className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 pl-10 text-sm placeholder:text-muted-foreground focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           placeholder="Enter Location"
                           {...form.register("location")}
                         />
@@ -204,12 +205,12 @@ export function CreateEventDrawer() {
                         <Input
                           type="text"
                           id="add-guests"
-                          className="block w-full rounded-lg border border-white/70 bg-secondary/30 p-3 pl-4 text-sm focus:border-primary-500 focus:ring-primary-500 dark:border-muted dark:bg-muted dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-3 pl-4 text-sm focus:border-primary-500 focus:ring-primary-500 dark:border-muted dark:bg-muted dark:text-primary-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           placeholder="Add guest email"
                           required
                           {...form.register("guests")}
                         />
-                        <Button className="absolute bottom-2.5 right-2.5 inline-flex items-center rounded-lg px-3 py-1.5 text-xs font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                        <Button className="absolute bottom-0 right-2.5 mb-1 inline-flex h-7 items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
                           <HiPlus className="-ml-0.5 mr-0.5 size-4" />
                           Add
                         </Button>
@@ -248,7 +249,7 @@ export function CreateEventDrawer() {
                         <AvatarFallback>BG</AvatarFallback>
                       </Avatar>
                       <Avatar>
-                        <AvatarFallback className="flex size-8 items-center justify-center rounded-full border-2 border-white text-xs font-medium text-white dark:border-muted-foreground/20 dark:bg-muted dark:hover:bg-muted-foreground/70">
+                        <AvatarFallback className="flex size-8 items-center justify-center rounded-full border-2 border-white text-xs font-medium text-primary-foreground dark:border-muted-foreground/20 dark:bg-muted dark:text-white dark:hover:bg-muted-foreground/70">
                           +7
                         </AvatarFallback>
                       </Avatar>
@@ -260,15 +261,22 @@ export function CreateEventDrawer() {
                       Tag Color
                     </Label>
                     <div className="flex items-center space-x-2">
-                      <button className="size-6 rounded-sm bg-purple-500"></button>
-                      <button className="size-6 rounded-sm bg-indigo-500"></button>
-                      <button className="size-6 rounded-sm bg-primary-600"></button>
-                      <button className="size-6 rounded-sm bg-pink-500"></button>
-                      <button className="size-6 rounded-sm bg-teal-400"></button>
-                      <button className="size-6 rounded-sm bg-green-400"></button>
-                      <button className="size-6 rounded-sm bg-yellow-300"></button>
-                      <button className="size-6 rounded-sm bg-orange-400"></button>
-                      <button className="size-6 rounded-sm bg-red-500"></button>
+                      {[
+                        "bg-purple-500",
+                        "bg-indigo-500",
+                        "bg-primary-500",
+                        "bg-pink-500",
+                        "bg-teal-500",
+                        "bg-green-400",
+                        "bg-yellow-300",
+                        "bg-orange-400",
+                        "bg-red-500",
+                      ].map((color, index) => (
+                        <button
+                          key={index}
+                          className={`size-6 rounded-sm ${color}`}
+                        ></button>
+                      ))}
                     </div>
                   </div>
 
@@ -280,7 +288,7 @@ export function CreateEventDrawer() {
                       <div className="mr-4 flex items-center">
                         <Checkbox
                           id="guest-permission-1-checkbox"
-                          className="size-4 rounded border-white/70 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-muted dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
+                          className="size-4 rounded border-muted-foreground/30 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
                           {...form.register("permissions.modifyEvent")}
                         />
                         <Label className="ml-2 text-sm font-medium dark:text-white/70">
@@ -290,7 +298,7 @@ export function CreateEventDrawer() {
                       <div className="mr-4 flex items-center">
                         <Checkbox
                           id="guest-permission-2-checkbox"
-                          className="size-4 rounded border-white/70 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-muted dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
+                          className="size-4 rounded border-muted-foreground/30 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
                           {...form.register("permissions.inviteOthers")}
                         />
                         <Label className="ml-2 text-sm font-medium dark:text-white/70">
@@ -301,7 +309,7 @@ export function CreateEventDrawer() {
                         <Checkbox
                           id="guest-permission-3-checkbox"
                           defaultChecked={true}
-                          className="size-4 rounded border-white/70 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-muted dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
+                          className="size-4 rounded border-muted-foreground/30 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:ring-offset-muted-foreground/20 dark:focus:ring-primary-600"
                           {...form.register("permissions.seeGuestList")}
                         />
                         <Label className="ml-2 text-sm font-medium dark:text-white/70">
@@ -314,11 +322,11 @@ export function CreateEventDrawer() {
               </form>
             </Form>
             <div className="left-0 flex w-full justify-start space-x-4 p-4">
-              <Button className="w-max justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+              <Button className="w-max justify-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
                 Add Event
               </Button>
               <DrawerClose asChild>
-                <Button className="inline-flex w-max items-center justify-center rounded-lg border border-muted-foreground/10 bg-white px-5 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted-foreground/30 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:border-muted-foreground/40 dark:bg-muted dark:text-white/70 dark:hover:bg-muted-foreground/30 dark:hover:text-white dark:focus:ring-muted-foreground/30">
+                <Button className="inline-flex w-max items-center justify-center rounded-lg border border-muted-foreground/10 bg-white px-5 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted-foreground/30 focus:z-10 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:border-muted-foreground/40 dark:bg-muted-foreground/30 dark:text-white dark:hover:bg-muted dark:hover:text-primary-foreground dark:focus:ring-muted-foreground/30">
                   <X className="-ml-1 size-5 sm:mr-1" />
                   Close
                 </Button>

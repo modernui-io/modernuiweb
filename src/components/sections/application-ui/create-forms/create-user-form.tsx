@@ -81,7 +81,7 @@ export function CreateUserForm() {
                   className="block h-auto w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                   placeholder="•••••••••"
                   required
-                  {...form.register("firstName")}
+                  {...form.register("password")}
                 />
               </div>
               <div className="w-full">
@@ -94,7 +94,7 @@ export function CreateUserForm() {
                   className="block h-auto w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                   placeholder="•••••••••"
                   required
-                  {...form.register("lastName")}
+                  {...form.register("confirmPassword")}
                 />
               </div>
 

@@ -26,7 +26,10 @@ export function ImageWithCTAButtonSection() {
           className="hidden size-full object-cover dark:block"
         />
         <div className="mt-4 md:mt-0">
-          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
+          <Heading
+            level={2}
+            className="mb-4 text-wrap font-extrabold tracking-tight"
+          >
             Let&#39;s create more tools and ideas that brings us together.
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg">

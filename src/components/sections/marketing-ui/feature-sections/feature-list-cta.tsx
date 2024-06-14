@@ -61,10 +61,12 @@ export function FeatureListCTA() {
           {ListData.map(({ icon, title, description, link }) => (
             <div key={title}>
               {icon}
-              <Heading level={3} className="mb-2 font-bold">
+              <Heading level={4} className="mb-2 font-bold">
                 {title}
               </Heading>
-              <Text className="mb-4 text-muted-foreground">{description}</Text>
+              <Text className="mb-4 text-md text-muted-foreground">
+                {description}
+              </Text>
               <Link
                 href="#"
                 className="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-800"

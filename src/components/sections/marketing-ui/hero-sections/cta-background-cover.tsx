@@ -34,7 +34,7 @@ export function BackgroundCoverImageWithCTAsHero() {
         <div className="mb-6 max-w-screen-lg lg:mb-0">
           <Heading
             level={"lgDisplay"}
-            className="mb-4 font-extrabold leading-none tracking-tight text-white"
+            className="mb-4 font-bold leading-none tracking-tight text-white"
           >
             We invest in the world&apos;s potential
           </Heading>
@@ -45,7 +45,10 @@ export function BackgroundCoverImageWithCTAsHero() {
             fuels. We&apos;re committed to responsibly meeting the world&apos;s
             energy needs.
           </Text>
-          <Button size="lg" className="text-white [&>span]:items-center">
+          <Button
+            size="lg"
+            className="bg-gray-800  text-white [&>span]:items-center"
+          >
             Learn more about the plan
             <ArrowRight className="w-5" />
           </Button>

@@ -118,7 +118,7 @@ export function HeroSectionWithSearchBar() {
             >
               We invest in the world&apos;s potential
             </Heading>
-            <Text className="mx-auto mb-6 max-w-xl text-primary-600 md:text-lg lg:mx-0 xl:mb-8 xl:text-xl">
+            <Text className="mx-auto mb-6 max-w-xl text-primary-600 md:text-lg lg:mx-0 xl:mb-8 xl:text-lg">
               Here at modernUIWeb we focus on markets where innovation can
               unlock long-term value and drive economic growth.
             </Text>
@@ -133,7 +133,7 @@ export function HeroSectionWithSearchBar() {
                     control={form.control}
                     name="search"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="space-y-0">
                         <FormLabel className="sr-only">Search</FormLabel>
                         <FormControl>
                           <Input

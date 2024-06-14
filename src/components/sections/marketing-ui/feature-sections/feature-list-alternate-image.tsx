@@ -33,7 +33,7 @@ export function FeatureListAlternateImage() {
             <Heading level={2} className="mb-4 font-extrabold tracking-tight">
               Work with tools you already use
             </Heading>
-            <Text className="mb-8 lg:text-xl">
+            <Text className="mb-8 text-primary-700 lg:text-lg ">
               Deliver great service experiences fast - without the complexity of
               traditional ITSM solutions. Accelerate critical development work,
               eliminate toil, and deploy changes with ease.
@@ -48,7 +48,7 @@ export function FeatureListAlternateImage() {
                 </li>
               ))}
             </ul>
-            <Text className="mb-8 lg:text-xl">
+            <Text className="mb-8 lg:text-lg">
               Deliver great service experiences fast - without the complexity of
               traditional ITSM solutions.
             </Text>
@@ -70,13 +70,10 @@ export function FeatureListAlternateImage() {
             className="mb-4 hidden w-full rounded-lg lg:mb-0 lg:flex"
           />
           <div className="text-muted-foreground sm:text-lg">
-            <Heading
-              level={2}
-              className="mb-4 text-4xl font-extrabold tracking-tight"
-            >
+            <Heading level={2} className="mb-4 font-extrabold tracking-tight">
               We invest in the world’s potential
             </Heading>
-            <Text className="mb-8 lg:text-xl">
+            <Text className="mb-8 lg:text-lg">
               Deliver great service experiences fast - without the complexity of
               traditional ITSM solutions. Accelerate critical development work,
               eliminate toil, and deploy changes with ease.
@@ -91,7 +88,7 @@ export function FeatureListAlternateImage() {
                 </li>
               ))}
             </ul>
-            <Text className="lg:text-xl">
+            <Text className="lg:text-lg">
               Deliver great service experiences fast - without the complexity of
               traditional ITSM solutions.
             </Text>

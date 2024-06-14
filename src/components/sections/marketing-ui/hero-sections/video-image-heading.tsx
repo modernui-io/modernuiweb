@@ -20,7 +20,7 @@ export function VisualImageWithHeadingHero() {
           >
             Payments tool for software companies
           </Heading>
-          <Text className="mb-6 max-w-2xl text-muted-foreground md:text-lg lg:mb-8 lg:text-xl">
+          <Text className="mb-6 max-w-2xl text-muted-foreground md:text-lg lg:mb-8 lg:text-lg">
             From checkout to global sales tax compliance, companies around the
             world use modernUIWeb to simplify their payment stack.
           </Text>

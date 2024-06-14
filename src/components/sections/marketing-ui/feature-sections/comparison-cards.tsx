@@ -41,10 +41,10 @@ export function ComparisonCards() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="grid space-y-8 lg:grid-cols-2 lg:gap-12 lg:space-y-0">
           <div>
-            <Heading level={2} className="mb-4 font-extrabold tracking-tight">
+            <Heading level={1} className="mb-4 font-extrabold tracking-tight">
               Compare Modernuiweb to other platforms on the market
             </Heading>
-            <Text className="mb-4 text-muted-foreground sm:text-xl">
+            <Text className="mb-4 text-muted-foreground sm:text-lg">
               Here we focus on markets where technology, innovation, and capital
               can unlock long-term value and drive economic growth.
             </Text>

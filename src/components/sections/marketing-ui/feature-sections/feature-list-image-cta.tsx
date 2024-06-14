@@ -8,7 +8,7 @@ import * as MuiLayout from "~/components/layouts";
 import { Heading } from "~/components/ui/custom/headings";
 import { Text } from "~/components/ui/custom/text";
 //Image import
-import OfficeImage from "~/lib/assets/images/feature-office-1.png";
+import OfficeImage from "~/lib/assets/images/feature-office-long.png";
 
 interface ListData {
   icon: JSX.Element;
@@ -64,10 +64,10 @@ export function FeatureListImageCTA() {
           className="mb-4 w-full rounded-lg lg:mb-0"
         />
         <div className="text-muted-foreground sm:text-lg">
-          <Heading level={2} className="mb-4  font-extrabold tracking-tight">
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Designed for business teams
           </Heading>
-          <Text className="mb-8 lg:text-xl">
+          <Text className="mb-8 text-primary-800 lg:text-lg">
             Deliver great service experiences fast - without the complexity of
             traditional ITSM solutions. Accelerate critical development work,
             eliminate toil, and deploy changes with ease.
@@ -81,7 +81,7 @@ export function FeatureListImageCTA() {
                   {icon}
                 </div>
                 <div>
-                  <Heading level={3} className="mb-2 font-bold">
+                  <Heading level={4} className="mb-2 font-bold">
                     {title}
                   </Heading>
                   <Text className="mb-2 text-muted-foreground">
@@ -89,7 +89,7 @@ export function FeatureListImageCTA() {
                   </Text>
                   <Link
                     href="#"
-                    className={`inline-flex items-center hover:text-primary-800 ${color}`}
+                    className={`inline-flex items-center text-lg hover:text-primary-800 ${color}`}
                   >
                     Learn more
                     <ChevronRight className="ml-1 size-6" />

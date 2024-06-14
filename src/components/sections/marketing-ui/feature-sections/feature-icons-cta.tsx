@@ -50,10 +50,10 @@ export function FeatureIconsCta() {
   return (
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 text-center sm:py-16 lg:px-6">
-        <Heading level={2} className="mb-4 font-extrabold tracking-tight">
+        <Heading level={1} className="mb-4 font-extrabold tracking-tight">
           Designed for business teams like yours
         </Heading>
-        <Text className="text-muted-foreground sm:text-xl lg:px-48">
+        <Text className="text-muted-foreground sm:text-lg lg:px-48">
           Here we focus on markets where technology, innovation, and capital can
           unlock long-term value and drive economic growth.
         </Text>
@@ -68,7 +68,9 @@ export function FeatureIconsCta() {
               <Heading level={3} className="mb-4  font-bold">
                 {title}
               </Heading>
-              <Text className="mb-4 text-muted-foreground">{description}</Text>
+              <Text className="mb-4 text-wrap text-muted-foreground">
+                {description}
+              </Text>
             </div>
           ))}
         </div>

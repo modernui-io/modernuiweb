@@ -13,7 +13,7 @@ export function QRCodeCTASection() {
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center">
-          <Heading className="mb-4 font-extrabold tracking-tight">
+          <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Trade. Anywhere.
           </Heading>
           <Text className="mb-6 text-muted-foreground md:text-lg lg:mb-8">

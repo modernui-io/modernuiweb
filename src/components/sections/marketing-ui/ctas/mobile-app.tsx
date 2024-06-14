@@ -44,10 +44,12 @@ const ButtonDetail = [
   {
     icon: <AppleIcon />,
     buttonText: "Mac App Store",
+    buttonSubText: "Download on the",
   },
   {
     icon: <PlayStoreIcon />,
     buttonText: "Google Play",
+    buttonSubText: "Get it on",
   },
 ];
 
@@ -66,11 +68,11 @@ export function MobileAppDownloadCTASection() {
             Groups.
           </Text>
           <div className="items-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
-            {ButtonDetail.map(({ icon, buttonText }) => (
+            {ButtonDetail.map(({ icon, buttonText, buttonSubText }) => (
               <Button variant="getApp" className="p-6" key={buttonText}>
                 {icon}
                 <div className="text-left">
-                  <div className="mb-1 text-xs">Download on the</div>
+                  <div className="mb-1 text-xs">{buttonSubText}</div>
                   <div className="-mt-1 font-sans text-sm font-semibold">
                     {buttonText}
                   </div>

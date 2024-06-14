@@ -79,7 +79,7 @@ export function FeatureListIcons() {
           <Heading level={2} className="mb-4 font-extrabold tracking-tight">
             Secure platform, secure data
           </Heading>
-          <Text className="text-muted-foreground sm:text-xl">
+          <Text className="text-muted-foreground sm:text-lg">
             Here at Modernuiweb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.
@@ -93,7 +93,7 @@ export function FeatureListIcons() {
               >
                 {icon}
               </div>
-              <Heading level={3} className="mb-2 font-bold">
+              <Heading level={4} className="mb-2 font-bold">
                 {title}
               </Heading>
               <ul className="my-6 space-y-4 lg:mb-0">

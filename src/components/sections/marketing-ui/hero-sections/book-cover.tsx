@@ -20,7 +20,7 @@ export function HeroSectionWithBookCover() {
           <div className="text-center md:max-w-3xl lg:text-left xl:shrink-0">
             <div>
               <Heading
-                level={2}
+                level={"mdDisplay"}
                 className="font-extrabold leading-none tracking-tight text-secondary-foreground"
               >
                 Designing Interfaces:
@@ -51,14 +51,15 @@ export function HeroSectionWithBookCover() {
                     <AvatarImage
                       src={`https://xsgames.co/randomusers/assets/avatars/female/${i}.jpg`}
                       alt="@shadcn"
+                      className="size-8 rounded-full"
                     />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 ))}
               </AvatarGroup>
-              <div className="h-8 w-px "></div>
+              <div className="h-8 w-px bg-gray-700"></div>
               <div>
-                <Ratings rating={5} variant="yellow" totalStars={5}>
+                <Ratings rating={5} variant="yellow" totalStars={5} size={16}>
                   <Text className="ml-2 text-base font-medium text-muted-foreground">
                     5.0
                   </Text>

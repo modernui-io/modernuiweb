@@ -102,7 +102,7 @@ const TailwindCSSLogoSVG = () => (
 const CardText: CardText[] = [
   {
     icon: <Earth className="mr-3" />,
-    title: "Explore ModernUI Web and take your marketplace to the next level.",
+    title: "Explore ModernUI and take your marketplace to the next level.",
     href: "#",
   },
   {
@@ -126,17 +126,17 @@ export function CardCTAsWithIconsSection() {
   return (
     <MuiLayout.Section className="bg-background">
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
-        <Heading level={2} className="mb-4  font-extrabold tracking-tight">
+        <Heading level={1} className="mb-4  font-extrabold tracking-tight">
           We didn&#39;t reinvent the wheel
         </Heading>
-        <Text className="mb-3 text-muted-foreground sm:text-xl">
+        <Text className="mb-3 text-muted-foreground sm:text-lg">
           Track work across the enterprise through an open, collaborative
           platform. Link issues across Jira and ingest data from other software
           development tools, so your IT support and operations teams have richer
           contextual information to rapidly respond to requests, incidents, and
           changes.
         </Text>
-        <Text className="mb-8 text-muted-foreground sm:text-xl">
+        <Text className="mb-8 text-muted-foreground sm:text-lg">
           Deliver great service experiences fast - without the complexity of
           traditional ITSM solutions. Accelerate critical development work,
           eliminate toil, and deploy changes with ease.

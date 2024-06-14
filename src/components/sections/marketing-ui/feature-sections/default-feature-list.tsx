@@ -84,10 +84,10 @@ export function DefaultFeatureList() {
     <MuiLayout.Section>
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
         <div className="mb-8 max-w-screen-md lg:mb-16">
-          <Heading level={2} className="mb-4  font-extrabold tracking-tight ">
+          <Heading level={1} className="mb-4  font-extrabold tracking-tight">
             Designed for business teams like yours
           </Heading>
-          <Text className="text-muted-foreground sm:text-xl">
+          <Text className="text-muted-foreground sm:text-lg">
             Here at Modernuiweb we focus on markets where technology,
             innovation, and capital can unlock long-term value and drive
             economic growth.
@@ -99,7 +99,7 @@ export function DefaultFeatureList() {
               <div className="mb-4 flex size-10 items-center justify-center rounded-full bg-foreground text-muted lg:size-12">
                 {icon}
               </div>
-              <Heading level={3} className="mb-2 text-xl font-bold ">
+              <Heading level={4} className="mb-2 font-bold tracking-tight ">
                 {title}
               </Heading>
               <Text className="text-muted-foreground ">{description}</Text>

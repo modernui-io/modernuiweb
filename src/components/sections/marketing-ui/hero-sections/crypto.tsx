@@ -43,14 +43,14 @@ export function FinancialExchangeCryptoHero() {
       <MuiLayout.Container className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-12 lg:py-16">
         <div className="mx-auto max-w-2xl">
           <Heading
-            level={"mdDisplay"}
+            level={"lgDisplay"}
             className="mb-4 font-extrabold leading-none tracking-tight"
           >
             Decentralized for a better tomorrow
           </Heading>
-          <Text className="text-base font-normal text-secondary-foreground lg:mb-8 lg:text-xl xl:mb-12">
+          <Text className="text-base font-normal text-primary-500 lg:mb-8 lg:text-xl xl:mb-12">
             Buy, trade, and hold&nbsp;
-            <span className="font-medium">600+</span>
+            <span className="font-medium text-primary-900">600+</span>
             &nbsp;cryptocurrencies on modernUIWeb
           </Text>
         </div>
@@ -74,7 +74,7 @@ export function FinancialExchangeCryptoHero() {
                 <TabsTrigger value="Buy">Buy</TabsTrigger>
                 <TabsTrigger value="Sell">Sell</TabsTrigger>
               </TabsList>
-              <TabsContent value="Buy">
+              <TabsContent className="pt-4" value="Buy">
                 <div className="block items-center space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
                   <div className="w-full">
                     <Label htmlFor="euro-form" className="sr-only">
@@ -106,7 +106,7 @@ export function FinancialExchangeCryptoHero() {
                   </div>
                 </div>
               </TabsContent>
-              <TabsContent value="Sell">
+              <TabsContent className="pt-4" value="Sell">
                 <div className="block items-center space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
                   <div className="w-full">
                     <Label htmlFor="sell-bitcoin-form" className="sr-only">

@@ -162,11 +162,16 @@ export function DefaultForm() {
                 ></Textarea>
               </div>
               <div className="flex w-72  items-center">
-                <Button className="mx-auto ml-0 mt-2 inline-flex items-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground">
+                <Button
+                  aria-label="Update product"
+                  type="submit"
+                  className="mx-auto ml-0 mt-2 inline-flex items-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground"
+                >
                   Update product
                 </Button>
 
                 <Button
+                  aria-label="Delete product"
                   variant={"outline"}
                   className="mx-auto ml-0 mt-2 inline-flex items-center rounded-lg border-red-500 px-5 py-2.5 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white"
                 >

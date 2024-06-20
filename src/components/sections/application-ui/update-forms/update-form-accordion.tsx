@@ -61,21 +61,26 @@ const images = [iMacSideImage, iMacFrontImage, iMacBackImage, iMacSideImage];
 const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
-  price: z.number(),
-  category: z.string().optional(),
+
+  price: z.number().min(1, { message: "Price must be a positive number" }),
+  category: z.string().optional().default("Select Category"),
   returnPolicy: z.string().optional(),
   shipsFrom: z.string(),
   soldBy: z.string(),
-  importFees: z.number(),
+  importFees: z
+    .number()
+    .min(0, { message: "Import fees must be a non-negative number" }),
   productState: z.string().optional(),
   description: z.string(),
   productOptions: z.boolean().optional(),
   tags: z.string(),
-  itemWeight: z.number(),
-  length: z.number(),
-  breadth: z.number(),
-  width: z.number(),
-  files: z.array(z.string()).optional(),
+  itemWeight: z
+    .number()
+    .min(1, { message: "Item weight must be a positive number" }),
+  length: z.number().min(1, { message: "Length must be a positive number" }),
+  breadth: z.number().min(1, { message: "Breadth must be a positive number" }),
+  width: z.number().min(1, { message: "Width must be a positive number" }),
+  uploadedFiles: z.array(z.string()).optional(),
   discountType: z.string().optional(),
   minimumAmount: z.number().optional(),
   discountWorth: z.number().optional(),
@@ -104,7 +109,7 @@ export function UpdateFormAccordion() {
         "Standard glass, 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz, 16GB 2666MHz DDR4 memory, Radeon Pro 5500 XT with 8GB of GDDR6 memory, 256GB SSD storage, Gigabit Ethernet, Magic Mouse 2, Magic Keyboard - US",
       productOptions: true,
       tags: "react, tailwind",
-      files: [],
+      uploadedFiles: [],
       discountType: "PO",
       minimumAmount: 400,
       offerStart: "08/11/2023",
@@ -324,11 +329,9 @@ export function UpdateFormAccordion() {
                                     text-muted-foreground
                                     hover:bg-muted-foreground/10
                                     dark:hover:text-primary-foreground"
+                                        aria-label={item.label}
                                       >
                                         {item.icon}
-                                        <span className="sr-only">
-                                          {item.label}
-                                        </span>
                                       </Button>
                                     </Link>
                                   ))}
@@ -529,7 +532,7 @@ export function UpdateFormAccordion() {
                                 id="dropzone-file"
                                 type="file"
                                 className="hidden"
-                                {...form.register("files")}
+                                {...form.register("uploadedFiles")}
                               />
                             </Label>
                           </div>

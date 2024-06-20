@@ -493,7 +493,10 @@ export function UpdateEventForm() {
                       required
                       {...form.register("guests")}
                     />
-                    <Button className="absolute bottom-0 right-2.5 mb-1 inline-flex h-7 items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                    <Button
+                      type="button"
+                      className="absolute bottom-0 right-2.5 mb-1 inline-flex h-7 items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800"
+                    >
                       <HiPlus className="-ml-0.5 mr-0.5 size-4" />
                       Add
                     </Button>

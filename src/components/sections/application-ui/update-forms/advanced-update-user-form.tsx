@@ -43,7 +43,16 @@ import {
 import Avatar from "~/lib/assets/images/avatar-3.png";
 
 const formSchema = z.object({
-  file: z.string(),
+  file: z.string().refine(
+    (val) => {
+      const allowedExtensions = ["svg", "png", "jpg", "gif"];
+      const extension = val.split(".").pop()?.toLowerCase();
+      return extension && allowedExtensions.includes(extension);
+    },
+    {
+      message: "Only SVG, PNG, JPG, or GIF files are allowed",
+    },
+  ),
   firstName: z.string(),
   lastName: z.string(),
   email: z.string(),
@@ -67,7 +76,7 @@ const formSchema = z.object({
   address: z.string(),
   zip: z.string(),
   timezone: z.string(),
-  phoneNumber: z.number(),
+  phoneNumber: z.string(),
   linkedIn: z.string(),
   facebook: z.string(),
   github: z.string(),
@@ -103,7 +112,7 @@ export function AdvancedUpdateUserForm() {
       address: "92 Miles Drive, Newark, NJ 07103.",
       zip: "2124436",
       timezone: "GMT+3",
-      phoneNumber: 3934567890,
+      phoneNumber: "3934567890",
       linkedIn: "https://www.linkedin.com/in/helene-example/",
       facebook: "@helene.fb",
       github: "@helene",
@@ -605,7 +614,7 @@ export function AdvancedUpdateUserForm() {
                   Phone Number
                 </Label>
                 <Input
-                  type="number"
+                  type="text"
                   id="phone-number"
                   className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                   placeholder="Add a phone number"

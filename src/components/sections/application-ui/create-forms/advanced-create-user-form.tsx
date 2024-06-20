@@ -45,7 +45,7 @@ const formSchema = z.object({
   file: z.string(),
   firstName: z.string(),
   lastName: z.string(),
-  email: z.string(),
+  email: z.string().email(),
   permissions: z.string().optional(),
   emailStatus: z.string().optional(),
   jobTitle: z.string(),
@@ -53,7 +53,7 @@ const formSchema = z.object({
   account: z.string().optional(),
   password: z.string(),
   confirmPassword: z.string(),
-  biography: z.string(),
+  biography: z.string().max(500, "Biography cannot exceed 500 characters"),
   roles: z
     .object({
       administrator: z.boolean(),
@@ -66,7 +66,7 @@ const formSchema = z.object({
   address: z.string(),
   zip: z.string(),
   timezone: z.string(),
-  phoneNumber: z.number(),
+  phoneNumber: z.string(),
   linkedIn: z.string(),
   facebook: z.string(),
   github: z.string(),
@@ -101,6 +101,7 @@ export function AdvancedCreateUserForm() {
       address: "",
       zip: "",
       timezone: "",
+      phoneNumber: "",
       linkedIn: "",
       facebook: "",
       github: "",
@@ -603,7 +604,7 @@ export function AdvancedCreateUserForm() {
                   Phone Number
                 </Label>
                 <Input
-                  type="number"
+                  type="text"
                   id="phone-number"
                   className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                   placeholder="Add a phone number"

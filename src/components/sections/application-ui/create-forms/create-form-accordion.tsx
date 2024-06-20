@@ -54,21 +54,25 @@ import {
 const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
-  price: z.number(),
-  category: z.string().optional(),
+  price: z.number().min(1, { message: "Price must be a positive number" }),
+  category: z.string().optional().default("Select Category"),
   returnPolicy: z.string().optional(),
   shipsFrom: z.string(),
   soldBy: z.string(),
-  importFees: z.number(),
+  importFees: z
+    .number()
+    .min(0, { message: "Import fees must be a non-negative number" }),
   productState: z.string().optional(),
   description: z.string(),
   productOptions: z.boolean().optional(),
   tags: z.string(),
-  itemWeight: z.number(),
-  length: z.number(),
-  breadth: z.number(),
-  width: z.number(),
-  files: z.array(z.string()).optional(),
+  itemWeight: z
+    .number()
+    .min(1, { message: "Item weight must be a positive number" }),
+  length: z.number().min(1, { message: "Length must be a positive number" }),
+  breadth: z.number().min(1, { message: "Breadth must be a positive number" }),
+  width: z.number().min(1, { message: "Width must be a positive number" }),
+  uploadedFiles: z.array(z.string()).optional(),
   discountType: z.string().optional(),
   minimumAmount: z.number().optional(),
   discountWorth: z.number().optional(),
@@ -90,7 +94,7 @@ export function CreateFormAccordion() {
       description: "",
       productOptions: false,
       tags: "",
-      files: [],
+      uploadedFiles: [],
       discountType: "PO",
     },
   });
@@ -367,6 +371,7 @@ export function CreateFormAccordion() {
                               id="description"
                               className="block w-full rounded-lg rounded-t-none border bg-background p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                               placeholder="Write a description here"
+                              maxLength={500}
                               required
                               {...form.register("description")}
                             ></Textarea>
@@ -487,7 +492,7 @@ export function CreateFormAccordion() {
                                 id="dropzone-file"
                                 type="file"
                                 className="hidden"
-                                {...form.register("files")}
+                                {...form.register("uploadedFiles")}
                               />
                             </Label>
                           </div>

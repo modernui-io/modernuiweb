@@ -21,8 +21,8 @@ const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
   category: z.string().optional(),
-  price: z.number(),
-  weight: z.string(),
+  price: z.number().min(1, { message: "Price must be a positive number" }),
+  weight: z.string().min(1, { message: "Weight must be a positive number" }),
   description: z.string().optional(),
 });
 
@@ -158,7 +158,10 @@ export function DefaultForm() {
                   {...form.register("description")}
                 ></Textarea>
               </div>
-              <Button className="mx-auto ml-0 mt-2 inline-flex items-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground">
+              <Button
+                type="submit"
+                className="mx-auto ml-0 mt-2 inline-flex items-center rounded-lg px-5 py-2.5 text-center text-sm font-medium text-primary-foreground"
+              >
                 Add product
               </Button>
             </div>

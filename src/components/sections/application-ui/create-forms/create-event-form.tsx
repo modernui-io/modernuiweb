@@ -47,7 +47,7 @@ import {
 } from "~/components/ui/tooltip";
 
 const formSchema = z.object({
-  title: z.string().optional(),
+  title: z.string(),
   location: z.string().optional(),
   startDate: z.string().optional(),
   endDate: z.string().optional(),
@@ -356,7 +356,6 @@ export function CreateEventForm() {
                       id="description"
                       className="block w-full rounded-lg rounded-t-none border border-muted-foreground/30 bg-secondary/30 p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                       placeholder="Write a description here"
-                      required
                       {...form.register("description")}
                     ></Textarea>
                   </div>
@@ -438,10 +437,12 @@ export function CreateEventForm() {
                       id="add-guests"
                       className="block w-full rounded-lg border border-muted-foreground/30 bg-secondary/30 p-3 pl-4 text-sm focus:border-primary-600 focus:ring-primary-600 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                       placeholder="Add guest email"
-                      required
                       {...form.register("guests")}
                     />
-                    <Button className="absolute bottom-0 right-2.5 mb-1 inline-flex h-7 items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                    <Button
+                      type="button"
+                      className="absolute bottom-0 right-2.5 mb-1 inline-flex h-7 items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800"
+                    >
                       <HiPlus className="-ml-0.5 mr-0.5 size-4" />
                       Add
                     </Button>

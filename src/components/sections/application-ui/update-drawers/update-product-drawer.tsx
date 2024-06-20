@@ -112,7 +112,7 @@ export function UpdateProductDrawer() {
                 Update Product
               </DrawerTitle>
               <DrawerClose asChild>
-                <Button className="right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-primary-foreground">
+                <Button className="inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-primary-foreground">
                   <X className="size-5" />
                   <span className="sr-only">Close menu</span>
                 </Button>
@@ -237,7 +237,7 @@ export function UpdateProductDrawer() {
                         <Textarea
                           rows={8}
                           id="description"
-                          className="block h-40 w-full rounded-lg rounded-t-none border bg-background p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                          className="block w-full rounded-lg rounded-t-none border bg-background p-2.5 text-sm focus:border-primary-600 focus:ring-primary-600 dark:border-muted-foreground/30 dark:bg-muted-foreground/35 dark:placeholder:text-muted-foreground/90 dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           placeholder="Write a description here"
                           required
                           {...form.register("description")}

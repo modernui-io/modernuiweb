@@ -18,7 +18,7 @@ import { Label } from "~/components/ui/label";
 
 const formSchema = z.object({
   username: z.string(),
-  email: z.string(),
+  email: z.string().email(),
   password: z.string(),
   confirmPassword: z.string(),
 });
@@ -118,6 +118,7 @@ export function UpdateUserDrawer() {
           </Button>
           <DrawerClose asChild>
             <Button
+              type="button"
               variant={"outline"}
               className="inline-flex items-center rounded-lg border-red-500 px-5 py-2.5 text-center text-sm font-medium text-red-500 hover:bg-red-500 hover:text-primary-foreground dark:bg-muted-foreground/20"
             >

@@ -27,7 +27,7 @@ const formSchema = z.object({
   file: z.string(),
   firstName: z.string(),
   lastName: z.string(),
-  email: z.string(),
+  email: z.string().email(),
   password: z.string(),
   confirmPassword: z.string(),
   roles: z

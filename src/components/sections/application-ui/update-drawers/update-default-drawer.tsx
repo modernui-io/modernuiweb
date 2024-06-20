@@ -29,7 +29,7 @@ const formSchema = z.object({
   name: z.string(),
   brand: z.string(),
   category: z.string().optional(),
-  price: z.number(),
+  price: z.number().min(1, { message: "Price must be a positive number" }),
   description: z.string().optional(),
 });
 

@@ -212,7 +212,10 @@ export function UpdateEventDrawer() {
                           required
                           {...form.register("guests")}
                         />
-                        <Button className="absolute bottom-2.5 right-2.5 inline-flex items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                        <Button
+                          type="button"
+                          className="absolute bottom-2.5 right-2.5 inline-flex items-center rounded-lg px-3 py-1.5 text-xs font-medium text-primary-foreground focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800"
+                        >
                           <HiPlus className="-ml-0.5 mr-0.5 size-4" />
                           Add
                         </Button>
@@ -222,34 +225,36 @@ export function UpdateEventDrawer() {
 
                   <div className="items-center md:flex">
                     <div className="mb-4 flex shrink-0 md:mb-0">
-                      <Avatar className="relative size-8 rounded-full border-2 border-white dark:border-muted-foreground/20">
-                        <AvatarImage
-                          alt="Robert Brown"
-                          src="https://github.com/shadcn.png"
-                        />
-                        <AvatarFallback>RB</AvatarFallback>
-                      </Avatar>
-                      <Avatar className="size-8 rounded-full border-2 border-white dark:border-muted-foreground/20">
-                        <AvatarImage
-                          alt="Helene Engels"
-                          src="https://github.com/shadcn.png"
-                        />
-                        <AvatarFallback>HE</AvatarFallback>
-                      </Avatar>
-                      <Avatar className="size-8 rounded-full border-2 border-white dark:border-muted-foreground/20">
-                        <AvatarImage
-                          alt="Bonnie Green"
-                          src="https://github.com/shadcn.png"
-                        />
-                        <AvatarFallback>BG</AvatarFallback>
-                      </Avatar>
-                      <Avatar className="size-8 rounded-full border-2 border-white dark:border-muted-foreground/20">
-                        <AvatarImage
-                          alt="Bonnie Green"
-                          src="https://github.com/shadcn.png"
-                        />
-                        <AvatarFallback>BG</AvatarFallback>
-                      </Avatar>
+                      {[
+                        {
+                          alt: "Robert Brown",
+                          src: "https://github.com/shadcn.png",
+                          fallback: "RB",
+                        },
+                        {
+                          alt: "Helene Engels",
+                          src: "https://github.com/shadcn.png",
+                          fallback: "HE",
+                        },
+                        {
+                          alt: "Bonnie Green",
+                          src: "https://github.com/shadcn.png",
+                          fallback: "BG",
+                        },
+                        {
+                          alt: "Bonnie Green",
+                          src: "https://github.com/shadcn.png",
+                          fallback: "BG",
+                        },
+                      ].map((guest, index) => (
+                        <Avatar
+                          key={index}
+                          className="relative size-8 rounded-full border-2 border-white dark:border-muted-foreground/20"
+                        >
+                          <AvatarImage alt={guest.alt} src={guest.src} />
+                          <AvatarFallback>{guest.fallback}</AvatarFallback>
+                        </Avatar>
+                      ))}
                       <Avatar>
                         <AvatarFallback className="flex size-8 items-center justify-center rounded-full border-2 border-white text-xs font-medium text-primary-foreground dark:border-muted-foreground/20 dark:bg-muted dark:hover:bg-muted-foreground/70">
                           +7

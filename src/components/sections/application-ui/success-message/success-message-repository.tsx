@@ -22,7 +22,7 @@ export function SuccessMessageRepository() {
           </Button>
         </div>
       </DialogTrigger>
-      <DialogContent className="relative left-0 top-20 m-auto w-fit translate-x-0 rounded-lg bg-background p-4 text-center shadow sm:translate-y-0">
+      <DialogContent className="max-w-md rounded-lg bg-background p-4 text-center shadow">
         <Text className="mt-2 text-left text-lg font-semibold leading-none">
           Awesome!
         </Text>

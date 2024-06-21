@@ -21,7 +21,7 @@ export function SuccessMessageList() {
           </Button>
         </div>
       </DialogTrigger>
-      <DialogContent className="relative left-0 top-20 m-auto w-fit translate-x-0 rounded-lg bg-background p-4 text-center sm:translate-y-0 md:w-[400px]">
+      <DialogContent className="w-96 rounded-lg bg-background p-4 text-center shadow">
         <Text level={"lg"} className="text-left font-semibold">
           Products successfully deleted
         </Text>

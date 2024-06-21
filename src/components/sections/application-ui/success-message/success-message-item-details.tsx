@@ -23,7 +23,7 @@ export function SuccessMessageItemDetails() {
           </Button>
         </div>
       </DialogTrigger>
-      <DialogContent className="relative left-0 top-20 m-auto max-w-md translate-x-0 rounded-lg bg-background p-4 text-center shadow sm:translate-y-0 sm:p-5">
+      <DialogContent className="max-w-md rounded-lg bg-background p-4 text-center shadow">
         <div className="mx-auto mb-4">
           <FaCheck className="size-8 text-green-500" />
           <span className="sr-only">Success</span>

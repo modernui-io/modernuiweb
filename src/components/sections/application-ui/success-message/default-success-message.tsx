@@ -19,7 +19,7 @@ export function DefaultSuccessMessage() {
           </Button>
         </div>
       </DialogTrigger>
-      <DialogContent className="relative left-0 top-20 m-auto max-w-md translate-x-0 rounded-lg bg-background p-4 text-center shadow sm:translate-y-0">
+      <DialogContent className="max-w-md rounded-lg bg-background p-4 text-center shadow">
         <div className="mx-auto mb-3.5 flex size-12 items-center justify-center rounded-full bg-green-100 p-2 dark:bg-green-900">
           <FaCheck className="size-8 text-green-500" />
           <span className="sr-only">Success</span>

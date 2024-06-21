@@ -54,10 +54,16 @@ export function ReadDefaultDrawer() {
                 },
               ].map((detail, index) => (
                 <div key={index}>
-                  <dt className="mb-2 font-semibold leading-none">
+                  <dt
+                    key={`title-${index}`}
+                    className="mb-2 font-semibold leading-none"
+                  >
                     {detail.title}
                   </dt>
-                  <dd className="mb-4 font-light text-muted-foreground sm:mb-5">
+                  <dd
+                    key={`desc-${index}`}
+                    className="mb-4 font-light text-muted-foreground sm:mb-5"
+                  >
                     {detail.description}
                   </dd>
                 </div>

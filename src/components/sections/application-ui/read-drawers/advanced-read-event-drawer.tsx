@@ -42,7 +42,10 @@ export function AdvancedReadEventDrawer() {
                 </Text>
               </DrawerTitle>
               <DrawerClose asChild>
-                <Button className="absolute right-2.5 top-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white">
+                <Button
+                  aria-label="Close menu"
+                  className="absolute right-2.5 top-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-muted-foreground hover:bg-muted-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white"
+                >
                   <X className="size-5" />
                   <span className="sr-only">Close menu</span>
                 </Button>
@@ -96,7 +99,7 @@ export function AdvancedReadEventDrawer() {
                       key={index}
                       className="size-8 rounded-full border-2"
                       src={image}
-                      alt="avatar"
+                      alt={`avatar ${index + 1}`}
                     />
                   ))}
                   <Button className="size-8 rounded-full border-2 bg-muted-foreground text-xs font-medium text-white dark:bg-muted-foreground/90">

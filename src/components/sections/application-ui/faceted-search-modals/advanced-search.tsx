@@ -46,6 +46,10 @@ const jobTitles = [
 ];
 
 export function AdvancedSearch() {
+  const [minAge, setMinAge] = React.useState(18);
+  const [maxAge, setMaxAge] = React.useState(45);
+  const [minExperience, setMinExperience] = React.useState(18);
+  const [maxExperience, setMaxExperience] = React.useState(45);
   return (
     <div className="m-5 flex justify-center">
       <Dialog>
@@ -74,10 +78,12 @@ export function AdvancedSearch() {
                         Min Age
                       </Label>
                       <Slider
-                        value={[18]}
+                        value={[minAge]}
                         step={1}
                         max={100}
                         min={1}
+                        aria-label="Minimum Age"
+                        onValueChange={(value) => setMinAge(value[0])}
                         className="h-2 w-full cursor-pointer rounded-lg bg-muted-foreground/10 dark:bg-muted-foreground/20"
                       />
                     </div>
@@ -89,10 +95,12 @@ export function AdvancedSearch() {
                         Max Age
                       </Label>
                       <Slider
-                        value={[45]}
+                        value={[maxAge]}
                         step={1}
                         max={100}
                         min={1}
+                        aria-label="Maximum Age"
+                        onValueChange={(value) => setMaxAge(value[0])}
                         className="h-2 w-full cursor-pointer rounded-lg bg-muted-foreground/10 dark:bg-muted-foreground/20"
                       />
                     </div>
@@ -107,9 +115,10 @@ export function AdvancedSearch() {
                         <Input
                           type="number"
                           id="min-age-input"
-                          value={18}
+                          value={minAge}
                           min="1"
                           max="100"
+                          onChange={(e) => setMinAge(Number(e.target.value))}
                           className="block w-full rounded-lg border border-muted-foreground/20 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/20 dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           required
                         />
@@ -124,9 +133,10 @@ export function AdvancedSearch() {
                         <Input
                           type="number"
                           id="max-age-input"
-                          value={45}
+                          value={maxAge}
                           min="1"
                           max="100"
+                          onChange={(e) => setMaxAge(Number(e.target.value))}
                           className="block w-full rounded-lg border border-muted-foreground/20 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/20 dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           required
                         />
@@ -142,10 +152,12 @@ export function AdvancedSearch() {
                         Min Experience
                       </Label>
                       <Slider
-                        value={[18]}
+                        value={[minExperience]}
                         step={1}
                         max={30}
                         min={0}
+                        aria-label="Minimum Experience"
+                        onValueChange={(value) => setMinExperience(value[0])}
                         className="h-2 w-full cursor-pointer rounded-lg bg-muted-foreground/10 dark:bg-muted-foreground/20"
                       />
                     </div>
@@ -157,10 +169,12 @@ export function AdvancedSearch() {
                         Max Experience
                       </Label>
                       <Slider
-                        value={[45]}
+                        value={[maxExperience]}
                         step={1}
-                        max={100}
+                        max={45}
                         min={0}
+                        aria-label="Maximum Experience"
+                        onValueChange={(value) => setMaxExperience(value[0])}
                         className="h-2 w-full cursor-pointer rounded-lg bg-muted-foreground/10 dark:bg-muted-foreground/20"
                       />
                     </div>
@@ -175,9 +189,12 @@ export function AdvancedSearch() {
                         <Input
                           type="number"
                           id="min-experience-input"
-                          value={18}
+                          value={minExperience}
                           min="0"
                           max="30"
+                          onChange={(e) =>
+                            setMinExperience(Number(e.target.value))
+                          }
                           className="block w-full rounded-lg border border-muted-foreground/20 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/20 dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           required
                         />
@@ -192,9 +209,12 @@ export function AdvancedSearch() {
                         <Input
                           type="number"
                           id="max-experience-input"
-                          value={45}
+                          value={maxExperience}
                           min="0"
                           max="30"
+                          onChange={(e) =>
+                            setMaxExperience(Number(e.target.value))
+                          }
                           className="block w-full rounded-lg border border-muted-foreground/20 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted-foreground/20 dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                           required
                         />

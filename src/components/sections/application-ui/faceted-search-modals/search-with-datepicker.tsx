@@ -101,7 +101,7 @@ export function SearchWithDatepicker() {
                     </PopoverContent>
                   </Popover>
                 </div>
-                <span>to</span>
+                <span className="mx-2">to</span>
                 <div className="relative">
                   <Popover>
                     <PopoverTrigger asChild>
@@ -140,7 +140,7 @@ export function SearchWithDatepicker() {
               >
                 {durations.map((duration, index) => (
                   <ToggleGroupItem
-                    key={index}
+                    key={duration.id}
                     value={duration.label}
                     className="border-2 border-primary bg-background data-[state=on]:bg-primary-500 data-[state=on]:text-white dark:border-white"
                   >

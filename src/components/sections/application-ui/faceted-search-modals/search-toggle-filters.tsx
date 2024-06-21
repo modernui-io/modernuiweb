@@ -77,7 +77,6 @@ export function SearchToggleFilters() {
         selectOption: filter.selectOption,
         checked: filter.defaultChecked,
       })),
-      security_emails: true,
     },
   });
 

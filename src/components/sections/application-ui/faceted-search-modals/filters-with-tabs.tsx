@@ -89,9 +89,10 @@ interface BrandItem {
 }
 
 export function FiltersWithTabs() {
-  const isChecked = (item: BrandItem) => {
-    return item.checked ?? false;
-  };
+  const isChecked = (item: BrandItem) => item.checked ?? false;
+  const [minPrice, setMinPrice] = React.useState(300);
+  const [maxPrice, setMaxPrice] = React.useState(3350);
+  const [minDeliveryTime, setMinDeliveryTime] = React.useState(30);
 
   return (
     <div className="m-5 flex justify-center">
@@ -131,6 +132,7 @@ export function FiltersWithTabs() {
                             <Checkbox
                               id={item.id}
                               defaultChecked={isChecked(item)}
+                              aria-label={item.label}
                             />
                             <Label
                               htmlFor={item.id}
@@ -150,19 +152,23 @@ export function FiltersWithTabs() {
                       <div>
                         <Label htmlFor="min-price">Min Price</Label>
                         <Slider
-                          defaultValue={[300]}
+                          value={[minPrice]}
                           step={1}
                           max={7000}
                           min={1}
+                          aria-label="Minimum Price"
+                          onValueChange={(value) => setMinPrice(value[0])}
                         />
                       </div>
                       <div>
                         <Label htmlFor="max-price">Max Price</Label>
                         <Slider
-                          defaultValue={[3350000]}
+                          value={[maxPrice]}
                           step={1}
                           max={7000}
                           min={1}
+                          aria-label="Maximum Price"
+                          onValueChange={(value) => setMaxPrice(value[0])}
                         />
                       </div>
                       <div className="col-span-2 flex items-center justify-between space-x-2">
@@ -171,6 +177,7 @@ export function FiltersWithTabs() {
                           id="min-price-input"
                           defaultValue="300"
                           min="0"
+                          onChange={(e) => setMinPrice(Number(e.target.value))}
                           max="7000"
                         />
                         <div className="shrink-0 text-sm font-medium text-black dark:text-muted-foreground">
@@ -182,6 +189,7 @@ export function FiltersWithTabs() {
                           defaultValue="3500"
                           min="0"
                           max="7000"
+                          onChange={(e) => setMaxPrice(Number(e.target.value))}
                           className="block w-full rounded-lg border border-muted-foreground/60 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         />
                       </div>
@@ -191,7 +199,16 @@ export function FiltersWithTabs() {
                         <Label htmlFor="min-delivery-time">
                           Min Delivery Time (Days)
                         </Label>
-                        <Slider defaultValue={[30]} step={1} max={50} min={3} />
+                        <Slider
+                          value={[minDeliveryTime]}
+                          step={1}
+                          max={50}
+                          min={3}
+                          aria-label="Minimum Delivery Time"
+                          onValueChange={(value) =>
+                            setMinDeliveryTime(value[0])
+                          }
+                        />
                       </div>
                       <Input
                         type="number"
@@ -199,6 +216,9 @@ export function FiltersWithTabs() {
                         defaultValue="30"
                         min="3"
                         max="50"
+                        onChange={(e) =>
+                          setMinDeliveryTime(Number(e.target.value))
+                        }
                         className="block w-full rounded-lg border border-muted-foreground/60 bg-secondary/30 p-2.5 text-sm text-black focus:border-primary-500 focus:ring-primary-500 dark:border-muted-foreground/30 dark:bg-muted dark:text-white dark:placeholder:text-muted-foreground dark:focus:border-primary-500 dark:focus:ring-primary-500"
                         placeholder=""
                         required

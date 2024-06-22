@@ -86,23 +86,21 @@ const MenuDropDown: React.FC = () => {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           {menuItems.map((item) => (
-            <>
-              <DropdownMenuItem className="p-0" key={item.label}>
+            <React.Fragment key={item.label}>
+              <DropdownMenuItem className="p-0">
                 {item.link ? (
-                  <>
-                    <Link
-                      key={item.label}
-                      href={item.link}
-                      className="flex w-full items-center justify-start p-2 text-sm hover:bg-secondary-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white"
-                    >
-                      {item.icon && (
-                        <span className="pr-2">
-                          <item.icon className="size-6" />
-                        </span>
-                      )}
-                      {item.label}
-                    </Link>
-                  </>
+                  <Link
+                    key={item.label}
+                    href={item.link}
+                    className="flex w-full items-center justify-start p-2 text-sm hover:bg-secondary-foreground/10 dark:hover:bg-muted-foreground/30 dark:hover:text-white"
+                  >
+                    {item.icon && (
+                      <span className="pr-2">
+                        <item.icon className="size-6" />
+                      </span>
+                    )}
+                    {item.label}
+                  </Link>
                 ) : (
                   <Text className="block px-4 py-2 text-sm hover:bg-secondary-foreground/10 dark:text-muted-foreground dark:hover:bg-muted-foreground/30 dark:hover:text-white">
                     {item.label}
@@ -110,7 +108,7 @@ const MenuDropDown: React.FC = () => {
                 )}
               </DropdownMenuItem>
               {item.divider && <DropdownMenuSeparator />}
-            </>
+            </React.Fragment>
           ))}
         </DropdownMenuGroup>
       </DropdownMenuContent>
@@ -140,6 +138,7 @@ const navLinks: NavigationLink[] = [
 export function UserDropDownMenuHeader() {
   // State
   const [toggle, setToggle] = useState<boolean>(false);
+  const handleToggle = React.useCallback(() => setToggle((prev) => !prev), []);
 
   return (
     <header>
@@ -178,9 +177,7 @@ export function UserDropDownMenuHeader() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
+                  onClick={handleToggle}
                   className="ml-1 inline-flex items-center rounded-lg bg-background p-2 text-sm text-secondary-foreground shadow-none hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary-300 lg:hidden"
                 >
                   <span className="sr-only">Open main menu</span>

@@ -76,7 +76,7 @@ export function MegaDropdownHeader() {
     <header>
       <div className="max-w-full justify-normal bg-background px-1 py-2.5 lg:px-6">
         <div className="mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between">
-          <Image src={Logo} alt="Logo" className="h-4 w-fit sm:h-9" />
+          <Image src={Logo} alt="Company Logo" className="h-4 w-fit sm:h-9" />
           <NavigationMenu className="lg:order-2">
             <NavigationMenuList className="flex items-center">
               <NavigationMenuItem>
@@ -95,6 +95,7 @@ export function MegaDropdownHeader() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button
+                  type="button"
                   onClick={() => {
                     setToggle(!toggle);
                   }}
@@ -135,19 +136,20 @@ export function MegaDropdownHeader() {
                 <NavigationMenuContent>
                   <ul className="grid w-[340px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {dropdownData.map((data) => (
-                      <>
-                        <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                          <div className="text-sm font-medium leading-none">
-                            {data.title}
-                          </div>
-                          <p
-                            key={data.title}
-                            className="line-clamp-2 text-sm leading-snug text-muted-foreground"
-                          >
-                            {data.description}
-                          </p>
+                      <div
+                        key={data.title}
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">
+                          {data.title}
                         </div>
-                      </>
+                        <p
+                          key={data.title}
+                          className="line-clamp-2 text-sm leading-snug text-muted-foreground"
+                        >
+                          {data.description}
+                        </p>
+                      </div>
                     ))}
                   </ul>
                 </NavigationMenuContent>

@@ -53,14 +53,24 @@ export function HeaderWithCenteredLogo() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink className="">
-                <Button variant={"ghost"} size={"sm"} className="p-2">
+                <Button
+                  variant={"ghost"}
+                  size={"sm"}
+                  className="p-2"
+                  aria-label="Language"
+                >
                   <LuGlobe />
                 </Button>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink className="">
-                <Button variant={"ghost"} size={"sm"} className="p-2">
+                <Button
+                  variant={"ghost"}
+                  size={"sm"}
+                  className="p-2"
+                  aria-label="Call"
+                >
                   <MdCall />
                 </Button>
               </NavigationMenuLink>
@@ -72,7 +82,7 @@ export function HeaderWithCenteredLogo() {
       <NavigationMenu className="max-w-full justify-normal bg-background px-4 py-2.5 lg:px-6">
         <div className="mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between">
           <div className="hidden gap-0 md:flex lg:order-2">
-            <Image src={Logo} alt="Logo" className="mx-5 h-6 sm:h-9" />
+            <Image src={Logo} alt="Company Logo" className="mx-5 h-6 sm:h-9" />
           </div>
 
           <div className="lg:order-3">

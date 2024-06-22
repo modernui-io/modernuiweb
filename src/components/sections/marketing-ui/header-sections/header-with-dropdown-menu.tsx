@@ -163,6 +163,9 @@ const navLinks: NavigationLink[] = [
 export function DropDownMenuHeader() {
   // State
   const [toggle, setToggle] = useState<boolean>(false);
+  const handleToggle = React.useCallback(() => {
+    setToggle((prevToggle) => !prevToggle);
+  }, []);
 
   return (
     <header>
@@ -187,9 +190,7 @@ export function DropDownMenuHeader() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
+                  onClick={handleToggle}
                   className="ml-1 inline-flex items-center rounded-lg bg-background p-2 text-sm text-secondary-foreground shadow-none hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary-300 lg:hidden"
                 >
                   <span className="sr-only">Open main menu</span>

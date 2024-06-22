@@ -164,7 +164,7 @@ const socialIcons: socialIcons[] = [
   { icon: FaTwitter, label: "Twitter" },
 ];
 
-const categories = [
+const productCategories = [
   { label: "Mockups" },
   { label: "Templates" },
   { label: "Design" },
@@ -279,7 +279,7 @@ export function HeaderWithMegaMenu() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="py-1 text-sm text-muted-foreground/20">
-                {categories.map((item, index) => (
+                {productCategories.map((item, index) => (
                   <DropdownMenuItem
                     key={index}
                     className="block px-4 py-2 text-black hover:bg-muted-foreground/30 dark:text-white"

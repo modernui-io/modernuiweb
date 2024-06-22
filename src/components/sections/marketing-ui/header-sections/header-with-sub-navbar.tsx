@@ -100,10 +100,10 @@ export function HeaderWithSubNavbar() {
                     "Resources",
                     "Forum",
                     "Support",
-                  ].map((menulink, index) => (
+                  ].map((menulink) => (
                     <DropdownMenuItem
-                      key={index}
-                      className="block px-4 py-2 hover:bg-muted-foreground/30 dark:hover:bg-muted-foreground/30 dark:hover:text-white"
+                      key={menulink}
+                      className="block px-4 py-2 text-black hover:bg-muted-foreground/30 dark:text-white dark:hover:bg-muted-foreground/30"
                     >
                       {menulink}
                     </DropdownMenuItem>

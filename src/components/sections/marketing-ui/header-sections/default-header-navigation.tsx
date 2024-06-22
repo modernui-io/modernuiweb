@@ -33,7 +33,7 @@ const navLinks: NavigationLink[] = [
 
 export function DefaultHeaderNavigation() {
   // State
-  const [toggle, setToggle] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
     <header>
@@ -59,7 +59,7 @@ export function DefaultHeaderNavigation() {
               <NavigationMenuItem>
                 <Button
                   onClick={() => {
-                    setToggle(!toggle);
+                    setIsMenuOpen(!isMenuOpen);
                   }}
                   className="ml-1 inline-flex items-center rounded-lg bg-background p-2 text-sm text-secondary-foreground shadow-none hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary-300 lg:hidden"
                 >
@@ -70,7 +70,7 @@ export function DefaultHeaderNavigation() {
             </NavigationMenuList>
           </div>
           <div
-            className={`${toggle ? "" : "hidden"} w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
+            className={`${isMenuOpen ? "" : "hidden"} w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
           >
             <NavigationMenuList className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
               <NavigationMenuItem className="w-full">
